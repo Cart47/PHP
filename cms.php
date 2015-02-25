@@ -6,7 +6,7 @@
 		<link rel="stylesheet" href="css/cms.css">
 
 		<meta charset="utf-8" />
-		<title>Your Mother, Trebek</title>
+		<title></title>
 	</head>
 	<body>
 		
