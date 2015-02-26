@@ -12,21 +12,18 @@ body {
 #citf {
     color: #fff;
     float: left;
-    padding: 14px 25px;
+    padding: 10px 25px;
     font-family: Lobster, serif; 
-    font-size: 2em; }
+    font-size: 2.5em; }
 
 #cms-top-nav li a {
     float: left;
-    font-size: 0.85em;
+    font-size: 1em;
     list-style: none;
     display: inline;
     padding: 22px 20px;
     text-decoration: none;
     color: #fff; }
-
-#cms-top-nav a:hover {   
-    color: #7f00ff;}
 
 #user {
     float: right;
@@ -55,11 +52,15 @@ body {
     width: 40%; 
     padding: 10px; }
 
-#cms-left-nav {
+#left-col-menu {
+    padding: 5px; 
+    position: fixed; 
+    width: 20%}
+
+.left-menu {
     clear: both;
     margin-left: 20px;
     margin-top: 20px;
-    width: 18%;
     border: 1px solid #ddd; 
     border-radius: 10px; }
 

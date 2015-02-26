@@ -4,7 +4,8 @@
     <img src="img/ChorusLogo-white.png" />
     <ul id="links">
 
-        <li><a href="#">Tickets & Accomodations</a></li>
+        <li><a href="#">Tickets</a></li>
+        <li><a href="#">Accomodations</a></li>
         <li><a href="#">Lineup</a></li>
         <li><a href="#">Festival Info</a></li>
         <li><a href="#">Get Involved</a></li>

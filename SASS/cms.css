@@ -54,7 +54,7 @@
   width: 250px;
   border-right: 1px solid #ddd; }
 
-#cms-left-nav {
+.cms-left-nav {
   margin-top: 140px;
   position: absolute;
   width: 100%; }
