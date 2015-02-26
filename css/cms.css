@@ -9,6 +9,13 @@ body {
     right: 0;
     left: 0; }
 
+#citf {
+    color: #fff;
+    float: left;
+    padding: 10px 25px;
+    font-family: Lobster, serif; 
+    font-size: 2.5em; }
+
 #cms-top-nav li a {
     float: left;
     font-size: 1em;
@@ -37,14 +44,13 @@ body {
     color: #7f00ff; }
 
 /*** Left Menu ***/
-#logo {
-    margin-left: 20px;
-    width: 210px;
-    padding: 20px 10px; }
+#cms-logo {
+    float: left;
+    margin-left: 20px; }
 
-#logo img {
-    margin: 0 auto;
-    display: block; }
+#cms-logo img {
+    width: 40%; 
+    padding: 10px; }
 
 #cms-left-nav {
     clear: both;

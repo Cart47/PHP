@@ -2,7 +2,8 @@
 <html>
 	<head>
 		
-        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/font-awesome-4.3.0/css/font-awesome.css">
         <link rel="stylesheet" href="css/Reset.css" type="text/css">
 		<link rel="stylesheet" href="css/cms.css">
 
@@ -14,6 +15,11 @@
 		<!-- Header -->
 
 		<div id="header-container">
+            
+            <!--<div id="cms-logo">
+                <img src="img/citf-3trees.png" alt="CITF Tree" />
+            </div>-->
+            <div id="citf">Chorus in the Forest</div>
 
 			<ul id="cms-top-nav">
 				<li><a href=""><i class="fa fa-external-link"></i>Visit Site</a></li>
@@ -26,7 +32,7 @@
 			
 
 			<div id="user">
-				<p>Welcome, Jane Doe</p>
+                <p>Welcome, <em>Jane Doe</em></p>
 			</div>
 
 		</div>
@@ -57,7 +63,7 @@
                 <i class="fa fa-caret-right fa-lg"></i>
                 Contact</a>
             <a class="left-mnu-itm" href="">
-                <i class="fa fa-user fa-lg"></i>
+                <i class="fa fa-users"></i>
                 Users</a>	
         </div>
 
