@@ -3,19 +3,12 @@
 /*** Header ***/
 
 #header-container {
+    font-family: $font1;
 	background-color: #019ab8;
 	height: 40px;
 	right: 0;
 	left: 0;
 	position: fixed;
-}
-
-#date {
-	color: #fff;
-	padding: 15px;
-	margin: 0px 20px;
-	float: left;
-	font-size: 0.75em;
 }
 
 #cms-top-nav li a {
