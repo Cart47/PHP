@@ -25,6 +25,9 @@ body {
     text-decoration: none;
     color: #fff; }
 
+#cms-top-nav li a:hover {
+    color: #7f00ff; }
+
 #user {
     float: right;
     color: #fff;
