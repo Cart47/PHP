@@ -16,7 +16,7 @@
     </ul>
     <div id="logIn">
         <ul>
-            <li><a href="#">Login/Register</a></li>
+            <li><a href="cms.php">Login/Register</a></li>
         </ul>
     </div>
 </div>

@@ -23,7 +23,8 @@
       position: absolute;
       top: 10%;
       right: 1.25em;
-      width: 20%; }
+      width: 20%;
+      z-index: 5001; }
       #navMain #logIn ul {
         width: 100%;
         float: right;
@@ -48,7 +49,7 @@
   .sticky {
     position: fixed;
     top: 0;
-    z-index: 5000; }
+    z-index: 1000; }
 
   .stickyStyle {
     width: 100%;
