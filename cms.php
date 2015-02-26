@@ -46,7 +46,7 @@
         <div id="cms-left-nav">
             <a class="left-mnu-itm" href="">
                 <i class="fa fa-caret-right fa-lg"></i>
-                Home</a>
+                Homepage Slider</a>
             <a class="left-mnu-itm" href="">
                 <i class="fa fa-caret-right fa-lg"></i>
                 About NDH</a>

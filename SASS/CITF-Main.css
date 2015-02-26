@@ -1,0 +1,105 @@
+@media screen and (min-width: 1800px) {
+  #container {
+    width: 1440px;
+    margin: 0 auto; } }
+@media screen and (max-width: 1799px) {
+  #container {
+    position: relative;
+    width: 100%; } }
+@media screen and (min-width: 1026px) {
+  body {
+    background-image: url(../img/tree-back.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: roboto, raleway, sans-serif; }
+
+  #headMain {
+    padding-top: 500px;
+    position: relative;
+    display: block; }
+
+  nav {
+    position: relative;
+    display: block; }
+
+  main {
+    position: relative;
+    display: block; }
+
+  footer {
+    position: relative;
+    display: block; } }
+@media screen and (max-width: 1025px) {
+  #headMain {
+    width: 80%;
+    overflow-x: hidden;
+    left: 20%; }
+
+  nav {
+    position: fixed;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 20%; }
+
+  main {
+    width: 80%;
+    overflow-x: hidden;
+    left: 20%; }
+
+  footer {
+    visibility: hidden; } }
+@media screen and (max-width: 900px) {
+  #headMain {
+    visibility: visible;
+    position: relative;
+    top: 4.25em;
+    left: 0;
+    width: 100%;
+    overflow-x: visible; }
+
+  nav {
+    height: auto;
+    left: 0;
+    top: 0;
+    width: 100%;
+    display: block; }
+
+  main {
+    position: relative;
+    width: 100%;
+    overflow-x: visible;
+    top: 4.25em;
+    left: 0%; }
+
+  footer {
+    visibility: visible; } }
+@media screen and (max-width: 720px) {
+  #headMain {
+    visibility: visible;
+    position: relative;
+    top: 5em;
+    left: 0;
+    width: 100%;
+    overflow-x: visible; }
+
+  nav {
+    position: relative;
+    height: auto;
+    left: 0;
+    top: -31.5em;
+    width: 100%;
+    display: block; }
+
+  main {
+    position: relative;
+    width: 100%;
+    overflow-x: visible;
+    top: 0;
+    left: 0%; }
+
+  footer {
+    visibility: visible; } }
+
+/*# sourceMappingURL=CITF-Main.css.map */
