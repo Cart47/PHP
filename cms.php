@@ -79,6 +79,8 @@
                     Users</a>	
             </div>
         </div>
+        
+        <!-- Main Content Area -->
 
 		<!-- Footer -->
 
