@@ -24,31 +24,69 @@
  </head>
  <body>
 	 <div id="container">
-		<header> 
-            <div id="headMain">
+		<section id="modalPopUp">
+		    <?php
+                include_once('components/modal.php');
+            ?>
+		</section>
+        
+        <main>
+            <header> 
+                <div id="headMain">
+                    <?php
+                        include_once('components/HeaderMain.php');
+                    ?>
+                 </div>
+                 <nav>
+                   <?php
+                        include_once('components/NavigationMain.php');
+                    ?>
+                 </nav>
+             </header>
+             <main>
                 <?php
-                    include_once('components/HeaderMain.php');
+                    include_once('components/mainContent.php');
                 ?>
-             </div>
-             <nav>
-               <?php
-                    include_once('components/NavigationMain.php');
+            </main>
+            <footer>
+                <?php
+                    include_once('components/FooterMain.php');
                 ?>
-             </nav>
-         </header>
-         <main>
-            <?php
-                include_once('components/mainContent.php');
-            ?>
-        </main>
-        <footer>
-            <?php
-                include_once('components/FooterMain.php');
-            ?>
-        </footer>	 
+            </footer>
+        </main>	 
 	 </div> <!-- closing div for container -->
 	 
 <!--   JS Scripts can go here -->
+      <script type="text/javascript">
+        $("#modal_trigger").leanModal({top : 200, overlay : 0.6, closeButton: ".modal_close" });
+
+        $(function(){
+            // Calling Login Form
+            $("#login_form").click(function(){
+                $(".social_login").hide();
+                $(".user_login").show();
+                return false;
+            });
+
+            // Calling Register Form
+            $("#register_form").click(function(){
+                $(".social_login").hide();
+                $(".user_register").show();
+                $(".header_title").text('Register');
+                return false;
+            });
+
+            // Going back to Social Forms
+            $(".back_btn").click(function(){
+                $(".user_login").hide();
+                $(".user_register").hide();
+                $(".social_login").show();
+                $(".header_title").text('Login');
+                return false;
+            });
+
+        })
+    </script>
    <script src="js/stickyHeader.js" type="text/javascript"></script> 	
    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js" type="text/javascript"></script>
 </body>
