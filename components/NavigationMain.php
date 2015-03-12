@@ -16,7 +16,7 @@
     </ul>
     <div id="logIn">
         <ul>
-            <li><a href="cms.php">Login/Register</a></li>
+            <li><a id="modal_trigger" href="#modal">Login/Register</a></li>
         </ul>
     </div>
 </div>
