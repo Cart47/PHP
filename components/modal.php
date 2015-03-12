@@ -57,7 +57,7 @@
 
 			<!-- Register Form -->
 			<div class="user_register">
-				<form>
+				<form action="cms.php" method="post">
 					<label>Full Name</label>
 					<input type="text" />
 					<br />
@@ -69,11 +69,10 @@
 					<label>Password</label>
 					<input type="password" />
 					<br />
-
-					<div class="checkbox">
-						<input id="send_updates" type="checkbox" />
-						<label for="send_updates">Send me occasional email updates</label>
-					</div>
+					
+					<label>Password Repeat</label>
+					<input type="password" />
+					<br />
 
 					<div class="action_btns">
 						<div class="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>
