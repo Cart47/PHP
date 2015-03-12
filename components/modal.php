@@ -32,7 +32,7 @@
 
 			<!-- Username & Password Login form -->
 			<div class="user_login">
-				<form>
+				<form id="loginForm" action="" method="post">
 					<label>Email / Username</label>
 					<input type="text" />
 					<br />
@@ -40,9 +40,11 @@
 					<label>Password</label>
 					<input type="password" />
 					<br />
+					<input type="hidden" name="loginSent"/>
+					<br />
 					<div class="action_btns">
 						<div class="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>
-						<div class="one_half last"><a href="#" class="btn btn_red">Login</a></div>
+						<div class="one_half last"><a id="loginButton" href="#" class="btn btn_red">Login</a></div>
 					</div>
 				</form>
 			</div>
@@ -65,7 +67,7 @@
 					<label>Password Repeat</label>
 					<input type="password" name="password_repeat"/>
 					<br />
-					<input type="hidden" name="formSent"/>
+					<input type="hidden" name="registrationSent"/>
 					<br />
 					<div class="action_btns">
 						<div class="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>
