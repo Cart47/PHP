@@ -81,8 +81,9 @@
         </div>
         
         <!-- Main Content Area -->
-		
-		
+        
+        <p>main content</p>
+        
 		<!-- Footer -->
 
 		<div id="cms-footer">
