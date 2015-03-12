@@ -4,6 +4,7 @@ $(function(){
     // Calling Login Form
     $("#login_form").click(function(){
         $(".social_login").hide();
+        $(".registeredUser").hide();
         $(".user_login").show();
         return false;
     });
@@ -24,5 +25,26 @@ $(function(){
         $(".header_title").text('Login');
         return false;
     });
+    
+    //Confirming the Registration
+    $("#registerButton").click(function(){
+        $("#registerForm").submit();
+        return false;
+    });
 
-})
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
