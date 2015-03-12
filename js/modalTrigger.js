@@ -32,6 +32,12 @@ $(function(){
         return false;
     });
 
+     //Confirming the Registration
+    $("#loginButton").click(function(){
+        $("#loginForm").submit();
+        return false;
+    });
+    
 });
 
 

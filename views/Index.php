@@ -33,9 +33,13 @@ include_once('../css/style.php');
  </head>
  <body>
     <?php
-     if(isset($_POST['formSent'])){
-    echo '<span style="color:white; font-size:40px">Poop face </span>';
+     if(isset($_POST['registrationSent'])){
+    echo '<span style="color:white; font-size:40px">I will not eat Green Eggs </span>';
         }
+    if(isset($_POST['loginSent'])){
+    echo '<span style="color:white; font-size:40px">I will not eat them Sam I Am</span>';
+        }
+
         ?>
 	 <div id="container">
 		<section id="modalPopUp">
