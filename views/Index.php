@@ -1,7 +1,11 @@
 <!-- PHP code will be placed here for intitial setups like titles etc -->
 <?php
-    include_once('../css/style.php');
     
+include_once('../css/style.php');
+    
+
+            
+
 ?> 
 
 <!DOCTYPE html>
@@ -28,6 +32,11 @@
     ?> 
  </head>
  <body>
+    <?php
+     if(isset($_POST['formSent'])){
+    echo '<span style="color:white; font-size:40px">Poop face </span>';
+        }
+        ?>
 	 <div id="container">
 		<section id="modalPopUp">
 		    <?php
@@ -35,7 +44,7 @@
             ?>
 		</section>
         
-        <main>
+        <section>
             <header> 
                 <div id="headMain">
                     <?php
@@ -58,7 +67,7 @@
                     include_once('../components/FooterMain.php');
                 ?>
             </footer>
-        </main>	 
+        </section>	 
 	 </div> <!-- closing div for container -->
 	 
 <!--   JS Scripts can go here -->

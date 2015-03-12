@@ -49,28 +49,29 @@
 
 			<!-- Register Form -->
 			<div class="user_register">
-				<form action="cms.php" method="post">
-					<label>Full Name</label>
-					<input type="text" />
+				<form id="registerForm" action="" method="post">
+					<label>User Name</label>
+					<input type="text" name="user_name"/>
 					<br />
 
 					<label>Email Address</label>
-					<input type="email" />
+					<input type="email" name="user_email" />
 					<br />
 
 					<label>Password</label>
-					<input type="password" />
+					<input type="password" name="user_password"/>
 					<br />
 					
 					<label>Password Repeat</label>
-					<input type="password" />
+					<input type="password" name="password_repeat"/>
 					<br />
-
+					<input type="hidden" name="formSent"/>
+					<br />
 					<div class="action_btns">
 						<div class="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>
-						<div class="one_half last"><a href="#" class="btn btn_red">Register</a></div>
+						<div class="one_half last"><a href="#" id="registerButton" class="btn" >Register</a></div>
 					</div>
 				</form>
-			</div>
+			</div>		
 		</section>
 	</div>
