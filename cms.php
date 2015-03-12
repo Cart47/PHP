@@ -82,7 +82,7 @@
         
         <!-- Main Content Area -->
         
-        
+        <p>main content</p>
         
 
 		<!-- Footer -->
