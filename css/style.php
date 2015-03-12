@@ -16,7 +16,7 @@ class Stylesheet {
             if($links == null){
                 continue;
             } else {
-             echo '<link rel="stylesheet" href="css/' . $links . '.css" type="text/css">';    
+             echo '<link rel="stylesheet" href="../css/' . $links . '.css" type="text/css">';    
             }
         }
     }

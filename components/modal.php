@@ -14,7 +14,7 @@
 						
 					</a>
 
-					<a href="#" class="social_box twitter">
+					<a href="../views/cms.php" class="social_box twitter">
 						<span class="icon"><i class="fa fa-twitter"></i></span>
 						<span class="icon_title">Connect with Twitter</span>
 					</a>
