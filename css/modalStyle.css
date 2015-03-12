@@ -25,13 +25,13 @@
   color: #FFF; }
 
 .btn:hover {
-  background: #E4E4E2; }
+  background: #F08080; }
 
 .btn_red:hover {
-  background: #C12B05; }
+  background: #a54531; }
 
 a.btn {
-  color: #666;
+  color: #000;
   text-align: center;
   text-decoration: none; }
 
@@ -53,21 +53,23 @@ a.btn_red {
   text-transform: uppercase; }
 
 .popupHeader {
-  background: #F4F4F2;
+  background: #000;
   position: relative;
   padding: 10px 20px;
-  border-bottom: 1px solid #DDD;
-  font-weight: bold; }
+  border-bottom: 1px solid #000;
+  font-weight: bold;
+  color: #fff; }
 
 .popupHeader .modal_close {
   position: absolute;
   right: 0;
   top: 0;
   padding: 10px 15px;
-  background: #E4E4E2;
+  background: #000;
   cursor: pointer;
-  color: #aaa;
-  font-size: 16px; }
+  color: #fff;
+  font-size: 16px;
+  border-left: 1px solid #fff; }
 
 .popupBody {
   padding: 20px; }
@@ -89,13 +91,16 @@ a.btn_red {
   float: left;
   color: #FFF;
   font-size: 16px;
-  text-align: center; }
+  text-align: center;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px; }
 
 .social_login .fb .icon {
   background: #3B5998; }
 
-.social_login .google .icon {
-  background: #DD4B39; }
+.social_login .twitter .icon {
+  background: #1dcaff; }
 
 .social_login .icon_title {
   display: block;
@@ -103,10 +108,10 @@ a.btn_red {
   float: left;
   font-weight: bold;
   font-size: 16px;
-  color: #777; }
+  color: #000; }
 
 .social_login .social_box:hover {
-  background: #E4E4E2; }
+  background: #F08080; }
 
 .centeredText {
   text-align: center;

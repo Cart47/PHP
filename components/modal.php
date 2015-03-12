@@ -14,9 +14,9 @@
 						
 					</a>
 
-					<a href="#" class="social_box google">
-						<span class="icon"><i class="fa fa-google-plus"></i></span>
-						<span class="icon_title">Connect with Google</span>
+					<a href="#" class="social_box twitter">
+						<span class="icon"><i class="fa fa-twitter"></i></span>
+						<span class="icon_title">Connect with Twitter</span>
 					</a>
 				</div>
 
@@ -40,19 +40,11 @@
 					<label>Password</label>
 					<input type="password" />
 					<br />
-
-					<div class="checkbox">
-						<input id="remember" type="checkbox" />
-						<label for="remember">Remember me on this computer</label>
-					</div>
-
 					<div class="action_btns">
 						<div class="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>
 						<div class="one_half last"><a href="#" class="btn btn_red">Login</a></div>
 					</div>
 				</form>
-
-				<a href="#" class="forgot_password">Forgot password?</a>
 			</div>
 
 			<!-- Register Form -->
