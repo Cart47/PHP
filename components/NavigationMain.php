@@ -1,7 +1,7 @@
 
 <div id="navMain" class="float floatStyle">
-    <img src="img/CITF-textLogo-white.png" />
-    <img src="img/ChorusLogo-white.png" />
+    <img src="../img/CITF-textLogo-white.png" />
+    <img src="../img/ChorusLogo-white.png" />
     <ul id="links">
 
         <li><a href="#">Tickets</a></li>

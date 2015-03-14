@@ -19,10 +19,10 @@
             <!--<div id="cms-logo">
                 <img src="img/citf-3trees.png" alt="CITF Tree" />
             </div>-->
-            <div id="citf">Chorus in the Forest</div>
+            <a href="../views/Index.php"><div id="citf">Chorus in the Forest</div></a>
 
 			<ul id="cms-top-nav">
-                <li><a href=""><i class="fa fa-home"></i>Home</a></li>
+                <li><a href="../views/Index.php"><i class="fa fa-home"></i>Home</a></li>
 				<li><a href=""><i class="fa fa-external-link"></i>Visit Site</a></li>
 				<li><a href=""><i class="fa fa-plus"></i>New</a></li>
 			</ul>

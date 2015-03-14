@@ -3,6 +3,7 @@
 //----------------  CONTENT ABOVE 1800px (Very large format screens  ie. retina displays))-------
 @media screen and (min-width: 1800px) {
 #container {
+        position: relative;
 		width: 1440px;
 		margin:0 auto;
 }}
@@ -21,7 +22,7 @@ body {
     background-attachment: fixed;
     background-size: cover;
     font-family: $font1
-}    
+} 
     
 #headMain {
     padding-top: 500px;

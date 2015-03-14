@@ -23,13 +23,22 @@ if(isset($_POST['register']))
 
     $validation = new validation();
     $validation->validator($info);
-
+/*
     if($validation->errors != null){
         //echo $validation->errors;
         var_dump($validation->errors);
     } else {
     new Registration($info);
-    }
+    } */
+    
+     if($validation->errors != null){
+            //var_dump($validation->errors);
+            foreach($validation->errors as $a => $b){
+                echo "<p>" . $a . $b . "</p>";
+            }
+               
+        }
+    
 }             
 ?>
 

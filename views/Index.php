@@ -1,11 +1,26 @@
 <!-- PHP code will be placed here for intitial setups like titles etc -->
 <?php
     
-include_once('../css/style.php');
-    
+include '../css/style.php';
+include '../models/databaseClass.php';    
+include '../controllers/RegisterNewUser.php';
+include '../controllers/validation.php'; 
+include '../controllers/UserLogin.php'; 
 
-            
+$validation = new Validation();
+$info = $_POST;
+unset($_POST);
 
+if(isset($info['registrationSent']))
+{
+ // These will be session variables, taught March 19
+ // $user_name =$info['user_name'];
+ // $user_email =$info['user_email'];   
+    $validation->validator($info);
+    if(empty($validation->errors)){
+        new Registration($info);
+    } 
+}             
 ?> 
 
 <!DOCTYPE html>
@@ -20,27 +35,46 @@ include_once('../css/style.php');
     <script src="../js/jquery-2.1.3.js" type="text/javascript"></script>
     <script src="../js/jquery-ui.min.js" type="text/javascript"></script>
     <script src="../js/jquery.leanModal.min.js" type="text/javascript"></script>
+     <script src="../js/facebookAPI.js" type="text/javascript"></script>
     
-    
-    <!-- Need to revisit to add in php that determines the associated styles needed and sources them out -->
+    <!-- Need to revisit to add in php that determines the associated styles needed and sources them out  -->
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
     <link rel="stylesheet" href="../css/Reset.css" type="text/css">
     <link rel="stylesheet" href="../css/CITF-Main.css" type="text/css">
-    <link rel="stylesheet" href="../css/navigation.css" type="text/css">
     <?php
-        new Stylesheet('contentMain', 'modalStyle');
+        new Stylesheet('contentMain', 'modalStyle', 'head');
     ?> 
  </head>
  <body>
-    <?php
-     if(isset($_POST['registrationSent'])){
-    echo '<span style="color:white; font-size:40px">I will not eat Green Eggs </span>';
+  <?php
+        if($validation->errors != null){
+            foreach($validation->errors as $a => $b){
+                echo "<p style='color:#fff; font-size:20px'>" . $a . $b . "</p>";
+            }    
         }
-    if(isset($_POST['loginSent'])){
-    echo '<span style="color:white; font-size:40px">I will not eat them Sam I Am</span>';
-        }
-
-        ?>
+    if(isset($info['loginSent'])){
+        new Login($info);
+    }
+  ?>
+  
+  <!--  Bullshit Facebook API code that I can't crack -->
+   <section style="width:300px;height:150px;background-color:#fff;">
+   
+    <div class="fb-login-button" data-max-rows="4" data-size="xlarge" data-show-faces="true" data-auto-logout-link="true" scope="email"></div>
+    <br/>
+    
+    <!-- <span id="fbLogout" onclick="fbLogout()"><a class="fb_button fb_button_medium"><span class="fb_button_text">Logout</span></a></span> -->
+    <div
+      class="fb-like"
+      data-share="true"
+      data-width="450"
+      data-show-faces="true">
+    </div>
+    <div id="null"></div>
+     </section>
+	 
+<!-- -------------------------Above is testing AREA ------------------------------------- -->
+	 	 
 	 <div id="container">
 		<section id="modalPopUp">
 		    <?php
@@ -74,9 +108,9 @@ include_once('../css/style.php');
         </section>	 
 	 </div> <!-- closing div for container -->
 	 
-<!--   JS Scripts can go here -->
-   <script src="../js/stickyHeader.js" type="text/javascript"></script> 	
-   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js" type="text/javascript"></script>
+    <!--   JS Scripts can go here -->
+    <script src="../js/stickyHeader.js" type="text/javascript"></script> 	
+    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="../js/modalTrigger.js"> </script>
 </body>
 </html>

@@ -28,14 +28,14 @@ class Validation {
                 if($inputName == $regName){
                    if($inputValue == null)
                     {
-                       $this->errors[$inputName] = " is an empty";
+                       $this->errors[$inputName] = " is an empty<br/>";
                     }
                     else
                     {if (preg_match($regex, $inputValue))
                         {continue;}
                      else
                         {
-                         $this->errors[$inputName] = " is an invalid input";
+                         $this->errors[$inputName] = " is an invalid input<br/>";
                         }
                    }      
                }

@@ -2,15 +2,14 @@
 
 class Registration {
     
-    private $newUser, $newEmail, $newPassword;
+    private $newUser, $newEmail, $newPassword, $success;
 
 
     public function __construct($info)
     {
-        if (isset($info["register"])) {
             $USERinfo = $info;
             $this->registerUser($USERinfo);
-        }
+        
     }
     
     private function registerUser($info)
@@ -18,12 +17,12 @@ class Registration {
             $db = Database::getDB();
             
             //Transforming the collected inputs into actual values and no $_POST(s)
-            $USERname = $info['user_name'];
-            $USERemail = $info['user_email'];         
+            $USERname = Login::CleanInputs($info['user_name']);
+            $USERemail = Login::CleanInputs($info['user_email']);         
             
             //encrypts password for added security using a VERY basic encryption
-            $USERpassword = $info['user_password']; 
-            $salt = '%IG47GM46';
+            $USERpassword = Login::CleanInputs($info['user_password']); 
+            $salt = '%IG47GM46MD45GB44';
             
             $encrPASS = crypt($USERpassword, $salt);
             
@@ -31,7 +30,7 @@ class Registration {
                   VALUES (NULL ,  '$USERname', '$encrPASS', '$USERemail')";
             
             $db->exec($query);
-            echo $encrPASS;
+            $this->success = 'You have successfully registered';
             
         }
     }
