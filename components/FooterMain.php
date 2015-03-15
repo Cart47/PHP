@@ -32,10 +32,10 @@
                 <h3>Subscribe to our newsletter!</h3>
 
                 <input type="hidden" name="email_id" />
-                <input type="text" name="name" placeholder="Your Name"/>
-                <input type="text" name="email" placeholder="Your Email" />
+                <input class="email-field" type="text" name="name" placeholder="Your Name"/>
+                <input class="email-field" type="text" name="email" placeholder="Your Email" />
 
-                <input type="submit" name="submit" value="Subscribe Now" />
+                <input id="subscribe" type="submit" name="submit" value="Subscribe Now" />
 
         </form>
         

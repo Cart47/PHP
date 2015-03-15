@@ -29,7 +29,10 @@ input[type=text] {
     padding: 0px 10px;
     margin: 1% 0%;
     font-size: 0.875em;
-    width: 85%;
+}
+
+.email-field {
+    width: 94%;
 }
 
 
@@ -42,6 +45,10 @@ input[type=submit] {
     color: #fff;
     cursor: pointer;
     margin: 15px 0px;
+}
+
+#subscribe {
+    width: 100%;
 }
 
 
