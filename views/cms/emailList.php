@@ -89,7 +89,7 @@
 
             </table>           
             
-            <form action="." method="post" id="insert_email">
+            <form action="../../controllers/emailController.php" method="post" id="insert_email">
                 <input id="addSubscriber" type="submit" name="add" value="Add a Subscriber"/>
             </form>
             

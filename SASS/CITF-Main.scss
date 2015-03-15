@@ -1,5 +1,15 @@
 @import "_variables.scss";
 
+h3 {
+    font-size: 1.25em;
+    padding: 10px 0px;
+}
+
+p {
+    padding: 2px;   
+}
+
+
 //----------------  CONTENT ABOVE 1800px (Very large format screens  ie. retina displays))-------
 @media screen and (min-width: 1800px) {
 #container {

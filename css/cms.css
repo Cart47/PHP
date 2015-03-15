@@ -89,7 +89,7 @@ input[type=submit] {
 #left-col-menu {
   width: 200px;
   margin: 10px 10px 10px 10px;
-  min-height: 95%; }
+  min-height: 100%; }
 
 .left-menu {
   float: left;
@@ -97,6 +97,9 @@ input[type=submit] {
   margin: 10px;
   border: 1px solid #ddd;
   border-radius: 8px; }
+
+.left-menu:last-child {
+  margin-bottom: 100px; }
 
 .left-mnu-itm {
   display: block;
@@ -127,19 +130,22 @@ input[type=submit] {
 #main {
   margin: 10px;
   display: inline-block;
-  width: 73%; }
+  width: 73%;
+  min-height: 100%; }
 
 /*** Footer ***/
 #cms-footer {
   clear: both;
   background-color: #ddd;
-  padding: 20px;
   font-size: 0.75em;
   position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;
   overflow: hidden; }
+
+#footer-content {
+  padding: 20px; }
 
 /*** Email Subscription ***/
 #addSubscriber {
