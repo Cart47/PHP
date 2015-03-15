@@ -1,8 +1,36 @@
 @import "_variables.scss";
 
+/*** General Styling ***/
+
 html { position: relative; min-height: 100%; }
 body { font-family: $font1; -webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px; }
 a { color: #444; }
+
+h1 {
+    font-size: 1.5em;
+    padding: 10px 0px;
+    color: $Purple;
+}
+
+h2 {
+    font-size: 1.25em;
+    padding: 10px 0px;
+}
+
+h3 {
+    
+    
+}
+
+input[type=submit] {
+    font-size: 0.875em;
+    border-radius: 5px;
+    border: 0;
+    padding: 10px 30px;
+    background: #444;
+    color: #fff;
+    cursor: pointer;
+}
 
 /*** Header ***/
 
@@ -79,7 +107,6 @@ a { color: #444; }
     width: 200px;
     margin: 10px 10px 10px 10px;
     min-height: 95%;
-    position: relative;
 }
 
 .left-menu {
@@ -121,6 +148,15 @@ a { color: #444; }
    padding-right: 5px;
 } 
 
+/*** Main Content ***/
+
+#main {
+    margin: 10px;
+    display: inline-block;
+    width: 73%;
+    
+}
+
 /*** Footer ***/
 
 #cms-footer {
@@ -135,7 +171,11 @@ a { color: #444; }
     overflow:hidden;
 }
 
+/*** Email Subscription ***/
 
+#addSubscriber {
+    margin-top: 20px;
+}
 
 
 

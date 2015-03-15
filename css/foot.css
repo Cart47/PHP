@@ -1,5 +1,11 @@
-@media screen and (min-width: 1026px) {
-  #footContainer {
-    background-color: black;
-    color: white;
-    padding: 40px; } }
+#footContainer {
+  background-color: black;
+  color: #fff;
+  padding: 40px;
+  width: 100%; }
+
+#subscribe {
+  float: right;
+  width: 30%; }
+
+/*# sourceMappingURL=foot.css.map */

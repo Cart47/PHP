@@ -1,3 +1,4 @@
+/*** General Styling ***/
 html {
   position: relative;
   min-height: 100%; }
@@ -8,6 +9,24 @@ body {
 
 a {
   color: #444; }
+
+h1 {
+  font-size: 1.5em;
+  padding: 10px 0px;
+  color: #9a3cf5; }
+
+h2 {
+  font-size: 1.25em;
+  padding: 10px 0px; }
+
+input[type=submit] {
+  font-size: 0.875em;
+  border-radius: 5px;
+  border: 0;
+  padding: 10px 30px;
+  background: #444;
+  color: #fff;
+  cursor: pointer; }
 
 /*** Header ***/
 #header-container {
@@ -70,8 +89,7 @@ a {
 #left-col-menu {
   width: 200px;
   margin: 10px 10px 10px 10px;
-  min-height: 95%;
-  position: relative; }
+  min-height: 95%; }
 
 .left-menu {
   float: left;
@@ -105,6 +123,12 @@ a {
 .fa-external-link {
   padding-right: 5px; }
 
+/*** Main Content ***/
+#main {
+  margin: 10px;
+  display: inline-block;
+  width: 73%; }
+
 /*** Footer ***/
 #cms-footer {
   clear: both;
@@ -116,3 +140,9 @@ a {
   bottom: 0;
   width: 100%;
   overflow: hidden; }
+
+/*** Email Subscription ***/
+#addSubscriber {
+  margin-top: 20px; }
+
+/*# sourceMappingURL=cms.css.map */

@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAGA,qCAAqC;EAErC,cAAe;IACX,gBAAgB,EAAE,KAAK;IACvB,KAAK,EAAC,KAAK;IACX,OAAO,EAAE,IAAI",
+"mappings": "AAEA,cAAe;EACX,gBAAgB,EAAE,KAAK;EACvB,KAAK,EAAE,IAAI;EACX,OAAO,EAAE,IAAI;EACb,KAAK,EAAE,IAAI;;AAGf,UAAW;EACP,KAAK,EAAE,KAAK;EACZ,KAAK,EAAE,GAAG",
 "sources": ["../SASS/foot.scss"],
 "names": [],
 "file": "foot.css"
