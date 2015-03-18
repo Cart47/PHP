@@ -57,13 +57,13 @@ if(isset($info['registrationSent']))
     }
   ?>
   
-  <!--  Bullshit Facebook API code that I can't crack -->
+  <!--  Bullshit Facebook API code that I can't crack 
    <section style="width:300px;height:150px;background-color:#fff;">
    
     <div class="fb-login-button" data-max-rows="4" data-size="xlarge" data-show-faces="true" data-auto-logout-link="true" scope="email"></div>
     <br/>
     
-    <!-- <span id="fbLogout" onclick="fbLogout()"><a class="fb_button fb_button_medium"><span class="fb_button_text">Logout</span></a></span> -->
+    <!-- <span id="fbLogout" onclick="fbLogout()"><a class="fb_button fb_button_medium"><span class="fb_button_text">Logout</span></a></span> 
     <div
       class="fb-like"
       data-share="true"
@@ -71,7 +71,7 @@ if(isset($info['registrationSent']))
       data-show-faces="true">
     </div>
     <div id="null"></div>
-     </section>
+     </section> -->
 	 
 <!-- -------------------------Above is testing AREA ------------------------------------- -->
 	 	 
