@@ -9,6 +9,16 @@ p {
     padding: 2px;   
 }
 
+input[type=submit] {
+    font-size: 0.875em;
+    border-radius: 5px;
+    border: 0;
+    padding: 10px 60px;
+    background: $Purple;
+    color: #fff;
+    cursor: pointer;
+    margin: 15px 0px;
+}
 
 //----------------  CONTENT ABOVE 1800px (Very large format screens  ie. retina displays))-------
 @media screen and (min-width: 1800px) {
@@ -47,6 +57,7 @@ nav {
 main {
     position: relative;
     display: block;
+    height: 100em;
 }
     
 footer {
@@ -146,6 +157,7 @@ main {
     overflow-x:visible;
     top:0;
     left:0%;
+    height: 100em;
 }
     
 footer {

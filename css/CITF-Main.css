@@ -5,6 +5,16 @@ h3 {
 p {
   padding: 2px; }
 
+input[type=submit] {
+  font-size: 0.875em;
+  border-radius: 5px;
+  border: 0;
+  padding: 10px 60px;
+  background: #9a3cf5;
+  color: #fff;
+  cursor: pointer;
+  margin: 15px 0px; }
+
 @media screen and (min-width: 1800px) {
   #container {
     width: 1440px;
@@ -32,7 +42,8 @@ p {
 
   main {
     position: relative;
-    display: block; }
+    display: block;
+    height: 100em; }
 
   footer {
     position: relative;
@@ -104,7 +115,8 @@ p {
     width: 100%;
     overflow-x: visible;
     top: 0;
-    left: 0%; }
+    left: 0%;
+    height: 100em; }
 
   footer {
     visibility: visible; } }

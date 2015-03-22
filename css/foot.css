@@ -26,16 +26,6 @@ input[type=text] {
 .email-field {
   width: 94%; }
 
-input[type=submit] {
-  font-size: 0.875em;
-  border-radius: 5px;
-  border: 0;
-  padding: 10px 60px;
-  background: #9a3cf5;
-  color: #fff;
-  cursor: pointer;
-  margin: 15px 0px; }
-
 #subscribe {
   width: 100%; }
 

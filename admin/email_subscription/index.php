@@ -1,8 +1,8 @@
 <?php 
 
-require ('../models/databaseClass.php');
-require ('../models/emailSubscription/emailClass.php');
-require ('../models/emailSubscription/emailDB.php');
+require ('../../models/databaseClass.php');
+require ('../../models/emailSubscription/emailClass.php');
+require ('../../models/emailSubscription/emailDB.php');
 
 if(isset($_POST['add'])) { //If 'add a subscriber' button is clicked
     
@@ -36,18 +36,18 @@ if(isset($_POST['add'])) { //If 'add a subscriber' button is clicked
     
     EmailDB::updateEmail($email_id, $name, $email, $approved);
     
-    include ('../views/cms/emailList.php');
+    include ('emailList.php');
 
 } elseif(isset($_POST['cancel'])) { //If cancel button is clicked
     
-    include ('../views/cms/emailList.php');
+    include ('emailList.php');
 
 } elseif(isset($_POST['delete'])) { //If delete button is clicked
     
     $email_id = $_POST['email_id']; 
     EmailDB::deleteEmail($email_id);  
     
-    include ('../views/cms/emailList.php');
+    include ('emailList.php');
 
 } else { //If no buttons are clicked display pending and approved subscribers
     
@@ -57,7 +57,7 @@ if(isset($_POST['add'])) { //If 'add a subscriber' button is clicked
     $approvedEmail = EmailDB::getEmailsByStatus($approve);
     $pendingEmail = EmailDB::getEmailsByStatus($pending);
       
-    include ('../views/cms/emailList.php');
+    include ('emailList.php');
     
 }
 

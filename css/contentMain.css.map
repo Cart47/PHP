@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAGA,qCAAqC;EAErC,YAAa;IACT,MAAM,EAAC,KAAK;IACZ,QAAQ,EAAE,QAAQ;IAClB,OAAO,EAAE,IAAI",
+"mappings": "AAGA,qCAAqC;EAErC,YAAa;IACT,QAAQ,EAAE,QAAQ;IAClB,OAAO,EAAE,IAAI",
 "sources": ["../SASS/contentMain.scss"],
 "names": [],
 "file": "contentMain.css"
