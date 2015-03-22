@@ -15,8 +15,14 @@
         <?php 
 
             include ('../../components/cmsHeader.php'); 
-            include ('../../components/cmsLeftMenu.php'); 
-        
+            include ('../../components/cmsLeftMenu.php');             
+
+            //Forces a redirect through the index
+            if(!isset($approvedEmail) && !isset($pendingEmail)){
+                header('Location: ../cms/'); 
+
+            }
+
         ?>
         
         <!-- Main Content Area -->
@@ -40,13 +46,13 @@
                         <td>
                             <form action="." method="post" id="edit_email">                            
                                 <input type="hidden" name="email_id" value="' . $approve->getEmailID() . '" />
-                                <input type="submit" name="edit" value="Edit" />                           
+                                <input type="submit" class="edit-btn" name="edit" value="Edit" />                           
                             </form>
                         </td>
                         <td>
                             <form action="." method="post" id="delete_email">                            
                                 <input type="hidden" name="email_id" value="' . $approve->getEmailID() . '" />
-                                <input type="submit" name="delete" value="Delete" />                           
+                                <input type="submit" class="delete-btn" name="delete" value="Delete" />                           
                             </form>
                         </td>
                     </tr>';             
@@ -89,7 +95,7 @@
 
             </table>           
             
-            <form action="../../controllers/emailController.php" method="post" id="insert_email">
+            <form action="." method="post" id="insert_email">
                 <input id="addSubscriber" type="submit" name="add" value="Add a Subscriber"/>
             </form>
             

@@ -32,6 +32,16 @@ input[type=submit] {
     cursor: pointer;
 }
 
+input[type=submit].edit-btn {
+    font-size: 0.875em;
+    border-radius: 5px;
+    border: 0;
+    padding: 5px 10px;
+    background: #444;
+    color: #fff;
+    cursor: pointer;
+}
+
 /*** Header ***/
 
 #header-container {
@@ -107,6 +117,7 @@ input[type=submit] {
     width: 200px;
     margin: 10px 10px 10px 10px;
     min-height: 100%;
+    float: left;
 }
 
 .left-menu {
@@ -155,10 +166,12 @@ input[type=submit] {
 /*** Main Content ***/
 
 #main {
-    margin: 10px;
+    margin-top: 10px;
+    margin-left: 30px;
     display: inline-block;
     width: 73%;
     min-height: 100%;
+    float: left;
     
 }
 

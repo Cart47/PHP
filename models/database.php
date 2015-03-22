@@ -1,9 +1,9 @@
 <?php
 class Database {
 	
-    private static $dsn = 'mysql:host=localhost;dbname=CITFuser';//<-- insert the DBName
-    private static $username = 'root';
-    private static $password = 'root';
+    private static $dsn = 'mysql:host=chorusintheforest.stem.arvixe.com;dbname=chorusintheforest';//<-- insert the DBName
+    private static $username = 'Gen';
+    private static $password = 'password';
    //reference to db connection
     private static $db;
 
@@ -17,6 +17,7 @@ class Database {
                 self::$db = new PDO(self::$dsn,
                                      self::$username,
                                      self::$password);
+                echo 'connected';
             } catch (PDOException $e) {
                 $error_message = $e->getMessage();
                 echo $error_message;
