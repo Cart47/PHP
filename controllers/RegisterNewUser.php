@@ -22,9 +22,8 @@ class Registration {
             
             //encrypts password for added security using a VERY basic encryption
             $USERpassword = Login::CleanInputs($info['user_password']); 
-            $salt = '%IG47GM46MD45GB44';
             
-            $encrPASS = crypt($USERpassword, $salt);
+            $encrPASS = password_hash($USERpassword, PASSWORD_BCRYPT);
             
             $query = "INSERT INTO  `CITFuser`.`login` (`user_id`,`user_name` ,`user_pass_crypt` ,`user_email`)
                   VALUES (NULL ,  '$USERname', '$encrPASS', '$USERemail')";

@@ -13,9 +13,9 @@ class Login {
     }
     
     //Found this on through StackOverflow as a means to remove special characters
-    private static function CleanInputs($Value) {
+    public static function CleanInputs($Value) {
        $Value = str_replace(' ', '-', $Value); 
-       $Value = preg_replace('/[^A-Za-z0-9\-]/', '', $Value); 
+       $Value = preg_replace('/[^A-Za-z0-9\@.]/', '', $Value); 
        return preg_replace('/-+/', '-', $Value); 
     }
     

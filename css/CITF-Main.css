@@ -1,5 +1,6 @@
 @media screen and (min-width: 1800px) {
   #container {
+    position: relative;
     width: 1440px;
     margin: 0 auto; } }
 @media screen and (max-width: 1799px) {

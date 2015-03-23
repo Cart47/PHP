@@ -1,6 +1,5 @@
-<!-- PHP code will be placed here for intitial setups like titles etc -->
 <?php
-    
+session_start();    
 include '../css/style.php';
 include '../models/databaseClass.php';    
 include '../controllers/RegisterNewUser.php';
@@ -57,21 +56,29 @@ if(isset($info['registrationSent']))
     }
   ?>
   
-  <!--  Bullshit Facebook API code that I can't crack 
+  
+<!-- Bullshit Facebook API code that I can't crack 
    <section style="width:300px;height:150px;background-color:#fff;">
    
-    <div class="fb-login-button" data-max-rows="4" data-size="xlarge" data-show-faces="true" data-auto-logout-link="true" scope="email"></div>
+   <div id="fb-root"></div>
+   
+    <div class="fb-login-button" data-max-rows="4" data-size="xlarge" data-show-faces="true" data-auto-logout-link="true" scope="email "></div>
     <br/>
-    
-    <!-- <span id="fbLogout" onclick="fbLogout()"><a class="fb_button fb_button_medium"><span class="fb_button_text">Logout</span></a></span> 
     <div
       class="fb-like"
       data-share="true"
       data-width="450"
       data-show-faces="true">
     </div>
-    <div id="null"></div>
-     </section> -->
+    <br />
+    <div id="status"></div>
+    
+    <a style="cursor:pointer;" class="fb_button fb_button_medium" onclick="fbLogout()">
+        <span id="fbLogout">
+            <span class="fb_button_text">Logout</span>
+        </span>
+    </a> 
+     </section> 
 	 
 <!-- -------------------------Above is testing AREA ------------------------------------- -->
 	 	 
