@@ -22,7 +22,73 @@
         <!-- Main Content Area -->
         <div id="main">
             
-            <h1>Main content area</h1>
+            <h1>Heading 1</h1>
+            <h2>Heading 2</h2>
+            <h3>Heading 3</h3>
+            
+            <p>paragraph text...</p>
+            <a href="">this is a hyperlink...</a>
+            
+            <form action="." method="post" id="insert_email">
+                <input id="" type="submit" name="" class="btn" value="Sample Button"/>
+                <input id="" type="submit" name="" class="link-btn" value="Sample Link Button"/>
+            </form>
+            
+            <table>
+                <th>head 1</th>
+                <th>head 2</th>
+                <th>head 3</th>
+                <tr>
+                    <td>content 1</td>
+                    <td>content 2</td>
+                    <td>content 3</td>
+                    <td>
+                        <input id="" type="submit" name="" class="link-btn" value="Edit"/> / 
+                        <input id="" type="submit" name="" class="link-btn" value="Delete"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>content 1</td>
+                    <td>content 2</td>
+                    <td>content 3</td>
+                    <td>
+                        <input id="" type="submit" name="" class="link-btn" value="Edit"/> / 
+                        <input id="" type="submit" name="" class="link-btn" value="Delete"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>content 1</td>
+                    <td>content 2</td>
+                    <td>content 3</td>
+                    <td>
+                        <input id="" type="submit" name="" class="link-btn" value="Edit"/> / 
+                        <input id="" type="submit" name="" class="link-btn" value="Delete"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>content 1</td>
+                    <td>content 2</td>
+                    <td>content 3</td>
+                    <td>
+                        <input id="" type="submit" name="" class="link-btn" value="Edit"/> / 
+                        <input id="" type="submit" name="" class="link-btn" value="Delete"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>content 1</td>
+                    <td>content 2</td>
+                    <td>content 3</td>
+                    <td>
+                        <input id="" type="submit" name="" class="link-btn" value="Edit"/> / 
+                        <input id="" type="submit" name="" class="link-btn" value="Delete"/>
+                    </td>
+                </tr>
+            
+            </table>
+            
+            <input type="text" name="" value="" class="textbox" />
+            
+            
         
         </div><!-- end main -->
         

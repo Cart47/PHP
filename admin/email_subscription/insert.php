@@ -24,21 +24,25 @@
         
             <h1>Insert New Subscriber</h1>
             
-            <form action="." method="post" id="subscribe">
-
+            <form action="." method="post" id="add_subscriber">
+            
                 <input type="hidden" name="email_id" />
 
-                <input type="text" name="name" placeholder="Your Name" value="" />
-                
+                <input type="text" name="name" placeholder="Name"/>
 
                 <br /><br />
 
-                <input type="text" name="email" placeholder="Your Email" value="" />
-                
+                <input type="text" name="email" placeholder="Email" />
 
                 <br /><br />
 
-                <input type="submit" name="submit" value="Submit" />
+                <input type='radio' name='approved' value='1'  /> Approved
+                <input type='radio' name='approved' value='0' checked /> Pending
+
+                <br /><br />
+
+                <input type="submit" name="insert" value="Submit" />
+                <input type="submit" name="cancel" value="Cancel" />
 
             </form>
             
