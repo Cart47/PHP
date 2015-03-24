@@ -38,7 +38,8 @@ include_once('css/style.php');
     echo '<span style="color:white; font-size:40px">I will not eat them Sam I Am</span>';
         }
 
-        ?>
+     ?>
+     
 	 <div id="container">
 		<section id="modalPopUp">
 		    <?php
