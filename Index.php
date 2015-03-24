@@ -24,7 +24,6 @@ include_once('css/style.php');
     <link rel="stylesheet" href="css/Reset.css" type="text/css">
     <link rel="stylesheet" href="css/CITF-Main.css" type="text/css">
     <link rel="stylesheet" href="css/navigation.css" type="text/css">
-    <link rel="stylesheet" href="css/foot.css" type="text/css">
     <?php
         new Stylesheet('contentMain', 'modalStyle');
     ?> 
