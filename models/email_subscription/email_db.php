@@ -9,18 +9,20 @@ class EmailDB {
         $query = 'SELECT * FROM email_subscription
                   WHERE approved ="' . $option . '"';
         
-        $result = $db->query($query);
+        $stm = $db->prepare($query);
+        $stm->execute();
+        $result = $stm->fetchAll(PDO::FETCH_ASSOC);
         
         $emails = array();
         foreach ($result as $row) {
             $subscription = new EmailClass($row['name'],
                                            $row['email'],
-                                           $row['approved']);           
+                                           $row['approved']); 
             $subscription->setEmailID($row['email_id']);
-            
+
             $emails[] = $subscription;
         }
-        
+   
         return $emails;
     }
     

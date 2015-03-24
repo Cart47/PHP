@@ -30,7 +30,7 @@
             
             <h1>Email Subscribers</h1>
         
-            <h2>Approved Subscribers</h2>
+            <h3>Approved Subscribers</h3>
 
             <table>
 
@@ -46,13 +46,10 @@
                         <td>
                             <form action="." method="post" id="edit_email">                            
                                 <input type="hidden" name="email_id" value="' . $approve->getEmailID() . '" />
-                                <input type="submit" class="edit-btn" name="edit" value="Edit" />                           
-                            </form>
-                        </td>
-                        <td>
-                            <form action="." method="post" id="delete_email">                            
+                                <input type="submit" class="link-btn" name="edit" value="Edit" />                           
+                                /
                                 <input type="hidden" name="email_id" value="' . $approve->getEmailID() . '" />
-                                <input type="submit" class="delete-btn" name="delete" value="Delete" />                           
+                                <input type="submit" class="link-btn" name="delete" value="Delete" />                           
                             </form>
                         </td>
                     </tr>';             
@@ -63,7 +60,7 @@
             </table>
 
 
-            <h2>Pending Subscribers</h2>
+            <h3>Pending Subscribers</h3>
 
             <table>
 
@@ -79,13 +76,10 @@
                         <td>
                             <form action="." method="post" id="edit_email">                            
                                 <input type="hidden" name="email_id" value="' . $unapprove->getEmailID() . '" />
-                                <input type="submit" name="edit" value="Edit" />                           
-                            </form>
-                        </td>
-                        <td>
-                            <form action="." method="post" id="delete_email">                            
-                                <input type="hidden" name="email_id" value="' . $unapprove->getEmailID() . '" />
-                                <input type="submit" name="delete" value="Delete" />                           
+                                <input type="submit" class="link-btn" name="edit" value="Edit" />    
+                                /
+                                <input type="hidden" name="email_id" class="link-btn" value="' . $unapprove->getEmailID() . '" />
+                                <input type="submit" class="link-btn" name="delete" value="Delete" />                           
                             </form>
                         </td>
                     </tr>';             
@@ -96,8 +90,9 @@
             </table>           
             
             <form action="." method="post" id="insert_email">
-                <input id="addSubscriber" type="submit" name="add" value="Add a Subscriber"/>
+                <input id="addSubscriber" type="submit" name="add" class="btn" value="Add a Subscriber"/>
             </form>
+            
             
         </div><!-- end main -->
         
