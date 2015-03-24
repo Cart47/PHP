@@ -1,6 +1,6 @@
 
 <div id="navMain" class="float floatStyle">
-    <img src="img/CITF-textLogo-white.png" />
+    <img src="img/logo.png" />
     <img src="img/ChorusLogo-white.png" />
     <ul id="links">
 

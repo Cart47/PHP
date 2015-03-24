@@ -27,7 +27,6 @@ require ('config.php');
     <link rel="stylesheet" href="css/Reset.css" type="text/css">
     <link rel="stylesheet" href="css/CITF-Main.css" type="text/css">
     <link rel="stylesheet" href="css/navigation.css" type="text/css">
-    <link rel="stylesheet" href="css/foot.css" type="text/css">
     <?php
         new Stylesheet('contentMain', 'modalStyle');
     ?> 
@@ -41,7 +40,8 @@ require ('config.php');
     echo '<span style="color:white; font-size:40px">I will not eat them Sam I Am</span>';
         }
 
-        ?>
+     ?>
+     
 	 <div id="container">
 		<section id="modalPopUp">
 		    <?php
