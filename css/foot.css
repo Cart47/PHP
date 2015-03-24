@@ -12,17 +12,6 @@
   width: 30%;
   margin-right: 3%; }
 
-input[type=text] {
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  border: 1px solid #848484;
-  outline: 0;
-  height: 2.25em;
-  padding: 0px 10px;
-  margin: 1% 0%;
-  font-size: 0.875em; }
-
 .email-field {
   width: 94%; }
 
@@ -35,5 +24,3 @@ input[type=text] {
 
 #contact {
   margin: 25px 0px; }
-
-/*# sourceMappingURL=foot.css.map */

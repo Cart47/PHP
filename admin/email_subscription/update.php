@@ -59,7 +59,7 @@
                 <br /><br />
 
                 <input type="submit" name="update" value="Update" class="btn" />
-                <input type="submit" name="cancel" value="Cancel" class="btn" />
+                <a href="." class="btn">Cancel</a>
 
             </form>
             

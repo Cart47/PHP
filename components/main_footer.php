@@ -33,7 +33,7 @@
 
             <input type="hidden" name="email_id" />
 
-            <input type="text" name="name" placeholder="Your Name" value="<?php echo isset($name) ? $name : '' ; ?>" />
+            <input type="text" name="name" class="textbox" placeholder="Your Name" value="<?php echo isset($name) ? $name : '' ; ?>" />
             <?php 
 
                 if(isset($fields)){
@@ -43,7 +43,7 @@
 
             <div class="clear"></div>
 
-            <input type="text" name="email" placeholder="Your Email" value="<?php echo isset($email) ? $email : '' ; ?>" />
+            <input type="text" name="email" class="textbox" placeholder="Your Email" value="<?php echo isset($email) ? $email : '' ; ?>" />
             
             <?php 
             if(isset($fields)){

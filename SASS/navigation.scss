@@ -12,10 +12,15 @@
         width: 100%;
         img {
             position: absolute;
-            visibility: hidden;
+            left: 4%;
+            top:10px;
+            width: 12%;
+            display: inline-block;
         }
 		ul{
-			width: 78%;
+            left: 20%;
+            position: relative;
+			width: 55%;
 			li {
 				width: auto;
 				display: inline-block;
@@ -35,15 +40,17 @@
         #logIn {
             position: absolute;
             top:10%;
-            right: 1.25em;
+            right: 1%;
             width:20%;
             z-index: 5001;
             ul {
+                position: absolute;
                 width: 100%;
                 float: right;
                 display: block;
             }
             li {
+                position:absolute;
                 display: inline-block;
                 float: right;
                 margin-right: 20px;

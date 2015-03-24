@@ -42,7 +42,7 @@
                 <br /><br />
 
                 <input type="submit" name="insert" value="Submit" />
-                <input type="submit" name="cancel" value="Cancel" />
+                <a href="." class="btn">Cancel</a>
 
             </form>
             
