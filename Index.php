@@ -32,15 +32,7 @@ require ('config.php');
     ?> 
  </head>
  <body>
-    <?php
-     if(isset($_POST['registrationSent'])){
-    echo '<span style="color:white; font-size:40px">I will not eat Green Eggs </span>';
-        }
-    if(isset($_POST['loginSent'])){
-    echo '<span style="color:white; font-size:40px">I will not eat them Sam I Am</span>';
-        }
-
-     ?>
+   
      
 	 <div id="container">
 		<section id="modalPopUp">
@@ -50,17 +42,26 @@ require ('config.php');
 		</section>
         
         <section>
-            <header> 
+            <header>
+               <nav>
+                   <?php
+                        include_once('components/main_navigation.php');
+                    ?>
+                 </nav> 
+                  <?php
+                     if(isset($_POST['registrationSent'])){
+                    echo '<span style="color:white; font-size:40px">I will not eat Green Eggs </span>';
+                        }
+                    if(isset($_POST['loginSent'])){
+                    echo '<span style="color:white; font-size:40px">I will not eat them Sam I Am</span>';
+                        }
+                    ?>
                 <div id="headMain">
                     <?php
                         include_once('components/main_header.php');
                     ?>
                  </div>
-                 <nav>
-                   <?php
-                        include_once('components/main_navigation.php');
-                    ?>
-                 </nav>
+                 
              </header>
              <main>
                 <?php
@@ -76,7 +77,7 @@ require ('config.php');
 	 </div> <!-- closing div for container -->
 	 
 <!--   JS Scripts can go here -->
-   <script src="js/stickyHeader.js" type="text/javascript"></script> 	
+   <!-- <script src="js/stickyHeader.js" type="text/javascript"></script> 	-->
    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="js/modalTrigger.js"> </script>
 </body>

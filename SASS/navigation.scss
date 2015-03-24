@@ -5,6 +5,11 @@
 #navMain {
         display: block;
         background-color: $Color2;
+        margin: 0 auto;
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+        width: 100%;
         img {
             position: absolute;
             visibility: hidden;
@@ -47,35 +52,7 @@
                 }
             }
         }
-}
-
-.float {
-    position: relative;
-}
-    
-.floatStyle {
-    width: 85%;
-    margin: 0 auto;
-    
-    -webkit-border-radius: 2.5em;
-    -moz-border-radius: 2.5em;
-    border-radius: 2.5em;
-
-}    
-    
-.sticky {
-    position: fixed;
-	top: 0;
-    z-index: 1000;
-} 
-    
-.stickyStyle {
-    width: 100%;
-    
-    -webkit-border-radius: 0px;
-    -moz-border-radius: 0px;
-    border-radius: 0px;
-}    
+}   
     
 }
 

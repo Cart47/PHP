@@ -1,5 +1,5 @@
 
-<div id="navMain" class="float floatStyle">
+<div id="navMain" class="float stickyStyle .sticky">
     <img src="img/logo.png" />
     <img src="img/ChorusLogo-white.png" />
     <ul id="links">
