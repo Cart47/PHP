@@ -14,12 +14,12 @@
         
         <?php 
 
-            include ('../../components/cmsHeader.php'); 
-            include ('../../components/cmsLeftMenu.php');             
+            include ('../../components/cms_header.php'); 
+            include ('../../components/cms_left_menu.php');             
 
             //Forces a redirect through the index
             if(!isset($approvedEmail) && !isset($pendingEmail)){
-                header('Location: ../cms/'); 
+                header('Location: ../email_subscription'); 
 
             }
 
@@ -101,7 +101,7 @@
             
         </div><!-- end main -->
         
-        <?php include ('../../components/cmsFooter.php'); ?>
+        <?php include ('../../components/cms_footer.php'); ?>
         
 	</body>
 </html>

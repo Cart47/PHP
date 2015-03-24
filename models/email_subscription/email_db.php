@@ -6,7 +6,7 @@ class EmailDB {
         
         $db = Database::getDB();
         
-        $query = 'SELECT * FROM email
+        $query = 'SELECT * FROM email_subscription
                   WHERE approved ="' . $option . '"';
         
         $result = $db->query($query);
@@ -28,7 +28,7 @@ class EmailDB {
      
         $db = Database::getDB();
         
-        $query = 'SELECT * FROM email
+        $query = 'SELECT * FROM email_subscription
                   WHERE email_id ="' . $email_id . '"';
         
         $result = $db->query($query);
@@ -47,7 +47,7 @@ class EmailDB {
         $email = $subscribe->getEmail();
         $approved = $subscribe->getApproval();
         
-        $query = "INSERT INTO email
+        $query = "INSERT INTO email_subscription
                   (email_id, name, email, approved)
                   VALUES
                   ('$email_id', '$name', '$email', '$approved')";
@@ -62,7 +62,7 @@ class EmailDB {
         
         $db = Database::getDB();
         
-        $query = 'UPDATE email
+        $query = 'UPDATE email_subscription
                   SET name ="' . $name . '", email ="' . $email . '", approved ="' . $approved . '"
                   WHERE email_id ="' . $email_id . '"';
         
@@ -76,7 +76,7 @@ class EmailDB {
           
         $db = Database::getDB();
         
-        $query = "DELETE FROM email
+        $query = "DELETE FROM email_subscription
                   WHERE email_id ='" . $email_id . "'";
         
         $row_count = $db->exec($query);
