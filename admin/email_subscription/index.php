@@ -38,10 +38,6 @@ if(isset($_POST['add'])) { //If 'add a subscriber' button is clicked
     
     include ('emailList.php');
 
-} elseif(isset($_POST['cancel'])) { //If cancel button is clicked
-    
-    include ('emailList.php');
-
 } elseif(isset($_POST['delete'])) { //If delete button is clicked
     
     $email_id = $_POST['email_id']; 
