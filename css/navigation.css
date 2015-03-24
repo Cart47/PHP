@@ -1,7 +1,7 @@
 @media screen and (min-width: 1026px) {
   #navMain {
     display: block;
-    background-color: black; }
+    background-color: #121212; }
     #navMain img {
       position: absolute;
       visibility: hidden; }
@@ -18,7 +18,7 @@
         padding: 1em;
         display: block; }
         #navMain ul a:hover {
-          color: #71bb75; }
+          color: #9a3cf5; }
     #navMain #logIn {
       position: absolute;
       top: 10%;
@@ -60,7 +60,7 @@
   #navMain {
     display: block;
     height: 100%;
-    background-color: black;
+    background-color: #121212;
     border-right: 2px solid white; }
     #navMain img:nth-child(2) {
       margin-top: 0.5em;
@@ -125,7 +125,7 @@
     display: block;
     height: auto;
     width: 100%;
-    background-color: black; }
+    background-color: #121212; }
     #navMain img:nth-child(2) {
       visibility: hidden;
       margin-top: 0;
@@ -185,7 +185,7 @@
     display: block;
     height: 5em;
     width: 100%;
-    background-color: black; }
+    background-color: #121212; }
     #navMain img:nth-child(2) {
       visibility: hidden;
       margin-top: 0;

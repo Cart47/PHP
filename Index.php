@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD:views/Index.php
 session_start();    
 include '../css/style.php';
 include '../models/databaseClass.php';    
@@ -20,6 +21,11 @@ if(isset($info['registrationSent']))
         new Registration($info);
     } 
 }             
+=======
+    
+include_once('css/style.php');
+    
+>>>>>>> master:Index.php
 ?> 
 
 <!DOCTYPE html>
@@ -31,15 +37,28 @@ if(isset($info['registrationSent']))
     <meta name="description" content="description here">
     <meta name="keywords" content="keywords,here">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+<<<<<<< HEAD:views/Index.php
     <script src="../js/jquery-2.1.3.js" type="text/javascript"></script>
     <script src="../js/jquery-ui.min.js" type="text/javascript"></script>
     <script src="../js/jquery.leanModal.min.js" type="text/javascript"></script>
      <script src="../js/facebookAPI.js" type="text/javascript"></script>
+=======
+    <script src="js/jquery-2.1.3.js" type="text/javascript"></script>
+    <script src="js/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="js/jquery.leanModal.min.js" type="text/javascript"></script>
+>>>>>>> master:Index.php
     
     <!-- Need to revisit to add in php that determines the associated styles needed and sources them out  -->
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
+<<<<<<< HEAD:views/Index.php
     <link rel="stylesheet" href="../css/Reset.css" type="text/css">
     <link rel="stylesheet" href="../css/CITF-Main.css" type="text/css">
+=======
+    <link rel="stylesheet" href="css/Reset.css" type="text/css">
+    <link rel="stylesheet" href="css/CITF-Main.css" type="text/css">
+    <link rel="stylesheet" href="css/navigation.css" type="text/css">
+    <link rel="stylesheet" href="css/foot.css" type="text/css">
+>>>>>>> master:Index.php
     <?php
         new Stylesheet('contentMain', 'modalStyle', 'head');
     ?> 
@@ -85,7 +104,7 @@ if(isset($info['registrationSent']))
 	 <div id="container">
 		<section id="modalPopUp">
 		    <?php
-                include_once('../components/modal.php');
+                include_once('components/modal.php');
             ?>
 		</section>
         
@@ -93,31 +112,38 @@ if(isset($info['registrationSent']))
             <header> 
                 <div id="headMain">
                     <?php
-                        include_once('../components/HeaderMain.php');
+                        include_once('components/main_header.php');
                     ?>
                  </div>
                  <nav>
                    <?php
-                        include_once('../components/NavigationMain.php');
+                        include_once('components/main_navigation.php');
                     ?>
                  </nav>
              </header>
              <main>
                 <?php
-                    include_once('../components/mainContent.php');
+                    include_once('components/main_content.php');
                 ?>
             </main>
             <footer>
                 <?php
-                    include_once('../components/FooterMain.php');
+                    include_once('components/main_footer.php');
                 ?>
             </footer>
         </section>	 
 	 </div> <!-- closing div for container -->
 	 
+<<<<<<< HEAD:views/Index.php
     <!--   JS Scripts can go here -->
     <script src="../js/stickyHeader.js" type="text/javascript"></script> 	
     <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="../js/modalTrigger.js"> </script>
+=======
+<!--   JS Scripts can go here -->
+   <script src="js/stickyHeader.js" type="text/javascript"></script> 	
+   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/modalTrigger.js"> </script>
+>>>>>>> master:Index.php
 </body>
 </html>
