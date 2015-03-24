@@ -27,23 +27,32 @@
     
     <div class="right-col">
         
-        <form action="../email_subscription" method="post" id="subscribe">
+        <form action="<?php echo 'http://localhost/'; ?>PHP/email_subscription/index.php" method="post" id="subscribe">
 
             <h3>Subscribe to our newsletter!</h3>
 
             <input type="hidden" name="email_id" />
 
-            <input type="text" name="name" placeholder="Your Name" value="<?php echo $name; ?>" />
-            <?php echo $fields->getField('name')->showErrors();?>
+            <input type="text" name="name" placeholder="Your Name" value="<?php echo isset($name) ? $name : '' ; ?>" />
+            <?php 
 
-            <br /><br />
+                if(isset($fields)){
+                    echo $fields->getField('name')->showErrors();
+                }
+                ?>
 
-            <input type="text" name="email" placeholder="Your Email" value="<?php echo $email; ?>" />
-            <?php echo $fields->getField('email')->showErrors();?>
+            <div class="clear"></div>
 
-            <br /><br />
+            <input type="text" name="email" placeholder="Your Email" value="<?php echo isset($email) ? $email : '' ; ?>" />
+            
+            <?php 
+            if(isset($fields)){
+                echo $fields->getField('email')->showErrors();
+            }?>
 
-            <input type="submit" name="submit" value="Submit" />
+            <div class="clear"></div>
+
+            <input type="submit" name="subscribe" value="Submit" />
             
         </form>
         

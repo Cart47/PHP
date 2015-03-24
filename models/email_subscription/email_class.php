@@ -7,7 +7,7 @@ class EmailClass {
     public function __construct($name, $email, $approved) {
         $this->name = $name;
         $this->email = $email;
-        $this->approved = $approved;
+        $this->active = $approved;
     }
     
     public function getEmailID() {
@@ -39,6 +39,6 @@ class EmailClass {
     }
 
     public function setApproval($value) {
-        $this->approved = $value;
+        $this->active = $value;
     }
 }

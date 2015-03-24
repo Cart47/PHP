@@ -17,7 +17,7 @@ class Database {
                 self::$db = new PDO(self::$dsn,
                                      self::$username,
                                      self::$password);
-                echo 'connected';
+                //echo 'connected';
             } catch (PDOException $e) {
                 $error_message = $e->getMessage();
                 echo $error_message;

@@ -28,14 +28,14 @@
 
                 <input type="hidden" name="email_id" value="<?php echo $emailByID['email_id']; ?>" />
             
-                <input type="text" name="name" value="<?php echo $emailByID['name']; ?>"/>
+                <input type="text" name="name" class="textbox" value="<?php echo $emailByID['name']; ?>"/>
+                
+                <div class="clear"></div>
 
-                <br /><br />
+                <input type="text" name="email" class="textbox" value="<?php echo $emailByID['email']; ?>" />
 
-                <input type="text" name="email" value="<?php echo $emailByID['email']; ?>" />
-
-                <br /><br />
-
+                <div class="clear"></div>
+                
                 <?php 
 
                     $options = array(1 => 'Approved', 0 => 'Pending');  
@@ -58,8 +58,8 @@
 
                 <br /><br />
 
-                <input type="submit" name="update" value="Update" />
-                <input type="submit" name="cancel" value="Cancel" />
+                <input type="submit" name="update" value="Update" class="btn" />
+                <input type="submit" name="cancel" value="Cancel" class="btn" />
 
             </form>
             
