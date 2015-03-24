@@ -1,12 +1,12 @@
 <?php 
 
-require ('../../models/databaseClass.php');
-require ('../../models/emailSubscription/emailClass.php');
-require ('../../models/emailSubscription/emailDB.php');
+require ('../../models/database.php');
+require ('../../models/email_subscription/email_class.php');
+require ('../../models/email_subscription/email_db.php');
 
 if(isset($_POST['add'])) { //If 'add a subscriber' button is clicked
     
-    include ('insert_email.php');
+    include ('insert.php');
      
 } elseif(isset($_POST['insert'])){ //If insert button is clicked
 
@@ -18,14 +18,14 @@ if(isset($_POST['add'])) { //If 'add a subscriber' button is clicked
     $newSubscriber = new EmailClass($name, $email, $approved);
     $addSubscriber = EmailDB::insertEmail($newSubscriber);
     
-    include ('email.php');
+    include ('emailList.php');
     
 } elseif(isset($_POST['edit'])) { //If edit button is clicked  
     
     $email_id = $_POST['email_id'];  
     $emailByID = EmailDB::getEmailByID($email_id);
     
-    include ('edit_email.php');
+    include ('update.php');
     
 } elseif (isset($_POST['update'])) { //If update button is clicked
     

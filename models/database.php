@@ -1,7 +1,7 @@
 <?php
 class Database {
 	
-    private static $dsn = 'mysql:host=chorusintheforest.stem.arvixe.com;dbname=chorusintheforest';//<-- insert the DBName
+    private static $dsn = 'mysql:host=chorusintheforest.stem.arvixe.com;dbname=chorusintheforest';
     private static $username = 'Gen';
     private static $password = 'password';
    //reference to db connection
