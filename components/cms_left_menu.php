@@ -30,7 +30,7 @@
             <i class="fa fa-newspaper-o fa-lg"></i>
             News</a>
         <a class="left-mnu-itm" href="">
-            <i class="fa fa-money fa-lg"></i>
+            <i class="fa fa-heart fa-lg"></i>
             Donations</a>
         <a class="left-mnu-itm" href="../admin/email_subscription/index.php">
             <i class="fa fa fa-envelope-o fa-lg"></i>

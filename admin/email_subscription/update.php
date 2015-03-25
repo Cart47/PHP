@@ -58,13 +58,10 @@
 
                 <br /><br />
 
-<<<<<<< HEAD
-                <input type="submit" name="update" value="Update" class="btn" />
-=======
                 <input type="hidden" name="action" value="update" />
                 <input type="submit" name="submit" class="btn" value="Update" />
->>>>>>> gen
-                <a href="." class="btn">Cancel</a>
+
+                <a href="." class="btn xtra-pad">Cancel</a>
 
             </form>
             

@@ -29,7 +29,7 @@
                 <input type="hidden" name="email_id" value="<?php echo $selected['email_id']; ?>" />
                 <input type="hidden" name="action" class="btn" value="yes" />
                 <input type="submit" name="yes" class="btn" value="Yes" />
-                <a href="." class="btn">No</a>
+                <a href="." class="btn xtra-pad">No</a>
                 
             </form>
             
