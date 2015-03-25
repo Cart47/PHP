@@ -7,7 +7,7 @@
 		<section class="popupBody">
 			<!-- Social Login -->
 			<div class="social_login">
-				<div class="">
+				<div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="false" data-scope="email">
 					<a href="#" class="social_box fb">
 						<span class="icon"><i class="fa fa-facebook"></i></span>
 						<span class="icon_title">Connect with Facebook</span>
@@ -34,11 +34,11 @@
 			<div class="user_login">
 				<form id="loginForm" action="" method="post">
 					<label>Email / Username</label>
-					<input type="text" />
+					<input type="text" name="UserName" />
 					<br />
 
 					<label>Password</label>
-					<input type="password" />
+					<input type="password" name="UserPass"/>
 					<br />
 					<input type="hidden" name="loginSent"/>
 					<br />
@@ -60,7 +60,7 @@
 					<input type="email" name="user_email" />
 					<br />
 
-					<label>Password</label>
+					<label>Password&nbsp;<span style="color:red; font-size:10px;">Must be atleast 8 characters</span> </label>
 					<input type="password" name="user_password"/>
 					<br />
 					

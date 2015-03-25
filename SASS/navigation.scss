@@ -10,13 +10,6 @@
         top: 0;
         z-index: 1000;
         width: 100%;
-        img {
-            position: absolute;
-            left: 4%;
-            top:10px;
-            width: 12%;
-            display: inline-block;
-        }
 		ul{
             left: 20%;
             position: relative;
@@ -37,6 +30,15 @@
                     }
                }
         }
+        #citfLogo h1 {
+            position: absolute;
+            left:2%;
+            top:15%;
+            color: white;
+            font-size: 30px;
+            font-family: Lobster, serif;
+            }
+        
         #logIn {
             position: absolute;
             top:10%;
@@ -59,6 +61,7 @@
                 }
             }
         }
+        
 }   
     
 }

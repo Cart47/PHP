@@ -1,11 +1,11 @@
-<!-- PHP code will be placed here for intitial setups like titles etc -->
 <?php
-    
+session_start();    
 include_once('css/style.php');
 require ('models/validation/field_classes.php');
 require ('models/validation/validation_class.php');
 require ('config.php');
-    
+
+
 ?> 
 
 <!DOCTYPE html>
@@ -23,6 +23,7 @@ require ('config.php');
     
     
     <!-- Need to revisit to add in php that determines the associated styles needed and sources them out -->
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
     <link rel="stylesheet" href="css/Reset.css" type="text/css">
     <link rel="stylesheet" href="css/CITF-Main.css" type="text/css">
