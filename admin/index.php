@@ -29,8 +29,11 @@
             <p>paragraph text...</p>
             <a href="">this is a hyperlink...</a>
             
+            
+            <!--  -->
             <form action="." method="post" id="insert_email">
                 <input id="" type="submit" name="" class="btn" value="Sample Button"/>
+                <button type="submit" class="btn" name="add"><i class="fa fa-plus"></i>Button with Icon</button>
                 <input id="" type="submit" name="" class="link-btn" value="Sample Link Button"/>
             </form>
             
@@ -38,50 +41,42 @@
                 <th>head 1</th>
                 <th>head 2</th>
                 <th>head 3</th>
+                <th>Edit</th>
+                <th>Delete</th>
                 <tr>
                     <td>content 1</td>
                     <td>content 2</td>
                     <td>content 3</td>
-                    <td>
-                        <input id="" type="submit" name="" class="link-btn" value="Edit"/> / 
-                        <input id="" type="submit" name="" class="link-btn" value="Delete"/>
-                    </td>
+                    <td><button type="submit" class="link-btn"><i class="fa fa-pencil fa-lg"></i></button></td>
+                    <td><button type="submit" class="link-btn"><i class="fa fa-trash-o fa-lg"></i></button></td>
                 </tr>
                 <tr>
                     <td>content 1</td>
                     <td>content 2</td>
                     <td>content 3</td>
-                    <td>
-                        <input id="" type="submit" name="" class="link-btn" value="Edit"/> / 
-                        <input id="" type="submit" name="" class="link-btn" value="Delete"/>
-                    </td>
+                    <td><button type="submit" class="link-btn"><i class="fa fa-pencil fa-lg"></i></button></td>
+                    <td><button type="submit" class="link-btn"><i class="fa fa-trash-o fa-lg"></i></button></td>
                 </tr>
                 <tr>
                     <td>content 1</td>
                     <td>content 2</td>
                     <td>content 3</td>
-                    <td>
-                        <input id="" type="submit" name="" class="link-btn" value="Edit"/> / 
-                        <input id="" type="submit" name="" class="link-btn" value="Delete"/>
-                    </td>
+                    <td><button type="submit" class="link-btn"><i class="fa fa-pencil fa-lg"></i></button></td>
+                    <td><button type="submit" class="link-btn"><i class="fa fa-trash-o fa-lg"></i></button></td>
                 </tr>
                 <tr>
                     <td>content 1</td>
                     <td>content 2</td>
                     <td>content 3</td>
-                    <td>
-                        <input id="" type="submit" name="" class="link-btn" value="Edit"/> / 
-                        <input id="" type="submit" name="" class="link-btn" value="Delete"/>
-                    </td>
+                    <td><button type="submit" class="link-btn"><i class="fa fa-pencil fa-lg"></i></button></td>
+                    <td><button type="submit" class="link-btn"><i class="fa fa-trash-o fa-lg"></i></button></td>
                 </tr>
                 <tr>
                     <td>content 1</td>
                     <td>content 2</td>
                     <td>content 3</td>
-                    <td>
-                        <input id="" type="submit" name="" class="link-btn" value="Edit"/> / 
-                        <input id="" type="submit" name="" class="link-btn" value="Delete"/>
-                    </td>
+                    <td><button type="submit" class="link-btn"><i class="fa fa-pencil fa-lg"></i></button></td>
+                    <td><button type="submit" class="link-btn"><i class="fa fa-trash-o fa-lg"></i></button></td>
                 </tr>
             
             </table>

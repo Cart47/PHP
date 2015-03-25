@@ -58,7 +58,8 @@
 
                 <br /><br />
 
-                <input type="submit" name="update" value="Update" class="btn" />
+                <input type="hidden" name="action" value="update" />
+                <input type="submit" name="submit" class="btn" value="Update" />
                 <a href="." class="btn">Cancel</a>
 
             </form>
