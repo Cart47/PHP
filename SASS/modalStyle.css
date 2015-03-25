@@ -140,7 +140,8 @@ a.btn_red {
   width: 90%;
   padding: 10px;
   border: 1px solid #DDD;
-  color: #666; }
+  color: #666;
+  border-radius: 5px; }
 
 .user_login input[type="checkbox"] {
   float: left;

@@ -36,7 +36,8 @@ h3 {
   background: #444;
   color: #fff;
   cursor: pointer;
-  margin: 20px 0px; }
+  margin: 20px 0px;
+  text-decoration: none; }
 
 .link-btn {
   font-size: 1em;

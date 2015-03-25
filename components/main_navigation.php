@@ -1,9 +1,8 @@
 
-<div id="navMain" class="float floatStyle">
-    <img src="img/CITF-textLogo-white.png" />
-    <img src="img/ChorusLogo-white.png" />
+<div id="navMain">
+    <div id="citf">Chorus in the Forest</div>
+    <img src="img/logo.png" />
     <ul id="links">
-
         <li><a href="#">Tickets</a></li>
         <li><a href="#">Accomodations</a></li>
         <li><a href="#">Lineup</a></li>
