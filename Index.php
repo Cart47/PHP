@@ -1,8 +1,6 @@
 <?php
 session_start();    
 include_once('css/style.php');
-require ('models/validation/field_classes.php');
-require ('models/validation/validation_class.php');
 require ('config.php');
 
 
