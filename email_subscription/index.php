@@ -35,7 +35,7 @@ if (isset($_POST['submit'])){ //If submit button is clicked
     $validate->required('name', $name);
     $validate->required('email', $email);
     
-    //If
+    //If there are errors
     if($fields->hasErrors()){
         
         include ('Index.php#subscribe');
@@ -49,6 +49,6 @@ if (isset($_POST['submit'])){ //If submit button is clicked
     
 } else {
     
-    include ('Index.php#subscribe');
+    include ('');
     
 }
