@@ -20,7 +20,7 @@ $name='';
 $email='';
 $approved='';
 
-if (isset($_POST['subscribe'])){ //If submit button is clicked
+if (isset($_POST['submit'])){ //If submit button is clicked
     
     //Creates an object from the Email class
     $subscribe = new EmailClass($name, $email, $approved);
@@ -38,18 +38,17 @@ if (isset($_POST['subscribe'])){ //If submit button is clicked
     //If
     if($fields->hasErrors()){
         
-        include ('../index.php');
+        include ('Index.php#subscribe');
         
     } else {
         
         //Inserts into the database
         $addEmail = EmailDB::insertEmail($subscribe);
-        echo 'thank you';
         
     }
     
-} else { //If no buttons are clicked, show form
+} else {
     
-    include ('../components/main_footer.php');
+    include ('Index.php#subscribe');
     
 }

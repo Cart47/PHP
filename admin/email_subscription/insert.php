@@ -28,11 +28,11 @@
             
                 <input type="hidden" name="email_id" />
 
-                <input type="text" name="name" placeholder="Name"/>
+                <input type="text" class="textbox" name="name" placeholder="Name"/>
 
                 <br /><br />
 
-                <input type="text" name="email" placeholder="Email" />
+                <input type="text" class="textbox" name="email" placeholder="Email" />
 
                 <br /><br />
 
@@ -41,7 +41,12 @@
 
                 <br /><br />
 
+<<<<<<< HEAD
                 <input type="submit" name="insert" value="Submit" />
+=======
+                <input type="hidden" name="action" value="insert" />
+                <input type="submit" name="submit" value="Add New" class="btn" />
+>>>>>>> gen
                 <a href="." class="btn">Cancel</a>
 
             </form>

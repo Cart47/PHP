@@ -78,6 +78,9 @@ td {
   margin-top: 10px;
   font-size: 0.875em; }
 
+.fa-pencil {
+  font-family: FontAwesome, 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
 /*** Header ***/
 #header-container {
   background-color: #000;
