@@ -1,7 +1,7 @@
 <?php 
 
-    require ('./models/validation/field_classes.php');
-    require ('./models/validation/validation_class.php');
+require ('./models/validation/field_classes.php');
+require ('./models/validation/validation_class.php');
 
 //Creates an object from Validation class
 $validate = new Validation();
