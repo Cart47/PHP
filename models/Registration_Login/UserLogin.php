@@ -31,8 +31,8 @@ class Login {
         $result = $db->query($query);
         $row = $result->fetch();
         $password = $row['password'];
-        $verify = password_verify($USERpassword, $password);
-        if ($verify == true){
+       
+        if (password_verify($USERpassword, $password)){
             return "waffles";
         }
         else
