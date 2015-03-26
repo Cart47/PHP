@@ -5,59 +5,72 @@
 #navMain {
         display: block;
         background-color: $Color2;
-        margin: 0 auto;
         position: fixed;
         top: 0;
         z-index: 1000;
         width: 100%;
-		ul{
-            left: 20%;
+		&>ul {
+            left:5%;
+            height:50px;
+            display:inline-block;
             position: relative;
-			width: 55%;
+			width: 50%;
 			li {
 				width: auto;
+                line-height: 20px;
 				display: inline-block;
                 font-family: $font1;               
                 font-size: .9em;
+                padding: 15px 10px;
 			}
 			a {
 				text-decoration: none;
                 color: white;
-                padding: 1em;
                 display: block;
                 &:hover {
                     color: $Purple;
                     }
                }
         }
-        #citfLogo h1 {
-            position: absolute;
-            left:2%;
-            top:15%;
+        #citfLogo {
+            float:left;
+            margin-top:10px;
+            margin-left: 20px;
             color: white;
             font-size: 30px;
             font-family: Lobster, serif;
+            text-decoration: none;
+            display: inline-block;
+            &:hover {
+                color:$Purple;
+                }
             }
         
         #logIn {
-            position: absolute;
-            top:10%;
-            right: 1%;
-            width:20%;
+            display: inline-block;
+            margin-left: 5%;
+            width:25%;
             z-index: 5001;
             ul {
-                position: absolute;
                 width: 100%;
                 float: right;
-                display: block;
+                display: inline-block;
             }
             li {
-                position:absolute;
                 display: inline-block;
                 float: right;
-                margin-right: 20px;
+                margin-left: 10px;
                 a {
-                 font-size: .8em;   
+                    color: white;
+                    font-size: .8em; 
+                    text-decoration: none;
+                    &:hover {
+                    color: $Purple;
+                    }
+                }
+                p {
+                    color: white;
+                    font-size: .9em; 
                 }
             }
         }
