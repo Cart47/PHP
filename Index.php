@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 require ('config.php');
 include ('css/style.php');
@@ -15,20 +14,22 @@ if(isset($info['registrationSent'])){
    new Registration($info);
     }
 
-	if(isset($info['loginSent'])){
-		new Login($info);
-	}
-
+if(isset($info['loginSent'])){
     $verified = new Login($info);
-    
+    }
+
+if(isset($_POST['subscribe'])){
+    require ('./models/database.php');
+    require ('./models/email_subscription/email_class.php');
+    require ('./models/email_subscription/email_db.php');
+    include ('./config.php');
+    }
 
 	if(isset($_POST['subscribe'])){
 		require ('./models/database.php');
 		require ('./models/email_subscription/email_class.php');
 		require ('./models/email_subscription/email_db.php');
 	}
-   
-include_once('css/style.php');
 ?> 
 
 <!DOCTYPE html>
