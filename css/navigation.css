@@ -31,18 +31,15 @@
       font-size: 30px;
       font-family: Lobster, serif; }
     #navMain #logIn {
-      position: absolute;
-      top: 10%;
-      right: 1%;
-      width: 20%;
+      position: relative;
+      float: right;
+      width: auto;
       z-index: 5001; }
       #navMain #logIn ul {
-        position: absolute;
         width: 100%;
         float: right;
         display: block; }
       #navMain #logIn li {
-        position: absolute;
         display: inline-block;
         float: right;
         margin-right: 20px; }
