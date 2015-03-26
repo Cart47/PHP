@@ -8,11 +8,11 @@ include ('models/Registration_Login/UserLogin.php');
 
 if(isset($_POST['registrationSent'])){
     //Need to talk to Gen about using the newly created validation for Registration
-   new Registration($_POST);
+    new Registration($_POST);
     }
 
 if(isset($_POST['loginSent'])){
-    $verified = new Login($_POST);
+    new Login($_POST);
     $_SESSION['username'] = $verified->$UserName;
     
     }
