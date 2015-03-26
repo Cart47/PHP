@@ -1,23 +1,24 @@
+<?php 
+
+    include ('../../components/cms_header.php'); 
+    include ('../../components/cms_left_menu.php');
+
+    //Forces a redirect through the index
+    if(!isset($emailByID)){
+        header('Location: ../email_subscription'); 
+
+    }
+
+?>
+
+
 <!doctype html>
 <html>
 	<head>
-		
-        <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="../../css/Reset.css">
-        <link rel="stylesheet" href="../../css/font-awesome-4.3.0/css/font-awesome.css">
-		<link rel="stylesheet" href="../../css/cms.css">
-
 		<meta charset="utf-8" />
 		<title></title>
 	</head>
 	<body>
-        
-        <?php 
-
-            include ('../../components/cms_header.php'); 
-            include ('../../components/cms_left_menu.php');             
-
-        ?>
         
         <!-- Main Content Area -->
         <div id="main">
@@ -28,11 +29,11 @@
 
                 <input type="hidden" name="email_id" value="<?php echo $emailByID['email_id']; ?>" />
             
-                <input type="text" name="name" class="textbox" value="<?php echo $emailByID['name']; ?>"/>
+                <input type="text" name="name" class="textbox" size="40" value="<?php echo $emailByID['name']; ?>"/><span class="required">*</span>
                 
                 <div class="clear"></div>
 
-                <input type="text" name="email" class="textbox" value="<?php echo $emailByID['email']; ?>" />
+                <input type="text" name="email" class="textbox" size="40" value="<?php echo $emailByID['email']; ?>" /><span class="required">*</span>
 
                 <div class="clear"></div>
                 
@@ -45,11 +46,11 @@
 
                         if($emailByID['approved'] == $key){
 
-                            echo "<input type='radio' name='approved' value='" . $key . "' checked />" . $value;
+                            echo "<input type='radio' class='radio' name='approved' value='" . $key . "' checked />" . $value;
 
                         } else {
 
-                            echo "<input type='radio' name='approved' value='" . $key . "' />" . $value;
+                            echo "<input type='radio' class='radio' name='approved' value='" . $key . "' />" . $value;
 
                         }                           
                     }              
@@ -67,7 +68,7 @@
             
         </div><!-- end main -->
         
-        <?php include ('../../components/cms_footer.php'); ?>
-        
 	</body>
 </html>
+
+<?php include ('../../components/cms_footer.php'); ?>

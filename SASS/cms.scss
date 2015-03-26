@@ -57,6 +57,10 @@ h3 {
     padding: 10px 20px 7px 20px;
 }
 
+.xtra-pad:hover {
+    color: #fff;
+}
+
 .link-btn {
     font-size: 1em;
     border: 0;
@@ -133,6 +137,10 @@ td {
     line-height: 20px;
     border: 1px solid #444;
     border-radius: none;
+}
+
+label.label {
+
 }
 
 .required {
@@ -297,6 +305,7 @@ td {
     bottom: 0;
     width: 100%;
     overflow:hidden;
+    position: absolute;
 }
 
 #footer-content {

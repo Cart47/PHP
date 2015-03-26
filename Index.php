@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 session_start();
 require ('config.php');
 include ('css/style.php');
@@ -28,6 +29,18 @@ if(isset($info['loginSent'])){
 }
 ?>
 
+=======
+
+if(isset($_POST['subscribe'])){
+    require ('./models/database.php');
+    require ('./models/email_subscription/email_class.php');
+    require ('./models/email_subscription/email_db.php');
+    include ('./config.php');
+}
+    
+include_once('css/style.php');
+?> 
+>>>>>>> gen
 
 <!DOCTYPE html>
 <html>
@@ -93,15 +106,16 @@ if(isset($info['loginSent'])){
             </main>
             <footer>
                 <?php
-                    include_once('components/main_footer.php');
+                    include ('components/main_footer.php'); 
                 ?>
             </footer>
         </section>	 
 	 </div> <!-- closing div for container -->
-	 
-<!--   JS Scripts can go here -->
-   <!-- <script src="js/stickyHeader.js" type="text/javascript"></script> 	-->
-   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js" type="text/javascript"></script>
-    <script type="text/javascript" src="js/modalTrigger.js"> </script>
+
 </body>
 </html>
+
+<!--   JS Scripts can go here -->
+<!-- <script src="js/stickyHeader.js" type="text/javascript"></script> 	-->
+<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="../js/modalTrigger.js"> </script>

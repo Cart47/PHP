@@ -1,10 +1,11 @@
 <?php 
 
-require ('../models/database.php');
-require ('../models/email_subscription/email_class.php');
-require ('../models/email_subscription/email_db.php');
-require ('../models/validation/field_classes.php');
-require ('../models/validation/validation_class.php');
+require ('../../models/database.php');
+require ('../../models/email_subscription/email_class.php');
+require ('../../models/email_subscription/email_db.php');
+require ('../../models/validation/field_classes.php');
+require ('../../models/validation/validation_class.php');
+include ('../../config.php');
 
 //Creates an object from Validation class
 $validate = new Validation();
@@ -20,7 +21,7 @@ $name='';
 $email='';
 $approved='';
 
-if (isset($_POST['submit'])){ //If submit button is clicked
+if (isset($_POST['subscribe'])){ //If subscribe button is clicked
     
     //Creates an object from the Email class
     $subscribe = new EmailClass($name, $email, $approved);
@@ -38,17 +39,23 @@ if (isset($_POST['submit'])){ //If submit button is clicked
     //If there are errors
     if($fields->hasErrors()){
         
-        include ('Index.php#subscribe');
+        echo 'has error'; 
         
     } else {
         
         //Inserts into the database
-        $addEmail = EmailDB::insertEmail($subscribe);
+        EmailDB::insertEmail($subscribe);
+        
+        //header("Location: $hostName/PHP/Index.php");
+        
+        echo 'success';
         
     }
     
 } else {
     
-    include ('');
+    //header("Location: $hostName/PHP/Index.php");
+    
+    echo 'default';
     
 }
