@@ -47,7 +47,7 @@ input[type=submit] {
     font-family: roboto, raleway, sans-serif; }
 
   #headMain {
-    padding-top: 500px;
+    margin-top: 30px;
     position: relative;
     display: block; }
 
