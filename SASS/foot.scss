@@ -1,13 +1,65 @@
 @import "_variables.scss";
 
+#footContainer {
+    background-color: $Color2;
+    color: #fff;
+    padding: 3%;
+    height: 195px;
+}
+   
+
+/*** Email Subscription Feature ***/
+
+.left-col,
+.center-col,
+.right-col {
+    float: left; 
+    width: 30%;
+    margin-right: 3%;
+    
+}
+
+.email-field {
+    -webkit-border-radius: 5px; 
+    -moz-border-radius: 5px; 
+    border-radius: 5px; 
+    border: 1px solid #848484; 
+    outline:0;
+    height: 2.25em;
+    padding: 0px 10px;
+    margin: 1% 0%;
+    font-size: 0.875em;
+    width: 94%;
+}
+
+#subscribe {
+    width: 100%;
+    font-size: 1em;
+}
+
+.fa.fa-smile-o {
+    padding-right: 10px;
+}
+
+
+/*** Contact info ***/
+
+#footer-contact {
+    font-size: 0.875em;
+}
+
+#contact {
+    margin: 25px 0px;
+}
+
+#copyright {
+    
+}
+
+
 //-----Desktop style --------------------//
 @media screen and (min-width:1026px) {
 
-#footContainer {
-    background-color: black;
-    color:white;
-    padding: 40px;
-}     
     
 }
 

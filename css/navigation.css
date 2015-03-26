@@ -1,12 +1,16 @@
 @media screen and (min-width: 1026px) {
   #navMain {
     display: block;
-    background-color: black; }
-    #navMain img {
-      position: absolute;
-      visibility: hidden; }
+    background-color: #121212;
+    margin: 0 auto;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    width: 100%; }
     #navMain ul {
-      width: 78%; }
+      left: 20%;
+      position: relative;
+      width: 55%; }
       #navMain ul li {
         width: auto;
         display: inline-block;
@@ -18,49 +22,37 @@
         padding: 1em;
         display: block; }
         #navMain ul a:hover {
-          color: #71bb75; }
+          color: #9a3cf5; }
+    #navMain #citfLogo h1 {
+      position: absolute;
+      left: 2%;
+      top: 15%;
+      color: white;
+      font-size: 30px;
+      font-family: Lobster, serif; }
     #navMain #logIn {
       position: absolute;
       top: 10%;
-      right: 1.25em;
+      right: 1%;
       width: 20%;
       z-index: 5001; }
       #navMain #logIn ul {
+        position: absolute;
         width: 100%;
         float: right;
         display: block; }
       #navMain #logIn li {
+        position: absolute;
         display: inline-block;
         float: right;
         margin-right: 20px; }
         #navMain #logIn li a {
-          font-size: .8em; }
-
-  .float {
-    position: relative; }
-
-  .floatStyle {
-    width: 85%;
-    margin: 0 auto;
-    -webkit-border-radius: 2.5em;
-    -moz-border-radius: 2.5em;
-    border-radius: 2.5em; }
-
-  .sticky {
-    position: fixed;
-    top: 0;
-    z-index: 1000; }
-
-  .stickyStyle {
-    width: 100%;
-    -webkit-border-radius: 0px;
-    -moz-border-radius: 0px;
-    border-radius: 0px; } }
+          font-size: .8em; } }
 @media screen and (max-width: 1025px) {
   #navMain {
     display: block;
     height: 100%;
-    background-color: black;
+    background-color: #121212;
     border-right: 2px solid white; }
     #navMain img:nth-child(2) {
       margin-top: 0.5em;
@@ -107,25 +99,13 @@
         float: right;
         margin-right: 20px; }
         #navMain #logIn li a {
-          font-size: .7em; }
-
-  .float {
-    position: fixed; }
-
-  .floatStyle {
-    width: 20%;
-    -webkit-border-radius: 0em;
-    -moz-border-radius: 0em;
-    border-radius: 0em; }
-
-  .stickyStyle {
-    width: 20%; } }
+          font-size: .7em; } }
 @media screen and (max-width: 900px) {
   #navMain {
     display: block;
     height: auto;
     width: 100%;
-    background-color: black; }
+    background-color: #121212; }
     #navMain img:nth-child(2) {
       visibility: hidden;
       margin-top: 0;
@@ -185,7 +165,7 @@
     display: block;
     height: 5em;
     width: 100%;
-    background-color: black; }
+    background-color: #121212; }
     #navMain img:nth-child(2) {
       visibility: hidden;
       margin-top: 0;

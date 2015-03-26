@@ -1,3 +1,32 @@
+h3 {
+  font-size: 1.25em;
+  padding: 10px 0px; }
+
+p {
+  padding: 2px; }
+
+input[type=submit] {
+  font-size: 0.875em;
+  border-radius: 5px;
+  border: 0;
+  padding: 10px 60px;
+  background: #9a3cf5;
+  color: #fff;
+  cursor: pointer;
+  margin: 15px 0px; }
+
+.textbox {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #848484;
+  outline: 0;
+  height: 2.25em;
+  padding: 0px 10px;
+  margin: 1% 0%;
+  font-size: 0.875em;
+  width: 100%; }
+
 @media screen and (min-width: 1800px) {
   #container {
     width: 1440px;
@@ -15,7 +44,7 @@
     font-family: roboto, raleway, sans-serif; }
 
   #headMain {
-    padding-top: 500px;
+    padding-top: 150px;
     position: relative;
     display: block; }
 
@@ -25,7 +54,8 @@
 
   main {
     position: relative;
-    display: block; }
+    display: block;
+    height: 100em; }
 
   footer {
     position: relative;
@@ -70,7 +100,6 @@
     position: relative;
     width: 100%;
     overflow-x: visible;
-    top: 4.25em;
     left: 0%; }
 
   footer {
@@ -97,7 +126,8 @@
     width: 100%;
     overflow-x: visible;
     top: 0;
-    left: 0%; }
+    left: 0%;
+    height: 100em; }
 
   footer {
     visibility: visible; } }
