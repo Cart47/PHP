@@ -1,13 +1,14 @@
-<?php 
-
-    include ('../components/cms_header.php'); 
-    include ('../components/cms_left_menu.php');
-
-?>
-
 <!doctype html>
 <html>
 	<head>
+        
+        <?php 
+            include ('../config.php');
+            include ('../components/cms_header.php'); 
+            include ('../components/cms_left_menu.php');
+
+        ?>
+        
 		<meta charset="utf-8" />
 		<title>CITF Admin</title>
 	</head>
