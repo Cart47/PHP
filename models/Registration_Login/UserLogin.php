@@ -1,7 +1,7 @@
 <?php
 class Login {
     
-    private $UserName, $UserPassword, $success;
+    private $UserName;
 
 
     public function __construct($info)
@@ -26,19 +26,15 @@ class Login {
         $USERpassword = self::CleanInputs($password);
         
         //username check
-        $db = Database::getDB();
-        $query = "SELECT * FROM login WHERE username='$USERname' OR individual_id=(SELECT individual_id FROM individual WHERE ind_email='$user')";
+        $query = "SELECT * FROM login JOIN individual ON login.individual_id=individual.individual_id  WHERE username='$USERname' OR ind_email='$user'";
         $result = $db->query($query);
         $row = $result->fetch();
         $password = $row['password'];
        
         if (password_verify($USERpassword, $password)){
-            return "waffles";
+            $this->$UserName = $row['ind_fname'] . ' ' . $row['ind_lname'];
         }
-        else
-        {
-            return "Pancakes";
-        }
+       
     }
 
 

@@ -16,6 +16,8 @@ if(isset($info['registrationSent'])){
 
 if(isset($info['loginSent'])){
     $verified = new Login($info);
+    $_SESSION['username'] = $verified->$UserName;
+    
     }
 
 if(isset($_POST['subscribe'])){
@@ -43,8 +45,6 @@ if(isset($_POST['subscribe'])){
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="js/jquery-2.1.3.js" type="text/javascript"></script>
     <script src="js/jquery-ui.min.js" type="text/javascript"></script>
-    <script src="js/jquery.leanModal.min.js" type="text/javascript"></script>
-    <script src="../js/facebookAPI.js" type="text/javascript"></script>
     
     <!-- Need to revisit to add in php that determines the associated styles needed and sources them out -->
     <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
@@ -70,7 +70,7 @@ if(isset($_POST['subscribe'])){
             <header>
                <nav>
                    <?php
-                        include('components/main_navigation.php');
+                        include_once('components/main_navigation.php');
                     ?>
                 </nav>
                 
@@ -100,5 +100,7 @@ if(isset($_POST['subscribe'])){
 
 <!--   JS Scripts can go here -->
 <!-- <script src="js/stickyHeader.js" type="text/javascript"></script> 	-->
+<script src="js/jquery.leanModal.min.js" type="text/javascript"></script>
+<script src="js/facebookAPI.js" type="text/javascript"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js" type="text/javascript"></script>
-<script type="text/javascript" src="../js/modalTrigger.js"> </script>
+<script type="text/javascript" src="js/modalTrigger.js"> </script>

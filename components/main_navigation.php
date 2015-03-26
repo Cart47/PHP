@@ -25,10 +25,6 @@
                 {
                 echo '<li>Welcome, ' . $_SESSION["username"] . '<a href="./admin.php">Admin</a>&nbsp;&nbsp;<a href"#">Logout</a></li>';
                 }
-            if(isset($verified))
-                {
-                echo '<li>' . $verified . '</li>';
-                }
               else
                 {
                 echo '<li><a id="modal_trigger" href="#modal">Login | Register</a></li>';
