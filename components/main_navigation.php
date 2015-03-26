@@ -21,11 +21,14 @@
         <ul>
            <?php
           
-             if(isset($_SESSION["username"]))
+             if(isset($_SESSION["UserFullName"]))
                 {
                  //Still need to build the kill session 
-                echo '<li>Welcome, ' . $_SESSION["username"] . '<a href="./admin.php">Admin</a>&nbsp;&nbsp;<a href"#">Logout</a></li>';
+                echo '<li><a href"#">Logout</a></li><li><a href="./admin/index.php">Admin</a></li><li style="color:#fff;">Welcome, ' . $_SESSION["UserFullName"] . '</li>';
                 }
+            elseif ($verified == "Invalid User Name "){
+                echo '<li style="color:#fff;">Invalid User Name</li>';
+            }
               else
                 {
                 echo '<li><a id="modal_trigger" href="#modal">Login | Register</a></li>';

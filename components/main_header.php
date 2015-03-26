@@ -6,15 +6,16 @@ include ('models/database.php');
 include ('models/Registration_Login/RegisterNewUser.php');
 include ('models/Registration_Login/UserLogin.php'); 
 
+$verified = null;
+
 if(isset($_POST['registrationSent'])){
     //Need to talk to Gen about using the newly created validation for Registration
     new Registration($_POST);
     }
 
 if(isset($_POST['loginSent'])){
-    new Login($_POST);
-    $_SESSION['username'] = $verified->$UserName;
-    
+    $verified = new Login($_POST);
+    unset($_POST);
     }
 
 if(isset($_POST['subscribe'])){

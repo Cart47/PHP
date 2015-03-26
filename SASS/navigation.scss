@@ -40,19 +40,16 @@
             }
         
         #logIn {
-            position: absolute;
-            top:10%;
-            right: 1%;
-            width:20%;
+            position: relative;
+            float:right;
+            width:auto;
             z-index: 5001;
             ul {
-                position: absolute;
                 width: 100%;
                 float: right;
                 display: block;
             }
             li {
-                position:absolute;
                 display: inline-block;
                 float: right;
                 margin-right: 20px;
