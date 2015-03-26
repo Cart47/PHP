@@ -7,12 +7,6 @@
     top: 0;
     z-index: 1000;
     width: 100%; }
-    #navMain img {
-      position: absolute;
-      left: 4%;
-      top: 10px;
-      width: 12%;
-      display: inline-block; }
     #navMain ul {
       left: 20%;
       position: relative;
@@ -29,6 +23,13 @@
         display: block; }
         #navMain ul a:hover {
           color: #9a3cf5; }
+    #navMain #citfLogo h1 {
+      position: absolute;
+      left: 2%;
+      top: 15%;
+      color: white;
+      font-size: 30px;
+      font-family: Lobster, serif; }
     #navMain #logIn {
       position: absolute;
       top: 10%;
@@ -98,19 +99,7 @@
         float: right;
         margin-right: 20px; }
         #navMain #logIn li a {
-          font-size: .7em; }
-
-  .float {
-    position: fixed; }
-
-  .floatStyle {
-    width: 20%;
-    -webkit-border-radius: 0em;
-    -moz-border-radius: 0em;
-    border-radius: 0em; }
-
-  .stickyStyle {
-    width: 20%; } }
+          font-size: .7em; } }
 @media screen and (max-width: 900px) {
   #navMain {
     display: block;

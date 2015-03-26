@@ -1,0 +1,12 @@
+@media screen and (min-width: 1026px) {
+  #transitionBlock {
+    margin-top: 600px;
+    display: block;
+    width: 90%;
+    height: 300px;
+    background-color: black;
+    padding: 20px 5%; }
+    #transitionBlock h3 {
+      color: white;
+      text-decoration: underline;
+      width: 25%; } }
