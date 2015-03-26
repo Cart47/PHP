@@ -1,5 +1,5 @@
 <div id="navMain">
-   <a href="../Index.php" id="citfLogo">Chorus in the Forest</a> 
+   <a href="./Index.php" id="citfLogo">Chorus in the Forest</a> 
     <ul>
         <li><a href="#">Tickets</a></li>
         <li><a href="#">Accomodations</a></li>
