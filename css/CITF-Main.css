@@ -27,9 +27,6 @@ input[type=submit] {
   font-size: 0.875em;
   width: 100%; }
 
-.fa-smile-o {
-  padding-right: 10px; }
-
 @media screen and (min-width: 1800px) {
   #container {
     width: 1440px;
@@ -47,7 +44,7 @@ input[type=submit] {
     font-family: roboto, raleway, sans-serif; }
 
   #headMain {
-    margin-top: 30px;
+    padding-top: 500px;
     position: relative;
     display: block; }
 
@@ -135,5 +132,3 @@ input[type=submit] {
 
   footer {
     visibility: visible; } }
-
-/*# sourceMappingURL=CITF-Main.css.map */
