@@ -54,15 +54,12 @@ if ($action == 'email_list'){ //default view
     
     EmailDB::updateEmail($email_id, $name, $email, $approved);
     
-<<<<<<< HEAD
     include ('emailList.php');
 
 } elseif(isset($_POST['delete'])) { //If delete button is clicked
-=======
     include ('email_list.php');
     
 } elseif ($action == 'delete'){ //If delete button is clicked
->>>>>>> gen
     
     $email_id = $_POST['email_id']; 
     $selected = EmailDB::getEmailByID($email_id);

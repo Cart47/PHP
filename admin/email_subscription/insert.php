@@ -41,12 +41,10 @@
 
                 <br /><br />
 
-<<<<<<< HEAD
                 <input type="submit" name="insert" value="Submit" />
-=======
                 <input type="hidden" name="action" value="insert" />
                 <input type="submit" name="submit" value="Add New" class="btn" />
->>>>>>> gen
+
                 <a href="." class="btn">Cancel</a>
 
             </form>

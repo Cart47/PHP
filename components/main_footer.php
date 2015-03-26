@@ -33,11 +33,7 @@
 
             <input type="hidden" name="email_id" />
 
-<<<<<<< HEAD
             <input type="text" name="name" class="textbox" placeholder="Your Name" value="<?php echo isset($name) ? $name : '' ; ?>" />
-=======
-            <input type="text" class="textbox" name="name" placeholder="Your Name" value="<?php echo isset($name) ? $name : '' ; ?>" />
->>>>>>> gen
             <?php 
 
                 if(isset($fields)){
@@ -47,11 +43,7 @@
 
             <div class="clear"></div>
 
-<<<<<<< HEAD
             <input type="text" name="email" class="textbox" placeholder="Your Email" value="<?php echo isset($email) ? $email : '' ; ?>" />
-=======
-            <input type="text" class="textbox" name="email" placeholder="Your Email" value="<?php echo isset($email) ? $email : '' ; ?>" />
->>>>>>> gen
             
             <?php 
             if(isset($fields)){

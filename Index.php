@@ -3,29 +3,21 @@ session_start();
 require ('config.php');
 include ('css/style.php');
 include ('models/database.php');    
-include ('controllers/RegisterNewUser.php');
-include ('controllers/UserLogin.php'); 
+include ('models/Registration_Login/RegisterNewUser.php');
+include ('models/Registration_Login/UserLogin.php'); 
 
-
-if(isset($_POST)){
 $info = $_POST;
 unset($_POST);
 
-if(isset($info['registrationSent']))
-{
- // These will be session variables, taught March 19
- // $user_name =$info['user_name'];
- // $user_email =$info['user_email'];   
-    $validation->validator($info);
-    if(empty($validation->errors)){
-        new Registration($info);
-    } 
-}
+if(isset($info['registrationSent'])){
+    //Need to talk to Gen about using the newly created validation for Registration
+   new Registration($info);
+    }
 
 if(isset($info['loginSent'])){
-    new Login($info);
-}
-}
+    $verified = new Login($info);
+    }
+
 ?>
 
 
@@ -67,21 +59,14 @@ if(isset($info['loginSent'])){
             <header>
                <nav>
                    <?php
-                        include_once('components/main_navigation.php');
+                        include('components/main_navigation.php');
                     ?>
                 </nav>
                 
                 <div id="headMain">
                     
                     <?php
-                        if(isset($_POST['registrationSent'])){
-                            echo '<span style="color:white; font-size:40px">I will not eat Green Eggs </span>';
-                            }
-                        if(isset($_POST['loginSent'])){
-                            echo '<span style="color:white; font-size:40px">I will not eat them Sam I Am</span>';
-                            }
-
-                        include_once('components/main_header.php');
+                       include_once('components/main_header.php');
                     ?>
                  </div>
                  
