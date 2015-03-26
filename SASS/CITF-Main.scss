@@ -33,10 +33,6 @@ input[type=submit] {
     width: 100%;
 }
 
-.fa-smile-o {
-    padding-right: 10px;
-}
-
 //----------------  CONTENT ABOVE 1800px (Very large format screens  ie. retina displays))-------
 @media screen and (min-width: 1800px) {
 #container {
@@ -61,7 +57,7 @@ body {
 }    
     
 #headMain {
-    margin-top: 30px;
+    padding-top: 500px;
     position: relative;
     display: block;
 }
