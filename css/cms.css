@@ -55,6 +55,9 @@ h3 {
 .xtra-pad {
   padding: 10px 20px 7px 20px; }
 
+.xtra-pad:hover {
+  color: #fff; }
+
 .link-btn {
   font-size: 1em;
   border: 0;
@@ -252,7 +255,8 @@ td {
   left: 0;
   bottom: 0;
   width: 100%;
-  overflow: hidden; }
+  overflow: hidden;
+  position: absolute; }
 
 #footer-content {
   padding: 20px; }

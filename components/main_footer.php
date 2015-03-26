@@ -1,69 +1,117 @@
+<?php 
+
+    require ('./models/validation/field_classes.php');
+    require ('./models/validation/validation_class.php');
+
+//Creates an object from Validation class
+$validate = new Validation();
+
+//Creates a new fieldsArray
+$fields = $validate->getFields();
+
+//Adds the following field objects to the fieldsArray
+$fields->addField('name');
+$fields->addField('email');
+
+$name='';
+$email='';
+$approved='';
+
+if (isset($_POST['subscribe'])){ //If subscribe button is clicked
+    
+    //Post values from the form
+    $email_id = $_POST['email_id'];
+    $name = $_POST['name']; 
+    $email = $_POST['email'];
+    $approved = $_POST['approved'];
+    
+    //Assigns required validation to fields
+    $validate->required('name', $name);
+    $validate->required('email', $email);
+    
+    //If there are errors
+    if(!$fields->hasErrors()){
+        
+        //Create an object from the Email class
+        $subscribe = new EmailClass($name, $email, $approved);
+        
+        //Insert into the database
+        EmailDB::insertEmail($subscribe);
+        
+    }  
+} 
+
+?>
+
 <div id="footContainer">
-    
+
     <div class="left-col">
-    
+
         <div id="footer-contact">
             <h3>Chorus in the Forest Head Office</h3>
             <p>123 Woods Road</p>
             <p>Moosonee, Ontario, Canada</p>
             <p>P0L 1Y0</p>
-            
+
             <div id="contact">
                 <p>(705) 555-3144</p>
                 <p>admin@citf.ca</p>
             </div>
-            
+
             <p id="copyright">&copy; 2015 Chorus in the Forest</p>
-            
+
         </div>
-        
+
     </div><!-- end left-col -->
-    
+
     <div class="center-col">
-    
+
         <h3>Sponsors</h3>
-    
+
     </div><!-- end center-col -->
-    
+
     <div class="right-col">
+
+        <?php if($fields->hasErrors() || !isset($_POST['subscribe']) ){ ?>
         
-        <form action="../email_subscription/" method="post" id="subscribe">
+            <form action=".#footContainer" method="post" id="subscription-form">
 
-            <h3>Subscribe to our newsletter!</h3>
+                <h3>Subscribe to our newsletter!</h3>
 
-            <input type="hidden" name="email_id" />
+                <input type="hidden" name="email_id" />
+                <input type="text" class="email-field" name="name" placeholder="Your Name" value="<?php echo isset($name) ? $name : '' ; ?>" />
+                 <?php 
+                                                                       
+                    if(isset($fields)){
+                        echo $fields->getField('name')->showErrors();
+                        
+                }?>   
+             
+                <div class="clear"></div>
 
-<<<<<<< HEAD
-            <input type="text" name="name" class="textbox" placeholder="Your Name" value="<?php echo isset($name) ? $name : '' ; ?>" />
-=======
-            <input type="text" class="textbox" name="name" placeholder="Your Name" value="<?php echo isset($name) ? $name : '' ; ?>" />
->>>>>>> gen
-            <?php 
+                <input type="text" class="email-field" name="email" placeholder="Your Email" value="<?php echo isset($email) ? $email : '' ; ?>" />
+                <?php 
+                                                                       
+                    if(isset($fields)){
+                        echo $fields->getField('email')->showErrors();
+                        
+                }?>
 
-                if(isset($fields)){
-                    echo $fields->getField('name')->showErrors();
-                }
-                ?>
+                <div class="clear"></div>
+             
+                <input type="hidden" name="approved" value="0"/>
+                <input type="submit" id="subscribe" name="subscribe" value="Subscribe :-)" />
 
-            <div class="clear"></div>
-
-<<<<<<< HEAD
-            <input type="text" name="email" class="textbox" placeholder="Your Email" value="<?php echo isset($email) ? $email : '' ; ?>" />
-=======
-            <input type="text" class="textbox" name="email" placeholder="Your Email" value="<?php echo isset($email) ? $email : '' ; ?>" />
->>>>>>> gen
-            
-            <?php 
-            if(isset($fields)){
-                echo $fields->getField('email')->showErrors();
-            }?>
-
-            <div class="clear"></div>
-
-            <input type="submit" name="submit" value="Submit" />
-            
         </form>
         
+        <?php } else { 
+
+        echo '<h3><i class="fa fa-smile-o fa-lg"></i>Thanks for Subscribing!</h3></i>';
+
+        }?>
+        
+         
+
     </div><!-- end right-col -->
-    
+
 </div>

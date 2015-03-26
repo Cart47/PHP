@@ -13,10 +13,23 @@
   margin-right: 3%; }
 
 .email-field {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #848484;
+  outline: 0;
+  height: 2.25em;
+  padding: 0px 10px;
+  margin: 1% 0%;
+  font-size: 0.875em;
   width: 94%; }
 
 #subscribe {
-  width: 100%; }
+  width: 100%;
+  font-size: 1em; }
+
+.fa.fa-smile-o {
+  padding-right: 10px; }
 
 /*** Contact info ***/
 #footer-contact {
@@ -24,3 +37,5 @@
 
 #contact {
   margin: 25px 0px; }
+
+/*# sourceMappingURL=foot.css.map */

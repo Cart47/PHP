@@ -39,6 +39,6 @@ class EmailClass {
     }
 
     public function setApproval($value) {
-        $this->active = $value;
+        $this->approved = $value;
     }
 }
