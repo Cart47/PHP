@@ -23,6 +23,7 @@
           
              if(isset($_SESSION["username"]))
                 {
+                 //Still need to build the kill session 
                 echo '<li>Welcome, ' . $_SESSION["username"] . '<a href="./admin.php">Admin</a>&nbsp;&nbsp;<a href"#">Logout</a></li>';
                 }
               else
