@@ -1,19 +1,20 @@
-<?php 
-
-    include ('../../components/cms_header.php'); 
-    include ('../../components/cms_left_menu.php');
-
-    //Forces a redirect through the index
-    if(!isset($emailByID)){
-        header('Location: ../email_subscription'); 
-
-    }
-
-?>
-
 <!doctype html>
 <html>
 	<head>
+        
+        <?php 
+
+            include ('../../components/cms_header.php'); 
+            include ('../../components/cms_left_menu.php');
+
+            //Forces a redirect through the index
+            if(!isset($emailByID)){
+                header('Location: ../email_subscription'); 
+
+            }
+
+        ?>
+        
 		<meta charset="utf-8" />
 		<title></title>
 	</head>

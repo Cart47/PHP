@@ -43,75 +43,90 @@ if (isset($_POST['subscribe'])){ //If subscribe button is clicked
 
 ?>
 
-<div id="footContainer">
+<footer>
 
-    <div class="left-col">
+    <div id="footContainer">
 
-        <div id="footer-contact">
-            <h3>Chorus in the Forest Head Office</h3>
-            <p>123 Woods Road</p>
-            <p>Moosonee, Ontario, Canada</p>
-            <p>P0L 1Y0</p>
+        <div class="left-col">
 
-            <div id="contact">
-                <p>(705) 555-3144</p>
-                <p>admin@citf.ca</p>
+            <div id="footer-contact">
+                <h3>Chorus in the Forest Head Office</h3>
+                <p>123 Woods Road</p>
+                <p>Moosonee, Ontario, Canada</p>
+                <p>P0L 1Y0</p>
+
+                <div id="contact">
+                    <p>(705) 555-3144</p>
+                    <p>admin@citf.ca</p>
+                </div>
+
+                <p id="copyright">&copy; 2015 Chorus in the Forest</p>
+
             </div>
 
-            <p id="copyright">&copy; 2015 Chorus in the Forest</p>
+        </div><!-- end left-col -->
 
-        </div>
+        <div class="center-col">
 
-    </div><!-- end left-col -->
+            <h3>Sponsors</h3>
 
-    <div class="center-col">
+        </div><!-- end center-col -->
 
-        <h3>Sponsors</h3>
+        <div class="right-col">
 
-    </div><!-- end center-col -->
+            <?php if($fields->hasErrors() || !isset($_POST['subscribe']) ){ ?>
 
-    <div class="right-col">
+                <form action=".#footContainer" method="post" id="subscription-form">
 
-        <?php if($fields->hasErrors() || !isset($_POST['subscribe']) ){ ?>
-        
-            <form action=".#footContainer" method="post" id="subscription-form">
+                    <h3>Subscribe to our newsletter!</h3>
 
-                <h3>Subscribe to our newsletter!</h3>
+                    <input type="hidden" name="email_id" />
+                    <input type="text" class="email-field" name="name" placeholder="Your Name" value="<?php echo isset($name) ? $name : '' ; ?>" />
+                     <?php 
 
-                <input type="hidden" name="email_id" />
-                <input type="text" class="email-field" name="name" placeholder="Your Name" value="<?php echo isset($name) ? $name : '' ; ?>" />
-                 <?php 
-                                                                       
-                    if(isset($fields)){
-                        echo $fields->getField('name')->showErrors();
-                        
-                }?>   
-             
-                <div class="clear"></div>
+                        if(isset($fields)){
+                            echo $fields->getField('name')->showErrors();
 
-                <input type="text" class="email-field" name="email" placeholder="Your Email" value="<?php echo isset($email) ? $email : '' ; ?>" />
-                <?php 
-                                                                       
-                    if(isset($fields)){
-                        echo $fields->getField('email')->showErrors();
-                        
-                }?>
+                    }?>   
 
-                <div class="clear"></div>
-             
-                <input type="hidden" name="approved" value="0"/>
-                <input type="submit" id="subscribe" name="subscribe" value="Subscribe :-)" />
+                    <div class="clear"></div>
 
-        </form>
-        
-        <?php } else { 
+                    <input type="text" class="email-field" name="email" placeholder="Your Email" value="<?php echo isset($email) ? $email : '' ; ?>" />
+                    <?php 
 
-        echo '<h3><i class="fa fa-smile-o fa-lg"></i>Thanks for Subscribing!</h3></i>';
+                        if(isset($fields)){
+                            echo $fields->getField('email')->showErrors();
 
-        }?>
-        
-         
+                    }?>
 
-    </div><!-- end right-col -->
+                    <div class="clear"></div>
 
-</div>
+                    <input type="hidden" name="approved" value="0"/>
+                    <input type="submit" id="subscribe" name="subscribe" value="Subscribe :-)" />
+
+            </form>
+
+            <?php } else { 
+
+            echo '<h3><i class="fa fa-smile-o fa-lg"></i>Thanks for Subscribing!</h3></i>';
+
+            }?>
+
+        </div><!-- end right-col -->
+
+    </div>
+
+</footer>
+
+</section>	 
+</div> <!-- closing div for container -->
+
+<!--   JS Scripts can go here -->
+<script src="js/jquery.leanModal.min.js" type="text/javascript"></script>
+<script src="js/facebookAPI.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/modalTrigger.js"> </script>
+
+</body>
+</html>
+
+

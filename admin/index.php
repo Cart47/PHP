@@ -43,7 +43,9 @@
                     <td>content 1</td>
                     <td>content 2</td>
                     <td>content 3</td>
+                    <!-- Edit Button -->
                     <td><button type="submit" class="link-btn"><i class="fa fa-pencil fa-lg"></i></button></td>
+                    <!-- Delete Button -->
                     <td><button type="submit" class="link-btn"><i class="fa fa-trash-o fa-lg"></i></button></td>
                 </tr>
                 <tr>
