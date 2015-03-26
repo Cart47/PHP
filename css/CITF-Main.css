@@ -24,7 +24,8 @@ input[type=submit] {
   height: 2.25em;
   padding: 0px 10px;
   margin: 1% 0%;
-  font-size: 0.875em; }
+  font-size: 0.875em;
+  width: 100%; }
 
 @media screen and (min-width: 1800px) {
   #container {
@@ -43,7 +44,7 @@ input[type=submit] {
     font-family: roboto, raleway, sans-serif; }
 
   #headMain {
-    margin-top: 30px;
+    padding-top: 500px;
     position: relative;
     display: block; }
 

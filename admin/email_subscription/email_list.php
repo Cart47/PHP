@@ -1,29 +1,23 @@
+<?php 
+
+    include ('../../components/cms_header.php'); 
+    include ('../../components/cms_left_menu.php');
+
+    //Forces a redirect through the index
+    if(!isset($approvedEmail) && !isset($pendingEmail)){
+        header('Location: ../email_subscription'); 
+
+    }
+
+?>
+
 <!doctype html>
 <html>
 	<head>
-		
-        <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="../../css/Reset.css">
-        <link rel="stylesheet" href="../../css/font-awesome-4.3.0/css/font-awesome.css">
-		<link rel="stylesheet" href="../../css/cms.css">
-
 		<meta charset="utf-8" />
 		<title></title>
 	</head>
 	<body>
-        
-        <?php 
-
-            include ('../../components/cms_header.php'); 
-            include ('../../components/cms_left_menu.php');             
-
-            //Forces a redirect through the index
-            if(!isset($approvedEmail) && !isset($pendingEmail)){
-                header('Location: ../email_subscription'); 
-
-            }
-
-        ?>
         
         <!-- Main Content Area -->
         <div id="main">
@@ -110,7 +104,7 @@
             
         </div><!-- end main -->
         
-        <?php include ('../../components/cms_footer.php'); ?>
-        
 	</body>
 </html>
+
+<?php include ('../../components/cms_footer.php'); ?>

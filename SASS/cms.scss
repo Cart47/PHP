@@ -1,11 +1,19 @@
 @import "_variables.scss";
 
-/*** General Styling ***/
+/***************************************/
+/*************** General ***************/
+/***************************************/
 
 html { position: relative; min-height: 100%; }
 body { font-family: $font1; -webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px; font-size: 1em; }
+
+
 a { color: #444; }
+a:hover { color: $Purple; transition: all 0.2s; }
+
 p { padding: 5px 0px; }
+
+/* Headings */
 
 h1 {
     font-size: 1.75em;
@@ -24,16 +32,33 @@ h3 {
     font-weight: 700;
 }
 
+
+/* Buttons */
+
 .btn {
     font-size: 0.875em;
     border-radius: 5px;
     border: 0;
-    padding: 10px 30px;
+    padding: 7px 20px;
     background: #444;
     color: #fff;
     cursor: pointer;
     margin: 20px 0px;
     text-decoration: none;
+    transition: all 0.3s;
+}
+
+.btn:hover {   
+    background: #000;
+}
+
+/* Only use with href button */
+.xtra-pad {
+    padding: 10px 20px 7px 20px;
+}
+
+.xtra-pad:hover {
+    color: #fff;
 }
 
 .link-btn {
@@ -42,6 +67,8 @@ h3 {
     background: none;
     color: $Purple;
     cursor: pointer;
+    text-align: center;
+    transition: all 0.3s;
 }
 
 .link-btn:hover {
@@ -49,12 +76,19 @@ h3 {
     text-decoration: underline;
 }
 
+.fa.fa-trash-o,
+.fa.fa-pencil {
+    padding: 0px;
+}
+
 .clear {
     clear: both;
 }
 
+/* Table Elements */
+
 table {
-    margin: 20px 0px;
+    margin: 20px 0px 30px 0px;
     text-align: left;
 	border-collapse: collapse;
 }
@@ -70,25 +104,54 @@ tr:nth-child(even){
 }
 
 td {
-    padding: 8px;
+    padding: 8px 15px;
 	color: #444;
 }
 
+
+/* Form Elements */
+
 .textbox {
     border: 1px solid #848484; 
-    outline:0;
     height: 2.25em;
     padding: 0px 10px;
     margin-top: 10px;
     font-size: 0.875em;   
+    box-shadow: none;
 }
 
-
-.fa-pencil {
-    font-family: FontAwesome, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+.dropdown {
+    border: 1px solid #848484; 
+    background: #fff;
+    height: 2.25em;
+    padding: 0px 10px;
+    margin-top: 10px;
+    font-size: 0.875em;
+    box-shadow: none;
 }
 
-/*** Header ***/
+.radio {
+    margin: 10px;
+    padding: 10px;
+    font-size: 20px;
+    line-height: 20px;
+    border: 1px solid #444;
+    border-radius: none;
+}
+
+label.label {
+
+}
+
+.required {
+    margin: 5px;
+    color: red;
+    font-size: 1.25em;   
+}
+
+/**************************************/
+/*************** Header ***************/
+/**************************************/
 
 #header-container {
 	background-color: #000;
@@ -135,15 +198,17 @@ td {
 	border: 1px solid #000;
     color: #fff;
     text-decoration: none;
+    transition: all 0.1s;
 }
 
 #signout:hover {
     background-color: #fff;
     color: $Purple;
-    text-decoration: underline;
 }
 
-/*** Left Menu ***/
+/*****************************************/
+/*************** Left Menu ***************/
+/*****************************************/
 
 #logo {
 	float: left;
@@ -186,6 +251,10 @@ td {
 	text-decoration: none;
 }
 
+.left-mnu-itm:hover {
+    color: #444;
+}
+
 .left-mnu-itm:first-child {
     border-top: 0px;
     border-radius: 8px 8px 0px 0px;
@@ -209,11 +278,14 @@ td {
    padding-right: 5px;
 } 
 
-/*** Main Content ***/
+/*****************************************/
+/*************** Main Body ***************/
+/*****************************************/
 
 #main {
     margin-top: 30px;
     margin-left: 30px;
+    margin-bottom: 100px;
     display: inline-block;
     width: 73%;
     min-height: 100%;
@@ -221,7 +293,9 @@ td {
     
 }
 
-/*** Footer ***/
+/**************************************/
+/*************** Footer ***************/
+/**************************************/
 
 #cms-footer {
 	clear: both;
@@ -231,20 +305,9 @@ td {
     bottom: 0;
     width: 100%;
     overflow:hidden;
+    position: absolute;
 }
 
 #footer-content {
     padding: 20px;
 }
-
-/*** Email Subscription ***/
-
-#addSubscriber {
-    margin-top: 20px;
-}
-
-
-
-
-
-

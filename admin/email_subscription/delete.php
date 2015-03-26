@@ -1,23 +1,23 @@
+<?php 
+
+    include ('../../components/cms_header.php'); 
+    include ('../../components/cms_left_menu.php');
+
+    //Forces a redirect through the index
+    if(!isset($selected['email'])){
+        header('Location: ../email_subscription'); 
+
+    }
+
+?>
+
 <!doctype html>
 <html>
 	<head>
-		
-        <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="../../css/Reset.css">
-        <link rel="stylesheet" href="../../css/font-awesome-4.3.0/css/font-awesome.css">
-		<link rel="stylesheet" href="../../css/cms.css">
-
 		<meta charset="utf-8" />
 		<title></title>
 	</head>
 	<body>
-        
-        <?php 
-
-            include ('../../components/cms_header.php'); 
-            include ('../../components/cms_left_menu.php');             
-
-        ?>
         
         <!-- Main Content Area -->
         <div id="main">
@@ -29,13 +29,12 @@
                 <input type="hidden" name="email_id" value="<?php echo $selected['email_id']; ?>" />
                 <input type="hidden" name="action" class="btn" value="yes" />
                 <input type="submit" name="yes" class="btn" value="Yes" />
-                <a href="." class="btn">No</a>
+                <a href="." class="btn xtra-pad">No</a>
                 
             </form>
             
         </div><!-- end main -->
-        
-        <?php include ('../../components/cms_footer.php'); ?>
-        
 	</body>
 </html>
+
+ <?php include ('../../components/cms_footer.php'); ?>

@@ -56,9 +56,6 @@ if ($action == 'email_list'){ //default view
     
     include ('emailList.php');
 
-} elseif(isset($_POST['delete'])) { //If delete button is clicked
-    include ('email_list.php');
-    
 } elseif ($action == 'delete'){ //If delete button is clicked
     
     $email_id = $_POST['email_id']; 
@@ -74,6 +71,5 @@ if ($action == 'email_list'){ //default view
     include ('email_list.php');
     
 }
-
 
 ?>
