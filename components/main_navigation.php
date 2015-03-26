@@ -1,9 +1,11 @@
 <div id="navMain">
-    <div id="citfLogo">
-        <h1>
-            Chorus in the Forest
-        </h1>
-    </div>
+   <a href="../Index.php">
+       <div id="citfLogo">
+            <h1>
+                Chorus in the Forest
+            </h1>
+        </div>
+    </a> 
     <ul id="links">
         <li><a href="#">Tickets</a></li>
         <li><a href="#">Accomodations</a></li>
@@ -26,7 +28,10 @@
                 {
                 echo '<li>Welcome, ' . $_SESSION["username"] . '<a href="./admin.php">Admin</a>&nbsp;&nbsp;<a href"#">Logout</a></li>';
                 }
-
+            if(isset($verified))
+                {
+                echo '<li>' . $verified . '</li>';
+                }
 
             ?>
         </ul>
