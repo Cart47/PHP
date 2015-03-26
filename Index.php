@@ -6,32 +6,24 @@ include ('models/database.php');
 include ('models/Registration_Login/RegisterNewUser.php');
 include ('models/Registration_Login/UserLogin.php'); 
 
-$info = $_POST;
-unset($_POST);
+//$info = $_POST;
+//unset($_POST);
 
-if(isset($info['registrationSent'])){
+if(isset($_POST['registrationSent'])){
     //Need to talk to Gen about using the newly created validation for Registration
-   new Registration($info);
+   new Registration($_POST);
     }
 
-if(isset($info['loginSent'])){
-    $verified = new Login($info);
+if(isset($_POST['loginSent'])){
+    $verified = new Login($_POST);
     $_SESSION['username'] = $verified->$UserName;
     
     }
 
 if(isset($_POST['subscribe'])){
-    require ('./models/database.php');
     require ('./models/email_subscription/email_class.php');
     require ('./models/email_subscription/email_db.php');
-    include ('./config.php');
     }
-
-	if(isset($_POST['subscribe'])){
-		require ('./models/database.php');
-		require ('./models/email_subscription/email_class.php');
-		require ('./models/email_subscription/email_db.php');
-	}
 ?> 
 
 <!DOCTYPE html>
