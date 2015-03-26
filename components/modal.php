@@ -52,6 +52,13 @@
 			<!-- Register Form -->
 			<div class="user_register">
 				<form id="registerForm" action="" method="post">
+					<label>First Name</label>
+					<input type="text" name="user_firstname"/>
+					<br />
+					<label>Last Name</label>
+					<input type="text" name="user_lastname"/>
+					<br />
+					
 					<label>User Name</label>
 					<input type="text" name="user_name"/>
 					<br />
