@@ -1,12 +1,6 @@
 <div id="navMain">
-   <a href="../Index.php">
-       <div id="citfLogo">
-            <h1>
-                Chorus in the Forest
-            </h1>
-        </div>
-    </a> 
-    <ul id="links">
+   <a href="../Index.php" id="citfLogo">Chorus in the Forest</a> 
+    <ul>
         <li><a href="#">Tickets</a></li>
         <li><a href="#">Accomodations</a></li>
         <li><a href="#">Lineup</a></li>
@@ -24,7 +18,7 @@
              if(isset($_SESSION["UserFullName"]))
                 {
                  //Still need to build the kill session 
-                echo '<li><a href"#">Logout</a></li><li><a href="./admin/index.php">Admin</a></li><li style="color:#fff;">Welcome, ' . $_SESSION["UserFullName"] . '</li>';
+                echo '<li><a href"#">Logout</a></li><li><a href="./admin/index.php">Admin</a></li><li><p>Welcome, ' . $_SESSION["UserFullName"] . '</p></li>';
                 }
             elseif ($verified == "Invalid User Name "){
                 echo '<li style="color:#fff;">Invalid User Name</li>';

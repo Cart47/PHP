@@ -2,49 +2,62 @@
   #navMain {
     display: block;
     background-color: #121212;
-    margin: 0 auto;
     position: fixed;
     top: 0;
     z-index: 1000;
     width: 100%; }
-    #navMain ul {
-      left: 20%;
+    #navMain > ul {
+      left: 5%;
+      height: 50px;
+      display: inline-block;
       position: relative;
-      width: 55%; }
-      #navMain ul li {
+      width: 50%; }
+      #navMain > ul li {
         width: auto;
+        line-height: 20px;
         display: inline-block;
         font-family: roboto, raleway, sans-serif;
-        font-size: .9em; }
-      #navMain ul a {
+        font-size: .9em;
+        padding: 15px 10px; }
+      #navMain > ul a {
         text-decoration: none;
         color: white;
-        padding: 1em;
         display: block; }
-        #navMain ul a:hover {
+        #navMain > ul a:hover {
           color: #9a3cf5; }
-    #navMain #citfLogo h1 {
-      position: absolute;
-      left: 2%;
-      top: 15%;
+    #navMain #citfLogo {
+      float: left;
+      margin-top: 10px;
+      margin-left: 20px;
       color: white;
       font-size: 30px;
-      font-family: Lobster, serif; }
+      font-family: Lobster, serif;
+      text-decoration: none;
+      display: inline-block; }
+      #navMain #citfLogo:hover {
+        color: #9a3cf5; }
     #navMain #logIn {
-      position: relative;
-      float: right;
-      width: auto;
+      display: inline-block;
+      margin-left: 5%;
+      width: 25%;
       z-index: 5001; }
       #navMain #logIn ul {
         width: 100%;
         float: right;
-        display: block; }
+        display: inline-block; }
       #navMain #logIn li {
         display: inline-block;
         float: right;
-        margin-right: 20px; }
+        margin-left: 10px; }
         #navMain #logIn li a {
-          font-size: .8em; } }
+          color: white;
+          font-size: .8em;
+          text-decoration: none; }
+          #navMain #logIn li a:hover {
+            color: #9a3cf5; }
+        #navMain #logIn li p {
+          color: white;
+          font-size: .9em; } }
 @media screen and (max-width: 1025px) {
   #navMain {
     display: block;
