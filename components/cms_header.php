@@ -1,8 +1,9 @@
 <?php  session_start(); ?>
 <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="../css/Reset.css">
-<link rel="stylesheet" href="../css/font-awesome-4.3.0/css/font-awesome.css">
-<link rel="stylesheet" href="../css/cms.css">
+<link rel="stylesheet" href="<?php echo $absolute; ?>css/Reset.css">
+<link rel="stylesheet" href="<?php echo $absolute; ?>css/font-awesome-4.3.0/css/font-awesome.css">
+<link rel="stylesheet" href="<?php echo $absolute; ?>css/cms.css">
+
 <div id="header-container">
 
    
