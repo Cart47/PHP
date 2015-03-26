@@ -8,6 +8,6 @@
 </main>
             
 <?php include ('components/main_footer.php');
-//test
+
 ?>
             
