@@ -1,8 +1,8 @@
 <?php
 session_start();
 require ('config.php');
-include_once('css/style.php');
-include ('models/databaseClass.php');    
+include ('css/style.php');
+include ('models/database.php');    
 include ('controllers/RegisterNewUser.php');
 include ('controllers/UserLogin.php'); 
 
@@ -10,7 +10,6 @@ include ('controllers/UserLogin.php');
 if(isset($_POST)){
 $info = $_POST;
 unset($_POST);
-}
 
 if(isset($info['registrationSent']))
 {
@@ -26,8 +25,9 @@ if(isset($info['registrationSent']))
 if(isset($info['loginSent'])){
     new Login($info);
 }
-  ?>
-?> 
+}
+?>
+
 
 <!DOCTYPE html>
 <html>
@@ -69,32 +69,7 @@ if(isset($info['loginSent'])){
                    <?php
                         include_once('components/main_navigation.php');
                     ?>
-                 </nav>
-                   
-                <!-- Bullshit Facebook API code that I can't crack 
-                   <section style="width:300px;height:150px;background-color:#fff;">
-
-                   <div id="fb-root"></div>
-
-                    <div class="fb-login-button" data-max-rows="4" data-size="xlarge" data-show-faces="true" data-auto-logout-link="true" scope="email "></div>
-                    <br/>
-                    <div
-                      class="fb-like"
-                      data-share="true"
-                      data-width="450"
-                      data-show-faces="true">
-                    </div>
-                    <br />
-                    <div id="status"></div>
-
-                    <a style="cursor:pointer;" class="fb_button fb_button_medium" onclick="fbLogout()">
-                        <span id="fbLogout">
-                            <span class="fb_button_text">Logout</span>
-                        </span>
-                    </a> 
-                     </section> 
-
-                <!-- -------------------------Above is testing AREA ------------------------------------- --> 
+                </nav>
                 
                 <div id="headMain">
                     
