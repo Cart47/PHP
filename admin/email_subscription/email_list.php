@@ -1,5 +1,6 @@
 <?php 
 
+    require_once ('../../config.php');
     include ('../../components/cms_header.php'); 
     include ('../../components/cms_left_menu.php');
 

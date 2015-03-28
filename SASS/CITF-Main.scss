@@ -1,13 +1,70 @@
 @import "_variables.scss";
 
+// *********************************************** //
+// ******************** Reset ******************** //
+// *********************************************** //
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+// ************************************************* //
+// ******************** General ******************** //
+// ************************************************* //
+
+h1 {}
+
+h2 {}
+
 h3 {
     font-size: 1.25em;
     padding: 10px 0px;
 }
 
-p {
-    padding: 2px;   
-}
+p { padding: 2px; }
+
+a {}
 
 input[type=submit] {
     font-size: 0.875em;
@@ -33,147 +90,461 @@ input[type=submit] {
     width: 100%;
 }
 
-//----------------  CONTENT ABOVE 1800px (Very large format screens  ie. retina displays))-------
-@media screen and (min-width: 1800px) {
-#container {
-		width: 1440px;
-		margin:0 auto;
-}}
+// **************************************************** //
+// ******************** Navigation ******************** //
+// **************************************************** //
 
+#navMain {
+        display: block;
+        background-color: $Color2;
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+        width: 100%;
+        margin-right: 5%;
+		&>ul {
+            display:inline-block;
+			li {
+				width: auto;
+                line-height: 40px;
+				display: inline-block;
+                font-family: $font1;               
+                font-size: .9em;
+                padding: 10px;
+			}
+			a {
+				text-decoration: none;
+                color: white;
+                display: block;
+                &:hover {
+                    color: $Purple;
+                    }
+               }
+        }
+        #citfLogo {
+            float:left;
+            color: white;
+            font-size: 30px;
+            font-family: Lobster, serif;
+            text-decoration: none;
+            display: inline-block;
+            line-height: 60px;
+            margin: 0% 2%;
+            &:hover {
+                color:$Purple;
+                }
+            }
+        
+        #logIn {
+            display: inline-block;
+            z-index: 5001;
+            float: right;
+            &:hover {
+            background: #fff;
+            color: $Purple;
+            }
+            ul {
+                width: 100%;
+                float: right;
+                display: inline-block;
+            }
+            li a {
+                    color: white;
+                    font-size: .8em; 
+                    text-decoration: none;
+                    line-height: 60px;
+                    padding: 24px;
+                    background: $Purple;
+                    &:hover {
+                    color: $Purple;
+                    background: #fff;
+                    }
+                }
+                p {
+                    color: white;
+                    font-size: .9em; 
+                }
+            }
+        }
+
+// ********************************************** //
+// ******************** Body ******************** //
+// ********************************************** //
+
+#mainContent {
+    position: relative;
+    padding: 10em;
+} 
+
+
+
+// ************************************************ //
+// ******************** Footer ******************** //
+// ************************************************ //
+
+footer {
+    background-color: $Color2;
+}
+
+#footContainer {
+    width: 1440px;
+    margin:0 auto;
+    color: #fff;
+    height: 310px;
+}
+
+/*** Email Subscription Feature ***/
+
+.contact {
+    float: left; 
+    width: 30%;
+    padding: 3%;
+}
+
+.subscribe {
+    float: right; 
+    width: 30%;
+    padding: 3%;
+}
+
+.email-field {
+    -webkit-border-radius: 5px; 
+    -moz-border-radius: 5px; 
+    border-radius: 5px; 
+    border: 1px solid #848484; 
+    outline:0;
+    height: 2.25em;
+    padding: 0px 10px;
+    margin: 1% 0%;
+    font-size: 0.875em;
+    width: 94%;
+}
+
+#subscribe {
+    width: 100%;
+    font-size: 1em;
+}
+
+.fa.fa-smile-o {
+    padding-right: 10px;
+}
+
+
+/*** Contact info ***/
+
+#footer-contact {
+    font-size: 0.875em;
+}
+
+#contact {
+    margin: 25px 0px;
+}
+
+
+// **************************************************** //
+// ******************** Responsive ******************** //
+// **************************************************** //
+
+// ----------------  CONTENT ABOVE 1800px (Very large format screens  ie. retina displays)) ------- //
+@media screen and (min-width: 1800px) {
+    #container {
+            width: 1440px;
+            margin:0 auto;
+    }
+}
+
+// ----- Large Desktop style --------------------//
+@media screen and (max-width:1440px) {
+    #footContainer {
+        width: 100%;
+    }
+}
 
 @media screen and (max-width: 1799px) {
-#container {
-    position: relative;
-    width: 100%;
-}}
-//-----Desktop style --------------------//
-@media screen and (min-width:1026px) {
-body {
-    background-image: url(../img/tree-back.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    font-family: $font1
-}    
-    
-#headMain {
-    padding-top: 150px;
-    position: relative;
-    display: block;
+    #container {
+        position: relative;
+        width: 100%;
+    }
 }
 
-nav {
-    position: relative;
-    display: block;
-}
+// ----- Common Desktop style --------------------//
+@media screen and (min-width:1026px) {
     
-main {
-    position: relative;
-    display: block;
-    height: 100em;
-}
+     #transitionBlock {
+        margin-top: 600px;
+        display: block;
+        width: 90%;
+        height: 300px;
+        background-color: black;
+        padding: 20px 5%;
+        h3 {
+            color: white;
+            text-decoration: underline;
+            width: 25%;
+        }
+    }
     
-footer {
-    position: relative;
-    display: block;
-}  
+    body {
+        background-image: url(../img/tree-back.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        font-family: $font1
+    }    
+
+    #headMain {
+        padding-top: 150px;
+        position: relative;
+        display: block;
+    }
+
+    nav {
+        position: relative;
+        display: block;
+    }
+
+    main {
+        position: relative;
+        display: block;
+        height: 100em;
+    }
+
+    footer {
+        position: relative;
+        display: block;
+    }  
    
 }
 
-//-----Tablet Landscape style --------------------//
+// ----- Tablet Landscape style --------------------//
 @media screen and (max-width:1025px) {
  
-#headMain {
-    width:80%;
-    overflow-x: hidden;
-    left:20%;
+    #headMain {
+        width:80%;
+        overflow-x: hidden;
+        left:20%;
+
+    }
+
+    nav {
+        position: fixed;
+        height: 100%;
+        left:0;
+        top:0;
+        width:20%;
+    }
     
+    #navMain {
+        display: block;
+        height: 100%;
+        background-color: $Color2;
+        border-right: 2px solid white;
+        img:nth-child(2) {
+            margin-top:0.5em;
+            width: 60%;
+            margin-left:19%;
+            margin-bottom: 1em;
+        }
+        img {
+            margin-top:1em;
+            margin-left:2.5%;
+            width:94%;
+            visibility: visible;
+            position: static;
+        }
+		ul{
+			width: 100%;
+            align-content: center;
+            overflow-x: hidden;
+			li {
+				width: 100%;
+                font-family: $font1;               
+                font-size: .8em;
+                border-bottom: .1em solid white;
+			}
+            li:first-child{
+            border-top:.1em solid white;
+            }
+			a {
+				text-decoration: none;
+                color: white;
+                padding: 1.4em 25%;
+                display: block;
+                &:hover {
+                    color: $Color1;
+                    }
+               }
+        }
+        #logIn {
+            visibility: hidden;
+            position: absolute;
+            overflow-y: hidden;
+            top:0;
+            left:0;
+            width:0;
+            ul {
+                width: 100%;
+                float: right;
+                display: block;
+            }
+            li {
+                display: inline-block;
+                float: right;
+                margin-right: 20px;
+                a {
+                 font-size: .7em;   
+                }
+            }
+        }
+    }
+
+    main {
+        width:80%;
+        overflow-x: hidden;
+        left:20%;
+    }
+
+    footer {
+        visibility: hidden;
+    }    
 }
 
-nav {
-    position: fixed;
-    height: 100%;
-    left:0;
-    top:0;
-    width:20%;
-}
-    
-main {
-    width:80%;
-    overflow-x: hidden;
-    left:20%;
-}
-    
-footer {
-    visibility: hidden;
-}    
-}
-
-//-----Tablet Portrait style --------------------//
+// ----- Tablet Portrait style --------------------//
 @media screen and (max-width:900px) {
 
-#headMain {
-    visibility:visible;
-    position: relative;
-    top:4.25em;
-    left:0;
-    width:100%;
-    overflow-x: visible;
+    #headMain {
+        visibility:visible;
+        position: relative;
+        top:4.25em;
+        left:0;
+        width:100%;
+        overflow-x: visible;
+    }
+
+    nav {
+        height:auto;
+        left:0;
+        top:0;
+        width:100%;
+        display: block;
+    }
+
+    main {
+        position: relative;
+        width:100%;
+        overflow-x:visible;
+        left:0%;
+    }
+
+    footer {
+        visibility: visible;
+    }    
 }
 
-nav {
-    height:auto;
-    left:0;
-    top:0;
-    width:100%;
-    display: block;
-}
-    
-main {
-    position: relative;
-    width:100%;
-    overflow-x:visible;
-    left:0%;
-}
-    
-footer {
-    visibility: visible;
-}    
-    
-}
-
-//-----Smart Phone style --------------------//
+// ----- Smart Phone style --------------------//
 @media screen and (max-width:720px) {
-#headMain {
-    visibility:visible;
-    position: relative;
-    top:5em;
-    left:0;
-    width:100%;
-    overflow-x: visible;
+    #headMain {
+        visibility:visible;
+        position: relative;
+        top:5em;
+        left:0;
+        width:100%;
+        overflow-x: visible;
 
-}
+    }
 
-nav {
-    position: relative;
-    height:auto;
-    left:0;
-    top:-31.5em;
-    width:100%;
-    display: block;
-}
+    nav {
+        position: relative;
+        height:auto;
+        left:0;
+        top:-31.5em;
+        width:100%;
+        display: block;
+    }
     
-main {
-    position: relative;
-    width:100%;
-    overflow-x:visible;
-    top:0;
-    left:0%;
-    height: 100em;
-}
-    
-footer {
-    visibility: visible;
-} 
-    
+    #navMain {
+        position: static;
+        display: block;
+        height: 5em;
+        width:100%;
+        background-color: $Color2;
+        img:nth-child(2) {
+            visibility: hidden;
+            margin-top:0;
+            width: 0;
+            margin-left:0;
+            margin-bottom:0;
+        }
+        img {
+            margin-top:.3em;
+            margin-left:2%;
+            width:12em;
+            visibility: visible;
+            position: static;
+            float: left;
+        }
+        ul{
+            position: relative;
+            width: .1%;
+            height: 0.1%;
+            right:0;
+            float: right;
+            li {
+                float: right;
+                width: auto;
+                height:100%;
+                border-bottom: 0;
+                display: inline-block;               
+                font-size: .75em;
+                margin-left: 0;
+                border-left: 2px solid white;
+            }
+            li:first-child{
+                border-top:0;
+            }
+            a {
+                text-decoration: none;
+                color: white;
+                padding:2.5em 1em;
+                &:hover {
+                    color: $Color1;
+                    }
+               }
+            }
+        #logIn {
+            visibility: hidden;
+            position: absolute;
+            overflow-y: hidden;
+            top:0;
+            left:0;
+            width:0;
+            ul {
+                width: 100%;
+                float: right;
+                display: block;
+            }
+            li {
+                display: inline-block;
+                float: right;
+                margin-right: 20px;
+                vertical-align: middle;
+                a {
+                 font-size: .7em;   
+                }
+            }
+        }
+    }
+
+    main {
+        position: relative;
+        width:100%;
+        overflow-x:visible;
+        top:0;
+        left:0%;
+        height: 100em;
+    }
+
+    footer {
+        visibility: visible;
+    } 
 }
