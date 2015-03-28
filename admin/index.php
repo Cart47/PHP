@@ -3,6 +3,7 @@
 	<head>
         
         <?php 
+
             include ('../config.php');
             include ('../components/cms_header.php'); 
             include ('../components/cms_left_menu.php');
@@ -88,7 +89,7 @@
             
         </div><!-- end main -->
         
-        <?php include ('../components/cms_footer.php'); ?>
-        
 	</body>
 </html>
+
+<?php include ('../components/cms_footer.php'); ?>
