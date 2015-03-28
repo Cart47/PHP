@@ -1,5 +1,5 @@
 <?php
 
-require('../model/database.php');
-require('../model/artist.php');
-require('../model/artist_db.php');
+require('../../models/database.php');
+require('../../models/browse_artist/artist.php');
+require('../../models/browse_artist/artist_db.php');

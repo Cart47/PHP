@@ -5,20 +5,17 @@
     position: fixed;
     top: 0;
     z-index: 1000;
-    width: 100%; }
+    width: 100%;
+    margin-right: 5%; }
     #navMain > ul {
-      left: 5%;
-      height: 50px;
-      display: inline-block;
-      position: relative;
-      width: 50%; }
+      display: inline-block; }
       #navMain > ul li {
         width: auto;
-        line-height: 20px;
+        line-height: 40px;
         display: inline-block;
         font-family: roboto, raleway, sans-serif;
         font-size: .9em;
-        padding: 15px 10px; }
+        padding: 10px; }
       #navMain > ul a {
         text-decoration: none;
         color: white;
@@ -27,37 +24,39 @@
           color: #9a3cf5; }
     #navMain #citfLogo {
       float: left;
-      margin-top: 10px;
-      margin-left: 20px;
       color: white;
       font-size: 30px;
       font-family: Lobster, serif;
       text-decoration: none;
-      display: inline-block; }
+      display: inline-block;
+      line-height: 60px;
+      margin: 0% 2%; }
       #navMain #citfLogo:hover {
         color: #9a3cf5; }
     #navMain #logIn {
       display: inline-block;
-      margin-left: 5%;
-      width: 25%;
-      z-index: 5001; }
+      z-index: 5001;
+      float: right; }
+      #navMain #logIn:hover {
+        background: #fff;
+        color: #9a3cf5; }
       #navMain #logIn ul {
         width: 100%;
         float: right;
         display: inline-block; }
-      #navMain #logIn li {
-        display: inline-block;
-        float: right;
-        margin-left: 10px; }
-        #navMain #logIn li a {
-          color: white;
-          font-size: .8em;
-          text-decoration: none; }
-          #navMain #logIn li a:hover {
-            color: #9a3cf5; }
-        #navMain #logIn li p {
-          color: white;
-          font-size: .9em; } }
+      #navMain #logIn li a {
+        color: white;
+        font-size: .8em;
+        text-decoration: none;
+        line-height: 60px;
+        padding: 24px;
+        background: #9a3cf5; }
+        #navMain #logIn li a:hover {
+          color: #9a3cf5;
+          background: #fff; }
+      #navMain #logIn p {
+        color: white;
+        font-size: .9em; } }
 @media screen and (max-width: 1025px) {
   #navMain {
     display: block;
@@ -230,3 +229,5 @@
         vertical-align: middle; }
         #navMain #logIn li a {
           font-size: .7em; } }
+
+/*# sourceMappingURL=navigation.css.map */
