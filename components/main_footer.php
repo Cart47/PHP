@@ -1,130 +1,123 @@
 <?php 
 
-require ('./models/validation/field_classes.php');
-require ('./models/validation/validation_class.php');
+    require ($path . 'models/validation/field_classes.php');
+    require ($path . 'models/validation/validation_class.php');
 
-//Creates an object from Validation class
-$validate = new Validation();
+    //Creates an object from Validation class
+    $validate = new Validation();
 
-//Creates a new fieldsArray
-$fields = $validate->getFields();
+    //Creates a new fieldsArray
+    $fields = $validate->getFields();
 
-//Adds the following field objects to the fieldsArray
-$fields->addField('name');
-$fields->addField('email');
+    //Adds the following field objects to the fieldsArray
+    $fields->addField('name');
+    $fields->addField('email');
 
-$name='';
-$email='';
-$approved='';
+    $name='';
+    $email='';
+    $approved='';
 
-if (isset($_POST['subscribe'])){ //If subscribe button is clicked
-    
-    //Post values from the form
-    $email_id = $_POST['email_id'];
-    $name = $_POST['name']; 
-    $email = $_POST['email'];
-    $approved = $_POST['approved'];
-    
-    //Assigns required validation to fields
-    $validate->required('name', $name);
-    $validate->required('email', $email);
-    
-    //If there are errors
-    if(!$fields->hasErrors()){
-        
-        //Create an object from the Email class
-        $subscribe = new EmailClass($name, $email, $approved);
-        
-        //Insert into the database
-        EmailDB::insertEmail($subscribe);
-        
-    }  
-} 
+    if (isset($_POST['subscribe'])){ //If subscribe button is clicked
+
+        //Post values from the form
+        $email_id = $_POST['email_id'];
+        $name = $_POST['name']; 
+        $email = $_POST['email'];
+        $approved = $_POST['approved'];
+
+        //Assigns required validation to fields
+        $validate->required('name', $name);
+        $validate->required('email', $email);
+
+        //If there are errors
+        if(!$fields->hasErrors()){
+
+            //Create an object from the Email class
+            $subscribe = new EmailClass($name, $email, $approved);
+
+            //Insert into the database
+            EmailDB::insertEmail($subscribe);
+
+        }  
+    } 
 
 ?>
 
-<footer>
 
-    <div id="footContainer">
+    </div><!-- closing div for container -->
 
-        <div class="left-col">
+    <footer>
 
-            <div id="footer-contact">
-                <h3>Chorus in the Forest Head Office</h3>
-                <p>123 Woods Road</p>
-                <p>Moosonee, Ontario, Canada</p>
-                <p>P0L 1Y0</p>
+        <div id="footContainer">
 
-                <div id="contact">
-                    <p>(705) 555-3144</p>
-                    <p>admin@citf.ca</p>
+            <!---------- CONTACT INFO ---------->
+
+            <div class="contact">
+
+                <div id="footer-contact">
+                    <h3>Chorus in the Forest Head Office</h3>
+                    <p>123 Woods Road</p>
+                    <p>Moosonee, Ontario, Canada</p>
+                    <p>P0L 1Y0</p>
+
+                    <div id="contact">
+                        <p>(705) 555-3144</p>
+                        <p>admin@citf.ca</p>
+                    </div>
+
+                    <p id="copyright">&copy; 2015 Chorus in the Forest</p>
+
                 </div>
 
-                <p id="copyright">&copy; 2015 Chorus in the Forest</p>
+            </div><!-- end contact -->
 
-            </div>
 
-        </div><!-- end left-col -->
+            <!---------- SUBSCRIBE FORM ---------->
 
-        <div class="center-col">
+            <div class="subscribe">
 
-            <h3>Sponsors</h3>
+                <!-- if there are input errors OR if the subscribe button has not been clicked, show the form -->
+                <?php if($fields->hasErrors() || !isset($_POST['subscribe']) ){ ?>
 
-        </div><!-- end center-col -->
+                    <form action=".#footContainer" method="post" id="subscription-form">
 
-        <div class="right-col">
+                        <h3>Subscribe to our newsletter!</h3>
 
-            <?php if($fields->hasErrors() || !isset($_POST['subscribe']) ){ ?>
+                        <input type="hidden" name="email_id" />
+                        <input type="text" class="email-field" name="name" placeholder="Your Name" value="<?php echo isset($name) ? $name : '' ; ?>" />     
+                        <?php echo isset($fields) ? $fields->getField('name')->showErrors() : '' ; ?>
 
-                <form action=".#footContainer" method="post" id="subscription-form">
+                        <div class="clear"></div>
 
-                    <h3>Subscribe to our newsletter!</h3>
+                        <input type="text" class="email-field" name="email" placeholder="Your Email" value="<?php echo isset($email) ? $email : '' ; ?>" />
+                        <?php echo isset($fields) ? $fields->getField('email')->showErrors() : '' ; ?>
 
-                    <input type="hidden" name="email_id" />
-                    <input type="text" class="email-field" name="name" placeholder="Your Name" value="<?php echo isset($name) ? $name : '' ; ?>" />
-                     <?php 
+                        <div class="clear"></div>
 
-                        if(isset($fields)){
-                            echo $fields->getField('name')->showErrors();
+                        <input type="hidden" name="approved" value="0"/>
+                        <input type="submit" id="subscribe" name="subscribe" value="Subscribe :-)" />
 
-                    }?>   
+                </form>
 
-                    <div class="clear"></div>
+                <!-- If there are no errors and the subscribe button has been clicked, thank the user for subscribing -->
+                <?php } else { 
 
-                    <input type="text" class="email-field" name="email" placeholder="Your Email" value="<?php echo isset($email) ? $email : '' ; ?>" />
-                    <?php 
+                    echo '<h3><i class="fa fa-smile-o fa-lg"></i>Thanks for Subscribing!</h3></i>';
 
-                        if(isset($fields)){
-                            echo $fields->getField('email')->showErrors();
+                }?>
 
-                    }?>
+            </div><!-- end right-col -->
 
-                    <div class="clear"></div>
+        </div>
 
-                    <input type="hidden" name="approved" value="0"/>
-                    <input type="submit" id="subscribe" name="subscribe" value="Subscribe :-)" />
+    </footer>
 
-            </form>
-
-            <?php } else { 
-
-            echo '<h3><i class="fa fa-smile-o fa-lg"></i>Thanks for Subscribing!</h3></i>';
-
-            }?>
-
-        </div><!-- end right-col -->
-
-    </div>
-
-</footer>
-
-</section>	 
-</div> <!-- closing div for container -->
+</section>
 
 <!--   JS Scripts can go here -->
-<script src="js/jquery.leanModal.min.js" type="text/javascript"></script>
-<script src="js/facebookAPI.js" type="text/javascript"></script>
-<script type="text/javascript" src="js/modalTrigger.js"> </script>
+<script src="<?php echo $absolute . 'js/jquery.leanModal.min.js'; ?>" type="text/javascript"></script>
+<script src="<?php echo $absolute . 'js/modalTrigger.js' ; ?>" type="text/javascript"></script>
+<script src="<?php echo $absolute . 'js/modalTrigger.js' ; ?>" type="text/javascript"></script>
 
 </body>
 </html>
