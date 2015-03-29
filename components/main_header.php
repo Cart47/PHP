@@ -1,7 +1,6 @@
 <?php
 session_start();
-require_once('../config.php');
-require_once ($path . '/models/database.php');  
+require ($path . '/models/database.php');  
 require ($path . '/models/Registration_Login/RegisterNewUser.php');
 require ($path . '/models/Registration_Login/UserLogin.php'); 
 
@@ -29,7 +28,7 @@ if(isset($_POST['subscribe'])){
 
         <meta charset="UTF-8">
 
-        <title>Chorus in the Forest Home Page</title>
+        <title>Chorus in the Forest Homepage</title>
 
         <meta name="author" content="name">
         <meta name="description" content="description here">

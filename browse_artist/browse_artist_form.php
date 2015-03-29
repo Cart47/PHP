@@ -6,7 +6,7 @@
      
 }
 
-    require_once ('../config.php');
+    include ('../config.php');
     include ('../components/main_header.php');
 
 ?>

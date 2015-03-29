@@ -1,6 +1,4 @@
 <?php
-
-
 class Database {
 	
     private static $dsn = 'mysql:host=chorusintheforest.stem.arvixe.com;dbname=chorusintheforest';

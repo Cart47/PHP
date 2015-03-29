@@ -11,6 +11,5 @@ $Gen = '/PHP/';
 $Ian = '/PHP/PHP/';
 $Matt = '/PHP/';
 
-
 $server = $_SERVER['HTTP_HOST'];
 $absolute = 'http://' . $server . $Gen;
