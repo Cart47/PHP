@@ -37,9 +37,11 @@ if(isset($_POST['subscribe'])){
 
         <script src="<?php echo $absolute . 'js/jquery-2.1.3.js'; ?>" type="text/javascript"></script>
         <script src="<?php echo $absolute . 'js/jquery-ui.min.js'; ?>" type="text/javascript"></script>
+        <script src="<?php echo $absolute . 'js/mobile_menu.js'; ?>" type="text/javascript"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js" type="text/javascript"></script>
 
         <!-- Need to revisit to add in php that determines the associated styles needed and sources them out -->
+        <link rel="stylesheet" href="<?php echo $absolute . 'css/Reset.css'; ?>" type="text/css">
         <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
         <link rel="stylesheet" href="<?php echo $absolute . 'css/CITF-Main.css'; ?>" type="text/css">
@@ -60,4 +62,4 @@ if(isset($_POST['subscribe'])){
                 <?php include_once($path . 'components/modal.php'); ?>
             </section>
              
-            <section>
+            <section id="content">

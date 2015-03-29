@@ -1,20 +1,12 @@
-<div id="navMain">
-   <a href="./Index.php" id="citfLogo">Chorus in the Forest</a> 
-    <ul>
-        <li><a href="#">Tickets</a></li>
-        <li><a href="#">Camping</a></li>
-        <li><a href="#">Lineup</a></li>
-        <li><a href="#">Festival Info</a></li>
-        <li><a href="#">Get Involved</a></li>
-        <li><a href="#">Store</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Donate</a></li>
-        
-    </ul>
+<div id="navBar">
+
+    <a href="./Index.php" id="citfLogo">Chorus in the Forest</a>     
+
     <div id="logIn">
+
         <ul>
            <?php
-          
+
              if(isset($_SESSION["UserFullName"]))
                 {
                  //Still need to build the kill session 
@@ -28,8 +20,26 @@
                 {
                 echo '<li><a id="modal_trigger" href="#modal">Login | Register</a></li>';
                 }
-
             ?>
         </ul>
+
+    </div><!-- end logIn -->
+    
+    <div id="hamburger">
+        <i class="fa fa-bars"></i>
     </div>
-</div>
+    
+    <nav id="nav">
+        <ul>
+            <li><a href="#">Tickets</a></li>
+            <li><a href="#">Camping</a></li>
+            <li><a href="#">Lineup</a></li>
+            <li><a href="#">Festival Info</a></li>
+            <li><a href="#">Get Involved</a></li>
+            <li><a href="#">Store</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Donate</a></li>
+        </ul>
+    </nav>
+    
+</div><!-- end navBar -->

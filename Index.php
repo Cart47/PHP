@@ -9,11 +9,9 @@
     
     <div id="headMain">
         
-        <?php include_once('components/main_topContent.php'); ?>
+        <?php include_once('components/main_content.php'); ?>
         
     </div>
-
-    <?php include_once('components/main_content.php'); ?>
     
 </main>
             
