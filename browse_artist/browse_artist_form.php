@@ -5,8 +5,11 @@ if(!isset($genres)){
      
 }
 
+<<<<<<< HEAD
     require_once ('../config.php');
     include ('../components/main_header.php');
+=======
+>>>>>>> NewBranch
 ?>
         
         <h1>Browse Artists</h1>
