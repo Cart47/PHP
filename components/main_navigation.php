@@ -1,7 +1,5 @@
 <div id="navBar">
-
-    <a href="./Index.php" id="citfLogo">Chorus in the Forest</a>     
-
+   <a href="../Home/Index.php" id="citfLogo">Chorus in the Forest</a> 
     <div id="logIn">
 
         <ul>
