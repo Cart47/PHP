@@ -142,12 +142,19 @@ input[type=submit] {
         float: right;
         display: inline-block;
     }
+    li {
+     display: inline-block;
+     color: white;  
+    }
+    li:first-child {
+     margin-right: 20px;  
+    }
     li a {
-            color: white;
+           
             font-size: .8em; 
             text-decoration: none;
             line-height: 60px;
-            padding: 24px;
+            padding: 22px;
             background: $Purple;
             &:hover {
             color: $Purple;
