@@ -1,16 +1,5 @@
 <div id="navBar">
    <a href="../Home/Index.php" id="citfLogo">Chorus in the Forest</a> 
-    <ul>
-        <li><a href="#">Tickets</a></li>
-        <li><a href="#">Camping</a></li>
-        <li><a href="#">Lineup</a></li>
-        <li><a href="#">Festival Info</a></li>
-        <li><a href="#">Get Involved</a></li>
-        <li><a href="#">Store</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Donate</a></li>
-        
-    </ul>
     <div id="logIn">
 
         <ul>
