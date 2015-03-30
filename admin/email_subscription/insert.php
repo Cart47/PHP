@@ -1,9 +1,7 @@
 <?php 
 
     include ('../config.php');
-    include ('../../components/cms_header.php'); 
-    include ('../../components/cms_left_menu.php');
-
+    include ('../components/cms_header.php'); 
 ?>
 
 <!doctype html>
@@ -51,4 +49,4 @@
 	</body>
 </html>
 
-<?php include ('../../components/cms_footer.php'); ?>
+<?php include ('../components/cms_footer.php'); ?>

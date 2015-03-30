@@ -1,22 +1,17 @@
-<!DOCTYPE html>
-
-<?php if(!isset($genres)){
+<?php 
+if(!isset($genres)){
     
      header("Location:../browse_artist");
      
 }
+<<<<<<< HEAD
 
     require_once ('../config.php');
     include ('../components/main_header.php');
 
+=======
+>>>>>>> NewBranch
 ?>
-
-<html>
-    <head>
-       <script src="../js/jquery-2.1.3.js"></script>
-       <script src="../js/live_search.js"></script>
-    </head>
-    <body>
         
         <h1>Browse Artists</h1>
         <form action="index.php" method="post" >
@@ -53,7 +48,3 @@
         </form>
         
         
-    </body>
-</html>
-
-<?php include ('../components/main_footer.php'); ?>

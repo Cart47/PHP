@@ -54,7 +54,7 @@ if ($action == 'email_list'){ //default view
     
     EmailDB::updateEmail($email_id, $name, $email, $approved);
     
-    include ('emailList.php');
+    include ('email_list.php');
 
 } elseif ($action == 'delete'){ //If delete button is clicked
     
@@ -67,6 +67,12 @@ if ($action == 'email_list'){ //default view
     
     $email_id = $_POST['email_id']; 
     EmailDB::deleteEmail($email_id);  
+    
+    $approve = 1;
+    $pending = 0;
+    
+    $approvedEmail = EmailDB::getEmailsByStatus($approve);
+    $pendingEmail = EmailDB::getEmailsByStatus($pending);
     
     include ('email_list.php');
     

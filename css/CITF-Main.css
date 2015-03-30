@@ -248,7 +248,8 @@ footer {
   main {
     position: relative;
     display: block;
-    height: 100em; }
+    height: 100em;
+    top: 100px; }
 
   footer {
     position: relative;
@@ -316,5 +317,3 @@ footer {
 @media screen and (max-width: 480px) {
   #logIn li a {
     display: none; } }
-
-/*# sourceMappingURL=CITF-Main.css.map */
