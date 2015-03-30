@@ -36,6 +36,12 @@ if ($action == 'email_list'){ //default view
     $newSubscriber = new EmailClass($name, $email, $approved);
     $addSubscriber = EmailDB::insertEmail($newSubscriber);
     
+    $approve = 1;
+    $pending = 0;
+    
+    $approvedEmail = EmailDB::getEmailsByStatus($approve);
+    $pendingEmail = EmailDB::getEmailsByStatus($pending);
+    
     include ('email_list.php');
     
 } elseif ($action == 'edit'){ //If edit button is clicked
