@@ -1,5 +1,8 @@
 <?php
 
+require_once($_SERVER['DOCUMENT_ROOT'] . '/PHP/config.php');
+require_once($path . 'models/database.php');
+
 class ArtistDB {
     public static function getArtists() {
         $db = Database::getDB();

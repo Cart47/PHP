@@ -1,7 +1,8 @@
+</main>
 <?php 
 
-    require ($path . 'models/validation/field_classes.php');
-    require ($path . 'models/validation/validation_class.php');
+    require ('../models/validation/field_classes.php');
+    require ('../models/validation/validation_class.php');
 
     //Creates an object from Validation class
     $validate = new Validation();
@@ -112,12 +113,10 @@
 
     </footer>
 
-</section>
-
 <!--   JS Scripts can go here -->
-<script src="<?php echo $absolute . 'js/jquery.leanModal.min.js'; ?>" type="text/javascript"></script>
-<script src="<?php echo $absolute . 'js/modalTrigger.js' ; ?>" type="text/javascript"></script>
-<script src="<?php echo $absolute . 'js/modalTrigger.js' ; ?>" type="text/javascript"></script>
+<script src="../js/jquery.leanModal.min.js" type="text/javascript"></script>
+<script src="../js/modalTrigger.js" type="text/javascript"></script>
+<script src="../js/modalTrigger.js" type="text/javascript"></script>
 
 </body>
 </html>

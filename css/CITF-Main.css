@@ -41,6 +41,9 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+body {
+  font-family: roboto, raleway, sans-serif; }
+
 h3 {
   font-size: 1.25em;
   padding: 10px 0px; }
@@ -70,30 +73,17 @@ input[type=submit] {
   font-size: 0.875em;
   width: 100%; }
 
-#navMain {
-  display: block;
+#container {
+  width: 1440px;
+  margin: 0 auto; }
+
+#navBar {
   background-color: #121212;
   position: fixed;
   top: 0;
-  z-index: 1000;
   width: 100%;
-  margin-right: 5%; }
-  #navMain > ul {
-    display: inline-block; }
-    #navMain > ul li {
-      width: auto;
-      line-height: 40px;
-      display: inline-block;
-      font-family: roboto, raleway, sans-serif;
-      font-size: .9em;
-      padding: 10px; }
-    #navMain > ul a {
-      text-decoration: none;
-      color: white;
-      display: block; }
-      #navMain > ul a:hover {
-        color: #9a3cf5; }
-  #navMain #citfLogo {
+  z-index: 1001; }
+  #navBar #citfLogo {
     float: left;
     color: white;
     font-size: 30px;
@@ -102,36 +92,42 @@ input[type=submit] {
     display: inline-block;
     line-height: 60px;
     margin: 0% 2%; }
-    #navMain #citfLogo:hover {
+
+#nav ul li {
+  line-height: 40px;
+  display: inline-block;
+  font-family: roboto, raleway, sans-serif;
+  font-size: .9em;
+  padding: 10px; }
+  #nav ul li a {
+    text-decoration: none;
+    color: white; }
+    #nav ul li a:hover {
       color: #9a3cf5; }
-  #navMain #logIn {
-    display: inline-block;
-    z-index: 5001;
-    float: right; }
-    #navMain #logIn:hover {
-      background: #fff;
-      color: #9a3cf5; }
-    #navMain #logIn ul {
-      width: 100%;
-      float: right;
-      display: inline-block; }
-    #navMain #logIn li a {
-      color: white;
-      font-size: .8em;
-      text-decoration: none;
-      line-height: 60px;
-      padding: 24px;
-      background: #9a3cf5; }
-      #navMain #logIn li a:hover {
-        color: #9a3cf5;
-        background: #fff; }
-    #navMain #logIn p {
-      color: white;
-      font-size: .9em; }
+
+#logIn {
+  float: right; }
+  #logIn ul {
+    width: 100%;
+    float: right;
+    display: inline-block; }
+  #logIn li a {
+    color: white;
+    font-size: .8em;
+    text-decoration: none;
+    line-height: 60px;
+    padding: 24px;
+    background: #9a3cf5; }
+    #logIn li a:hover {
+      color: #9a3cf5;
+      background: #fff; }
+  #logIn p {
+    color: white;
+    font-size: .9em; }
 
 #mainContent {
   position: relative;
-  padding: 10em; }
+  padding: 5% 2%; }
 
 footer {
   background-color: #121212; }
@@ -179,17 +175,51 @@ footer {
 #contact {
   margin: 25px 0px; }
 
-@media screen and (min-width: 1800px) {
-  #container {
-    width: 1440px;
-    margin: 0 auto; } }
-@media screen and (max-width: 1440px) {
-  #footContainer {
-    width: 100%; } }
+#hamburger {
+  display: none; }
+
 @media screen and (max-width: 1799px) {
   #container {
     position: relative;
+    width: 100%;
+    margin-top: 60px; } }
+@media screen and (max-width: 1440px) {
+  #footContainer {
     width: 100%; } }
+@media screen and (max-width: 1130px) {
+  #hamburger {
+    display: block;
+    float: right;
+    font-size: 2em;
+    margin-top: 15px;
+    margin-right: 3%;
+    color: #fff;
+    cursor: pointer;
+    -o-transition: .3s;
+    -ms-transition: .3s;
+    -moz-transition: .3s;
+    -webkit-transition: .3s;
+    transition: .3s; }
+    #hamburger:hover {
+      color: #9a3cf5; }
+
+  #nav {
+    display: none; }
+    #nav ul {
+      width: 100%;
+      position: fixed;
+      margin-top: 60px;
+      background: #333; }
+      #nav ul li {
+        text-align: center; }
+        #nav ul li a {
+          line-height: 20px; }
+          #nav ul li a:hover {
+            color: #fff; }
+
+  #logIn li a {
+    line-height: 60px;
+    padding: 24px; } }
 @media screen and (min-width: 1026px) {
   #transitionBlock {
     margin-top: 600px;
@@ -215,14 +245,11 @@ footer {
     position: relative;
     display: block; }
 
-  nav {
-    position: relative;
-    display: block; }
-
   main {
     position: relative;
     display: block;
-    height: 100em; }
+    height: 100em;
+    top: 100px; }
 
   footer {
     position: relative;
@@ -233,72 +260,8 @@ footer {
     overflow-x: hidden;
     left: 20%; }
 
-  nav {
-    position: fixed;
-    height: 100%;
-    left: 0;
-    top: 0;
-    width: 20%; }
-
-  #navMain {
-    display: block;
-    height: 100%;
-    background-color: #121212;
-    border-right: 2px solid white; }
-    #navMain img:nth-child(2) {
-      margin-top: 0.5em;
-      width: 60%;
-      margin-left: 19%;
-      margin-bottom: 1em; }
-    #navMain img {
-      margin-top: 1em;
-      margin-left: 2.5%;
-      width: 94%;
-      visibility: visible;
-      position: static; }
-    #navMain ul {
-      width: 100%;
-      align-content: center;
-      overflow-x: hidden; }
-      #navMain ul li {
-        width: 100%;
-        font-family: roboto, raleway, sans-serif;
-        font-size: .8em;
-        border-bottom: .1em solid white; }
-      #navMain ul li:first-child {
-        border-top: .1em solid white; }
-      #navMain ul a {
-        text-decoration: none;
-        color: white;
-        padding: 1.4em 25%;
-        display: block; }
-        #navMain ul a:hover {
-          color: #71bb75; }
-    #navMain #logIn {
-      visibility: hidden;
-      position: absolute;
-      overflow-y: hidden;
-      top: 0;
-      left: 0;
-      width: 0; }
-      #navMain #logIn ul {
-        width: 100%;
-        float: right;
-        display: block; }
-      #navMain #logIn li {
-        display: inline-block;
-        float: right;
-        margin-right: 20px; }
-        #navMain #logIn li a {
-          font-size: .7em; }
-
   main {
-    width: 80%;
-    overflow-x: hidden;
-    left: 20%; }
-
-  footer {
-    visibility: hidden; } }
+    min-height: 100%; } }
 @media screen and (max-width: 900px) {
   #headMain {
     visibility: visible;
@@ -308,18 +271,14 @@ footer {
     width: 100%;
     overflow-x: visible; }
 
-  nav {
-    height: auto;
-    left: 0;
-    top: 0;
-    width: 100%;
-    display: block; }
-
   main {
     position: relative;
     width: 100%;
     overflow-x: visible;
     left: 0%; }
+
+  .subscribe {
+    width: 50%; }
 
   footer {
     visibility: visible; } }
@@ -332,74 +291,18 @@ footer {
     width: 100%;
     overflow-x: visible; }
 
-  nav {
-    position: relative;
-    height: auto;
-    left: 0;
-    top: -31.5em;
-    width: 100%;
-    display: block; }
-
-  #navMain {
-    position: static;
-    display: block;
-    height: 5em;
-    width: 100%;
-    background-color: #121212; }
-    #navMain img:nth-child(2) {
-      visibility: hidden;
-      margin-top: 0;
-      width: 0;
-      margin-left: 0;
-      margin-bottom: 0; }
-    #navMain img {
-      margin-top: .3em;
-      margin-left: 2%;
-      width: 12em;
-      visibility: visible;
-      position: static;
-      float: left; }
-    #navMain ul {
-      position: relative;
-      width: .1%;
-      height: 0.1%;
-      right: 0;
-      float: right; }
-      #navMain ul li {
-        float: right;
-        width: auto;
-        height: 100%;
-        border-bottom: 0;
-        display: inline-block;
-        font-size: .75em;
-        margin-left: 0;
-        border-left: 2px solid white; }
-      #navMain ul li:first-child {
-        border-top: 0; }
-      #navMain ul a {
-        text-decoration: none;
-        color: white;
-        padding: 2.5em 1em; }
-        #navMain ul a:hover {
-          color: #71bb75; }
-    #navMain #logIn {
-      visibility: hidden;
-      position: absolute;
-      overflow-y: hidden;
-      top: 0;
-      left: 0;
-      width: 0; }
-      #navMain #logIn ul {
-        width: 100%;
-        float: right;
-        display: block; }
-      #navMain #logIn li {
-        display: inline-block;
-        float: right;
-        margin-right: 20px;
-        vertical-align: middle; }
-        #navMain #logIn li a {
-          font-size: .7em; }
+  #nav {
+    width: 100%; }
+    #nav li {
+      width: 100%;
+      display: block;
+      line-height: 0px;
+      line-height: 30px;
+      border-bottom: 1px solid #444; }
+      #nav li:hover {
+        background: #444; }
+      #nav li a {
+        padding: 30px 60px; }
 
   main {
     position: relative;
@@ -411,5 +314,6 @@ footer {
 
   footer {
     visibility: visible; } }
-
-/*# sourceMappingURL=CITF-Main.css.map */
+@media screen and (max-width: 480px) {
+  #logIn li a {
+    display: none; } }
