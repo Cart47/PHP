@@ -111,8 +111,10 @@ input[type=submit] {
     width: 100%;
     float: right;
     display: inline-block; }
+  #logIn li {
+    display: inline-block;
+    color: white; }
   #logIn li a {
-    color: white;
     font-size: .8em;
     text-decoration: none;
     line-height: 60px;
