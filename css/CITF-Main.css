@@ -114,11 +114,13 @@ input[type=submit] {
   #logIn li {
     display: inline-block;
     color: white; }
+  #logIn li:first-child {
+    margin-right: 20px; }
   #logIn li a {
     font-size: .8em;
     text-decoration: none;
     line-height: 60px;
-    padding: 24px;
+    padding: 22px;
     background: #9a3cf5; }
     #logIn li a:hover {
       color: #9a3cf5;
