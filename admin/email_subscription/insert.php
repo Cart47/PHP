@@ -1,6 +1,5 @@
 <?php 
 
-    include ('../config.php');
     include ('../components/cms_header.php'); 
 ?>
 
