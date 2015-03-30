@@ -114,11 +114,8 @@ input[type=submit] {
   #logIn li {
     display: inline-block;
     color: white; }
-<<<<<<< HEAD
-=======
   #logIn li:first-child {
     margin-right: 20px; }
->>>>>>> NewBranch
   #logIn li a {
     font-size: .8em;
     text-decoration: none;
