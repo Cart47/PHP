@@ -1,4 +1,5 @@
 <div id="navBar">
+<<<<<<< HEAD
    <a href="../Home/Index.php" id="citfLogo">Chorus in the Forest</a> 
     <ul>
         <li><a href="#">Tickets</a></li>
@@ -11,6 +12,11 @@
         <li><a href="#">Donate</a></li>
         
     </ul>
+=======
+
+    <a href="./Index.php" id="citfLogo">Chorus in the Forest</a>     
+
+>>>>>>> master
     <div id="logIn">
 
         <ul>
