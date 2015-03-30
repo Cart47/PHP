@@ -1,10 +1,4 @@
-<<<<<<< HEAD
 <div id="navBar">
-
-    <a href="./Index.php" id="citfLogo">Chorus in the Forest</a>     
-
-=======
-<div id="navMain">
    <a href="../Home/Index.php" id="citfLogo">Chorus in the Forest</a> 
     <ul>
         <li><a href="#">Tickets</a></li>
@@ -17,7 +11,6 @@
         <li><a href="#">Donate</a></li>
         
     </ul>
->>>>>>> NewBranch
     <div id="logIn">
 
         <ul>
