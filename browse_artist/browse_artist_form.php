@@ -4,6 +4,11 @@ if(!isset($genres)){
      header("Location:../browse_artist");
      
 }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> origin/master
 ?>
         
         <h1>Browse Artists</h1>
