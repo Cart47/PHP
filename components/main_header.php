@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once('../config.php');
+
 require_once ($path . '/models/database.php');  
 require ($path . '/models/Registration_Login/RegisterNewUser.php');
 require ($path . '/models/Registration_Login/UserLogin.php'); 
