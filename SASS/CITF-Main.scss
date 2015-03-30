@@ -142,8 +142,13 @@ input[type=submit] {
         float: right;
         display: inline-block;
     }
+    li{
+     display: inline-block;
+     color: white;
+    }
+    
     li a {
-            color: white;
+           
             font-size: .8em; 
             text-decoration: none;
             line-height: 60px;
