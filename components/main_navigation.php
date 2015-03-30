@@ -29,9 +29,9 @@
     <nav id="nav">
         <ul>
             <li><a href="#">Tickets</a></li>
-            <li><a href="#">Festival Schedulte</a></li>
-            <li><a href="#">Camping</a></li>
+            <li><a href="#">Festival Schedule</a></li>
             <li><a href="../browse_artist/index.php">Lineup</a></li>
+            <li><a href="#">Camping</a></li>
             <li><a href="#">Get Involved</a></li>
             <li><a href="#">Store</a></li>
             <li><a href="#">Contact</a></li>
