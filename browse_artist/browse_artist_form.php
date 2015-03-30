@@ -4,11 +4,10 @@ if(!isset($genres)){
      header("Location:../browse_artist");
      
 }
-<<<<<<< HEAD
 
+<<<<<<< HEAD
     require_once ('../config.php');
     include ('../components/main_header.php');
-
 =======
 >>>>>>> NewBranch
 ?>

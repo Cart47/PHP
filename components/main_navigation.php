@@ -1,7 +1,5 @@
 <div id="navBar">
-
-    <a href="./Index.php" id="citfLogo">Chorus in the Forest</a>     
-
+   <a href="../Home/Index.php" id="citfLogo">Chorus in the Forest</a> 
     <div id="logIn">
 
         <ul>
@@ -10,8 +8,7 @@
              if(isset($_SESSION["UserFullName"]))
                 {
                  //Still need to build the kill session 
-                echo '<li><a href"#">Logout</a></li><li><a href="../admin/Home/index.php">Admin</a></li>
-                      <li>Welcome, ' . $_SESSION["UserFullName"] . '</li>';
+                echo '<li>Welcome, ' . $_SESSION["UserFullName"] . '</li><li><a href="../admin/Home/index.php">Admin</a></li><li><a href"#">Logout</a></li>';
                 }
             elseif ($verified == "Invalid User Name "){
                 echo '<li style="color:#fff;">Invalid User Name</li>';

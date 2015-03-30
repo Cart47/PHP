@@ -2,11 +2,8 @@
 include ('../config.php');
 include ('../components/main_header.php');
 
-require_once('../config.php');
-require_once($path . 'models/browse_artist/artist.php');
-require_once($path . 'models/browse_artist/artist_db.php');
-
-
+require_once('../models/browse_artist/artist.php');
+require_once('../models/browse_artist/artist_db.php');
 
 if (isset($_POST['action'])) {
     $action = $_POST['action'];
