@@ -222,7 +222,8 @@ footer {
   main {
     position: relative;
     display: block;
-    height: 100em; }
+    height: 100em;
+    top: 100px; }
 
   footer {
     position: relative;
@@ -411,5 +412,3 @@ footer {
 
   footer {
     visibility: visible; } }
-
-/*# sourceMappingURL=CITF-Main.css.map */

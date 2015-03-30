@@ -1,25 +1,13 @@
-<!doctype html>
-<html>
-	<head>
-        
-        <?php 
+<?php 
+require_once ('../../config.php');
+include ('../components/cms_header.php'); 
 
-            require_once ('../../config.php');
-            include ('../../components/cms_header.php'); 
-            include ('../../components/cms_left_menu.php');
+//Forces a redirect through the index
+if(!isset($emailByID)){
+    header('Location: ../email_subscription'); 
+}
 
-            //Forces a redirect through the index
-            if(!isset($emailByID)){
-                header('Location: ../email_subscription'); 
-
-            }
-
-        ?>
-        
-		<meta charset="utf-8" />
-		<title></title>
-	</head>
-	<body>
+?>
         
         <!-- Main Content Area -->
         <div id="main">
@@ -72,4 +60,4 @@
 	</body>
 </html>
 
-<?php include ('../../components/cms_footer.php'); ?>
+<?php include ('../components/cms_footer.php'); ?>

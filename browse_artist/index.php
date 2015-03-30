@@ -1,7 +1,10 @@
 <?php
+include ('../config.php');
+include ('../components/main_header.php');
 
 require('../models/browse_artist/artist.php');
 require('../models/browse_artist/artist_db.php');
+
 
 if (isset($_POST['action'])) {
     $action = $_POST['action'];
@@ -35,3 +38,4 @@ if($action == 'list_artist') {
     include('artist_view.php');
 }
 
+include ('../components/main_footer.php');

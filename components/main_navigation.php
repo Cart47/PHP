@@ -1,5 +1,5 @@
 <div id="navMain">
-   <a href="./Index.php" id="citfLogo">Chorus in the Forest</a> 
+   <a href="../Home/Index.php" id="citfLogo">Chorus in the Forest</a> 
     <ul>
         <li><a href="#">Tickets</a></li>
         <li><a href="#">Camping</a></li>
@@ -18,7 +18,7 @@
              if(isset($_SESSION["UserFullName"]))
                 {
                  //Still need to build the kill session 
-                echo '<li><a href"#">Logout</a></li><li><a href="./admin/index.php">Admin</a></li>
+                echo '<li><a href"#">Logout</a></li><li><a href="../admin/Home/index.php">Admin</a></li>
                       <li>Welcome, ' . $_SESSION["UserFullName"] . '</li>';
                 }
             elseif ($verified == "Invalid User Name "){

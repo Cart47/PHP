@@ -270,6 +270,7 @@ footer {
 // ----- Common Desktop style --------------------//
 @media screen and (min-width:1026px) {
     
+    // Thius is for the middle of the homepage where the recent news takes place
      #transitionBlock {
         margin-top: 600px;
         display: block;
@@ -307,6 +308,7 @@ footer {
         position: relative;
         display: block;
         height: 100em;
+        top: 100px;
     }
 
     footer {
