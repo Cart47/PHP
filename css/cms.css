@@ -72,7 +72,10 @@ h3 {
   text-decoration: underline; }
 
 .fa.fa-trash-o,
-.fa.fa-pencil {
+.fa.fa-pencil,
+.fa-arrow-circle-up,
+.fa-globe,
+.fa-times-circle {
   padding: 0px; }
 
 .clear {
@@ -245,6 +248,15 @@ td {
   min-height: 100%;
   float: left; }
 
+/* Insert News Form */
+#internal {
+  z-index: 1;
+  position: absolute; }
+
+#external {
+  z-index: 2;
+  position: absolute; }
+
 /**************************************/
 /*************** Footer ***************/
 /**************************************/
@@ -260,3 +272,5 @@ td {
 
 #footer-content {
   padding: 20px; }
+
+/*# sourceMappingURL=cms.css.map */

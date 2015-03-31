@@ -77,7 +77,10 @@ h3 {
 }
 
 .fa.fa-trash-o,
-.fa.fa-pencil {
+.fa.fa-pencil,
+.fa-arrow-circle-up,
+.fa-globe,
+.fa-times-circle {
     padding: 0px;
 }
 
@@ -292,6 +295,18 @@ label.label {
     float: left;
     
 }
+
+/* Insert News Form */
+#internal {
+    z-index: 1;
+    position: absolute;
+}
+
+#external {
+    z-index: 2;
+    position: absolute;
+}
+
 
 /**************************************/
 /*************** Footer ***************/

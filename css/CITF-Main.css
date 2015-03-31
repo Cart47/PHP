@@ -115,13 +115,17 @@ input[type=submit] {
     display: inline-block;
     color: white; }
   #logIn li:first-child {
-    margin-right: 20px; }
+    margin-right: 20px;
+    font-size: 0.875em; }
   #logIn li a {
     font-size: .8em;
     text-decoration: none;
     line-height: 60px;
-    padding: 22px;
-    background: #9a3cf5; }
+    padding: 23.5px;
+    color: #fff;
+    background: #9a3cf5;
+    transition: all 0.3s;
+    cursor: pointer; }
     #logIn li a:hover {
       color: #9a3cf5;
       background: #fff; }
@@ -191,6 +195,9 @@ footer {
   #footContainer {
     width: 100%; } }
 @media screen and (max-width: 1130px) {
+  #logIn li:first-child {
+    display: none; }
+
   #hamburger {
     display: block;
     float: right;
