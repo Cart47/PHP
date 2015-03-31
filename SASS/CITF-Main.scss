@@ -144,18 +144,22 @@ input[type=submit] {
     }    
     li {
      display: inline-block;
-     color: white;  
+     color: white; 
     }
     li:first-child {
-     margin-right: 20px;  
+    margin-right: 20px;
+    font-size: 0.875em;
     }
     li a {
            
             font-size: .8em; 
             text-decoration: none;
             line-height: 60px;
-            padding: 22px;
+            padding: 23.5px;
+            color: #fff;
             background: $Purple;
+            transition: all 0.3s;
+            cursor: pointer;
             &:hover {
             color: $Purple;
             background: #fff;
@@ -271,6 +275,10 @@ footer {
 }
 
 @media screen and (max-width:1130px) {
+    
+#logIn li:first-child {
+    display: none;
+}
     
 #hamburger{
         display: block;
