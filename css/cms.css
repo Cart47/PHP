@@ -139,12 +139,13 @@ td {
   right: 0;
   left: 0; }
 
-#citf {
+#citf a {
   color: #fff;
   float: left;
   padding: 8px 25px;
   font-family: Lobster, serif;
-  font-size: 2em; }
+  font-size: 2em;
+  text-decoration: none; }
 
 #cms-top-nav li a {
   float: left;
