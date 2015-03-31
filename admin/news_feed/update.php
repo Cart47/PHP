@@ -1,149 +1,109 @@
-<!DOCTYPE html>
+<?php 
 
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-    </head>
-    <body>
-   
-            <p>Edit Article</p>
-            
-            <!-- If the article clicked is an INTERNAL article, display the following form -->
-            <?php if($newsByID['type'] == 0) : ?>
-            
-                <form action="." method="post" id="editInternal">
+    require_once ('../../config.php');
+    include ('../components/cms_header.php');
 
-                    <input type="hidden" name="news_id" value="<?php echo $newsByID['news_id']; ?>" />
-                    <input type="hidden" name="type" value="0" />
-                    <input type="hidden" name="date" value="<?php echo $newsByID['date']; ?>" />
+    //Forces a redirect through the index
+    if(!isset($newsByID)){
+        header('Location: ../news_feed/'); 
+    
+}
 
-                    <label>Title:</label>
-                    <input type="text" name="title" value="<?php echo $newsByID['title']; ?>"/>
+?>
+<h1>Edit Article</h1>
 
-                    <br /><br />
+<!-- If the article clicked is an INTERNAL article, display the following form -->
+<?php if($newsByID['type'] == 0) : ?>
 
-                    <label>Author:</label>
-                    <input type="text" name="author" value="<?php echo $newsByID['author']; ?>" />
+    <form action="." method="post" id="editInternal">
 
-                    <br /><br />
+        <input type="hidden" name="news_id" value="<?php echo $newsByID['news_id']; ?>" />
+        <input type="hidden" name="type" value="0" />
+        <input type="hidden" name="publish" value="<?php echo $newsByID['publish']; ?>" />
+        <input type="hidden" name="date" value="<?php echo $newsByID['date']; ?>" />
 
-                    <label>For more information:</label>
-                    <input type="text" id="other_url" name="other_url" value="<?php echo $newsByID['other_url']; ?>" />
+        <label>Title:</label>
+        <input type="text" name="title" value="<?php echo $newsByID['title']; ?>"/>
 
-                    <br /><br />
+        <div class="clear"></div>
 
-                    <label>Feature Image:</label>
-                    <input type="text" name="feature_img" value="<?php echo $newsByID['feature_img']; ?>" />
+        <label>Author:</label>
+        <input type="text" name="author" value="<?php echo $newsByID['author']; ?>" />
 
-                    <br /><br />
+        <div class="clear"></div>
 
-                    <label>Banner Image:</label>
-                    <input type="text" class="banner_img" name="banner_img" value="<?php echo $newsByID['banner_img']; ?>" />
+        <label>For more information:</label>
+        <input type="text" id="other_url" name="other_url" value="<?php echo $newsByID['other_url']; ?>" />
 
-                    <br /><br />
+        <div class="clear"></div>
 
-                    <label>Description:</label>
-                    <textarea name="description" rows="2" cols="50"><?php echo $newsByID['description']; ?></textarea>
+        <label>Feature Image:</label>
+        <input type="text" name="feature_img" value="<?php echo $newsByID['feature_img']; ?>" />
 
-                    <br /><br />
+        <div class="clear"></div>
 
-                    <label>Article:</label>
-                    <textarea name="article" class="article" rows="5" cols="50"><?php echo $newsByID['article']; ?></textarea>
+        <label>Banner Image:</label>
+        <input type="text" class="banner_img" name="banner_img" value="<?php echo $newsByID['banner_img']; ?>" />
 
-                    <br /><br />
+        <div class="clear"></div>
 
-                    <?php 
+        <label>Description:</label>
+        <textarea name="description" rows="2" cols="50"><?php echo $newsByID['description']; ?></textarea>
 
-                        $options = array(0 => 'Unpublish', 1 => 'Publish');  
+        <div class="clear"></div>
 
-                        //Loops through each array item and adds to radio button list
-                        foreach($options as $key => $value){
+        <label>Article:</label>
+        <textarea name="article" class="article" rows="5" cols="50"><?php echo $newsByID['article']; ?></textarea>
 
-                            if($newsByID['publish'] == $key){
+        <div class="clear"></div>
 
-                                echo "<label for='" . $value . "'><input type='radio' id='" . $value . "' name='publish' value='" . $key . "' checked />" . $value . "<br />";
+        <input type="hidden" name="action" value="updateInternal" />
+        <input type="submit" name="submit" class="btn" value="Update" />
+        <a href="." class="btn xtra-pad">Cancel</a>
 
-                            } else {
+    </form>
 
-                                echo "<label for='" . $value . "'><input type='radio' id='" . $value . "' name='publish' value='" . $key . "' />" . $value . "<br />";
+<!-- If the article clicked is an EXTERNAL article, display the following form -->
+<?php else : ?>
 
-                            }                           
-                        }              
+    <form action="." method="post" id="editExternal">
 
-                    ?>
+        <input type="hidden" name="news_id" value="<?php echo $newsByID['news_id']; ?>" />
+        <input type="hidden" name="type" value="1" />
+        <input type="hidden" name="publish" value="<?php echo $newsByID['publish']; ?>" />
+        <input type="hidden" name="date" value="<?php echo $newsByID['date']; ?>" />
 
-                    <br /><br />
+        <label>Title:</label>
+        <input type="text" name="title" value="<?php echo $newsByID['title']; ?>"/>
 
-                    <input type="hidden" name="action" value="updateInternal" />
-                    <input type="submit" name="submit" value="Update" />
-                    <a href="." class="btn">Cancel</a>
-                    
-                </form>
-            
-            <!-- If the article clicked is an EXTERNAL article, display the following form -->
-            <?php else : ?>
-            
-                <form action="." method="post" id="editExternal">
+        <div class="clear"></div>
 
-                    <input type="hidden" name="news_id" value="<?php echo $newsByID['news_id']; ?>" />
-                    <input type="hidden" name="type" value="1" />
-                    <input type="hidden" name="date" value="<?php echo $newsByID['date']; ?>" />
+        <label>Author:</label>
+        <input type="text" name="author" value="<?php echo $newsByID['author']; ?>" />
 
-                    <label>Title:</label>
-                    <input type="text" name="title" value="<?php echo $newsByID['title']; ?>"/>
+        <div class="clear"></div>
 
-                    <br /><br />
+        <label>Article Link:</label>
+        <input type="text" name="other_url" value="<?php echo $newsByID['story_url']; ?>" />
 
-                    <label>Author:</label>
-                    <input type="text" name="author" value="<?php echo $newsByID['author']; ?>" />
+        <div class="clear"></div>
 
-                    <br /><br />
+        <label>Feature Image:</label>
+        <input type="text" name="feature_img" value="<?php echo $newsByID['feature_img']; ?>" />
 
-                    <label>Article Link:</label>
-                    <input type="text" name="other_url" value="<?php echo $newsByID['story_url']; ?>" />
+        <div class="clear"></div>
 
-                    <br /><br />
+        <label>Description:</label>
+        <textarea name="description" rows="2" cols="50"><?php echo $newsByID['description']; ?></textarea>
 
-                    <label>Feature Image:</label>
-                    <input type="text" name="feature_img" value="<?php echo $newsByID['feature_img']; ?>" />
+        <div class="clear"></div>
+        
+        <input type="hidden" name="action" value="updateExternal" />
+        <input type="submit" name="submit" class="btn" value="Update" />
+        <a href="." class="btn xtra-pad">Cancel</a>
 
-                    <br /><br />
+    </form>
 
-                    <label>Description:</label>
-                    <textarea name="description" rows="2" cols="50"><?php echo $newsByID['description']; ?></textarea>
+<?php endif; ?>
 
-                    <br /><br />
-
-                    <?php 
-
-                        $options = array(0 => 'Unpublish', 1 => 'Publish');  
-
-                        //Loops through each array item and adds to radio button list
-                        foreach($options as $key => $value){
-
-                            if($newsByID['publish'] == $key){
-
-                                echo "<label for='" . $value . "'><input type='radio' id='" . $value . "' name='publish' value='" . $key . "' checked />" . $value . "<br />";
-
-                            } else {
-
-                                echo "<label for='" . $value . "'><input type='radio' id='" . $value . "' name='publish' value='" . $key . "' />" . $value . "<br />";
-
-                            }                           
-                        }              
-
-                    ?>
-
-                    <br /><br />
-
-                    <input type="hidden" name="action" value="updateExternal" />
-                    <input type="submit" name="submit" value="Update" />
-                    <a href="." class="btn">Cancel</a>
-
-                </form>
-   
-            <?php endif; ?>
-            
-    </body>
-</html>
+<?php include ('../components/cms_footer.php'); ?>
