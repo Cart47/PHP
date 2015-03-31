@@ -5,10 +5,16 @@
 <head>
     <meta charset="utf-8" />
     <title>CITF Admin</title>
+    
+    <!-- Stylesheets -->
     <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../../css/Reset.css">
     <link rel="stylesheet" href="../../css/font-awesome-4.3.0/css/font-awesome.css">
     <link rel="stylesheet" href="../../css/cms.css">
+    
+    <!-- Javascript -->
+    <script src="../../js/jquery-2.1.3.js"></script>
+    <script src="../../js/news_forms.js"></script>
 </head>
 
 <body>
@@ -83,3 +89,6 @@
             
         </div>
     </div>
+    
+    <!-- Main Content Area -->
+    <div id="main">
