@@ -76,13 +76,13 @@
             <a class="left-mnu-itm" href=""><i class="fa fa fa-picture-o fa-lg"></i>Homepage Slider</a>
             
             <!-- News -->
-            <a class="left-mnu-itm" href=""><i class="fa fa-newspaper-o fa-lg"></i>News</a>
+            <a class="left-mnu-itm" href="../news_feed/"><i class="fa fa-newspaper-o fa-lg"></i>News</a>
             
             <!-- Donations -->
             <a class="left-mnu-itm" href=""><i class="fa fa-heart fa-lg"></i>Donations</a>
             
             <!-- Email Subscriptions -->
-            <a class="left-mnu-itm" href="../email_subscription/index.php"><i class="fa fa fa-envelope-o fa-lg"></i>Email Subscribers</a>
+            <a class="left-mnu-itm" href="../email_subscription/"><i class="fa fa fa-envelope-o fa-lg"></i>Email Subscribers</a>
             
             <!-- Contact -->
             <a class="left-mnu-itm" href=""><i class="fa fa-phone fa-lg"></i>Contact</a>

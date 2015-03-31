@@ -5,7 +5,6 @@ if(!isset($_SESSION)) { session_start();}
 
 ?>
 
-<main>
     
     <div id="headMain">
         
@@ -15,7 +14,6 @@ if(!isset($_SESSION)) { session_start();}
 
     <?php include_once("../components/main_content.php"); ?>
     
-</main>
             
 <?php include("../components/main_footer.php");
 
