@@ -28,11 +28,19 @@
     
     <nav id="nav">
         <ul>
+<<<<<<< HEAD
             <li><a href="#">Tickets</a></li>
             <li><a href="#">Festival Schedule</a></li>
             <li><a href="../browse_artist/index.php">Lineup</a></li>
             <li><a href="#">Camping</a></li>
             <li><a href="#">Get Involved</a></li>
+=======
+            <li><a href="#">Buy Tickets</a></li>
+            <li><a href="../browse_artist/index.php">Lineup</a></li>
+            <li><a href="#">Schedule</a></li>
+            <li><a href="#">Camping</a></li>
+            <li><a href="#">Volunteer</a></li>
+>>>>>>> master
             <li><a href="#">Store</a></li>
             <li><a href="#">Contact</a></li>
             <li><a href="#">Donate</a></li>

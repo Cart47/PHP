@@ -44,39 +44,42 @@
     </div>
     <div id="left-col-menu">
         <div class="left-menu">
-            <a class="left-mnu-itm" href="">
-                <i class="fa fa-caret-right fa-lg"></i> Tickets
-            </a>
-            <a class="left-mnu-itm" href="">
-                <i class="fa fa-caret-right fa-lg"></i> Accomodations
-            </a>
-            <a class="left-mnu-itm" href="">
-                <i class="fa fa-caret-right fa-lg"></i> Lineup
-            </a>
-            <a class="left-mnu-itm" href="">
-                <i class="fa fa-caret-right fa-lg"></i> Festival Info</a>
-            <a class="left-mnu-itm" href="">
-                <i class="fa fa-caret-right fa-lg"></i> Get Involved</a>
-            <a class="left-mnu-itm" href="">
-                <i class="fa fa-caret-right fa-lg"></i> Shop
-            </a>
-            <a class="left-mnu-itm" href="">
-                <i class="fa fa-caret-right fa-lg"></i> Contact
-            </a>
-        </div>
-        <div class="left-menu">
-            <a class="left-mnu-itm" href="">
-                <i class="fa fa fa-picture-o fa-lg"></i> Homepage Slider</a>
-            <a class="left-mnu-itm" href="">
-                <i class="fa fa-newspaper-o fa-lg"></i> News
-            </a>
-            <a class="left-mnu-itm" href="">
-                <i class="fa fa-heart fa-lg"></i> Donations
-            </a>
-            <a class="left-mnu-itm" href="../email_subscription/index.php">
-                <i class="fa fa fa-envelope-o fa-lg"></i> Email Subscribers</a>
-            <a class="left-mnu-itm" href="">
-                <i class="fa fa-users fa-lg"></i> Users
-            </a>
+            
+            <!-- Users -->
+            <a class="left-mnu-itm" href=""><i class="fa fa-users fa-lg"></i>Users</a>
+            
+            <!-- Tickets -->
+            <a class="left-mnu-itm" href=""><i class="fa fa-ticket fa-lg"></i>Tickets</a>
+            
+            <!-- Camping -->
+            <a class="left-mnu-itm" href=""><i class="fa fa-bed fa-lg"></i>Camping</a>
+            
+            <!-- Lineup -->
+            <a class="left-mnu-itm" href=""><i class="fa fa-music fa-lg"></i>Lineup</a>
+            
+            <!-- Schedule -->
+            <a class="left-mnu-itm" href=""><i class="fa fa-clock-o fa-lg"></i>Festival Schedule</a>
+            
+            <!-- Voluteer -->
+            <a class="left-mnu-itm" href=""><i class="fa fa-smile-o fa-lg"></i>Volunteer</a>
+            
+            <!-- Store -->
+            <a class="left-mnu-itm" href=""><i class="fa fa-shopping-cart fa-lg"></i>Store</a>
+            
+            <!-- Homepage Slider -->
+            <a class="left-mnu-itm" href=""><i class="fa fa fa-picture-o fa-lg"></i>Homepage Slider</a>
+            
+            <!-- News -->
+            <a class="left-mnu-itm" href=""><i class="fa fa-newspaper-o fa-lg"></i>News</a>
+            
+            <!-- Donations -->
+            <a class="left-mnu-itm" href=""><i class="fa fa-heart fa-lg"></i>Donations</a>
+            
+            <!-- Email Subscriptions -->
+            <a class="left-mnu-itm" href="../email_subscription/index.php"><i class="fa fa fa-envelope-o fa-lg"></i>Email Subscribers</a>
+            
+            <!-- Contact -->
+            <a class="left-mnu-itm" href=""><i class="fa fa-phone fa-lg"></i>Contact</a>
+            
         </div>
     </div>
