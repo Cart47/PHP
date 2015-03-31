@@ -32,7 +32,7 @@ class Registration {
     public function registerLogin($username, $volunteer, $password)
     {
             $db = Database::getDB();
-            $query = "INSERT INTO  login (login_id, individual_id, username , password, role) VALUES ('null', '$volunteer', '$username', '$password', '1')";
+            $query = "INSERT INTO  login (login_id, individual_id, username , password, role_id) VALUES ('null', '$volunteer', '$username', '$password', '1')";
             $loggedUser = $db->exec($query);
             return $loggedUser;
     }

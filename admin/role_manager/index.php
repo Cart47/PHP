@@ -4,8 +4,13 @@ include_once('../../models/database.php');
 //including the Database call files for the Role Manager 
 include_once('../../models/role_manager/users.php');
 include_once('../../models/role_manager/role_manager.php');
-$users = Roles::getRoles();
 
+if(isset($_POST['delete_user'])){
+    $user_id = $_POST['delete_user'];
+    Roles::deleteUser($user_id);
+}
+
+$users = Roles::getRoles();
 //Breaks up the users based on their role ID 
 $individuals = array();
 $administrators = array();
@@ -22,7 +27,6 @@ foreach($users as $u){
     <h1>Role Manager</h1>
     <br/>
     <h2>Individuals</h2>
-    <form action="." method="post">
         <table>
             <thead>
                 <th>First Name</th>
@@ -30,22 +34,45 @@ foreach($users as $u){
                 <th>Username</th>
                 <th>Email</th>
                 <th>User Role</th>
+                <th>Edit User</th>
+                <th>Delete User</th>
             </thead>
             <?php 
-                foreach($individuals as $i){
-                echo '<tr><td>' .
-                            $i->getIndFName() 
-                    . '</td><td>' .
-                             $i->getIndLName()  
-                    . '</td><td>' .
-                             $i->getUsername() 
-                    . '</td><td>' .
-                              $i->getIndEmail()
-                    . '</td><td>Individual</td></tr>';
-            }
-            ?>   
+                foreach($individuals as $i){ ?>
+                <tr>
+                    <td>
+                        <?php echo $i->getIndFName() ?>
+                    </td>
+                    <td>
+                        <?php echo $i->getIndLName()  ?>
+                    </td>
+                    <td>
+                        <?php echo $i->getUsername() ?>
+                    </td>
+                    <td>
+                        <?php echo $i->getIndEmail() ?>
+                    </td>
+                    <td>
+                       Individual
+                    </td>
+                    <td>
+                        <form action="." method="post">
+                            <input type="hidden" name="email_id" value="<?php echo $i->getLogID() ?>" />
+                            <input type="hidden" name="action" value="edit" />
+                            <button type="submit" class="link-btn"><i class="fa fa-pencil fa-lg"></i></button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="." method="post">
+                                <input type="hidden" name="delete_user" value="<?php echo $i->getLogID() ?>" />
+                                <input type="hidden" name="action" value="delete" />
+                                <button type="submit" class="link-btn" onclick="confirm('Are you sure you would like to delete this member?');"><i class="fa fa-trash-o fa-lg"></i></button>
+                        </form>
+                    </td>
+                    </tr>
+                    </form>
+         <?php  } ?>   
         </table>      
-    </form>
     <?php if (!empty($administrators)){ ?>  
     <br/>
     <h2>Administrators</h2>
@@ -56,21 +83,28 @@ foreach($users as $u){
                 <th>Last Name</th>
                 <th>Username</th>
                 <th>Email</th>
-                <th>User Role</th>
+                <th>Administrative Role</th>
             </thead>
             <?php 
-                foreach($administrators as $a){
-                echo '<tr><td>' .
-                            $a->getIndFName() 
-                    . '</td><td>' .
-                             $a->getIndLName()  
-                    . '</td><td>' .
-                             $a->getUsername() 
-                    . '</td><td>' .
-                              $a->getIndEmail()
-                    . '</td><td>Individual</td></tr>';
-            }
-            ?>   
+                foreach($administrators as $a){ ?>
+                <tr>
+                    <td> 
+                        <?php echo $a->getIndFName() ?>
+                    </td>
+                    <td>
+                        <?php echo $a->getIndLName()  ?>
+                    </td>
+                    <td>
+                        <?php echo $a->getUsername() ?>
+                    </td>
+                    <td>
+                        <?php echo $a->getIndEmail() ?>
+                    </td>
+                    <td>
+                        <?php echo $a->getAdminPosition()  ?>    
+                    </td>
+                </tr>
+        <?php  } ?>   
         </table>      
     </form>
     <?php } if (!empty($artists)){ ?>  
@@ -95,7 +129,7 @@ foreach($users as $u){
                              $art->getUsername() 
                     . '</td><td>' .
                               $art->getIndEmail()
-                    . '</td><td>Individual</td></tr>';
+                    . '</td><td>Artist</td></tr>';
             }
             ?>   
         </table>      
@@ -122,7 +156,7 @@ foreach($users as $u){
                              $v->getUsername() 
                     . '</td><td>' .
                               $v->getIndEmail()
-                    . '</td><td>Individual</td></tr>';
+                    . '</td><td>Volunteer</td></tr>';
             }
             ?>   
         </table>      
