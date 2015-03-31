@@ -4,6 +4,11 @@ require ('../../models/database.php');
 require ('../../models/email_subscription/email_class.php');
 require ('../../models/email_subscription/email_db.php');
 
+
+// -------------------------------------------- //    
+// ---------- Displaying Subscribers ---------- //
+// -------------------------------------------- //  
+
 if (isset($_POST['action'])) {
     $action = $_POST['action'];
 } else if (isset($_GET['action'])) {
@@ -21,6 +26,11 @@ if ($action == 'email_list'){ //default view
     $pendingEmail = EmailDB::getEmailsByStatus($pending);
       
     include ('email_list.php');
+
+    
+// ------------------------------------------- //    
+// ---------- Inserting Subscribers ---------- //
+// ------------------------------------------- //  
     
 } elseif ($action == 'add'){ //If 'add a subscriber' button is clicked
     
@@ -43,6 +53,11 @@ if ($action == 'email_list'){ //default view
     $pendingEmail = EmailDB::getEmailsByStatus($pending);
     
     include ('email_list.php');
+
+    
+// ------------------------------------------ //    
+// ---------- Updating Subscribers ---------- //
+// ------------------------------------------ //  
     
 } elseif ($action == 'edit'){ //If edit button is clicked
     
@@ -68,6 +83,11 @@ if ($action == 'email_list'){ //default view
     
     include ('email_list.php');
 
+    
+// ------------------------------------------ //    
+// ---------- Deleting Subscribers ---------- //
+// ------------------------------------------ //  
+    
 } elseif ($action == 'delete'){ //If delete button is clicked
     
     $email_id = $_POST['email_id']; 

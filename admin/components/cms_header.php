@@ -21,10 +21,10 @@
     <div id="header-container">
 
 
-        <div id="citf">Chorus in the Forest</div>
+        <div id="citf"><a href="../Home/">Chorus in the Forest</a></div>
 
         <ul id="cms-top-nav">
-            <li><a href="."><i class="fa fa-home"></i>CMS Home</a>
+            <li><a href="."><i class="fa fa-home"></i>CMS</a>
             </li>
             <li><a href="../../Home/Index.php"><i class="fa fa-external-link"></i>Visit Site</a>
             </li>
