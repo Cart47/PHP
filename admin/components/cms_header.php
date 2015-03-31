@@ -46,7 +46,7 @@
         <div class="left-menu">
             
             <!-- Users -->
-            <a class="left-mnu-itm" href=""><i class="fa fa-users fa-lg"></i>Users</a>
+            <a class="left-mnu-itm" href="../role_manager/index.php"><i class="fa fa-users fa-lg"></i>Users</a>
             
             <!-- Tickets -->
             <a class="left-mnu-itm" href=""><i class="fa fa-ticket fa-lg"></i>Tickets</a>
