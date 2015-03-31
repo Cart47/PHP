@@ -72,7 +72,10 @@ h3 {
   text-decoration: underline; }
 
 .fa.fa-trash-o,
-.fa.fa-pencil {
+.fa.fa-pencil,
+.fa-arrow-circle-up,
+.fa-globe,
+.fa-times-circle {
   padding: 0px; }
 
 .clear {

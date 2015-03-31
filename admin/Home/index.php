@@ -15,7 +15,7 @@
         <!-- Buttons -->
         <form action="." method="post" id="insert_email">
             <input type="submit" name="" class="btn" value="Sample Button" />
-            <button type="submit" class="btn" name="add"><i class="fa fa-plus"></i>Button with Icon</button>
+            <button type="submit" class="btn" name="submit"><i class="fa fa-plus"></i>Button with Icon</button>
             <input type="submit" name="" class="link-btn" value="Sample Link Button" />
         </form>
 

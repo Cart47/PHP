@@ -1,8 +1,8 @@
 <?php
 
 require ('../../models/database.php');
-require ('../../models/news_class.php');
-require ('../../models/news_db.php');
+require ('../../models/news_feed/news_class.php');
+require ('../../models/news_feed/news_db.php');
 
 
 // ------------------------------------------- //    

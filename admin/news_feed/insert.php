@@ -22,7 +22,6 @@
     <!-- Internal News -->
     <form action="." method="post" id="internal">
 
-
         <input type="hidden" name="news_id" />
         <input type="hidden" name="type" value="0" />
         <input type="hidden" name="publish" value="0" />
@@ -64,8 +63,8 @@
         <br /><br />
 
         <input type="hidden" name="action" value="internal" />
-        <input type="submit" name="submit" value="Add" />
-        <a href="." value="">Cancel</a>
+        <input type="submit" name="submit" class="btn" value="Add New" />
+        <a href="." class="btn xtra-pad">Cancel</a>
 
 
     </form>
@@ -105,8 +104,8 @@
         <br /><br />
 
         <input type="hidden" name="action" value="external" />
-        <input type="submit" name="submit" value="Add" />
-        <a href="." value="">Cancel</a>
+        <input type="submit" name="submit" class="btn" value="Add New" />
+        <a href="." class="btn xtra-pad">Cancel</a>
 
 </form>
 
