@@ -1,3 +1,5 @@
+</div><!-- end main -->
+
 <div id="cms-footer">
     
     <div id="footer-content">

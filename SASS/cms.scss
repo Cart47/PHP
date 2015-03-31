@@ -293,6 +293,18 @@ label.label {
     
 }
 
+/* Insert News Form */
+#internal {
+    z-index: 1;
+    position: absolute;
+}
+
+#external {
+    z-index: 2;
+    position: absolute;
+}
+
+
 /**************************************/
 /*************** Footer ***************/
 /**************************************/
