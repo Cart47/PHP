@@ -9,11 +9,11 @@ $verified = null;
 if(isset($_POST['registrationSent'])){
     //Need to talk to Gen about using the newly created validation for Registration
     new Registration($_POST);
+    echo "<script type='text/javascript'>alert('You have Successfully Registered!);</script>";
     }
 
 if(isset($_POST['loginSent'])){
     $verified = new Login($_POST);
-    unset($_POST);
     }
 
 if(isset($_POST['subscribe'])){
@@ -47,7 +47,10 @@ if(isset($_POST['subscribe'])){
         <link rel="stylesheet" href="../css/modalStyle.css" type="text/css">
      </head>
      <body>
-         
+       <?php  if(isset($_POST['registrationSent'])){
+                    echo "<script type='text/javascript'>alert('You have Successfully Registered!);</script>";
+                } 
+        ?>
             <header>
                 <nav>
                     <?php include_once('../components/main_navigation.php'); ?>

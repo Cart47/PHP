@@ -1,10 +1,10 @@
 <?php
 
 class User {
-    private $logID, $adminID, $artistID, $volunteerID, $indID, $username, $role, $indFName, $indLName, $indEmail;
+    private $logID, $adminID, $artistID, $volunteerID, $indID, $username, $role, $indFName, $indLName, $indEmail, $adPosition;
     
     
-    public function __construct($logID, $adminID, $artistID, $volunteerID, $indID, $username, $role, $indFName, $indLName, $indEmail){
+    public function __construct($logID, $adminID, $artistID, $volunteerID, $indID, $username, $role, $indFName, $indLName, $indEmail, $adPosition){
         $this->logID = $logID;
         $this->adminID = $adminID;
         $this->artistID = $artistID;
@@ -14,11 +14,12 @@ class User {
         $this->role = $role;
         $this->indFName = $indFName;
         $this->indLName = $indLName;
-        $this->indEmail = $indEmail;   
+        $this->indEmail = $indEmail;
+         $this->adPosition = $adPosition; 
     }
     
     public function getLogID() {
-        $this->logID;
+        return $this->logID;
     }
     
     
@@ -56,6 +57,10 @@ class User {
     
      public function getIndEmail(){
         return $this->indEmail;
+    }
+    
+    public function getAdminPosition(){
+        return $this->adPosition;
     }
     
 

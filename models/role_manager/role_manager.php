@@ -5,9 +5,12 @@ class Roles {
     public static function getRoles()
     {
         $db = Database::getDB();
-        $query = "SELECT * FROM login JOIN individual ON login.individual_id=individual.individual_id";
+        $query = "SELECT * FROM login 
+                    JOIN individual 
+                        ON login.individual_id=individual.individual_id 
+                    LEFT JOIN admin 
+                        ON login.admin_id=admin.admin_id ORDER BY login_id";
         $result = $db->query($query);
-        $row = $result->fetch();
         $users = array();
         foreach ($result as $row) {
             $user = new User($row['login_id'],
@@ -19,7 +22,8 @@ class Roles {
                                  $row['role_id'],
                                  $row['ind_fname'],
                                  $row['ind_lname'],
-                                 $row['ind_email']
+                                 $row['ind_email'],
+                                $row['ad_position']
                               );
             $users[] = $user;
             
@@ -28,5 +32,17 @@ class Roles {
         return $users;
     }
     
+     public static function deleteUser($individual_id) {
+          
+        $db = Database::getDB();
+        
+        $query = "DELETE FROM login WHERE individual_id = '$individual_id';
+                  DELETE FROM individual WHERE individual_id = '$individual_id'";
+        
+        $row_count = $db->exec($query);
+        
+        return $row_count;
+        
+    }
 }
 ?>

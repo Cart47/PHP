@@ -7,23 +7,23 @@
 		<section class="popupBody">
 			<!-- Social Login -->
 			<div class="social_login">
-				<div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="false" data-scope="email">
+				<div>
 					<a href="#" class="social_box fb">
 						<span class="icon"><i class="fa fa-facebook"></i></span>
 						<span class="icon_title">Connect with Facebook</span>
 						
 					</a>
 
-					<a href="../views/cms.php" class="social_box twitter">
+					<a href="#" class="social_box twitter">
 						<span class="icon"><i class="fa fa-twitter"></i></span>
 						<span class="icon_title">Connect with Twitter</span>
 					</a>
 				</div>
-
+                
 				<div class="centeredText">
 					<span>Or use your Email address</span>
 				</div>
-
+        
 				<div class="action_btns">
 					<div class="one_half"><a href="#" id="login_form" class="btn">Login</a></div>
 					<div class="one_half last"><a href="#" id="register_form" class="btn">Sign up</a></div>

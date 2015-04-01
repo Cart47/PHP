@@ -4,7 +4,7 @@
 class Database {
 	
     private static $dsn = 'mysql:host=chorusintheforest.stem.arvixe.com;dbname=chorusintheforest';
-    //private static $dsn = 'mysql:host=localhost;dbname=chorusintheforest';
+    //zprivate static $dsn = 'mysql:host=localhost;dbname=chorusintheforest';
     private static $username = 'Gen';
     private static $password = 'password';
    //reference to db connection
