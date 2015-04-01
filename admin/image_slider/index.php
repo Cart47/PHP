@@ -1,8 +1,9 @@
 <?php
 
-require_once '../model/sliderClass.php';
-require_once '../model/images.php';
-require_once '../model/databaseClass.php';
+include ( '../components/cms_header.php');
+require_once '../../models/image_slider/sliderClass.php';
+require_once '../../models/image_slider/images.php';
+//require_once '../model/databaseClass.php';
 
 if (isset($_POST['action'])) {
     $action = $_POST['action'];
@@ -56,7 +57,7 @@ if ($action == 'delete') {
         
         include 'image_list.php';
         
-        $img_root = "imageSlider/slider/images/";       
+        $img_root = "PHP/img/images/";       
         $img_url =  $img_root . $file_name;
         $img_title = $_POST['img_title'];
         $img_link = $_POST['img_links'];

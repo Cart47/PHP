@@ -1,13 +1,13 @@
 <?php
-session_start();
-
-    require_once '../model/sliderClass.php';
-    require_once '../model/images.php';
-    require_once '../model/databaseClass.php';
+//session_start();
     
-    $page1 = "imageSlider/tickets/views/ticket_index.php";
-    $page2 = "imageSlider/store/views/shop_index.php";
-    $page3 = "#";
+    require_once '../../models/image_slider/sliderClass.php';
+    require_once '../../models/image_slider/images.php';
+    require_once '../../models/database.php';
+    
+    $page1 = "PHP/tickets/ticket_index.php";
+    $page2 = "PHP/store/shop_index.php";
+    $page3 = "PHP/browse_artist/index.php";
     $page4 = "imageSlider/lineup/views/artists.php";
     
     $name1 = "Tickets";
@@ -23,7 +23,7 @@ session_start();
 ?>
 <head>
     <title>Slider Image List</title>
-    <link rel="stylesheet" type="text/css" href="admin_styles.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/slider_admin_styles.css" />
 </head>
 <h1>Image slider list</h1>
     <div >
