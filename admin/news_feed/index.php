@@ -5,9 +5,9 @@ require ('../../models/news_feed/news_class.php');
 require ('../../models/news_feed/news_db.php');
 
 
-// ------------------------------------------- //    
-// ---------- Display News Articles ---------- //
-// ------------------------------------------- //  
+// -------------------------------------- //    
+// ---------- Display Articles ---------- //
+// -------------------------------------- //  
 
 if (isset($_POST['action'])) {
     $action = $_POST['action'];
@@ -30,9 +30,9 @@ if ($action == 'newsList'){ //default view
     include ('news_list.php');
   
     
-// ------------------------------------ //    
-// ---------- Inserting News ---------- //
-// ------------------------------------ // 
+// ---------------------------------------- //    
+// ---------- Inserting Articles ---------- //
+// ---------------------------------------- // 
     
 } elseif ($action == 'add'){ //if add news article button is clicked
  
@@ -55,7 +55,7 @@ if ($action == 'newsList'){ //default view
     $news = new NewsClass($title, $date, $author, null, $other_url, $feature_img, $banner_img, $description, $article, $type, $publish);
     $addNews = NewsDB::insertNews($news);
     
-    echo 'internal woo!';
+    include ('news_list.php');
     
 } elseif ($action == 'external'){ //insert an external news article
     
@@ -72,7 +72,7 @@ if ($action == 'newsList'){ //default view
     $news = new NewsClass($title, $date, $author, $story_url, null, $feature_img, null, $description, null, $type, $publish);
     $addNews = NewsDB::insertNews($news);
     
-    echo 'external woo!';
+    include ('news_list.php');
     
     
 // ------------------------------------------------------ //    
@@ -110,9 +110,9 @@ if ($action == 'newsList'){ //default view
     include ('news_list.php');
     
     
-// -------------------------------------------- //      
-// ---------- Updating News Articles ---------- //
-// -------------------------------------------- //  
+// --------------------------------------- //      
+// ---------- Updating Articles ---------- //
+// --------------------------------------- //  
     
 } elseif ($action == 'edit') { //if the edit button is clicked
     
@@ -156,20 +156,14 @@ if ($action == 'newsList'){ //default view
     include ('news_list.php');
     
     
-// -------------------------------------------- //  
-// ---------- Deleting News Articles ---------- //
-// -------------------------------------------- //  
-    
-} elseif ($action == 'delete') { //if delete button is clicked beside article
-    
-    $news_id = $_POST['news_id'];
-    $deleteSelected = NewsDB::getNewsByID($news_id);
-    
-    include ('confirm.php');
+// --------------------------------------- //  
+// ---------- Deleting Articles ---------- //
+// --------------------------------------- //  
     
 } elseif ($action == 'yesDelete'){ //if user confirms yes to delete article
     
     $news_id = $_POST['news_id']; 
+    var_dump($news_id);
     NewsDB::deleteNews($news_id); 
     
     include ('news_list.php');
