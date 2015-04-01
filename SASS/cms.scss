@@ -1,8 +1,8 @@
 @import "_variables.scss";
 
-/***************************************/
-/*************** General ***************/
-/***************************************/
+/* --------------------------------------- */
+/* --------------- General --------------- */
+/* --------------------------------------- */
 
 html { position: relative; min-height: 100%; }
 body { font-family: $font1; -webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px; font-size: 1em; }
@@ -46,19 +46,17 @@ h3 {
     margin: 20px 0px;
     text-decoration: none;
     transition: all 0.3s;
-}
-
-.btn:hover {   
-    background: #000;
+    &:hover {   
+        background: #000;
+    }
 }
 
 /* Only use with href button */
 .xtra-pad {
     padding: 10px 20px 7px 20px;
-}
-
-.xtra-pad:hover {
-    color: #fff;
+    &:hover {
+        color: #fff;
+    }
 }
 
 .link-btn {
@@ -69,18 +67,17 @@ h3 {
     cursor: pointer;
     text-align: center;
     transition: all 0.3s;
-}
-
-.link-btn:hover {
-    color: #444;
-    text-decoration: underline;
+    &:hover {
+        color: #444;
+        text-decoration: underline;
+    }
 }
 
 .fa.fa-trash-o,
 .fa.fa-pencil,
-.fa-arrow-circle-up,
-.fa-globe,
-.fa-times-circle {
+.fa.fa-arrow-circle-up,
+.fa.fa-globe,
+.fa.fa-times-circle {
     padding: 0px;
 }
 
@@ -152,9 +149,75 @@ label.label {
     font-size: 1.25em;   
 }
 
-/**************************************/
-/*************** Header ***************/
-/**************************************/
+
+/* ------------------------------------------- */
+/* --------------- Modal Popup --------------- */
+/* ------------------------------------------- */
+
+#lean_overlay {
+    position: fixed;
+    z-index:100;
+    top: 0px;
+    left: 0px;
+    height:100%;
+    width:100%;
+    background: #000;
+    display: none;
+}
+
+.popupContainer{
+	position:absolute;
+	width:330px;
+	height: auto;
+	left:45%;
+	top:80px;
+	background: #FFF;
+}
+
+.one_half {
+    width:50%; 
+    display: block; 
+    float:left;
+}
+
+.one_half.last {
+    width:45%;
+    margin-left:5%;
+}
+
+/* Popup Styles*/
+.popupHeader {
+    font-size:16px; 
+    text-transform:uppercase;
+}
+
+.popupHeader {
+    background:$Color2;
+    position:relative; 
+    padding:10px 20px 8px 20px;
+    border-bottom:1px solid #000; 
+    font-weight:bold; 
+    color: #fff
+}
+
+.popupHeader .modal_close {
+    position: absolute; 
+    right: 0; 
+    top:0; 
+    padding:10px 15px; 
+    background:$Color2; 
+    cursor: pointer; 
+    color:#fff; 
+    font-size:16px; 
+    border-left:1px solid #fff;}
+
+.popupBody {
+    padding:20px 20px 0px 20px;
+}
+
+/* -------------------------------------- */
+/* --------------- Header --------------- */
+/* -------------------------------------- */
 
 #header-container {
 	background-color: #000;
@@ -211,9 +274,9 @@ label.label {
     color: $Purple;
 }
 
-/*****************************************/
-/*************** Left Menu ***************/
-/*****************************************/
+/* ----------------------------------------- */
+/* --------------- Left Menu --------------- */
+/* ----------------------------------------- */
 
 #logo {
 	float: left;
@@ -283,9 +346,9 @@ label.label {
    padding-right: 5px;
 } 
 
-/*****************************************/
-/*************** Main Body ***************/
-/*****************************************/
+/* -------------------------------------------- */
+/* --------------- Content Body --------------- */
+/* -------------------------------------------- */
 
 #main {
     margin-top: 30px;
@@ -310,9 +373,9 @@ label.label {
 }
 
 
-/**************************************/
-/*************** Footer ***************/
-/**************************************/
+/* -------------------------------------- */
+/* --------------- Footer --------------- */
+/* -------------------------------------- */
 
 #cms-footer {
 	clear: both;

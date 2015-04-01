@@ -3,6 +3,7 @@
 <html>
 
 <head>
+    
     <meta charset="utf-8" />
     <title>CITF Admin</title>
     
@@ -15,6 +16,7 @@
     <!-- Javascript -->
     <script src="../../js/jquery-2.1.3.js"></script>
     <script src="../../js/news_forms.js"></script>
+    
 </head>
 
 <body>
