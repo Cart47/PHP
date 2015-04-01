@@ -1,6 +1,7 @@
 <?php
 include ( '../components/cms_header.php');
-session_start();
+//session_start();
+//GETTING SESSION START ERROR BUT WHEN REMOVED DON"T HAVE ACCESS TO MY SESSION VARIABLES
 
     $links = $_SESSION['links'];
     $img_root = "http://".$_SERVER['HTTP_HOST'] . "/";       
