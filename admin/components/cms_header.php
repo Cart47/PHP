@@ -73,7 +73,7 @@
             <a class="left-mnu-itm" href=""><i class="fa fa-shopping-cart fa-lg"></i>Store</a>
             
             <!-- Homepage Slider -->
-            <a class="left-mnu-itm" href=""><i class="fa fa fa-picture-o fa-lg"></i>Homepage Slider</a>
+            <a class="left-mnu-itm" href="../image_slider/index.php"><i class="fa fa fa-picture-o fa-lg"></i>Homepage Slider</a>
             
             <!-- News -->
             <a class="left-mnu-itm" href="../news_feed/"><i class="fa fa-newspaper-o fa-lg"></i>News</a>

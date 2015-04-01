@@ -1,4 +1,5 @@
 <?php
+include ( '../components/cms_header.php');
 session_start();
 
     $links = $_SESSION['links'];
