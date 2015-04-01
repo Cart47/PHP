@@ -1,9 +1,8 @@
 <?php
 
-include ( '../components/cms_header.php');
+include ('../../models/database.php');
 require_once '../../models/image_slider/sliderClass.php';
 require_once '../../models/image_slider/images.php';
-//require_once '../model/databaseClass.php';
 
 if (isset($_POST['action'])) {
     $action = $_POST['action'];
@@ -62,7 +61,7 @@ if ($action == 'delete') {
         $img_title = $_POST['img_title'];
         $img_link = $_POST['img_links'];
         
-        $target_path = "../images/";
+        $target_path = "../../img/images/";
         $target_path = $target_path . $file_name;
         
         //move from temp to target
