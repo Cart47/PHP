@@ -23,120 +23,6 @@ foreach($users as $u){
     if ($u->getRole() == 4) {$artists[] = $u;} 
 }
 ?>
-<<<<<<< HEAD
-
-<h1>Role Manager</h1>
-<br/>
-<h2>Individuals</h2>
-<form action="." method="post">
-    <table>
-        <thead>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Username</th>
-            <th>Email</th>
-            <th>User Role</th>
-        </thead>
-        <?php 
-            foreach($individuals as $i){
-            echo '<tr><td>' .
-                        $i->getIndFName() 
-                . '</td><td>' .
-                         $i->getIndLName()  
-                . '</td><td>' .
-                         $i->getUsername() 
-                . '</td><td>' .
-                          $i->getIndEmail()
-                . '</td><td>Individual</td></tr>';
-        }
-        ?>   
-    </table>      
-</form>
-<?php if (!empty($administrators)){ ?>  
-<br/>
-<h2>Administrators</h2>
-<form action="." method="post">
-    <table>
-        <thead>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Username</th>
-            <th>Email</th>
-            <th>User Role</th>
-        </thead>
-        <?php 
-            foreach($administrators as $a){
-            echo '<tr><td>' .
-                        $a->getIndFName() 
-                . '</td><td>' .
-                         $a->getIndLName()  
-                . '</td><td>' .
-                         $a->getUsername() 
-                . '</td><td>' .
-                          $a->getIndEmail()
-                . '</td><td>Individual</td></tr>';
-        }
-        ?>   
-    </table>      
-</form>
-<?php } if (!empty($artists)){ ?>  
-<br/>
-<h2>Artists</h2>
-<form action="." method="post">
-    <table>
-        <thead>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Username</th>
-            <th>Email</th>
-            <th>User Role</th>
-        </thead>
-        <?php 
-            foreach($artists as $art){
-            echo '<tr><td>' .
-                        $art->getIndFName() 
-                . '</td><td>' .
-                         $art->getIndLName()  
-                . '</td><td>' .
-                         $art->getUsername() 
-                . '</td><td>' .
-                          $art->getIndEmail()
-                . '</td><td>Individual</td></tr>';
-        }
-        ?>   
-    </table>      
-</form>
-<?php } if (!empty($volunteers)){ ?>        
-<br/>
-<h2>Volunteers</h2>
-<form action="." method="post">
-    <table>
-        <thead>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Username</th>
-            <th>Email</th>
-            <th>User Role</th>
-        </thead>
-        <?php 
-            foreach($volunteers as $v){
-            echo '<tr><td>' .
-                        $v->getIndFName() 
-                . '</td><td>' .
-                         $v->getIndLName()  
-                . '</td><td>' .
-                         $v->getUsername() 
-                . '</td><td>' .
-                          $v->getIndEmail()
-                . '</td><td>Individual</td></tr>';
-        }
-        ?>   
-    </table>      
-</form>
-<?php } ?>
-
-=======
-<div id="main">
     <h1>Role Manager</h1>
     <br/>
     <h2>Individuals</h2>
@@ -275,6 +161,6 @@ foreach($users as $u){
         </table>      
     </form>
     <?php } ?>
-</div>
->>>>>>> origin/master
+
+
 <?php include ( '../components/cms_footer.php'); ?>
