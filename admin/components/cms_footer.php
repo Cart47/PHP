@@ -17,4 +17,4 @@
 
 <!--   JS Scripts can go here -->
 <script src="../../js/jquery.leanModal.min.js" type="text/javascript"></script>
-<script src="../../js/deleteConfirm.js" type="text/javascript"></script>
+<script src="../../js/delete_news.js" type="text/javascript"></script>
