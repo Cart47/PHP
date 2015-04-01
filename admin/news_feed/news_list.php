@@ -12,7 +12,12 @@
 ?>
 
 <section id="modalPopUp">
-    <?php include_once('delete.php'); ?>
+    <?php 
+
+    include_once('delete.php'); 
+    include_once('publish.php'); 
+    
+    ?>
 </section>
 
 <h1>CITF News</h1>
@@ -36,7 +41,7 @@
             <td>' . $unpublished->getAuthor() . '</td>
             <td>' . $unpublished->getDate() . '</td>           
             <td>
-                <form action="." method="post" id="editArticle">                            
+                <form action="." method="post" class="editArticle">                            
                     <input type="hidden" name="news_id" value="' . $unpublished->getNewsID() . '" />
                     <input type="hidden" name="action" value="edit" />
                     <button type="submit" class="link-btn"><i class="fa fa-pencil fa-lg"></i></button>   
@@ -46,14 +51,14 @@
                 <form action="." method="post" class="deleteUnpublished">                            
                     <input type="hidden" name="news_id" id="unpub_news_id" value="' . $unpublished->getNewsID() . '" />
                     <input type="hidden" name="action" value="delete" />
-                    <button type="submit" href="#modal" class="link-btn modal_trigger"><i class="fa fa-trash-o fa-lg"></i></button>                
+                    <button type="submit" href="#modal_del" class="link-btn modal_trigger"><i class="fa fa-trash-o fa-lg"></i></button>                
                 </form>
             </td>
             <td>
-                <form action="." method="post" id="publishArticle">                            
-                    <input type="hidden" name="news_id" value="' . $unpublished->getNewsID() . '" />
+                <form action="." method="post" class="publishArticle">                            
+                    <input type="hidden" name="news_id" id="publish_news_id" value="' . $unpublished->getNewsID() . '" />
                     <input type="hidden" name="action" value="publish" />
-                    <button type="submit" class="link-btn"><i class="fa fa-globe fa-lg"></i></button>                      
+                    <button type="submit" href="#modal_pub" class="link-btn modal_trigger"><i class="fa fa-globe fa-lg"></i></button>                      
                 </form>
             </td>
         </tr>';             
@@ -82,7 +87,7 @@
             <td>' . $published->getAuthor() . '</td>
             <td>' . $published->getDate() . '</td>
             <td>
-                <form action="." method="post" id="editArticle">                            
+                <form action="." method="post" class="editArticle">                            
                     <input type="hidden" name="news_id" value="' . $published->getNewsID() . '" />
                     <input type="hidden" name="action" value="edit" />
                     <button type="submit" class="link-btn"><i class="fa fa-pencil fa-lg"></i></button>                            
@@ -92,11 +97,11 @@
                 <form action="." method="post" class="deletePublished">                            
                     <input type="hidden" name="news_id" id="pub_news_id" value="' . $published->getNewsID() . '" />
                     <input type="hidden" name="action" value="delete" />
-                    <button type="submit" href="#modal" class="link-btn modal_trigger"><i class="fa fa-trash-o fa-lg"></i></button>     
+                    <button type="submit" href="#modal" class="link-btn modal_trigger"><i class="fa fa-trash-o fa-lg"></i></button>    
                 </form>
             </td>
             <td>
-                <form action="." method="post" id="unpublishArticle">                            
+                <form action="." method="post" class="unpublishArticle">                            
                     <input type="hidden" name="news_id" value="' . $unpublished->getNewsID() . '" />
                     <input type="hidden" name="action" value="unpublish" />
                     <button type="submit" class="link-btn"><i class="fa fa-times-circle fa-lg"></i></button>                      

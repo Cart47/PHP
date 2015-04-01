@@ -79,18 +79,11 @@ if ($action == 'newsList'){ //default view
 // ---------- Publishing and Unpublishing News ---------- //
 // ------------------------------------------------------ //   
     
-} elseif ($action == 'publish') { //if publish button is clicked beside article
-    
-    $news_id = $_POST['news_id'];
-    $publishSelected = NewsDB::getNewsByID($news_id);
-    
-    include ('confirm.php');
-    
-} elseif ($action == 'yesPublish'){ //if user confirms yes to publish article
+} elseif ($action == 'publish'){ //if user confirms yes to publish article
    
     $news_id = $_POST['news_id']; 
-    $publish = 1;
-    NewsDB::publishNews($news_id, $publish);
+    //$publish = $_POST['publish'];
+    NewsDB::publishNews($news_id);
     
     include ('news_list.php');
     
@@ -160,11 +153,12 @@ if ($action == 'newsList'){ //default view
 // ---------- Deleting Articles ---------- //
 // --------------------------------------- //  
     
-} elseif ($action == 'yesDelete'){ //if user confirms yes to delete article
+} elseif ($action == 'delete'){ //if user confirms yes to delete article
     
     $news_id = $_POST['news_id']; 
-    var_dump($news_id);
     NewsDB::deleteNews($news_id); 
+    
+    var_dump($news_id);
     
     include ('news_list.php');
     

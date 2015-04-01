@@ -1,4 +1,4 @@
-<div id="modal" class="popupContainer" style="display:none;">
+<div id="modal_del" class="popupContainer" style="display:none;">
     
     <header class="popupHeader">
         
@@ -12,8 +12,8 @@
 
         <form action="." method="post" id="delete_news">       
             <input type="hidden" name="news_id" id="modal_news_id" value="" />
-            <input type="hidden" name="action" value="yesDelete" />
-            <input type="submit" class="btn" name="yes" value="Yes" id="yes" />
+            <input type="hidden" name="action" value="delete" />
+            <input type="submit" class="btn yes1" name="yes" value="Yes" />
             <a href="." class="btn xtra-pad">No</a>     
         </form>
 
