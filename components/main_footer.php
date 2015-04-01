@@ -117,7 +117,6 @@
 <!--   JS Scripts can go here -->
 <script src="../js/jquery.leanModal.min.js" type="text/javascript"></script>
 <script src="../js/modalTrigger.js" type="text/javascript"></script>
-<script src="../js/modalTrigger.js" type="text/javascript"></script>
 
 </body>
 </html>

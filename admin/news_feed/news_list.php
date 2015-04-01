@@ -11,11 +11,15 @@
 
 ?>
 
+<section id="modalPopUp">
+    <?php include_once('delete.php'); ?>
+</section>
+
 <h1>CITF News</h1>
 
 <h3>Unpublished Articles</h3>
 
-<table>
+<table id="form_table">
 
     <th>Title</th>
     <th>Author</th>
@@ -30,7 +34,7 @@
        '<tr>
             <td>' . $unpublished->getTitle() . '</td>
             <td>' . $unpublished->getAuthor() . '</td>
-            <td>' . $unpublished->getDate() . '</td>
+            <td>' . $unpublished->getDate() . '</td>           
             <td>
                 <form action="." method="post" id="editArticle">                            
                     <input type="hidden" name="news_id" value="' . $unpublished->getNewsID() . '" />
@@ -39,10 +43,10 @@
                 </form>
             </td>
             <td>
-                <form action="." method="post" id="deleteArticle">                            
-                    <input type="hidden" name="news_id" value="' . $unpublished->getNewsID() . '" />
+                <form action="." method="post" class="deleteUnpublished">                            
+                    <input type="hidden" name="news_id" id="unpub_news_id" value="' . $unpublished->getNewsID() . '" />
                     <input type="hidden" name="action" value="delete" />
-                    <button type="submit" class="link-btn"><i class="fa fa-trash-o fa-lg"></i></button>                      
+                    <button type="submit" href="#modal" class="link-btn modal_trigger"><i class="fa fa-trash-o fa-lg"></i></button>                
                 </form>
             </td>
             <td>
@@ -85,10 +89,10 @@
                 </form>
             </td>
             <td>
-                <form action="." method="post" id="deleteArticle">                            
-                    <input type="hidden" name="news_id" value="' . $published->getNewsID() . '" />
+                <form action="." method="post" class="deletePublished">                            
+                    <input type="hidden" name="news_id" id="pub_news_id" value="' . $published->getNewsID() . '" />
                     <input type="hidden" name="action" value="delete" />
-                    <button type="submit" class="link-btn"><i class="fa fa-trash-o fa-lg"></i></button>                               
+                    <button type="submit" href="#modal" class="link-btn modal_trigger"><i class="fa fa-trash-o fa-lg"></i></button>     
                 </form>
             </td>
             <td>
