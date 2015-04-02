@@ -32,7 +32,7 @@
             </li>
         </ul>
 
-        <a id="signout" href="">Sign Out</a>
+        <a id="signout" href="../../components/logout.php">Sign Out</a>
 
         <div id="user">
             <p>Welcome,
