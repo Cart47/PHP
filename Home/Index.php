@@ -5,17 +5,15 @@ if(!isset($_SESSION)) { session_start();}
 
 ?>
 
-<main>
     
     <div id="headMain">
-        
+        <?php include_once("../image_slider/slider.php"); ?>
         <?php include_once("../components/main_topContent.php"); ?>
         
     </div>
 
     <?php include_once("../components/main_content.php"); ?>
     
-</main>
             
 <?php include("../components/main_footer.php");
 

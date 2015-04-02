@@ -38,7 +38,6 @@ if(isset($_POST['subscribe'])){
         <script src="../js/jquery-2.1.3.js" type="text/javascript"></script>
         <script src="../js/jquery-ui.min.js" type="text/javascript"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js" type="text/javascript"></script>
-        <script src="../js/jquery-2.1.3.js"></script>
         <script src="../js/live_search.js"></script>
 
         <!-- Need to revisit to add in php that determines the associated styles needed and sources them out -->
@@ -66,6 +65,6 @@ if(isset($_POST['subscribe'])){
              
 
             <section id="content">
-
-            <main>
+    
+                <main>
 

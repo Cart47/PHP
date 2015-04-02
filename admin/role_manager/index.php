@@ -23,7 +23,6 @@ foreach($users as $u){
     if ($u->getRole() == 4) {$artists[] = $u;} 
 }
 ?>
-<div id="main">
     <h1>Role Manager</h1>
     <br/>
     <h2>Individuals</h2>
@@ -162,5 +161,6 @@ foreach($users as $u){
         </table>      
     </form>
     <?php } ?>
-</div>
+
+
 <?php include ( '../components/cms_footer.php'); ?>
