@@ -32,6 +32,28 @@ class Roles {
         return $users;
     }
     
+     public static function getUserRoles($indID)
+    {
+        $db = Database::getDB();
+        $query = "SELECT * FROM login l JOIN individual i ON l.individual_id = i.individual_id WHERE i.individual_id = '$indID'";
+        $result = $db->query($query);
+        $user = $result->fetch();
+        $userInfo = new User($user['login_id'],
+                             $user['admin_id'],
+                             $user['artist_id'],
+                             $user['volunteer_id'],
+                             $user['individual_id'],
+                             $user['username'],
+                             $user['role_id'],
+                             $user['ind_fname'],
+                             $user['ind_lname'],
+                             $user['ind_email'],
+                              null);
+        
+        return $userInfo;
+    }
+    
+    
      public static function deleteUser($individual_id) {
           
         $db = Database::getDB();
