@@ -15,7 +15,7 @@ class User {
         $this->indFName = $indFName;
         $this->indLName = $indLName;
         $this->indEmail = $indEmail;
-         $this->adPosition = $adPosition; 
+        $this->adPosition = $adPosition; 
     }
     
     public function getLogID() {

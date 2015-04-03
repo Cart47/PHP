@@ -55,15 +55,15 @@ foreach($users as $u){
                        Individual
                     </td>
                     <td>
-                        <form action="." method="post">
-                            <input type="hidden" name="email_id" value="<?php echo $i->getLogID() ?>" />
+                        <form action="./edit_user.php" method="post">
+                            <input type="hidden" name="edit_user" value="<?php echo $i->getindID() ?>" />
                             <input type="hidden" name="action" value="edit" />
                             <button type="submit" class="link-btn"><i class="fa fa-pencil fa-lg"></i></button>
                         </form>
                     </td>
                     <td>
                         <form action="." method="post">
-                                <input type="hidden" name="delete_user" value="<?php echo $i->getLogID() ?>" />
+                                <input type="hidden" name="delete_user" value="<?php echo $i->getindID() ?>" />
                                 <input type="hidden" name="action" value="delete" />
                                 <button type="submit" class="link-btn" onclick="confirm('Are you sure you would like to delete this member?');"><i class="fa fa-trash-o fa-lg"></i></button>
                         </form>
