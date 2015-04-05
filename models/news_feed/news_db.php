@@ -50,17 +50,16 @@ class NewsDB {
         
     }
     
-    public static function publishNews($news_id) {
+    public static function publishNews($publish, $news_id) {
           
         $db = Database::getDB();
         
         $query = 'UPDATE news
-                  SET publish = 1
+                  SET publish = ' . $publish . '
                   WHERE news_id = :news_id';
         
         $stm = $db->prepare($query);
         $stm->bindParam(':news_id', $news_id, PDO::PARAM_INT);
-        //$stm->bindParam(':publish', $publish, PDO::PARAM_INT);
         
         $row_count = $stm->execute();
         return $row_count;

@@ -79,11 +79,20 @@ if ($action == 'newsList'){ //default view
 // ---------- Publishing and Unpublishing News ---------- //
 // ------------------------------------------------------ //   
     
-} elseif ($action == 'publish'){ //if user confirms yes to publish article
+} elseif ($action == 'publish') { //if publish button is clicked beside article
+    
+    $news_id = $_POST['news_id'];
+    $publishSelected = NewsDB::getNewsByID($news_id);
+    
+    //var_dump($publishSelected);
+    include ('publish.php');
+    
+} elseif ($action == 'yesPublish'){ //if user confirms yes to publish article
    
-    $news_id = $_POST['news_id']; 
-    //$publish = $_POST['publish'];
-    NewsDB::publishNews($news_id);
+    //var_dump($_POST);
+    $news_id = $_POST['news_id'];
+    $published = 1;
+    NewsDB::publishNews($published, $news_id);
     
     include ('news_list.php');
     
@@ -92,13 +101,15 @@ if ($action == 'newsList'){ //default view
     $news_id = $_POST['news_id'];
     $unpublishSelected = NewsDB::getNewsByID($news_id);
     
-    include ('confirm.php');
+    //var_dump($unpublishSelected);
+    include ('unpublish.php');
     
-} elseif ($action == 'yesUnpublish'){ //if user confirms yes to unpublish article
+} elseif ($action == 'unpub'){ //if user confirms yes to unpublish article
     
+    //var_dump($_POST);
+    $unpublished = 0;
     $news_id = $_POST['news_id']; 
-    $publish = 0;
-    NewsDB::publishNews($news_id, $publish);
+    NewsDB::publishNews($unpublished, $news_id);
     
     include ('news_list.php');
     

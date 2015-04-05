@@ -45,7 +45,7 @@ $(".publishArticle").each(function(){
     
     $id = $(this).find('#publish_news_id').attr('value');
 
-    //console.log('unpubbed: ' + $id);
+    console.log('unpubbed: ' + $id);
     
     $(".yes2").click(function(){
 
