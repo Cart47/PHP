@@ -50,7 +50,7 @@ if ($action == 'newsList'){ //default view
     
     $news_id = $_POST['news_id'];
     $title = $_POST['title'];
-    $date = $_POST['date'];
+    $date_created = $_POST['date_created'];
     $author = $_POST['author'];
     $other_url = $_POST['other_url']; 
     $feature_img = $_POST['feature_img'];
@@ -60,7 +60,7 @@ if ($action == 'newsList'){ //default view
     $type = $_POST['type'];
     $publish = $_POST['publish'];
     
-    $news = new NewsClass($title, $date, $author, null, $other_url, $feature_img, $banner_img, $description, $article, $type, $publish);
+    $news = new NewsClass($title, $date_created, null, $author, null, $other_url, $feature_img, $banner_img, $description, $article, $type, $publish);
     $addNews = NewsDB::insertNews($news);
     
     getNewsList();
@@ -71,7 +71,7 @@ if ($action == 'newsList'){ //default view
     
     $news_id = $_POST['news_id'];
     $title = $_POST['title'];
-    $date = $_POST['date'];
+    $date_created = $_POST['date_created'];
     $author = $_POST['author'];
     $story_url = $_POST['story_url']; 
     $feature_img = $_POST['feature_img'];
@@ -79,7 +79,7 @@ if ($action == 'newsList'){ //default view
     $type = $_POST['type'];
     $publish = $_POST['publish'];
     
-    $news = new NewsClass($title, $date, $author, $story_url, null, $feature_img, null, $description, null, $type, $publish);
+    $news = new NewsClass($title, $date_created, null, $author, $story_url, null, $feature_img, null, $description, null, $type, $publish);
     $addNews = NewsDB::insertNews($news);
     
     getNewsList();
@@ -96,15 +96,15 @@ if ($action == 'newsList'){ //default view
     $news_id = $_POST['news_id'];
     $publishSelected = NewsDB::getNewsByID($news_id);
     
-    //var_dump($publishSelected);
     include ('publish.php');
     
 } elseif ($action == 'yesPublish'){ //if user confirms yes to publish article
-   
-    //var_dump($_POST);
-    $news_id = $_POST['news_id'];
+
+    $pubdate = $_POST['date_published'];
     $published = 1;
-    NewsDB::publishNews($published, $news_id);
+    $news_id = $_POST['news_id'];
+    
+    NewsDB::publishNews($news_id, $pubdate, $published);
     
     getNewsList();
     
@@ -115,15 +115,15 @@ if ($action == 'newsList'){ //default view
     $news_id = $_POST['news_id'];
     $unpublishSelected = NewsDB::getNewsByID($news_id);
     
-    //var_dump($unpublishSelected);
     include ('unpublish.php');
     
-} elseif ($action == 'unpub'){ //if user confirms yes to unpublish article
+} elseif ($action == 'yesUnpublish'){ //if user confirms yes to unpublish article
     
-    //var_dump($_POST);
+    $unpubdate = $_POST['date_published'];
     $unpublished = 0;
-    $news_id = $_POST['news_id']; 
-    NewsDB::publishNews($unpublished, $news_id);
+    $news_id = $_POST['news_id'];
+    
+    NewsDB::publishNews($news_id, $unpubdate, $unpublished);
     
     getNewsList();
     
@@ -145,7 +145,7 @@ if ($action == 'newsList'){ //default view
     
     $news_id = $_POST['news_id'];
     $title = $_POST['title'];
-    $date = $_POST['date'];
+    $date_created = $_POST['date_created'];
     $author = $_POST['author'];
     $other_url = $_POST['other_url']; 
     $feature_img = $_POST['feature_img'];
@@ -155,7 +155,7 @@ if ($action == 'newsList'){ //default view
     $type = $_POST['type'];
     $publish = $_POST['publish'];
     
-    NewsDB::updateNews($news_id, $title, $date, $author, null, $other_url, $feature_img, $banner_img, $description, $article, $type, $publish);
+    NewsDB::updateNews($news_id, $title, $date_created, $author, null, $other_url, $feature_img, $banner_img, $description, $article, $type, $publish);
     
     getNewsList();
     
@@ -185,6 +185,13 @@ if ($action == 'newsList'){ //default view
 // --------------------------------------- //  
     
 } elseif ($action == 'delete'){ //if user confirms yes to delete article
+    
+    $news_id = $_POST['news_id']; 
+    $selected = NewsDB::getNewsByID($news_id);
+    
+    include ('delete.php');
+    
+} elseif ($action == 'yesDelete'){
     
     $news_id = $_POST['news_id']; 
     NewsDB::deleteNews($news_id); 

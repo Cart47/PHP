@@ -1,22 +1,25 @@
-<div id="modal_del" class="popupContainer" style="display:none;">
-    
-    <header class="popupHeader">
-        
-        <h3>Please Confirm</h3>
-        
-    </header>
+<?php 
 
-    <section class="popupBody">
+    include ('../../config.php');
+    include ('../components/cms_header.php'); 
 
-        <h3>Permenantly delete this article?</h3>
+    //Forces a redirect through the index
+    if(!isset($selected['news_id'])){
+       header('Location: ../news_feed'); 
 
-        <form action="." method="post" id="delete_news">       
-            <input type="hidden" name="news_id" id="modal_news_id" value="" />
-            <input type="hidden" name="action" value="delete" />
-            <input type="submit" class="btn yes1" name="yes" value="Yes" />
-            <a href="." class="btn xtra-pad">No</a>     
-        </form>
+    }
 
-    </section>
-    
-</div>
+?>
+
+<h2>Are you sure you want to delete the article, <em><?php echo $selected['title']; ?></em></h2>
+
+<form action="." method="post" id="delete_news">
+
+    <input type="hidden" name="news_id" value="<?php echo $selected['news_id']; ?>" />
+    <input type="hidden" name="action" class="btn" value="yesDelete" />
+    <input type="submit" name="yes" class="btn" value="Yes" />
+    <a href="." class="btn xtra-pad">No</a>
+
+</form>
+
+ <?php include ('../components/cms_footer.php'); ?>

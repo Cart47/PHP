@@ -16,7 +16,8 @@ class NewsDB {
         $articles = array();
         foreach ($result as $row) {
             $article = new NewsClass($row['title'],
-                                     $row['date'],
+                                     $row['date_created'],
+                                     $row['date_published'],
                                      $row['author'],
                                      $row['story_url'],
                                      $row['other_url'],
@@ -50,12 +51,12 @@ class NewsDB {
         
     }
     
-    public static function publishNews($publish, $news_id) {
+    public static function publishNews($news_id, $pubdate, $publish) {
           
         $db = Database::getDB();
         
         $query = 'UPDATE news
-                  SET publish = ' . $publish . '
+                  SET date_published = "' . $pubdate . '", publish = "' . $publish . '"
                   WHERE news_id = :news_id';
         
         $stm = $db->prepare($query);
@@ -72,7 +73,8 @@ class NewsDB {
         
         $news_id = $news->getNewsID();
         $title = $news->getTitle();
-        $date = $news->getDate();
+        $date_created = $news->getDateCreated();
+        $date_published = $news->getDatePublished();
         $author = $news->getAuthor();
         $story_url = $news->getStoryURL();
         $other_url = $news->getOtherURL();
@@ -84,9 +86,9 @@ class NewsDB {
         $publish = $news->getPublish();
         
         $query = "INSERT INTO news
-                  (news_id, title, date, author, story_url, other_url, feature_img, banner_img, description, article, type, publish)
+                  (news_id, title, date_created, date_published, author, story_url, other_url, feature_img, banner_img, description, article, type, publish)
                   VALUES
-                  ('$news_id', '$title', '$date', '$author', '$story_url', '$other_url', '$feature_img', '$banner_img', '$description', '$article', '$type', '$publish')";
+                  ('$news_id', '$title', '$date_created', '$date_published', '$author', '$story_url', '$other_url', '$feature_img', '$banner_img', '$description', '$article', '$type', '$publish')";
         
         $stm = $db->prepare($query);
         $row_count = $stm->execute();
@@ -94,13 +96,14 @@ class NewsDB {
         
     }
     
-    public static function updateNews($news_id, $title, $date, $author, $story_url, $other_url, $feature_img, $banner_img, $description, $article, $type, $publish){
+    public static function updateNews($news_id, $title, $date_created, $date_published, $author, $story_url, $other_url, $feature_img, $banner_img, $description, $article, $type, $publish){
         
         $db = Database::getDB();
         
         $query = 'UPDATE news
                   SET title ="' . $title . '", 
-                      date ="' . $date . '", 
+                      date_created ="' . $date_created . '", 
+                      date_published ="' . $date_published . '", 
                       author ="' . $author . '",
                       story_url ="' . $story_url . '",
                       other_url ="' . $other_url . '",
