@@ -1,22 +1,31 @@
 <?php
 
 class User {
-    private $logID, $adminID, $artistID, $volunteerID, $indID, $username, $role, $indFName, $indLName, $indEmail, $adPosition;
+    private $logID, $adminID, $artistID, $volunteerID, $indID, $username, $roleID, $indFName, $indLName, $indEmail, $adPosition, $adDescription, $artBandName, $artFName, $artLName, $artGenre, $artDescription, $role, $volPosition, $volDescription;
     
     
-    public function __construct($logID, $adminID, $artistID, $volunteerID, $indID, $username, $role, $indFName, $indLName, $indEmail, $adPosition){
+    public function __construct($logID, $adminID, $artistID, $volunteerID, $indID, $username, $roleID, $indFName, $indLName, $indEmail, $adPosition, $adDescription, $artBandName, $artFName, $artLName, $artGenre, $artDescription, $role, $volPosition, $volDescription){
         $this->logID = $logID;
         $this->adminID = $adminID;
         $this->artistID = $artistID;
         $this->volunteerID = $volunteerID;
         $this->indID = $indID;
         $this->username = $username;
-        $this->role = $role;
+        $this->roleID = $roleID;
         $this->indFName = $indFName;
         $this->indLName = $indLName;
         $this->indEmail = $indEmail;
         $this->adPosition = $adPosition; 
-    }
+        $this->adDescription = $adDescription;
+        $this->artBandName = $artBandName;
+        $this->artFName = $artFName;
+        $this->artLName = $artLName;
+        $this->artGenre = $artGenre;
+        $this->artDescription = $artDescription;
+        $this->role = $role;
+        $this->volPosition = $volPosition;
+        $this->volDescription = $volDescription;
+            }
     
     public function getLogID() {
         return $this->logID;
@@ -43,8 +52,8 @@ class User {
         return $this->username;
     }
     
-    public function getRole() {
-        return $this->role;
+    public function getRoleID() {
+        return $this->roleID;
     }
     
     public function getIndFName(){
@@ -63,5 +72,40 @@ class User {
         return $this->adPosition;
     }
     
-
+      public function getAdminDescription(){
+        return $this->adDescription;
+    }
+    
+    public function getArtBandName() {
+        return $this->artBandName;
+    }
+    
+    public function getArtFName() {
+        return $this->artFName;
+    }
+    
+    public function getArtLName() {
+        return $this->artLName;
+    }
+    
+    public function getArtGenre() {
+        return $this->artGenre;
+    }
+    
+    public function getArtDescription() {
+        return $this->artDescription;
+    }
+    
+    public function getRole(){
+        return $this->role;
+    }
+    
+    public function getVolPosition(){
+        return $this->volPosition;
+    }
+    
+     public function getVolDescription(){
+        return $this->volDescription;
+    }
+    
 }

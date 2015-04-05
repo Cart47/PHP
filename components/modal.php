@@ -60,7 +60,7 @@
 					<br />
 					
 					<label>User Name</label>
-					<input type="text" name="user_name"/>
+					<input type="text" name="UserName"/>
 					<br />
 
 					<label>Email Address</label>
@@ -68,7 +68,7 @@
 					<br />
 
 					<label>Password&nbsp;<span style="color:red; font-size:10px;">Must be atleast 8 characters</span> </label>
-					<input type="password" name="user_password"/>
+					<input type="password" name="UserPass"/>
 					<br />
 					
 					<label>Password Repeat</label>

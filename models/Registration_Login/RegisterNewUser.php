@@ -59,11 +59,11 @@ class Registration {
             
             
             //Transforming the collected inputs into actual values and no $_POST(s)
-            $USERname = Login::CleanInputs($info['user_name']);
+            $USERname = Login::CleanInputs($info['UserName']);
             $USERfname = Login::CleanInputs($info['user_firstname']);
             $USERlname = Login::CleanInputs($info['user_lastname']);
             $USERemail = Login::CleanInputs($info['user_email']);         
-            $USERpassword = Login::CleanInputs($info['user_password']); 
+            $USERpassword = Login::CleanInputs($info['UserPass']); 
             
             $check = $this->checkForDuplicates($USERname, $USERemail);
         

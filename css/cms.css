@@ -105,6 +105,15 @@ td {
   font-size: 0.875em;
   box-shadow: none; }
 
+.textarea {
+  border: 1px solid #848484;
+  height: 10em;
+  width: 40em;
+  padding: 0px 10px;
+  margin-top: 10px;
+  font-size: 0.875em;
+  box-shadow: none; }
+
 .dropdown {
   border: 1px solid #848484;
   background: #fff;

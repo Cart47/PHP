@@ -8,7 +8,10 @@ $verified = null;
 
 if(isset($_POST['registrationSent'])){
     //Need to talk to Gen about using the newly created validation for Registration
-    $register = new Registration($_POST);    
+    $register = new Registration($_POST);
+    if($register != false){
+       $verified = new Login($_POST);    
+    }
 }
 
 if(isset($_POST['loginSent'])){
