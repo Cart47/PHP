@@ -1,8 +1,11 @@
-<?php require_once ( '../../config.php'); include ( '../components/cms_header.php'); //Forces a redirect through the index if(!isset($pendingNews) && !isset($publishedNews)){ header( 'Location: ../news_feed/'); } ?>
+<?php 
 
-<section id="modalPopUp">
-    <?php include_once( 'delete.php'); include_once( 'publish.php'); ?>
-</section>
+require_once ( '../../config.php'); 
+include ( '../components/cms_header.php'); 
+
+//Forces a redirect through the index 
+if(!isset($pendingNews) && !isset($publishedNews))
+{ header( 'Location: ../news_feed/'); } ?>
 
 <h1>CITF News</h1>
 
@@ -20,7 +23,7 @@
     <?php foreach ($unpublishedNews as $unpublished) { echo '<tr>
             <td>' . $unpublished->getTitle() . '</td>
     <td>' . $unpublished->getAuthor() . '</td>
-    <td>' . $unpublished->getDate() . '</td>
+    <td>' . $unpublished->getDateCreated() . '</td>
     <td>
         <form action="." method="post" class="editArticle">
             <input type="hidden" name="news_id" value="' . $unpublished->getNewsID() . '" />
@@ -31,17 +34,17 @@
     </td>
     <td>
         <form action="." method="post" class="deleteUnpublished">
-            <input type="hidden" name="news_id" id="unpub_news_id" value="' . $unpublished->getNewsID() . '" />
+            <input type="hidden" name="news_id" value="' . $unpublished->getNewsID() . '" />
             <input type="hidden" name="action" value="delete" />
-            <button type="submit" href="#modal_del" class="link-btn modal_trigger"><i class="fa fa-trash-o fa-lg"></i>
+            <button type="submit" class="link-btn"><i class="fa fa-trash-o fa-lg"></i>
             </button>
         </form>
     </td>
     <td>
         <form action="." method="post" class="publishArticle">
-            <input type="hidden" name="news_id" id="publish_news_id" value="' . $unpublished->getNewsID() . '" />
+            <input type="hidden" name="news_id" value="' . $unpublished->getNewsID() . '" />
             <input type="hidden" name="action" value="publish" />
-            <button type="submit" href="#modal_pub" class="link-btn modal_trigger"><i class="fa fa-globe fa-lg"></i>
+            <button type="submit" class="link-btn"><i class="fa fa-globe fa-lg"></i>
             </button>
         </form>
     </td>
@@ -55,15 +58,15 @@
 
     <th>Title</th>
     <th>Author</th>
-    <th>Date Created</th>
+    <th>Date Published</th>
     <th>Edit</th>
     <th>Delete</th>
     <th>Unpublish</th>
 
     <?php foreach ($publishedNews as $published) { echo '<tr>
-            <td>' . $published->getTitle() . '</td>
+    <td>' . $published->getTitle() . '</td>
     <td>' . $published->getAuthor() . '</td>
-    <td>' . $published->getDate() . '</td>
+    <td>' . $published->getDatePublished() . '</td>
     <td>
         <form action="." method="post" class="editArticle">
             <input type="hidden" name="news_id" value="' . $published->getNewsID() . '" />
@@ -74,15 +77,15 @@
     </td>
     <td>
         <form action="." method="post" class="deletePublished">
-            <input type="hidden" name="news_id" id="pub_news_id" value="' . $published->getNewsID() . '" />
+            <input type="hidden" name="news_id" value="' . $published->getNewsID() . '" />
             <input type="hidden" name="action" value="delete" />
-            <button type="submit" href="#modal" class="link-btn modal_trigger"><i class="fa fa-trash-o fa-lg"></i>
+            <button type="submit" class="link-btn"><i class="fa fa-trash-o fa-lg"></i>
             </button>
         </form>
     </td>
     <td>
         <form action="." method="post" class="unpublishArticle">
-            <input type="hidden" name="news_id" value="' . $unpublished->getNewsID() . '" />
+            <input type="hidden" name="news_id" value="' . $published->getNewsID() . '" />
             <input type="hidden" name="action" value="unpublish" />
             <button type="submit" class="link-btn"><i class="fa fa-times-circle fa-lg"></i>
             </button>
