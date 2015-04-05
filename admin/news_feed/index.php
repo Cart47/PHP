@@ -4,6 +4,20 @@ require ('../../models/database.php');
 require ('../../models/news_feed/news_class.php');
 require ('../../models/news_feed/news_db.php');
 
+//function that gets news articles by publish status
+function getNewsList(){
+    
+    GLOBAL $unpublishedNews;
+    GLOBAL $publishedNews;
+    
+    $unpublishArticle = 0;
+    $publishArticle = 1;
+    
+    $unpublishedNews = NewsDB::getNewsByStatus($unpublishArticle);
+    $publishedNews = NewsDB::getNewsByStatus($publishArticle);
+    
+}
+
 
 // -------------------------------------- //    
 // ---------- Display Articles ---------- //
@@ -19,13 +33,7 @@ if (isset($_POST['action'])) {
 
 if ($action == 'newsList'){ //default view
     
-    $unpublish = 0;
-    $publish = 1;
-    //$archive = 2;
-    
-    $unpublishedNews = NewsDB::getNewsByStatus($unpublish);
-    $publishedNews = NewsDB::getNewsByStatus($publish);
-    //$archivedNews = NewsDB::getNewsByStatus($archive);
+    getNewsList();
      
     include ('news_list.php');
   
@@ -55,6 +63,8 @@ if ($action == 'newsList'){ //default view
     $news = new NewsClass($title, $date, $author, null, $other_url, $feature_img, $banner_img, $description, $article, $type, $publish);
     $addNews = NewsDB::insertNews($news);
     
+    getNewsList();
+    
     include ('news_list.php');
     
 } elseif ($action == 'external'){ //insert an external news article
@@ -71,6 +81,8 @@ if ($action == 'newsList'){ //default view
     
     $news = new NewsClass($title, $date, $author, $story_url, null, $feature_img, null, $description, null, $type, $publish);
     $addNews = NewsDB::insertNews($news);
+    
+    getNewsList();
     
     include ('news_list.php');
     
@@ -94,6 +106,8 @@ if ($action == 'newsList'){ //default view
     $published = 1;
     NewsDB::publishNews($published, $news_id);
     
+    getNewsList();
+    
     include ('news_list.php');
     
 } elseif ($action == 'unpublish') { //if UNpublish button is clicked beside article
@@ -110,6 +124,8 @@ if ($action == 'newsList'){ //default view
     $unpublished = 0;
     $news_id = $_POST['news_id']; 
     NewsDB::publishNews($unpublished, $news_id);
+    
+    getNewsList();
     
     include ('news_list.php');
     
@@ -141,6 +157,8 @@ if ($action == 'newsList'){ //default view
     
     NewsDB::updateNews($news_id, $title, $date, $author, null, $other_url, $feature_img, $banner_img, $description, $article, $type, $publish);
     
+    getNewsList();
+    
     include ('news_list.php');
     
 } elseif ($action == 'updateExternal') { //if the update button is clicked for an external article
@@ -157,6 +175,8 @@ if ($action == 'newsList'){ //default view
     
     NewsDB::updateNews($news_id, $title, $date, $author, $story_url, null, $feature_img, null, $description, null, $type, $publish);
     
+    getNewsList();
+    
     include ('news_list.php');
     
     
@@ -169,7 +189,7 @@ if ($action == 'newsList'){ //default view
     $news_id = $_POST['news_id']; 
     NewsDB::deleteNews($news_id); 
     
-    var_dump($news_id);
+    getNewsList();
     
     include ('news_list.php');
     
