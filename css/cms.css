@@ -105,6 +105,15 @@ td {
   font-size: 0.875em;
   box-shadow: none; }
 
+.textarea {
+  border: 1px solid #848484;
+  height: 10em;
+  width: 40em;
+  padding: 0px 10px;
+  margin-top: 10px;
+  font-size: 0.875em;
+  box-shadow: none; }
+
 .dropdown {
   border: 1px solid #848484;
   background: #fff;
@@ -168,7 +177,7 @@ td {
   padding: 10px 20px 8px 20px;
   border-bottom: 1px solid #000;
   font-weight: bold;
-  color: #fff; }
+  color: white; }
 
 .popupHeader .modal_close {
   position: absolute;
@@ -327,5 +336,3 @@ td {
 
 #footer-content {
   padding: 20px; }
-
-/*# sourceMappingURL=cms.css.map */

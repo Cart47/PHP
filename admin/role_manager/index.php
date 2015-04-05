@@ -17,10 +17,10 @@ $administrators = array();
 $volunteers = array();
 $artists = array();
 foreach($users as $u){
-    if ($u->getRole() == 1) {$individuals[] = $u;}
-    if ($u->getRole() == 2) {$administrators[] = $u;}
-    if ($u->getRole() == 3) {$volunteers[] = $u;}
-    if ($u->getRole() == 4) {$artists[] = $u;} 
+    if ($u->getRoleID() == 1) {$individuals[] = $u;}
+    if ($u->getRoleID() == 2) {$administrators[] = $u;}
+    if ($u->getRoleID() == 3) {$volunteers[] = $u;}
+    if ($u->getRoleID() == 4) {$artists[] = $u;} 
 }
 ?>
     <h1>Role Manager</h1>
@@ -55,15 +55,15 @@ foreach($users as $u){
                        Individual
                     </td>
                     <td>
-                        <form action="." method="post">
-                            <input type="hidden" name="email_id" value="<?php echo $i->getLogID() ?>" />
+                        <form action="./edit_user.php" method="post">
+                            <input type="hidden" name="edit_user" value="<?php echo $i->getindID() ?>" />
                             <input type="hidden" name="action" value="edit" />
                             <button type="submit" class="link-btn"><i class="fa fa-pencil fa-lg"></i></button>
                         </form>
                     </td>
                     <td>
                         <form action="." method="post">
-                                <input type="hidden" name="delete_user" value="<?php echo $i->getLogID() ?>" />
+                                <input type="hidden" name="delete_user" value="<?php echo $i->getindID() ?>" />
                                 <input type="hidden" name="action" value="delete" />
                                 <button type="submit" class="link-btn" onclick="confirm('Are you sure you would like to delete this member?');"><i class="fa fa-trash-o fa-lg"></i></button>
                         </form>
@@ -75,7 +75,6 @@ foreach($users as $u){
     <?php if (!empty($administrators)){ ?>  
     <br/>
     <h2>Administrators</h2>
-    <form action="." method="post">
         <table>
             <thead>
                 <th>First Name</th>
@@ -83,6 +82,8 @@ foreach($users as $u){
                 <th>Username</th>
                 <th>Email</th>
                 <th>Administrative Role</th>
+                <th>Edit Admin</th>
+                <th>Delete Admin</th>
             </thead>
             <?php 
                 foreach($administrators as $a){ ?>
@@ -102,37 +103,78 @@ foreach($users as $u){
                     <td>
                         <?php echo $a->getAdminPosition()  ?>    
                     </td>
+                    <td>
+                        <form action="./edit_user.php" method="post">
+                            <input type="hidden" name="edit_user" value="<?php echo $a->getindID() ?>" />
+                            <input type="hidden" name="action" value="edit" />
+                            <button type="submit" class="link-btn"><i class="fa fa-pencil fa-lg"></i></button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="." method="post">
+                                <input type="hidden" name="delete_user" value="<?php echo $a->getindID() ?>" />
+                                <input type="hidden" name="action" value="delete" />
+                                <button type="submit" class="link-btn" onclick="confirm('Are you sure you would like to delete this member?');"><i class="fa fa-trash-o fa-lg"></i></button>
+                        </form>
+                    </td>
                 </tr>
         <?php  } ?>   
         </table>      
-    </form>
     <?php } if (!empty($artists)){ ?>  
     <br/>
     <h2>Artists</h2>
-    <form action="." method="post">
         <table>
             <thead>
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Username</th>
                 <th>Email</th>
-                <th>User Role</th>
+                <th>Band Name</th>
+                <th>Genre</th>
+                <th>Artist Description</th>
+                <th>Edit Artist</th>
+                <th>Delete Artist</th>
             </thead>
-            <?php 
-                foreach($artists as $art){
-                echo '<tr><td>' .
-                            $art->getIndFName() 
-                    . '</td><td>' .
-                             $art->getIndLName()  
-                    . '</td><td>' .
-                             $art->getUsername() 
-                    . '</td><td>' .
-                              $art->getIndEmail()
-                    . '</td><td>Artist</td></tr>';
-            }
-            ?>   
+            <?php foreach($artists as $art){ ?>
+                 <tr>
+                    <td> 
+                        <?php echo $art->getIndFName() ?>
+                    </td>
+                    <td>
+                        <?php echo $art->getIndLName()  ?>
+                    </td>
+                    <td>
+                        <?php echo $art->getUsername() ?>
+                    </td>
+                    <td>
+                        <?php echo $art->getIndEmail() ?>
+                    </td>
+                    <td>
+                        <?php echo $art->getArtBandName()  ?>    
+                    </td>
+                    <td>
+                        <?php echo $art->getArtGenre()  ?>    
+                    </td>
+                    <td>
+                        <?php echo $art->getArtDescription()  ?>    
+                    </td>
+                    <td>
+                        <form action="./edit_user.php" method="post">
+                            <input type="hidden" name="edit_user" value="<?php echo $art->getindID() ?>" />
+                            <input type="hidden" name="action" value="edit" />
+                            <button type="submit" class="link-btn"><i class="fa fa-pencil fa-lg"></i></button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="." method="post">
+                                <input type="hidden" name="delete_user" value="<?php echo $art->getindID() ?>" />
+                                <input type="hidden" name="action" value="delete" />
+                                <button type="submit" class="link-btn" onclick="confirm('Are you sure you would like to delete this member?');"><i class="fa fa-trash-o fa-lg"></i></button>
+                        </form>
+                    </td>
+                </tr>
+                <?php } ?>
         </table>      
-    </form>
     <?php } if (!empty($volunteers)){ ?>        
     <br/>
     <h2>Volunteers</h2>

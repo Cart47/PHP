@@ -7,7 +7,7 @@ if(!isset($_SESSION)) { session_start();}
 
     
     <div id="headMain">
-        
+        <?php include_once("../image_slider/slider.php"); ?>
         <?php include_once("../components/main_topContent.php"); ?>
         
     </div>

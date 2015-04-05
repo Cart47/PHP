@@ -37,22 +37,48 @@ class Registration {
             return $loggedUser;
     }
     
+    private function checkForDuplicates($username, $userEmail) 
+    {
+        $db = Database::getDB();   
+        $query = "SELECT * FROM individual WHERE ind_username='$username' OR ind_email='$userEmail'";
+        $result = $db->query($query);
+        $row = $result->fetch();
+        if(!empty($row['ind_username']) || !empty($row['ind_email'])){
+            return false;
+        } 
+        else
+        {
+            return true;
+        }
+    }
+    
+    
+    
     private function registerUser($info)
     {
             
             
             //Transforming the collected inputs into actual values and no $_POST(s)
-            $USERname = Login::CleanInputs($info['user_name']);
+            $USERname = Login::CleanInputs($info['UserName']);
             $USERfname = Login::CleanInputs($info['user_firstname']);
             $USERlname = Login::CleanInputs($info['user_lastname']);
             $USERemail = Login::CleanInputs($info['user_email']);         
-            $USERpassword = Login::CleanInputs($info['user_password']); 
+            $USERpassword = Login::CleanInputs($info['UserPass']); 
             
-            $encrPASS = password_hash($USERpassword, PASSWORD_BCRYPT);
-            
-            $individual = $this->create_individual($USERfname, $USERlname,$USERname, $USERemail);
-            $volunteerID = $this->individualID($USERname, $USERemail);
-            $login = $this->registerLogin($USERname, $volunteerID, $encrPASS);
-        }
+            $check = $this->checkForDuplicates($USERname, $USERemail);
+        
+            if ($check == true){
+                $encrPASS = password_hash($USERpassword, PASSWORD_BCRYPT);
+
+                $individual = $this->create_individual($USERfname, $USERlname,$USERname, $USERemail);
+                $volunteerID = $this->individualID($USERname, $USERemail);
+                $login = $this->registerLogin($USERname, $volunteerID, $encrPASS);
+                return true;    
+            }
+            else 
+            {
+                return false;
+            }
     }
+}
    

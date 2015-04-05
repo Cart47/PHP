@@ -7,7 +7,7 @@
 		<section class="popupBody">
 			<!-- Social Login -->
 			<div class="social_login">
-				<div>
+				<!-- <div>
 					<a href="#" class="social_box fb">
 						<span class="icon"><i class="fa fa-facebook"></i></span>
 						<span class="icon_title">Connect with Facebook</span>
@@ -18,10 +18,10 @@
 						<span class="icon"><i class="fa fa-twitter"></i></span>
 						<span class="icon_title">Connect with Twitter</span>
 					</a>
-				</div>
+				</div> -->
                 
 				<div class="centeredText">
-					<span>Or use your Email address</span>
+					<span>Would you like to sign-up or Register?</span>
 				</div>
         
 				<div class="action_btns">
@@ -60,7 +60,7 @@
 					<br />
 					
 					<label>User Name</label>
-					<input type="text" name="user_name"/>
+					<input type="text" name="UserName"/>
 					<br />
 
 					<label>Email Address</label>
@@ -68,7 +68,7 @@
 					<br />
 
 					<label>Password&nbsp;<span style="color:red; font-size:10px;">Must be atleast 8 characters</span> </label>
-					<input type="password" name="user_password"/>
+					<input type="password" name="UserPass"/>
 					<br />
 					
 					<label>Password Repeat</label>
