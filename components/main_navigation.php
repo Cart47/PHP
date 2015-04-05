@@ -4,16 +4,21 @@
 
         <ul>
            <?php
+            if ($verified == "Invalid User Name"){
+                echo '<li style="color:#fff;">Invalid User Name</li>&nbsp;&nbsp;<li><a id="modal_trigger" href="#modal">Login | Register</a></li>';
+            }
 
-             if(isset($_SESSION["UserFullName"]))
+            elseif (isset($_SESSION["UserFullName"]))
                 {
                  //Still need to build the kill session 
-                echo '<li>Welcome, ' . $_SESSION["UserFullName"] . '</li><li><a href="../admin/Home/index.php">Admin</a></li><li><a href="../components/logout.php">Logout</a></li>';
+                echo '<li>Welcome, ' . $_SESSION["UserFullName"] . '</li>';
+                if ($_SESSION['RoleID'] == 2){ 
+                    echo '<li><a href="../admin/Home/index.php">Admin</a></li>';
                 }
-            elseif ($verified == "Invalid User Name "){
-                echo '<li style="color:#fff;">Invalid User Name</li>';
-            }
-              else
+                 echo '<li><a href="../components/logout.php">Logout</a></li>';
+                }
+            
+            else
                 {
                 echo '<li><a id="modal_trigger" href="#modal">Login | Register</a></li>';
                 }
