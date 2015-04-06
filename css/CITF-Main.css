@@ -48,6 +48,15 @@ body {
   height: 100%;
   font-family: roboto, raleway, sans-serif; }
 
+nav {
+  height: 60px; }
+
+#container {
+  height: auto;
+  overflow-y: hidden;
+  position: relative;
+  margin-top: 50px; }
+
 h3 {
   font-size: 1.25em;
   padding: 10px 0px; }
@@ -76,11 +85,6 @@ input[type=submit] {
   margin: 1% 0%;
   font-size: 0.875em;
   width: 100%; }
-
-#container {
-  height: auto;
-  overflow-y: hidden;
-  position: relative; }
 
 .clearfix:after {
   visibility: hidden;
@@ -149,7 +153,8 @@ input[type=submit] {
 /* for slider */
 /* for news feed on homepage */
 #newsfeed {
-  margin-top: 30px; }
+  width: 1024px;
+  margin: 30px auto; }
 
 /* For news article details */
 #article {
@@ -254,33 +259,9 @@ footer {
     background-size: cover;
     font-family: roboto, raleway, sans-serif; }
 
-  #headMain {
-    padding-top: 150px;
-    position: relative;
-    display: block; }
-
   footer {
     display: block; } }
-@media screen and (max-width: 1025px) {
-  #headMain {
-    width: 80%;
-    overflow-x: hidden;
-    left: 20%; } }
 @media screen and (max-width: 900px) {
-  #headMain {
-    visibility: visible;
-    position: relative;
-    top: 4.25em;
-    left: 0;
-    width: 100%;
-    overflow-x: visible; }
-
-  main {
-    position: relative;
-    width: 100%;
-    overflow-x: visible;
-    left: 0%; }
-
   .subscribe {
     width: 50%; } }
 @media screen and (max-width: 720px) {
@@ -295,15 +276,7 @@ footer {
       #nav li:hover {
         background: #444; }
       #nav li a {
-        padding: 30px 60px; }
-
-  main {
-    position: relative;
-    width: 100%;
-    overflow-x: visible;
-    top: 0;
-    left: 0%;
-    height: 100em; } }
+        padding: 30px 60px; } }
 @media screen and (max-width: 480px) {
   #logIn li a {
     display: none; } }
