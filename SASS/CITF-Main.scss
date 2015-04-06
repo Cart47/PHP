@@ -53,7 +53,20 @@ table {
 // ******************** General ******************** //
 // ************************************************* //
 
-body { font-family: $font1; }
+html { height: 100%; }
+body { height: 100%; font-family: $font1; }
+
+nav {
+    height: 60px;
+}
+
+#container {
+    height: auto; 
+    overflow-y: hidden; 
+    position: relative;
+    margin-top: 50px;
+}
+
 
 h1 {}
 
@@ -92,9 +105,13 @@ input[type=submit] {
     width: 100%;
 }
 
-#container {
-    width: 1440px;
-    margin:0 auto;
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
 }
 
 // **************************************************** //
@@ -175,12 +192,25 @@ input[type=submit] {
 // ******************** Body ******************** //
 // ********************************************** //
 
-#mainContent {
-    position: relative;
-    padding: 5% 2%;
-} 
 
 
+/* for slider */
+#slider {
+
+}
+
+/* for news feed on homepage */
+#newsfeed {
+    width: 1024px;
+    margin: 30px auto;
+}
+
+/* For news article details */
+#article {
+    opacity: 0.7;
+    background: #fff;
+    padding: 20px;
+}
 
 // ************************************************ //
 // ******************** Footer ******************** //
@@ -259,15 +289,6 @@ footer {
 }
 
 // ----- Large Desktop style --------------------//
-@media screen and (max-width: 1799px) {
-    #container {
-        position: relative;
-        width: 100%;
-        margin-top: 60px;
-    }
-}
-
-// ----- Large Desktop style --------------------//
 @media screen and (max-width: 1440px) {
     #footContainer {
         width: 100%;
@@ -329,21 +350,6 @@ footer {
 // ----- Common Desktop style --------------------//
 @media screen and (min-width:1026px) {
     
-    // Thius is for the middle of the homepage where the recent news takes place
-     #transitionBlock {
-        margin-top: 600px;
-        display: block;
-        width: 90%;
-        height: 300px;
-        background-color: black;
-        padding: 20px 5%;
-        h3 {
-            color: white;
-            text-decoration: underline;
-            width: 25%;
-        }
-    }
-    
     body {
         background-image: url(../img/tree-back.jpg);
         background-repeat: no-repeat;
@@ -352,82 +358,23 @@ footer {
         font-family: $font1
     }    
 
-    #headMain {
-        padding-top: 150px;
-        position: relative;
-        display: block;
-    }
-
-    main {
-        position: relative;
-        display: block;
-        height: 100em;
-        top: 100px;
-    }
-
     footer {
-        position: relative;
         display: block;
     }  
    
 }
 
-// ----- Tablet Landscape style --------------------//
-@media screen and (max-width:1025px) {
- 
-    #headMain {
-        width:80%;
-        overflow-x: hidden;
-        left:20%;
-
-    }
-
-    main {
-        min-height: 100%;
-        
-    }  
-    
-}
-
 // ----- Tablet Portrait style --------------------//
 @media screen and (max-width:900px) {
-
-    #headMain {
-        visibility:visible;
-        position: relative;
-        top:4.25em;
-        left:0;
-        width:100%;
-        overflow-x: visible;
-    }
-
-    main {
-        position: relative;
-        width:100%;
-        overflow-x:visible;
-        left:0%;
-    }
     
     .subscribe {
         width: 50%;   
     }
-
-    footer {
-        visibility: visible;
-    }    
+ 
 }
 
 // ----- Smart Phone style -------------------- //
 @media screen and (max-width:720px) {
-    #headMain {
-        visibility:visible;
-        position: relative;
-        top:5em;
-        left:0;
-        width:100%;
-        overflow-x: visible;
-
-    }
 
     #nav {
         width: 100%;
@@ -450,18 +397,6 @@ footer {
                 }
             }
     
-    main {
-        position: relative;
-        width:100%;
-        overflow-x:visible;
-        top:0;
-        left:0%;
-        height: 100em;
-    }
-
-    footer {
-        visibility: visible;
-    } 
 }
 
 // ------ iPhone ------------------------ //

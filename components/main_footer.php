@@ -1,5 +1,3 @@
-</main>
-
 <?php 
 
     require ('../models/validation/field_classes.php');
@@ -69,7 +67,7 @@
 
                     <p id="copyright">&copy; 2015 Chorus in the Forest</p>
 
-                </div>
+                </div><!-- end footer-contact -->
 
             </div><!-- end contact -->
 
@@ -110,7 +108,7 @@
 
             </div><!-- end right-col -->
 
-        </div>
+        </div><!-- end footer container -->
 
     </footer>
 

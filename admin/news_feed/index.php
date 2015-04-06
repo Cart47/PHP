@@ -4,6 +4,20 @@ require ('../../models/database.php');
 require ('../../models/news_feed/news_class.php');
 require ('../../models/news_feed/news_db.php');
 
+//function that gets news articles by publish status
+function getNewsList(){
+    
+    GLOBAL $unpublishedNews;
+    GLOBAL $publishedNews;
+    
+    $unpublishArticle = 0;
+    $publishArticle = 1;
+    
+    $unpublishedNews = NewsDB::getNewsByStatus($unpublishArticle);
+    $publishedNews = NewsDB::getNewsByStatus($publishArticle);
+    
+}
+
 
 // -------------------------------------- //    
 // ---------- Display Articles ---------- //
@@ -19,13 +33,7 @@ if (isset($_POST['action'])) {
 
 if ($action == 'newsList'){ //default view
     
-    $unpublish = 0;
-    $publish = 1;
-    //$archive = 2;
-    
-    $unpublishedNews = NewsDB::getNewsByStatus($unpublish);
-    $publishedNews = NewsDB::getNewsByStatus($publish);
-    //$archivedNews = NewsDB::getNewsByStatus($archive);
+    getNewsList();
      
     include ('news_list.php');
   
@@ -42,7 +50,7 @@ if ($action == 'newsList'){ //default view
     
     $news_id = $_POST['news_id'];
     $title = $_POST['title'];
-    $date = $_POST['date'];
+    $date_created = $_POST['date_created'];
     $author = $_POST['author'];
     $other_url = $_POST['other_url']; 
     $feature_img = $_POST['feature_img'];
@@ -52,8 +60,10 @@ if ($action == 'newsList'){ //default view
     $type = $_POST['type'];
     $publish = $_POST['publish'];
     
-    $news = new NewsClass($title, $date, $author, null, $other_url, $feature_img, $banner_img, $description, $article, $type, $publish);
+    $news = new NewsClass($title, $date_created, null, $author, null, $other_url, $feature_img, $banner_img, $description, $article, $type, $publish);
     $addNews = NewsDB::insertNews($news);
+    
+    getNewsList();
     
     include ('news_list.php');
     
@@ -61,7 +71,7 @@ if ($action == 'newsList'){ //default view
     
     $news_id = $_POST['news_id'];
     $title = $_POST['title'];
-    $date = $_POST['date'];
+    $date_created = $_POST['date_created'];
     $author = $_POST['author'];
     $story_url = $_POST['story_url']; 
     $feature_img = $_POST['feature_img'];
@@ -69,8 +79,10 @@ if ($action == 'newsList'){ //default view
     $type = $_POST['type'];
     $publish = $_POST['publish'];
     
-    $news = new NewsClass($title, $date, $author, $story_url, null, $feature_img, null, $description, null, $type, $publish);
+    $news = new NewsClass($title, $date_created, null, $author, $story_url, null, $feature_img, null, $description, null, $type, $publish);
     $addNews = NewsDB::insertNews($news);
+    
+    getNewsList();
     
     include ('news_list.php');
     
@@ -79,11 +91,22 @@ if ($action == 'newsList'){ //default view
 // ---------- Publishing and Unpublishing News ---------- //
 // ------------------------------------------------------ //   
     
-} elseif ($action == 'publish'){ //if user confirms yes to publish article
-   
-    $news_id = $_POST['news_id']; 
-    //$publish = $_POST['publish'];
-    NewsDB::publishNews($news_id);
+} elseif ($action == 'publish') { //if publish button is clicked beside article
+    
+    $news_id = $_POST['news_id'];
+    $publishSelected = NewsDB::getNewsByID($news_id);
+    
+    include ('publish.php');
+    
+} elseif ($action == 'yesPublish'){ //if user confirms yes to publish article
+
+    $pubdate = $_POST['date_published'];
+    $published = 1;
+    $news_id = $_POST['news_id'];
+    
+    NewsDB::publishNews($news_id, $pubdate, $published);
+    
+    getNewsList();
     
     include ('news_list.php');
     
@@ -92,13 +115,17 @@ if ($action == 'newsList'){ //default view
     $news_id = $_POST['news_id'];
     $unpublishSelected = NewsDB::getNewsByID($news_id);
     
-    include ('confirm.php');
+    include ('unpublish.php');
     
 } elseif ($action == 'yesUnpublish'){ //if user confirms yes to unpublish article
     
-    $news_id = $_POST['news_id']; 
-    $publish = 0;
-    NewsDB::publishNews($news_id, $publish);
+    $unpubdate = $_POST['date_published'];
+    $unpublished = 0;
+    $news_id = $_POST['news_id'];
+    
+    NewsDB::publishNews($news_id, $unpubdate, $unpublished);
+    
+    getNewsList();
     
     include ('news_list.php');
     
@@ -118,7 +145,7 @@ if ($action == 'newsList'){ //default view
     
     $news_id = $_POST['news_id'];
     $title = $_POST['title'];
-    $date = $_POST['date'];
+    $date_created = $_POST['date_created'];
     $author = $_POST['author'];
     $other_url = $_POST['other_url']; 
     $feature_img = $_POST['feature_img'];
@@ -128,7 +155,9 @@ if ($action == 'newsList'){ //default view
     $type = $_POST['type'];
     $publish = $_POST['publish'];
     
-    NewsDB::updateNews($news_id, $title, $date, $author, null, $other_url, $feature_img, $banner_img, $description, $article, $type, $publish);
+    NewsDB::updateNews($news_id, $title, $date_created, $author, null, $other_url, $feature_img, $banner_img, $description, $article, $type, $publish);
+    
+    getNewsList();
     
     include ('news_list.php');
     
@@ -146,6 +175,8 @@ if ($action == 'newsList'){ //default view
     
     NewsDB::updateNews($news_id, $title, $date, $author, $story_url, null, $feature_img, null, $description, null, $type, $publish);
     
+    getNewsList();
+    
     include ('news_list.php');
     
     
@@ -156,9 +187,16 @@ if ($action == 'newsList'){ //default view
 } elseif ($action == 'delete'){ //if user confirms yes to delete article
     
     $news_id = $_POST['news_id']; 
+    $selected = NewsDB::getNewsByID($news_id);
+    
+    include ('delete.php');
+    
+} elseif ($action == 'yesDelete'){
+    
+    $news_id = $_POST['news_id']; 
     NewsDB::deleteNews($news_id); 
     
-    var_dump($news_id);
+    getNewsList();
     
     include ('news_list.php');
     
