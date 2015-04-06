@@ -37,11 +37,12 @@ class Login {
             $_SESSION['UserFullName'] = $row['ind_fname'] . ' ' . $row['ind_lname'];
             $_SESSION['Username'] = $this->UserName;
             $_SESSION['RoleID'] = $row['role_id'];
+            $_SESSION['Individual_ID'] = $row['individual_id'];
         }
-        else {  
-            return 'Invalid User Name';
+        else{
+            $_SESSION['UserFullName'] = "BadLogin";
         }
-       
+        
     }
     
 }

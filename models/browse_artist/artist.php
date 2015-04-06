@@ -2,7 +2,6 @@
 
 class Artist {
     private $browse_art_id;
-    private $artist_id;
     private $art_fname;
     private $art_lname;
     private $genre;
@@ -10,9 +9,8 @@ class Artist {
     private $display;
     
     
-    public function __construct($browse_art_id, $artist_id, $art_fname, $art_lname, $genre, $description, $display){
+    public function __construct($browse_art_id, $art_fname, $art_lname, $genre, $description, $display){
         $this->browse_art_id = $browse_art_id;
-        $this->artist_id = $artist_id;
         $this->art_fname = $art_fname;
         $this->art_lname = $art_lname;
         $this->genre = $genre;
@@ -22,11 +20,11 @@ class Artist {
     }
     
     public function getID() {
-        $this->artist_id;
+        $this->browse_art_id;
     }
     
     public function setID($value){
-        $this->artist_id = $value;
+        $this->browse_art_id = $value;
     }
     
     public function GetFName(){

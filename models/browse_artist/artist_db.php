@@ -8,7 +8,6 @@ class ArtistDB {
         $artists = array();
         foreach ($result as $row) {
             $artist = new Artist($row['browse_art_id'],
-                                 $row['artist_id'],
                                  $row['art_fname'],
                                  $row['art_lname'],
                                  $row['genre'],
@@ -43,7 +42,6 @@ class ArtistDB {
         $statement = $db->query($query);
         $row = $statement->fetch();
         $artist = new Artist($row['browse_art_id'],
-                                 $row['artist_id'],
                                  $row['art_fname'],
                                  $row['art_lname'],
                                  $row['genre'],
@@ -62,7 +60,6 @@ class ArtistDB {
              
          
          $artist = new Artist($row['browse_art_id'],
-                                 $row['artist_id'],
                                  $row['art_fname'],
                                  $row['art_lname'],
                                  $row['genre'],

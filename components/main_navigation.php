@@ -4,24 +4,32 @@
 
         <ul>
            <?php
-            if ($verified == "Invalid User Name"){
-                echo '<li style="color:#fff;">Invalid User Name</li>&nbsp;&nbsp;<li><a id="modal_trigger" href="#modal">Login | Register</a></li>';
-            }
 
-            elseif (isset($_SESSION["UserFullName"]))
+            if (isset($_SESSION["UserFullName"]))
+            {
+                if ($_SESSION["UserFullName"] == "BadLogin"){
+                    echo '<li>Invalid Username or Password</li>&nbsp;&nbsp;<li><a id="modal_trigger" href="#modal">Login | Register</a></li>';
+                }
+                elseif ($_SESSION['UserFullName'] == "BadRegistration")
                 {
-                 //Still need to build the kill session 
-                echo '<li>Welcome, ' . $_SESSION["UserFullName"] . '</li>';
-                if ($_SESSION['RoleID'] == 2){ 
-                    echo '<li><a href="../admin/Home/index.php">Admin</a></li>';
+                    echo '<li>This Username or Password already exists</li>&nbsp;&nbsp;<li><a id="modal_trigger" href="#modal">Login | Register</a></li>';
                 }
-                 echo '<li><a href="../components/logout.php">Logout</a></li>';
+                
+                else 
+                {
+                     //Still need to build the kill session 
+                    echo '<li>Welcome, ' . $_SESSION["UserFullName"] . '</li>';
+                    if($_SESSION['RoleID'] != 1){ 
+                        echo '<li><a href="../admin/Home/index.php">Admin</a></li>';
+                        }
+                        
+                     echo '<li><a href="../components/logout.php">Logout</a></li>';
                 }
-            
+            }
             else
-                {
+            {
                 echo '<li><a id="modal_trigger" href="#modal">Login | Register</a></li>';
-                }
+            }
             ?>
         </ul>
 

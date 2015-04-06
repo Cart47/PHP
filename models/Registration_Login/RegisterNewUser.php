@@ -73,11 +73,11 @@ class Registration {
                 $individual = $this->create_individual($USERfname, $USERlname,$USERname, $USERemail);
                 $volunteerID = $this->individualID($USERname, $USERemail);
                 $login = $this->registerLogin($USERname, $volunteerID, $encrPASS);
-                return true;    
+                $_SESSION['UserFullName'] = "SuperDaveOsborn";
             }
             else 
             {
-                return false;
+                $_SESSION['UserFullName'] = "BadRegistration";
             }
     }
 }
