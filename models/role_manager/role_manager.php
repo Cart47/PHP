@@ -95,7 +95,7 @@ class Roles {
         $db = Database::getDB();
         
         $query = "DELETE FROM login WHERE individual_id = '$individual_id'
-                DELETE FROM individual WHEREindividual_id = '$individual_id'";
+                  DELETE FROM individual WHEREindividual_id = '$individual_id'";
          
          $row_count = $db->exec($query);
          
