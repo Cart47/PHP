@@ -4,18 +4,21 @@ require ('../models/database.php');
 require ('../models/Registration_Login/RegisterNewUser.php');
 require ('../models/Registration_Login/UserLogin.php'); 
 
-$verified = null;
+$result = null;
 
 if(isset($_POST['registrationSent'])){
     //Need to talk to Gen about using the newly created validation for Registration
-    $register = new Registration($_POST);
-    if($register != false){
-       $verified = new Login($_POST);    
+    new Registration($_POST);
+    if(isset($_SESSION['UserFullName'])){
+        if($_SESSION['UserFullName'] != "BadRegistration"){
+            new Login($_POST);    
+        }
     }
 }
 
+
 if(isset($_POST['loginSent'])){
-    $verified = new Login($_POST);
+    $login = new Login($_POST);
     }
 
 if(isset($_POST['subscribe'])){

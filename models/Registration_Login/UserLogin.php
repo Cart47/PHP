@@ -39,10 +39,10 @@ class Login {
             $_SESSION['RoleID'] = $row['role_id'];
             $_SESSION['Individual_ID'] = $row['individual_id'];
         }
-        else {  
-            return 'Invalid User Name';
+        else{
+            $_SESSION['UserFullName'] = "BadLogin";
         }
-       
+        
     }
     
 }
