@@ -1,5 +1,3 @@
-</main>
-
 <?php 
 
     require ('../models/validation/field_classes.php');
