@@ -2,6 +2,40 @@
 
 class NewsDB {
     
+    public static function getAllNews(){
+        
+        $db = Database::getDB();
+        
+        $query = 'SELECT * FROM news
+                  WHERE publish = 1
+                  ORDER BY date_published ASC';
+        
+        $stm = $db->prepare($query);
+        $stm->execute();
+        $result = $stm->fetchAll(PDO::FETCH_ASSOC);
+        
+        $articles = array();
+        foreach ($result as $row) {
+            $article = new NewsClass($row['title'],
+                                     $row['date_created'],
+                                     $row['date_published'],
+                                     $row['author'],
+                                     $row['story_url'],
+                                     $row['other_url'],
+                                     $row['feature_img'],
+                                     $row['banner_img'],
+                                     $row['description'],
+                                     $row['article'],
+                                     $row['type'],
+                                     $row['publish']); 
+            $article->setNewsID($row['news_id']);
+
+            $articles[] = $article;
+        }
+        
+        return $articles;
+    }
+    
     public static function getNewsByStatus($status) {
         
         $db = Database::getDB();
