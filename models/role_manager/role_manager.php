@@ -90,28 +90,63 @@ class Roles {
     }
     
     
-     public static function deleteUser($individual_id, $RoleID) {
+     public static function deleteUser($individual_id, $RoleID, $user_role) {
           
         $db = Database::getDB();
         
-        $query = "DELETE FROM login WHERE individual_id = '$individual_id'";
+        $query = "DELETE FROM login WHERE individual_id = '$individual_id'
+                DELETE FROM individual WHEREindividual_id = '$individual_id'";
+         
+         $row_count = $db->exec($query);
          
          if($RoleID == 2){
-            $query .= " DELETE FROM admin WHERE individual_id = '$individual_id'";
+            self::deleteAdminUser($user_role);
         }
          
          if($RoleID == 3){
-            $query .= " DELETE FROM volunteer WHERE individual_id = '$individual_id'";
+            self::deleteVolunteerUser($user_role);
         }
         
          if($RoleID == 4){
-            $query .= " DELETE FROM browse_artist WHERE individual_id = '$individual_id'";
+           self::deleteArtistUser($user_role);
         }
-        
-        $row_count = $db->exec($query);
         
         return $row_count;
         
     }
+    
+     public static function deleteAdminUser($admin_id) {
+     
+        $db = Database::getDB();
+         
+        $query = " DELETE FROM admin WHERE admin_id = '$individual_id'";
+        
+        $row_count = $db->exec($query);
+        
+        return $row_count;
+     }
+    
+    public static function deleteArtistUser($artist_id) {
+     
+        $db = Database::getDB();
+         
+        $query = " DELETE FROM artist WHERE browse_art_id = '$artist_id'";
+        
+        $row_count = $db->exec($query);
+        
+        return $row_count;
+     }
+       
+    public static function deleteVolunteerUser($individual_id) {
+     
+        $db = Database::getDB();
+         
+        $query = " DELETE FROM volunteer WHERE volunteer_id = '$volunteer_id'";
+        
+        $row_count = $db->exec($query);
+        
+        return $row_count;
+     }
+    
 }
 ?>
