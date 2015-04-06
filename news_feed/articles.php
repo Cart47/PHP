@@ -22,10 +22,19 @@ foreach($rssfeed AS $name=>$url) {
        
        $date = strtotime($item->pubDate);
        
+       //Article block
        echo '<div class="article-block">';
-       echo '<h3><a href="' . htmlentities($item->link) . '">' . ($item->title) . '</a></h3>';
-       echo htmlentities(date('F j, Y', $date)) . '<br />';
-       echo '<p>' . htmlentities($item->description) . '</p>';
+       
+           //content inside of article block
+           echo '<div class="article-content">';
+               echo '<h3>' . ($item->title) . '</h3>';
+               echo '<p class="date"><em>' . htmlentities(date('F j, Y', $date)) . '</em></p>';
+               echo '<p>' . htmlentities($item->description) . '</p>';
+           echo '</div>';
+       
+           //Read more button
+           echo '<a class="more" href="' . htmlentities($item->link) . '">Read More<i class="fa fa-angle-double-right fa-lg"></i></a>';
+       
        echo '</div>';
        $count++;
    }
