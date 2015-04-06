@@ -13,18 +13,19 @@ header('Content-type: text/xml');
 echo '<?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0">
 <channel>
-<title></title>
-<author></author>
-<description></description>
+<title>Chorus in the Forest News</title>
+<description>Whats up ma nizzle?</description>
+<link>http://goolge.ca</link>
 ';
 
 foreach ($article as $item) {
 
 	//Print each record as an item
 	echo '<item>
-	<title><a href="' . $_SERVER['HTTP_HOST'] . '/PHP/news_feed/read_article.php?id=' . $item->getNewsID() . '">' . htmlentities($item->getTitle()) . '</a></title>
+	<title>' . htmlentities($item->getTitle()) . '</title>
     <description>' . htmlentities($item->getDesc()) . '</description>
     <pubDate>' . date($item->getDatePublished()) . '</pubDate>
+    <link>http://' . $_SERVER['HTTP_HOST'] . '/PHP/news_feed/read_article.php?id=' . $item->getNewsID() . '</link>
 	</item>
 	';
 }

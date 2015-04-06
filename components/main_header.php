@@ -64,5 +64,5 @@ if(isset($_POST['subscribe'])){
 
             <section id="content">
     
-                <main>
+                
 
