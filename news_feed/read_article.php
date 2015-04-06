@@ -18,6 +18,7 @@ if ($thisArticle == null){
 }
 
 ?>
+<main>
 
 <div id="article">
     
@@ -26,4 +27,5 @@ if ($thisArticle == null){
     
 </div>
 
+</main>
 <?php include("../components/main_footer.php"); ?>

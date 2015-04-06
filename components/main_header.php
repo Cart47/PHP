@@ -49,20 +49,15 @@ if(isset($_POST['subscribe'])){
         <link rel="stylesheet" href="../css/modalStyle.css" type="text/css">
      </head>
      <body>
-            <header>
-                <nav>
-                    <?php include_once('../components/main_navigation.php'); ?>
-                </nav>   
-            </header>
+         
+        <header>
+            <nav>
+                <?php include_once('../components/main_navigation.php'); ?>
+            </nav>   
+        </header>
 
-            <div id="container">
-             
-            <section id="modalPopUp">
-                <?php include_once('../components/modal.php'); ?>
-            </section>
-             
+        <div id="container" class="clearfix">
 
-            <section id="content">
-    
-                
-
+        <section id="modalPopUp">
+            <?php include_once('../components/modal.php'); ?>
+        </section>
