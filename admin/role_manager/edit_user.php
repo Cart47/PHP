@@ -46,11 +46,12 @@ $genres = ArtistDB::getGenres();
               <!------------ Administrator Edit Form    -->  
                 <?php  if($user->getRoleID() == 2){ ?>
                     <label>Administrator Position:</label><br/>
-                    <input class="textbox"  type="text" name="fname" value="<?php echo $user->getAdminPosition() ?>"/><br/><br/>
+                    <input class="textbox"  type="text" name="admin_position" value="<?php echo $user->getAdminPosition() ?>"/><br/><br/>
                     
                     <label>Administrator Description:</label><br/>
                     <textarea class="textarea"  name="admin_description"><?php echo $user->getAdminDescription() ?></textarea><br/><br/>
                 <?php } ?>
+                
               <!------------ Artist Edit Form    --> 
                 <?php  if($user->getRoleID() == 4){ ?>
                     <label>Band Name:</label><br/>
@@ -70,7 +71,7 @@ $genres = ArtistDB::getGenres();
                     </table>
                     
                     <label>Band Genre:</label><br/>
-                     <select onchange="this.form.submit()" name="Select_a_Genre">
+                     <select name="ArtGenre">
                        <?php foreach($genres as $genre) { ?>
                             <option value="<?php echo $genre; ?>" 
                                 <?php if($user->getArtGenre() == $genre){echo 'selected';}?> >
@@ -85,6 +86,16 @@ $genres = ArtistDB::getGenres();
                     <label>Band Description:</label><br/>
                     <textarea class="textarea"  type="text" name="band_description"><?php echo $user->getArtDescription() ?></textarea><br/><br/>
                 <?php } ?>
+                
+                <!------------ Volunteer Edit Form    -->  
+                <?php  if($user->getRoleID() == 3){ ?>
+                    <label>Volunteer Position:</label><br/>
+                    <input class="textbox"  type="text" name="vol_position" value="<?php echo $user->getVolPosition() ?>"/><br/><br/>
+                    
+                    <label>Administrator Description:</label><br/>
+                    <textarea class="textarea"  name="vol_description"><?php echo $user->getVolDescription() ?></textarea><br/><br/>
+                <?php } ?>
+                
                 </td>
             </tr>
             <tr>

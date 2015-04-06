@@ -112,7 +112,8 @@ td {
   padding: 0px 10px;
   margin-top: 10px;
   font-size: 0.875em;
-  box-shadow: none; }
+  box-shadow: none;
+  resize: none; }
 
 .dropdown {
   border: 1px solid #848484;

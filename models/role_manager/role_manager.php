@@ -90,11 +90,23 @@ class Roles {
     }
     
     
-     public static function deleteUser($individual_id) {
+     public static function deleteUser($individual_id, $RoleID) {
           
         $db = Database::getDB();
         
         $query = "DELETE FROM login WHERE individual_id = '$individual_id'";
+         
+         if($RoleID == 2){
+            $query .= " DELETE FROM admin WHERE individual_id = '$individual_id'";
+        }
+         
+         if($RoleID == 3){
+            $query .= " DELETE FROM volunteer WHERE individual_id = '$individual_id'";
+        }
+        
+         if($RoleID == 4){
+            $query .= " DELETE FROM browse_artist WHERE individual_id = '$individual_id'";
+        }
         
         $row_count = $db->exec($query);
         
