@@ -68,11 +68,11 @@
 					<br />
 
 					<label for="UserPass">Password </label>
-					<input type="password" name="UserPass" data-parsley-minlength="8" data-parsley-minlength-message = "The password needs to be atleast 8 characters" required/>
+					<input id="password" type="password" name="UserPass" data-parsley-minlength="8" data-parsley-minlength-message = "The password needs to be atleast 8 characters" required/>
 					<br />
 					
 					<label for="password_repeat">Password Repeat</label>
-					<input type="password" name="password_repeat" required/>
+					<input type="password" name="password_repeat" data-parsley-equalto="#password" required/>
 					<br />
 					<input type="hidden" name="registrationSent"/>
 					<br />
