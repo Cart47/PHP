@@ -3,21 +3,30 @@
 require ('../models/news_feed/news_class.php');
 require ('../models/news_feed/news_db.php');
 
-/* Define some RSS 2.0 and other compatible feeds */
-$rssfeed = array();
 
+$rssfeed = array();
 $rssfeed['CITF'] = 'http://localhost/PHP/news_feed/rss';
 
-
-/* Loop through and process each defined feed */
+$count = 0;
+//Loop through and process each defined feed
 foreach($rssfeed AS $name=>$url) {
    $rssParser = simplexml_load_file($url);
 
-   /* Iterate through the items, and output each one */
+   //Ouput each article
    foreach ($rssParser->channel->item AS $item) {
-      echo '<a href="' . htmlentities($item->link) . '">' . ($item->title) . '</a>';
-			echo htmlentities($item->description) . '<br />';
-			echo htmlentities($item->pubDate) . '<br />';
+       
+       //Limit of 6 articles displayed on homepage
+       if($count == 5 ) {
+            break;
+       }
+       
+       $date = strtotime($item->pubDate);
+       
+       echo '<div class="article-block">';
+       echo '<h3><a href="' . htmlentities($item->link) . '">' . ($item->title) . '</a></h3>';
+       echo htmlentities(date('F j, Y', $date)) . '<br />';
+       echo '<p>' . htmlentities($item->description) . '</p>';
+       echo '</div>';
+       $count++;
    }
-      echo '</ul>';
 }

@@ -18,14 +18,12 @@ if ($thisArticle == null){
 }
 
 ?>
-<main>
 
-<div id="article">
+<div class="article-details">
     
     <h1><?php echo $thisArticle['title']; ?></h1>
     
-    
 </div>
 
-</main>
+
 <?php include("../components/main_footer.php"); ?>

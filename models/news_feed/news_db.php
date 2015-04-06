@@ -8,7 +8,7 @@ class NewsDB {
         
         $query = 'SELECT * FROM news
                   WHERE publish = 1
-                  ORDER BY date_published ASC';
+                  ORDER BY date_published DESC';
         
         $stm = $db->prepare($query);
         $stm->execute();
@@ -40,7 +40,9 @@ class NewsDB {
         
         $db = Database::getDB();
         
-        $query = 'SELECT * FROM news WHERE publish = :status';
+        $query = 'SELECT * FROM news 
+                  WHERE publish = :status
+                  ORDER BY date_published DESC';
         
         $stm = $db->prepare($query);
         $stm->bindParam(':status', $status, PDO::PARAM_INT);
