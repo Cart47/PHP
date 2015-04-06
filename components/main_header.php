@@ -53,11 +53,9 @@ if(isset($_POST['subscribe'])){
      </head>
      <body>
          
-        <header>
-            <nav>
-                <?php include_once('../components/main_navigation.php'); ?>
-            </nav>   
-        </header>
+        <nav>  
+            <?php include_once('../components/main_navigation.php'); ?>
+        </nav>
 
         <div id="container" class="clearfix">
 

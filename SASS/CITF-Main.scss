@@ -56,6 +56,18 @@ table {
 html { height: 100%; }
 body { height: 100%; font-family: $font1; }
 
+nav {
+    height: 60px;
+}
+
+#container {
+    height: auto; 
+    overflow-y: hidden; 
+    position: relative;
+    margin-top: 50px;
+}
+
+
 h1 {}
 
 h2 {}
@@ -91,12 +103,6 @@ input[type=submit] {
     margin: 1% 0%;
     font-size: 0.875em;
     width: 100%;
-}
-
-#container {
-    height: auto; 
-    overflow-y: hidden; 
-    position: relative;
 }
 
 .clearfix:after {
@@ -195,7 +201,8 @@ input[type=submit] {
 
 /* for news feed on homepage */
 #newsfeed {
-    margin-top: 30px;
+    width: 1024px;
+    margin: 30px auto;
 }
 
 /* For news article details */
@@ -351,47 +358,14 @@ footer {
         font-family: $font1
     }    
 
-    #headMain {
-        padding-top: 150px;
-        position: relative;
-        display: block;
-    }
-
     footer {
         display: block;
     }  
    
 }
 
-// ----- Tablet Landscape style --------------------//
-@media screen and (max-width:1025px) {
- 
-    #headMain {
-        width:80%;
-        overflow-x: hidden;
-        left:20%;
-
-    }
-}
-
 // ----- Tablet Portrait style --------------------//
 @media screen and (max-width:900px) {
-
-    #headMain {
-        visibility:visible;
-        position: relative;
-        top:4.25em;
-        left:0;
-        width:100%;
-        overflow-x: visible;
-    }
-
-    main {
-        position: relative;
-        width:100%;
-        overflow-x:visible;
-        left:0%;
-    }
     
     .subscribe {
         width: 50%;   
@@ -423,14 +397,6 @@ footer {
                 }
             }
     
-    main {
-        position: relative;
-        width:100%;
-        overflow-x:visible;
-        top:0;
-        left:0%;
-        height: 100em;
-    }
 }
 
 // ------ iPhone ------------------------ //
