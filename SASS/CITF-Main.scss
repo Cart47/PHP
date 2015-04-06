@@ -53,7 +53,8 @@ table {
 // ******************** General ******************** //
 // ************************************************* //
 
-body { font-family: $font1; }
+html { height: 100%; }
+body { height: 100%; font-family: $font1; }
 
 h1 {}
 
@@ -93,8 +94,18 @@ input[type=submit] {
 }
 
 #container {
-    width: 1440px;
-    margin:0 auto;
+    height: auto; 
+    overflow-y: hidden; 
+    position: relative;
+}
+
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
 }
 
 // **************************************************** //
@@ -175,20 +186,23 @@ input[type=submit] {
 // ******************** Body ******************** //
 // ********************************************** //
 
-#mainContent {
-    position: relative;
-    padding: 5% 2%;
-} 
+
 
 /* for slider */
 #slider {
 
 }
 
+/* for news feed on homepage */
+#newsfeed {
+    margin-top: 30px;
+}
+
 /* For news article details */
 #article {
     opacity: 0.7;
     background: #fff;
+    padding: 20px;
 }
 
 // ************************************************ //
@@ -268,15 +282,6 @@ footer {
 }
 
 // ----- Large Desktop style --------------------//
-@media screen and (max-width: 1799px) {
-    #container {
-        position: relative;
-        width: 100%;
-        min-height: 350px;
-    }
-}
-
-// ----- Large Desktop style --------------------//
 @media screen and (max-width: 1440px) {
     #footContainer {
         width: 100%;
@@ -338,21 +343,6 @@ footer {
 // ----- Common Desktop style --------------------//
 @media screen and (min-width:1026px) {
     
-    // Thius is for the middle of the homepage where the recent news takes place
-     #transitionBlock {
-        margin-top: 600px;
-        display: block;
-        width: 90%;
-        height: 300px;
-        background-color: black;
-        padding: 20px 5%;
-        h3 {
-            color: white;
-            text-decoration: underline;
-            width: 25%;
-        }
-    }
-    
     body {
         background-image: url(../img/tree-back.jpg);
         background-repeat: no-repeat;
@@ -367,17 +357,7 @@ footer {
         display: block;
     }
 
-    main {
-        position: relative;
-        display: block;
-        top: 100px;
-        padding: 20px;
-        width: 90%;
-        margin: 0 auto;
-    }
-
     footer {
-        position: relative;
         display: block;
     }  
    
@@ -392,12 +372,6 @@ footer {
         left:20%;
 
     }
-
-    main {
-        min-height: 100%;
-        
-    }  
-    
 }
 
 // ----- Tablet Portrait style --------------------//
@@ -422,23 +396,11 @@ footer {
     .subscribe {
         width: 50%;   
     }
-
-    footer {
-        visibility: visible;
-    }    
+ 
 }
 
 // ----- Smart Phone style -------------------- //
 @media screen and (max-width:720px) {
-    #headMain {
-        visibility:visible;
-        position: relative;
-        top:5em;
-        left:0;
-        width:100%;
-        overflow-x: visible;
-
-    }
 
     #nav {
         width: 100%;
@@ -469,10 +431,6 @@ footer {
         left:0%;
         height: 100em;
     }
-
-    footer {
-        visibility: visible;
-    } 
 }
 
 // ------ iPhone ------------------------ //
