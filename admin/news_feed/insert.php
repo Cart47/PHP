@@ -1,5 +1,6 @@
 <?php 
 
+    date_default_timezone_set('UTC'); 
     require_once ('../../config.php');
     include ('../components/cms_header.php');
 
@@ -25,7 +26,7 @@
         <input type="hidden" name="news_id" />
         <input type="hidden" name="type" value="0" />
         <input type="hidden" name="publish" value="0" />
-        <input type="hidden" name="date" value="<?php echo date('Y-m-d'); ?>" />
+        <input type="hidden" name="date_created" value="<?php echo date('Y-m-d'); ?>" />
 
         <label>Title:</label>
         <input type="text" name="title" />
@@ -76,7 +77,7 @@
         <input type="hidden" name="news_id" />
         <input type="hidden" name="type" value="1" />
         <input type="hidden" name="publish" value="0" />
-        <input type="hidden" name="date" value="<?php echo date('Y-m-d'); ?>" />
+        <input type="hidden" name="date_created" value="<?php echo date('Y-m-d'); ?>" />
 
         <label>Title:</label>
         <input type="text" name="title" />

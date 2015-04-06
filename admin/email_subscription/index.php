@@ -4,6 +4,25 @@ require ('../../models/database.php');
 require ('../../models/email_subscription/email_class.php');
 require ('../../models/email_subscription/email_db.php');
 
+//function that gets emails by approved status
+function getEmailList(){
+    
+    GLOBAL $approvedEmail;
+    GLOBAL $pendingEmail;
+    
+    $approve = 1;
+    $pending = 0;
+    
+    $approvedEmail = EmailDB::getEmailsByStatus($approve);
+    $pendingEmail = EmailDB::getEmailsByStatus($pending);
+    
+}
+
+
+// -------------------------------------------- //    
+// ---------- Displaying Subscribers ---------- //
+// -------------------------------------------- //  
+
 if (isset($_POST['action'])) {
     $action = $_POST['action'];
 } else if (isset($_GET['action'])) {
@@ -14,13 +33,14 @@ if (isset($_POST['action'])) {
 
 if ($action == 'email_list'){ //default view
     
-    $approve = 1;
-    $pending = 0;
-    
-    $approvedEmail = EmailDB::getEmailsByStatus($approve);
-    $pendingEmail = EmailDB::getEmailsByStatus($pending);
+    getEmailList();
       
     include ('email_list.php');
+
+    
+// ------------------------------------------- //    
+// ---------- Inserting Subscribers ---------- //
+// ------------------------------------------- //  
     
 } elseif ($action == 'add'){ //If 'add a subscriber' button is clicked
     
@@ -36,13 +56,14 @@ if ($action == 'email_list'){ //default view
     $newSubscriber = new EmailClass($name, $email, $approved);
     $addSubscriber = EmailDB::insertEmail($newSubscriber);
     
-    $approve = 1;
-    $pending = 0;
-    
-    $approvedEmail = EmailDB::getEmailsByStatus($approve);
-    $pendingEmail = EmailDB::getEmailsByStatus($pending);
+    getEmailList();
     
     include ('email_list.php');
+
+    
+// ------------------------------------------ //    
+// ---------- Updating Subscribers ---------- //
+// ------------------------------------------ //  
     
 } elseif ($action == 'edit'){ //If edit button is clicked
     
@@ -60,14 +81,15 @@ if ($action == 'email_list'){ //default view
     
     EmailDB::updateEmail($email_id, $name, $email, $approved);
     
-    $approve = 1;
-    $pending = 0;
-    
-    $approvedEmail = EmailDB::getEmailsByStatus($approve);
-    $pendingEmail = EmailDB::getEmailsByStatus($pending);
+    getEmailList();
     
     include ('email_list.php');
 
+    
+// ------------------------------------------ //    
+// ---------- Deleting Subscribers ---------- //
+// ------------------------------------------ //  
+    
 } elseif ($action == 'delete'){ //If delete button is clicked
     
     $email_id = $_POST['email_id']; 
@@ -80,11 +102,7 @@ if ($action == 'email_list'){ //default view
     $email_id = $_POST['email_id']; 
     EmailDB::deleteEmail($email_id);  
     
-    $approve = 1;
-    $pending = 0;
-    
-    $approvedEmail = EmailDB::getEmailsByStatus($approve);
-    $pendingEmail = EmailDB::getEmailsByStatus($pending);
+    getEmailList();
     
     include ('email_list.php');
     

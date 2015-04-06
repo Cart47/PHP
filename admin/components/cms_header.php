@@ -3,6 +3,7 @@
 <html>
 
 <head>
+    
     <meta charset="utf-8" />
     <title>CITF Admin</title>
     
@@ -15,22 +16,23 @@
     <!-- Javascript -->
     <script src="../../js/jquery-2.1.3.js"></script>
     <script src="../../js/news_forms.js"></script>
+    
 </head>
 
 <body>
     <div id="header-container">
 
 
-        <div id="citf">Chorus in the Forest</div>
+        <div id="citf"><a href="../Home/">Chorus in the Forest</a></div>
 
         <ul id="cms-top-nav">
-            <li><a href="."><i class="fa fa-home"></i>CMS Home</a>
+            <li><a href="."><i class="fa fa-home"></i>CMS</a>
             </li>
             <li><a href="../../Home/Index.php"><i class="fa fa-external-link"></i>Visit Site</a>
             </li>
         </ul>
 
-        <a id="signout" href="">Sign Out</a>
+        <a id="signout" href="../../components/logout.php">Sign Out</a>
 
         <div id="user">
             <p>Welcome,

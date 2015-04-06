@@ -1,6 +1,6 @@
-/***************************************/
-/*************** General ***************/
-/***************************************/
+/* --------------------------------------- */
+/* --------------- General --------------- */
+/* --------------------------------------- */
 html {
   position: relative;
   min-height: 100%; }
@@ -47,16 +47,14 @@ h3 {
   margin: 20px 0px;
   text-decoration: none;
   transition: all 0.3s; }
-
-.btn:hover {
-  background: #000; }
+  .btn:hover {
+    background: #000; }
 
 /* Only use with href button */
 .xtra-pad {
   padding: 10px 20px 7px 20px; }
-
-.xtra-pad:hover {
-  color: #fff; }
+  .xtra-pad:hover {
+    color: #fff; }
 
 .link-btn {
   font-size: 1em;
@@ -66,16 +64,15 @@ h3 {
   cursor: pointer;
   text-align: center;
   transition: all 0.3s; }
-
-.link-btn:hover {
-  color: #444;
-  text-decoration: underline; }
+  .link-btn:hover {
+    color: #444;
+    text-decoration: underline; }
 
 .fa.fa-trash-o,
 .fa.fa-pencil,
-.fa-arrow-circle-up,
-.fa-globe,
-.fa-times-circle {
+.fa.fa-arrow-circle-up,
+.fa.fa-globe,
+.fa.fa-times-circle {
   padding: 0px; }
 
 .clear {
@@ -108,6 +105,16 @@ td {
   font-size: 0.875em;
   box-shadow: none; }
 
+.textarea {
+  border: 1px solid #848484;
+  height: 10em;
+  width: 40em;
+  padding: 0px 10px;
+  margin-top: 10px;
+  font-size: 0.875em;
+  box-shadow: none;
+  resize: none; }
+
 .dropdown {
   border: 1px solid #848484;
   background: #fff;
@@ -130,21 +137,22 @@ td {
   color: red;
   font-size: 1.25em; }
 
-/**************************************/
-/*************** Header ***************/
-/**************************************/
+/* -------------------------------------- */
+/* --------------- Header --------------- */
+/* -------------------------------------- */
 #header-container {
   background-color: #000;
   height: 50px;
   right: 0;
   left: 0; }
 
-#citf {
+#citf a {
   color: #fff;
   float: left;
   padding: 8px 25px;
   font-family: Lobster, serif;
-  font-size: 2em; }
+  font-size: 2em;
+  text-decoration: none; }
 
 #cms-top-nav li a {
   float: left;
@@ -177,9 +185,9 @@ td {
   background-color: #fff;
   color: #9a3cf5; }
 
-/*****************************************/
-/*************** Left Menu ***************/
-/*****************************************/
+/* ----------------------------------------- */
+/* --------------- Left Menu --------------- */
+/* ----------------------------------------- */
 #logo {
   float: left;
   margin-top: 60px;
@@ -236,9 +244,9 @@ td {
 .fa-external-link {
   padding-right: 5px; }
 
-/*****************************************/
-/*************** Main Body ***************/
-/*****************************************/
+/* -------------------------------------------- */
+/* --------------- Content Body --------------- */
+/* -------------------------------------------- */
 #main {
   margin-top: 30px;
   margin-left: 30px;
@@ -257,9 +265,9 @@ td {
   z-index: 2;
   position: absolute; }
 
-/**************************************/
-/*************** Footer ***************/
-/**************************************/
+/* -------------------------------------- */
+/* --------------- Footer --------------- */
+/* -------------------------------------- */
 #cms-footer {
   clear: both;
   background-color: #ddd;
@@ -272,5 +280,3 @@ td {
 
 #footer-content {
   padding: 20px; }
-
-/*# sourceMappingURL=cms.css.map */

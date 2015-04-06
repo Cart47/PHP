@@ -2,11 +2,12 @@
 
 class NewsClass {
     
-    private $news_id, $title, $date, $author, $story_url, $other_url, $feature_img, $banner_img, $description, $article, $type, $publish;
+    private $news_id, $title, $date_created, $date_published, $author, $story_url, $other_url, $feature_img, $banner_img, $description, $article, $type, $publish;
     
-    public function __construct($title, $date, $author, $story_url, $other_url, $feature_img, $banner_img, $description, $article, $type, $publish) {
+    public function __construct($title, $date_created, $date_published, $author, $story_url, $other_url, $feature_img, $banner_img, $description, $article, $type, $publish) {
         $this->title = $title;
-        $this->date = $date;
+        $this->date_created = $date_created;
+        $this->date_published = $date_published;
         $this->author = $author;
         $this->story_url = $story_url;
         $this->other_url = $other_url;
@@ -34,12 +35,20 @@ class NewsClass {
         $this->title = $value;
     }
     
-    public function getDate() {
-        return $this->date;
+    public function getDateCreated() {
+        return $this->date_created;
     }
 
-    public function setDate($value) {
-        $this->date = $value;
+    public function setDateCreated($value) {
+        $this->date_created = $value;
+    }
+    
+    public function getDatePublished() {
+        return $this->date_published;
+    }
+
+    public function setDatePublished($value) {
+        $this->date_published = $value;
     }
     
     public function getAuthor() {
