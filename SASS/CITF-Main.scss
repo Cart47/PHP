@@ -59,7 +59,7 @@ body {
     font-family: $font1; 
     font-size: 0.9em;
     -webkit-font-smoothing: antialiased; 
-    background: #eee;
+    background: #ddd;
 }
 
 nav {
@@ -94,6 +94,15 @@ p { line-height: 18px; padding-right: 5px; }
 
 a {}
 
+.link {
+    color: $Purple;
+    text-decoration: none;
+    &:hover { 
+        transition: all 0.2s;
+        border-bottom: 1px dotted $Purple;
+    }
+}
+
 input[type=submit] {
     font-size: 0.875em;
     border-radius: 5px;
@@ -125,6 +134,16 @@ input[type=submit] {
      content: " ";
      clear: both;
      height: 0;
+}
+
+#back-btn a {
+    background: #14CC60;
+    padding: 15px;
+    border-radius: 50px;
+    color: #fff;
+    float: left;
+    width: auto;
+    margin-top: 30px;
 }
 
 // **************************************************** //
@@ -236,6 +255,7 @@ input[type=submit] {
 .article-grid {
     display: flex;
     flex-flow: row wrap;
+ 
 }
 
 .article-block {
@@ -272,7 +292,8 @@ input[type=submit] {
     }
 }
 
-.fa-angle-double-right {
+.fa-angle-double-right,
+.fa-external-link {
     padding-left: 5px;
 }
 
@@ -280,9 +301,13 @@ input[type=submit] {
 .article-details {
     background-color: rgba(255, 255, 255, 0.7);
     padding: 20px;
-    width: 1024px;
-    margin: 30px auto;
+    width: 1000px;
+    margin: 100px auto 50px auto;
     border-radius: 5px;
+}
+
+.article-text {
+    margin: 30px 0px;
 }
 
 #social {
@@ -319,7 +344,7 @@ footer {
     width: 1440px;
     margin:0 auto;
     color: #fff;
-    height: 310px;
+    height: 270px;
 }
 
 /*** Email Subscription Feature ***/
@@ -376,11 +401,6 @@ footer {
 
 #hamburger{
     display: none;
-}
-
-// ----------------  CONTENT ABOVE 1800px (Very large format screens  ie. retina displays)) ------- //
-@media screen and (max-width: 1800px) {
-    
 }
 
 // ----- Large Desktop style --------------------//
@@ -451,7 +471,6 @@ footer {
         background-attachment: fixed;
         background-size: cover;
         font-family: $font1;
-        background: #eee;
     }    
    
 }
@@ -466,6 +485,10 @@ footer {
     .article-block {
         width: 45.33%;
 
+    }
+    
+    .article-details {
+        width: 80%;
     }
 
 }

@@ -86,7 +86,7 @@
         <div class="clear"></div>
 
         <label>Article Link:</label>
-        <input type="text" name="other_url" value="<?php echo $newsByID['story_url']; ?>" />
+        <input type="text" name="story_url" value="<?php echo $newsByID['story_url']; ?>" />
 
         <div class="clear"></div>
 
