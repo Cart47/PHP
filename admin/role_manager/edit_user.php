@@ -10,6 +10,7 @@ $userID = $_POST;
 if(isset($userID['edit'])){
     Roles::EditUserRole($userID);
     unset($userID);
+    $prompt = '<script>alert("Successfully Updated");</script>';
 }
 
 $user = Roles::getUserRoles($_POST['individualID']);
@@ -18,6 +19,7 @@ $genres = ArtistDB::getGenres();
 ?>
 
 <!---------  BASE Role Manager ---------->
+
 
 <h1>Role Manager</h1>
     <br/>
@@ -121,4 +123,5 @@ $genres = ArtistDB::getGenres();
            
         </form>
     </table>
+<?php if(isset($prompt)){echo $prompt;} ?>    
 <?php include ( '../components/cms_footer.php'); ?>

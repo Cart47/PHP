@@ -119,7 +119,7 @@ class Roles {
      
         $db = Database::getDB();
          
-        $query = " DELETE FROM admin WHERE admin_id = '$individual_id'";
+        $query = " DELETE FROM admin WHERE admin_id = '$admin_id'";
         
         $row_count = $db->exec($query);
         
@@ -268,7 +268,7 @@ class Roles {
         
         
             $query6 = "UPDATE login
-                  SET username='$username',
+                  SET username='$username'
                   WHERE login_id='$loginID'";
         
             $login_username_change = $db->exec($query6);
