@@ -69,7 +69,7 @@ foreach($users as $u){
                                 <input type="hidden" name="delete_user" value="<?php echo $i->getindID() ?>" />
                                 <input type="hidden" name="user_roleID" value="<?php echo $i->getRoleID() ?>" />
                                 <input type="hidden" name="action" value="delete" />
-                                <button type="submit" class="link-btn" onclick="confirm('Are you sure you would like to delete this member?');"><i class="fa fa-trash-o fa-lg"></i></button>
+                                <button type="submit" class="link-btn"><i class="fa fa-trash-o fa-lg"></i></button>
                         </form>
                     </td>
                     </tr>
@@ -124,7 +124,7 @@ foreach($users as $u){
                                 <input type="hidden" name="user_roleID" value="<?php echo $a->getRoleID() ?>" />
                                 <input type="hidden" name="user_role" value="<?php echo $a->getAdminID() ?>" />
                                 <input type="hidden" name="action" value="delete" />
-                                <button type="submit" class="link-btn" onclick="confirm('Are you sure you would like to delete this member?');"><i class="fa fa-trash-o fa-lg"></i></button>
+                                <button type="submit" class="link-btn"><i class="fa fa-trash-o fa-lg"></i></button>
                         </form>
                     </td>
                 </tr>
@@ -181,7 +181,7 @@ foreach($users as $u){
                                 <input type="hidden" name="user_roleID" value="<?php echo $art->getRoleID() ?>" />
                                 <input type="hidden" name="user_role" value="<?php echo $art->getArtistID() ?>" />
                                 <input type="hidden" name="action" value="delete" />
-                                <button type="submit" class="link-btn" onclick="confirm('Are you sure you would like to delete this member?');"><i class="fa fa-trash-o fa-lg"></i></button>
+                                <button type="submit" class="link-btn"><i class="fa fa-trash-o fa-lg"></i></button>
                         </form>
                     </td>
                 </tr>
@@ -234,7 +234,7 @@ foreach($users as $u){
                                 <input type="hidden" name="user_roleID" value="<?php echo $v->getRoleID() ?>" />
                                 <input type="hidden" name="user_role" value="<?php echo $v->getVolunteerID() ?>" />
                                 <input type="hidden" name="action" value="delete" />
-                                <button type="submit" class="link-btn" onclick="confirm('Are you sure you would like to delete this member?');"><i class="fa fa-trash-o fa-lg"></i></button>
+                                <button type="submit" class="link-btn"><i class="fa fa-trash-o fa-lg"></i></button>
                         </form>
                     </td>
                       <?php } ?>
