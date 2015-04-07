@@ -10,11 +10,26 @@ if(!isset($_SESSION)) { session_start();}
     <?php include_once("../image_slider/slider.php"); ?>
 </div>
 
-<?php //include_once("../components/main_content.php"); ?>
+<div id="newsfeed">
+    
+    <h2 id="news-title"></h2>
 
-<div id="newsfeed" class="clearfix">
-    <h2>What's New?</h2>
-    <?php include_once('../news_feed/articles.php'); ?>
+    <div class="article-grid">
+        <?php include_once('../news_feed/articles.php'); ?>
+    </div><!-- end article grid -->
+    
+</div><!-- end newsfeed -->
+
+<div id="social">
+
+    <div id="icons">
+        <h2 id="connect-title">Connect with CITF</h2>
+        <img class="social-icon" src="../img/social/facebook.png" alt="Facebook"/>
+        <img class="social-icon" src="../img/social/twitter.png" alt="Twitter"/>
+        <img class="social-icon" src="../img/social/flickr.png" alt="Flickr"/>
+        <img class="social-icon" src="../img/social/youtube.png" alt="Youtube"/>
+        <a href="../news_feed/rss/" title="RSS Feed" target="_blank"><img class="social-icon" src="../img/social/rss.png" alt="RSS" /></a>
+    </div>
 </div>
 
 <?php include("../components/main_footer.php");

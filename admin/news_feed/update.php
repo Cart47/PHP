@@ -20,7 +20,8 @@
         <input type="hidden" name="news_id" value="<?php echo $newsByID['news_id']; ?>" />
         <input type="hidden" name="type" value="0" />
         <input type="hidden" name="publish" value="<?php echo $newsByID['publish']; ?>" />
-        <input type="hidden" name="date" value="<?php echo $newsByID['date']; ?>" />
+        <input type="hidden" name="date_created" value="<?php echo $newsByID['date_created']; ?>" />
+        <input type="hidden" name="date_published" value="<?php echo $newsByID['date_published']; ?>" />
 
         <label>Title:</label>
         <input type="text" name="title" value="<?php echo $newsByID['title']; ?>"/>
@@ -71,7 +72,8 @@
         <input type="hidden" name="news_id" value="<?php echo $newsByID['news_id']; ?>" />
         <input type="hidden" name="type" value="1" />
         <input type="hidden" name="publish" value="<?php echo $newsByID['publish']; ?>" />
-        <input type="hidden" name="date" value="<?php echo $newsByID['date']; ?>" />
+        <input type="hidden" name="date_created" value="<?php echo $newsByID['date_created']; ?>" />
+        <input type="hidden" name="date_published" value="<?php echo $newsByID['date_published']; ?>" />
 
         <label>Title:</label>
         <input type="text" name="title" value="<?php echo $newsByID['title']; ?>"/>
@@ -84,7 +86,7 @@
         <div class="clear"></div>
 
         <label>Article Link:</label>
-        <input type="text" name="other_url" value="<?php echo $newsByID['story_url']; ?>" />
+        <input type="text" name="story_url" value="<?php echo $newsByID['story_url']; ?>" />
 
         <div class="clear"></div>
 

@@ -46,23 +46,44 @@ html {
 
 body {
   height: 100%;
-  font-family: roboto, raleway, sans-serif; }
+  font-family: roboto, raleway, sans-serif;
+  font-size: 0.9em;
+  -webkit-font-smoothing: antialiased;
+  background: #ddd; }
 
 nav {
   height: 60px; }
 
 #container {
   height: auto;
-  overflow-y: hidden;
   position: relative;
-  margin-top: 50px; }
+  margin-top: 60px; }
 
-h3 {
-  font-size: 1.25em;
+h1 {
+  font-size: 1.75em;
+  padding: 10px 0px;
+  color: #9a3cf5; }
+
+h2 {
+  font-size: 1.5em;
   padding: 10px 0px; }
 
+h3 {
+  font-size: 1.15em;
+  padding: 5px 0px;
+  font-weight: 700;
+  line-height: 20px; }
+
 p {
-  padding: 2px; }
+  line-height: 18px;
+  padding-right: 5px; }
+
+.link {
+  color: #9a3cf5;
+  text-decoration: none; }
+  .link:hover {
+    transition: all 0.2s;
+    border-bottom: 1px dotted #9a3cf5; }
 
 input[type=submit] {
   font-size: 0.875em;
@@ -93,6 +114,15 @@ input[type=submit] {
   content: " ";
   clear: both;
   height: 0; }
+
+#back-btn a {
+  background: #14CC60;
+  padding: 15px;
+  border-radius: 50px;
+  color: #fff;
+  float: left;
+  width: auto;
+  margin-top: 30px; }
 
 #navBar {
   background-color: #121212;
@@ -135,10 +165,10 @@ input[type=submit] {
     margin-right: 20px;
     font-size: 0.875em; }
   #logIn li a {
-    font-size: .8em;
+    font-size: .9em;
     text-decoration: none;
     line-height: 60px;
-    padding: 23.5px;
+    padding: 23px;
     color: #fff;
     background: #9a3cf5;
     transition: all 0.3s;
@@ -151,16 +181,89 @@ input[type=submit] {
     font-size: .9em; }
 
 /* for slider */
-/* for news feed on homepage */
+/* Homepage Newsfeed */
+#news-title {
+  color: #fff;
+  margin: 10px auto;
+  padding: 5px;
+  text-align: center;
+  font-weight: 700;
+  font-family: Lobster, serif; }
+
+.fa-rss-square {
+  color: #ff6600;
+  font-size: 1em;
+  padding-left: 10px; }
+
 #newsfeed {
   width: 1024px;
-  margin: 30px auto; }
+  margin: 30px auto 50px auto; }
 
-/* For news article details */
-#article {
-  opacity: 0.7;
-  background: #fff;
-  padding: 20px; }
+/* article feed */
+.article-grid {
+  display: flex;
+  flex-flow: row wrap; }
+
+.article-block {
+  width: 30.33%;
+  background: rgba(255, 255, 255, 0.8);
+  margin: 10px;
+  padding: 10px 0px 0px 10px;
+  border-radius: 5px;
+  height: 100%; }
+
+.article-content {
+  height: 100%; }
+
+.date {
+  padding-bottom: 5px; }
+
+.more {
+  background: #9a3cf5;
+  width: auto;
+  float: right;
+  padding: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.875em;
+  font-weight: 400;
+  transition: all 0.3s;
+  border-radius: 5px 0px 5px 0px; }
+  .more:hover {
+    color: #9a3cf5;
+    background: transparent; }
+
+.fa-angle-double-right,
+.fa-external-link {
+  padding-left: 5px; }
+
+/* article details page */
+.article-details {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+  width: 1000px;
+  margin: 100px auto 50px auto;
+  border-radius: 5px; }
+
+.article-text {
+  margin: 30px 0px; }
+
+#social {
+  background: #444;
+  width: 100%;
+  padding: 30px 0px; }
+
+#icons {
+  text-align: center; }
+
+.social-icon {
+  display: inline-block;
+  margin: 0 auto;
+  padding: 10px; }
+
+#connect-title {
+  color: #fff;
+  text-align: center; }
 
 footer {
   background-color: #121212; }
@@ -169,7 +272,7 @@ footer {
   width: 1440px;
   margin: 0 auto;
   color: #fff;
-  height: 310px; }
+  height: 270px; }
 
 /*** Email Subscription Feature ***/
 .contact {
@@ -253,18 +356,24 @@ footer {
     padding: 24px; } }
 @media screen and (min-width: 1026px) {
   body {
-    background-image: url(../img/tree-back.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    font-family: roboto, raleway, sans-serif; }
+    font-family: roboto, raleway, sans-serif; } }
+@media screen and (max-width: 1024px) {
+  #newsfeed {
+    width: 90%;
+    padding: 0px 30px; }
 
-  footer {
-    display: block; } }
+  .article-block {
+    width: 45.33%; }
+
+  .article-details {
+    width: 80%; } }
 @media screen and (max-width: 900px) {
   .subscribe {
     width: 50%; } }
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 730px) {
   #nav {
     width: 100%; }
     #nav li {
@@ -276,7 +385,12 @@ footer {
       #nav li:hover {
         background: #444; }
       #nav li a {
-        padding: 30px 60px; } }
+        padding: 30px 60px; }
+
+  .article-block {
+    width: 100%; } }
 @media screen and (max-width: 480px) {
   #logIn li a {
     display: none; } }
+
+/*# sourceMappingURL=CITF-Main.css.map */
