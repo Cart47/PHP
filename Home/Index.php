@@ -28,7 +28,7 @@ if(!isset($_SESSION)) { session_start();}
         <img class="social-icon" src="../img/social/twitter.png" alt="Twitter"/>
         <img class="social-icon" src="../img/social/flickr.png" alt="Flickr"/>
         <img class="social-icon" src="../img/social/youtube.png" alt="Youtube"/>
-        <img class="social-icon" src="../img/social/rss.png" alt="RSS"/>
+        <a href="../news_feed/rss/" title="RSS Feed" target="_blank"><img class="social-icon" src="../img/social/rss.png" alt="RSS" /></a>
     </div>
 </div>
 

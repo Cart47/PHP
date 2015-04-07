@@ -16,7 +16,7 @@ foreach($rssfeed AS $name=>$url) {
    foreach ($rssParser->channel->item AS $item) {
        
        //Limit of 6 articles displayed on homepage
-       if($count == 5 ) {
+       if($count == 6 ) {
             break;
        }
        
@@ -32,8 +32,12 @@ foreach($rssfeed AS $name=>$url) {
                echo '<p>' . htmlentities($item->description) . '</p>';
            echo '</div>';
        
-           //Read more button
-           echo '<a class="more" href="' . htmlentities($item->link) . '">Read More<i class="fa fa-angle-double-right fa-lg"></i></a>';
+           //Read more button based on internal or external article
+           if($item->link[@type] == "internal") {
+               echo '<a class="more" href="' . htmlentities($item->link) . '">Read More<i class="fa fa-angle-double-right fa-lg"></i></a>';
+           } elseif($item->link[@type] == "external") {
+               echo '<a class="more" href="' . htmlentities($item->link) . '" target="_blank">Read More<i class="fa fa-external-link"></i></a>';
+           }
        
        echo '</div>';
        $count++;

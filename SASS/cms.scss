@@ -8,8 +8,14 @@ html { position: relative; min-height: 100%; }
 body { font-family: $font1; -webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px; font-size: 1em; }
 
 
-a { color: #444; }
-a:hover { color: $Purple; transition: all 0.2s; }
+a { 
+    color: $Purple;
+    text-decoration: none;
+    &:hover { 
+        border-bottom: 1px dotted $Purple; 
+        transition: all 0.2s;
+    }
+}
 
 p { padding: 5px 0px; }
 

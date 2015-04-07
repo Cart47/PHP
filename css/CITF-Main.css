@@ -49,7 +49,7 @@ body {
   font-family: roboto, raleway, sans-serif;
   font-size: 0.9em;
   -webkit-font-smoothing: antialiased;
-  background: #eee; }
+  background: #ddd; }
 
 nav {
   height: 60px; }
@@ -77,6 +77,13 @@ h3 {
 p {
   line-height: 18px;
   padding-right: 5px; }
+
+.link {
+  color: #9a3cf5;
+  text-decoration: none; }
+  .link:hover {
+    transition: all 0.2s;
+    border-bottom: 1px dotted #9a3cf5; }
 
 input[type=submit] {
   font-size: 0.875em;
@@ -107,6 +114,15 @@ input[type=submit] {
   content: " ";
   clear: both;
   height: 0; }
+
+#back-btn a {
+  background: #14CC60;
+  padding: 15px;
+  border-radius: 50px;
+  color: #fff;
+  float: left;
+  width: auto;
+  margin-top: 30px; }
 
 #navBar {
   background-color: #121212;
@@ -217,16 +233,20 @@ input[type=submit] {
     color: #9a3cf5;
     background: transparent; }
 
-.fa-angle-double-right {
+.fa-angle-double-right,
+.fa-external-link {
   padding-left: 5px; }
 
 /* article details page */
 .article-details {
   background-color: rgba(255, 255, 255, 0.7);
   padding: 20px;
-  width: 1024px;
-  margin: 30px auto;
+  width: 1000px;
+  margin: 100px auto 50px auto;
   border-radius: 5px; }
+
+.article-text {
+  margin: 30px 0px; }
 
 #social {
   background: #444;
@@ -252,7 +272,7 @@ footer {
   width: 1440px;
   margin: 0 auto;
   color: #fff;
-  height: 310px; }
+  height: 270px; }
 
 /*** Email Subscription Feature ***/
 .contact {
@@ -339,15 +359,17 @@ footer {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    font-family: roboto, raleway, sans-serif;
-    background: #eee; } }
+    font-family: roboto, raleway, sans-serif; } }
 @media screen and (max-width: 1024px) {
   #newsfeed {
     width: 90%;
     padding: 0px 30px; }
 
   .article-block {
-    width: 45.33%; } }
+    width: 45.33%; }
+
+  .article-details {
+    width: 80%; } }
 @media screen and (max-width: 900px) {
   .subscribe {
     width: 50%; } }
