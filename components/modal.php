@@ -33,12 +33,12 @@
 			<!-- Username & Password Login form -->
 			<div class="user_login">
 				<form id="loginForm" action="" method="post">
-					<label>Email / Username</label>
-					<input type="text" name="UserName" />
+					<label for="UserName">Email / Username</label>
+					<input type="text" name="UserName" required/>
 					<br />
 
-					<label>Password</label>
-					<input type="password" name="UserPass"/>
+					<label for="password">Password</label>
+					<input type="password" name="UserPass" required/>
 					<br />
 					<input type="hidden" name="loginSent"/>
 					<br />
@@ -52,27 +52,27 @@
 			<!-- Register Form -->
 			<div class="user_register">
 				<form id="registerForm" action="" method="post">
-					<label>First Name</label>
-					<input type="text" name="user_firstname"/>
+					<label for="user_firstname">First Name</label>
+					<input type="text" name="user_firstname" required/>
 					<br />
-					<label>Last Name</label>
-					<input type="text" name="user_lastname"/>
-					<br />
-					
-					<label>User Name</label>
-					<input type="text" name="UserName"/>
-					<br />
-
-					<label>Email Address</label>
-					<input type="email" name="user_email" />
-					<br />
-
-					<label>Password&nbsp;<span style="color:red; font-size:10px;">Must be atleast 8 characters</span> </label>
-					<input type="password" name="UserPass"/>
+					<label for="user_lastname">Last Name</label>
+					<input type="text" name="user_lastname" required/>
 					<br />
 					
-					<label>Password Repeat</label>
-					<input type="password" name="password_repeat"/>
+					<label for="UserName">User Name</label>
+					<input type="text" name="UserName" required/>
+					<br />
+
+					<label for="user_email">Email Address</label>
+					<input type="email" name="user_email" data-parsley-trigger="change" required />
+					<br />
+
+					<label for="UserPass">Password </label>
+					<input id="password" type="password" name="UserPass" data-parsley-minlength="8" data-parsley-minlength-message = "The password needs to be atleast 8 characters" required/>
+					<br />
+					
+					<label for="password_repeat">Password Repeat</label>
+					<input type="password" name="password_repeat" data-parsley-equalto="#password" required/>
 					<br />
 					<input type="hidden" name="registrationSent"/>
 					<br />

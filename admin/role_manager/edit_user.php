@@ -5,25 +5,37 @@ include_once('../../models/database.php');
 include_once('../../models/role_manager/users.php');
 include_once('../../models/role_manager/role_manager.php');
 require_once('../../models/browse_artist/artist_db.php');
-$user = Roles::getUserRoles($_POST['edit_user']);
+
+$userID = $_POST;
+if(isset($userID['edit'])){
+    Roles::EditUserRole($userID);
+    unset($userID);
+    $prompt = '<script>alert("Successfully Updated");</script>';
+}
+
+$user = Roles::getUserRoles($_POST['individualID']);
 $genres = ArtistDB::getGenres();
+
 ?>
 
 <!---------  BASE Role Manager ---------->
 
+
 <h1>Role Manager</h1>
     <br/>
     <h2>Edit&nbsp;<?php echo $user->getRole() . " - " . $user->getIndFName() . " " . $user->getIndLName(); ?></h2>
-    <form action="<?php if ($user->getRoleID() == 1){echo "./edit_user.php"; }else{echo ".";}  ?> " method="post">
-       <input type="hidden" value="<?php echo $user->getIndID(); ?>" name="edit_user" />
+    <form action="./edit_user.php" method="post">
+       <input type="hidden" value="<?php echo $user->getIndID(); ?>" name="individualID" />
+       <input type="hidden" value="<?php echo $user->getRoleID(); ?>" name="old_roleID" />
+       <input type="hidden" value="<?php echo $user->getLogID(); ?>" name="loginID" />
         <table>
             <tr>
                 <td>
                    <label>Role:</label><br/>
-                        <input type="radio" name="role" value="1" <?php if($user->getRoleID() == 1){echo 'checked';}if($user->getRoleID() != 1){echo ' disabled';} ?> />Individual
-                        <input type="radio" name="role" value="2" <?php if($user->getRoleID() == 2){echo 'checked';}if($user->getRoleID() != 1){echo ' disabled';} ?> />Administrator 
-                        <input type="radio" name="role" value="4" <?php if($user->getRoleID() == 4){echo 'checked';}if($user->getRoleID() != 1){echo ' disabled';} ?> />Artist
-                        <input type="radio" name="role" value="3" <?php if($user->getRoleID() == 3){echo 'checked';}if($user->getRoleID() != 1){echo ' disabled';} ?> />Volunteer
+                        <input type="radio" name="roleID" value="1" <?php if($user->getRoleID() == 1){echo 'checked';}if($user->getRoleID() != 1){echo ' disabled';} ?> />Individual
+                        <input type="radio" name="roleID" value="2" <?php if($user->getRoleID() == 2){echo 'checked';}if($user->getRoleID() != 1){echo ' disabled';} ?> />Administrator 
+                        <input type="radio" name="roleID" value="4" <?php if($user->getRoleID() == 4){echo 'checked';}if($user->getRoleID() != 1){echo ' disabled';} ?> />Artist
+                        <input type="radio" name="roleID" value="3" <?php if($user->getRoleID() == 3){echo 'checked';}if($user->getRoleID() != 1){echo ' disabled';} ?> />Volunteer
                         <br/><br/>
                 </td>
             </tr>
@@ -45,6 +57,7 @@ $genres = ArtistDB::getGenres();
                 <td>
               <!------------ Administrator Edit Form    -->  
                 <?php  if($user->getRoleID() == 2){ ?>
+                    <input type="hidden" value="<?php echo $user->getAdminID() ?>" name="adminID" />
                     <label>Administrator Position:</label><br/>
                     <input class="textbox"  type="text" name="admin_position" value="<?php echo $user->getAdminPosition() ?>"/><br/><br/>
                     
@@ -54,6 +67,7 @@ $genres = ArtistDB::getGenres();
                 
               <!------------ Artist Edit Form    --> 
                 <?php  if($user->getRoleID() == 4){ ?>
+                   <input type="hidden" value="<?php echo $user->getArtistID() ?>" name="artistID" />
                     <label>Band Name:</label><br/>
                     <input class="textbox" name="band_name" value="<?php echo $user->getArtBandName() ?>"/><br/><br/>
                     
@@ -61,7 +75,7 @@ $genres = ArtistDB::getGenres();
                         <tr>
                             <td style="padding:0;">
                                 <label>Artist First Name:</label><br/>
-                                <input class="textbox" name="artist_lname" value="<?php echo $user->getArtFName() ?>"/>
+                                <input class="textbox" name="artist_fname" value="<?php echo $user->getArtFName() ?>"/>
                             </td>
                             <td>
                                 <label>Artist Last Name:</label><br/>
@@ -89,10 +103,11 @@ $genres = ArtistDB::getGenres();
                 
                 <!------------ Volunteer Edit Form    -->  
                 <?php  if($user->getRoleID() == 3){ ?>
+                   <input type="hidden" value="<?php echo $user->getVolunteerID() ?>" name="volunteerID" />
                     <label>Volunteer Position:</label><br/>
                     <input class="textbox"  type="text" name="vol_position" value="<?php echo $user->getVolPosition() ?>"/><br/><br/>
                     
-                    <label>Administrator Description:</label><br/>
+                    <label>Volunteer Description:</label><br/>
                     <textarea class="textarea"  name="vol_description"><?php echo $user->getVolDescription() ?></textarea><br/><br/>
                 <?php } ?>
                 
@@ -100,11 +115,13 @@ $genres = ArtistDB::getGenres();
             </tr>
             <tr>
                 <td>
+                    <input type=hidden value="<?php echo $user->getindID(); ?>" name="indID" />
                      <input class="btn xtra-pad" type="submit" name="edit" value="<?php if ($user->getRoleID() == 1){echo "Update User";}else { echo "Edit";}?>" />
-                     <a href="." class="btn xtra-pad">Cancel</a>
+                     <a href="." class="btn xtra-pad">Back</a>
                 </td>
             </tr>
            
         </form>
     </table>
+<?php if(isset($prompt)){echo $prompt;} ?>    
 <?php include ( '../components/cms_footer.php'); ?>

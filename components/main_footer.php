@@ -67,7 +67,7 @@
 
                     <p id="copyright">&copy; 2015 Chorus in the Forest</p>
 
-                </div>
+                </div><!-- end footer-contact -->
 
             </div><!-- end contact -->
 
@@ -108,13 +108,18 @@
 
             </div><!-- end right-col -->
 
-        </div>
+        </div><!-- end footer container -->
 
     </footer>
 
 <!--   JS Scripts can go here -->
 <script src="../js/jquery.leanModal.min.js" type="text/javascript"></script>
 <script src="../js/modalTrigger.js" type="text/javascript"></script>
+<script src="../js/parsley.min.js"></script>
+<script>
+    $('#loginForm').parsley();
+    $('#registerForm').parsley();
+</script>
 
 </body>
 </html>

@@ -146,6 +146,7 @@ if ($action == 'newsList'){ //default view
     $news_id = $_POST['news_id'];
     $title = $_POST['title'];
     $date_created = $_POST['date_created'];
+    $date_published = $_POST['date_published'];
     $author = $_POST['author'];
     $other_url = $_POST['other_url']; 
     $feature_img = $_POST['feature_img'];
@@ -155,7 +156,7 @@ if ($action == 'newsList'){ //default view
     $type = $_POST['type'];
     $publish = $_POST['publish'];
     
-    NewsDB::updateNews($news_id, $title, $date_created, $author, null, $other_url, $feature_img, $banner_img, $description, $article, $type, $publish);
+    NewsDB::updateNews($news_id, $title, $date_created, $date_published, $author, null, $other_url, $feature_img, $banner_img, $description, $article, $type, $publish);
     
     getNewsList();
     
@@ -165,7 +166,8 @@ if ($action == 'newsList'){ //default view
     
     $news_id = $_POST['news_id'];
     $title = $_POST['title'];
-    $date = $_POST['date'];
+    $date_created = $_POST['date_created'];
+    $date_published = $_POST['date_published'];
     $author = $_POST['author'];
     $story_url = $_POST['story_url']; 
     $feature_img = $_POST['feature_img'];
@@ -173,7 +175,7 @@ if ($action == 'newsList'){ //default view
     $type = $_POST['type'];
     $publish = $_POST['publish'];
     
-    NewsDB::updateNews($news_id, $title, $date, $author, $story_url, null, $feature_img, null, $description, null, $type, $publish);
+    NewsDB::updateNews($news_id, $title, $date_created, $date_published, $author, $story_url, null, $feature_img, null, $description, null, $type, $publish);
     
     getNewsList();
     

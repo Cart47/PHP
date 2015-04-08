@@ -50,22 +50,17 @@ if(isset($_POST['subscribe'])){
         <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
         <link rel="stylesheet" href="../css/CITF-Main.css" type="text/css">
         <link rel="stylesheet" href="../css/modalStyle.css" type="text/css">
+        <link rel="stylesheet" href="../css/validation_errors.css" type="text/css">
+        
      </head>
      <body>
-            <header>
-                <nav>
-                    <?php include_once('../components/main_navigation.php'); ?>
-                </nav>   
-            </header>
+         
+      
+        <?php include_once('../components/main_navigation.php'); ?>
+        
 
-            <div id="container">
-             
-            <section id="modalPopUp">
-                <?php include_once('../components/modal.php'); ?>
-            </section>
-             
+        <div id="container" class="clearfix">
 
-            <section id="content">
-    
-                
-
+        <section id="modalPopUp">
+            <?php include_once('../components/modal.php'); ?>
+        </section>

@@ -1,4 +1,4 @@
-<div id="navBar">
+<div id="navBar" class="clearfix">
    <a href="../Home/Index.php" id="citfLogo">Chorus in the Forest</a> 
     <div id="logIn">
 
@@ -39,7 +39,7 @@
         <i class="fa fa-bars"></i>
     </div>
     
-    <nav id="nav">
+    <nav id="nav" class="clearfix">
         <ul>
             <li><a href="#">Tickets</a></li>
             <li><a href="#">Schedule</a></li>
