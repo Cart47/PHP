@@ -17,28 +17,20 @@ if ($thisArticle == null){
     include ('error.php'); 
 }
 
-?>
-
-<div class="article-details">
-    
-<?php 
-
+    echo '<div class="article-details">';
     echo '<h1>' . $thisArticle['title'] . '</h1>';
 
     $date = strtotime($thisArticle['date_published']);
-    echo '<p class="date">By ' . $thisArticle['author'] . ' on ' . htmlentities(date('F j, Y', $date)) . '</p>';
+    echo '<p class="date">By ' . $thisArticle['author'] . ' on ' . date('F j, Y', $date) . '</p>';
     
     echo '<p class="article-text">' . $thisArticle['article'] . '</p>';
 
     if($thisArticle['other_url'] != null){
         echo '<p><a class="link" href="' . $thisArticle['other_url'] . '">Click Here</a> for more information.</p>';
     }
+    
+    echo '</div>';
 
-    echo '<div id="back-btn"><a href="../Home#newsfeed"><i class="fa fa-arrow-left fa-lg"></a></i></div>'
+include("../components/main_footer.php"); 
 
 ?>
-    
-</div>
-
-
-<?php include("../components/main_footer.php"); ?>
