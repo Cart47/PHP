@@ -1,5 +1,5 @@
 <?php
-//session_start();
+if (!isset($_SESSION)) { session_start();}
    
     include('../components/cms_header.php');
     require_once '../../models/image_slider/sliderClass.php';
