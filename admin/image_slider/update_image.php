@@ -1,7 +1,7 @@
 <?php
 include ( '../components/cms_header.php');
-//session_start();
-//GETTING SESSION START ERROR BUT WHEN REMOVED DON"T HAVE ACCESS TO MY SESSION VARIABLES
+if(!isset($_SESSION)) { session_start();}
+//DON"T HAVE ACCESS TO MY SESSION VARIABLES ANYMORE
 
     $links = $_SESSION['links'];
     $img_root = "http://".$_SERVER['HTTP_HOST'] . "/";       
@@ -10,7 +10,7 @@ include ( '../components/cms_header.php');
 ?>
 <head>
     <title>Update Image</title>
-    <link rel="stylesheet" type="text/css" href="admin_styles.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/slider_admin_styles.css" />
 </head>
 <h1>Update <?php echo $current_img['img_title']; ?> </h1>
 
@@ -27,11 +27,12 @@ include ( '../components/cms_header.php');
     
     <label> Link: </label>
     <select name="img_links">
+        <!--NEED SELECTED VALUE TO DISPLAY AS DEFAULT-->
                 <?php
                     foreach ($links as $link_url => $link_name){ 
-                        $sel = '';
-                        if($current_img['img_link']== $link_url){$sel = "selected";}           
-                            echo '<option'. $sel .'value="' . $link_url .'">' . $link_name . '</option>';
+                     //   $sel = '';
+                      //  if($current_img['img_link']== $link_url){$sel = "selected";}           
+                            echo '<option value="' . $link_url .'">' . $link_name . '</option>';
                     } 
                 ?>
     </select>  
