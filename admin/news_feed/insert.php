@@ -21,7 +21,7 @@
     <br /><br/>
 
     <!-- Internal News -->
-    <form action="." method="post" id="internal">
+    <form action="." method="post" id="internal" enctype="multipart/form-data">
 
         <input type="hidden" name="news_id" />
         <input type="hidden" name="type" value="0" />
@@ -44,7 +44,7 @@
         <br /><br />
 
         <label>Feature Image:</label>
-        <input type="text" name="feature_img" />
+        <input type="file" name="feature_img" id="feature_img" />
 
         <br /><br />
 
@@ -71,7 +71,7 @@
     </form>
 
     <!-- External News -->
-    <form action="." method="post" id="external">
+    <form action="." method="post" id="external" enctype="multipart/form-data">
 
 
         <input type="hidden" name="news_id" />

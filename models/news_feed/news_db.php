@@ -2,7 +2,7 @@
 
 class NewsDB {
     
-    public static function getAllNews(){
+    public static function getHomepageNews(){
         
         $db = Database::getDB();
         
