@@ -1,10 +1,10 @@
 <?php
 
 class User {
-    private $logID, $adminID, $artistID, $volunteerID, $indID, $username, $roleID, $indFName, $indLName, $indEmail, $adPosition, $adDescription, $artBandName, $artFName, $artLName, $artGenre, $artDescription, $role, $volPosition, $volDescription;
+    private $logID, $adminID, $artistID, $volunteerID, $indID, $username, $roleID, $indFName, $indLName, $indEmail, $adPosition, $adDescription, $artMembers, $artBandName, $artFName, $artLName, $artGenre, $artDescription, $role, $volPosition, $volDescription;
     
     
-    public function __construct($logID, $adminID, $artistID, $volunteerID, $indID, $username, $roleID, $indFName, $indLName, $indEmail, $adPosition, $adDescription, $artBandName, $artFName, $artLName, $artGenre, $artDescription, $role, $volPosition, $volDescription){
+    public function __construct($logID, $adminID, $artistID, $volunteerID, $indID, $username, $roleID, $indFName, $indLName, $indEmail, $adPosition, $adDescription, $artBandName, $artFName, $artLName, $artGenre, $artDescription, $band_members, $role, $volPosition, $volDescription){
         $this->logID = $logID;
         $this->adminID = $adminID;
         $this->artistID = $artistID;
@@ -22,6 +22,7 @@ class User {
         $this->artLName = $artLName;
         $this->artGenre = $artGenre;
         $this->artDescription = $artDescription;
+        $this->artMembers = $band_members;
         $this->role = $role;
         $this->volPosition = $volPosition;
         $this->volDescription = $volDescription;
@@ -94,6 +95,10 @@ class User {
     
     public function getArtDescription() {
         return $this->artDescription;
+    }
+    
+    public function getArtMembers() {
+        return $this->artMembers;
     }
     
     public function getRole(){

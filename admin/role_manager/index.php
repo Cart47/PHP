@@ -141,7 +141,6 @@ foreach($users as $u){
                 <th>Email</th>
                 <th>Band Name</th>
                 <th>Genre</th>
-                <th>Artist Description</th>
                 <th>Edit Artist</th>
                 <th>Delete Artist</th>
             </thead>
@@ -164,9 +163,6 @@ foreach($users as $u){
                     </td>
                     <td>
                         <?php echo $art->getArtGenre()  ?>    
-                    </td>
-                    <td>
-                        <?php echo $art->getArtDescription()  ?>    
                     </td>
                     <td>
                         <form action="./edit_user.php" method="post">
