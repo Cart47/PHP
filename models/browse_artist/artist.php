@@ -9,9 +9,10 @@ class Artist {
     private $display;
     private $band_name;
     private $picture;
+    private $members;
     
     
-    public function __construct($browse_art_id, $art_fname, $art_lname, $genre, $description, $display, $band_name, $picture){
+    public function __construct($browse_art_id, $art_fname, $art_lname, $genre, $description, $display, $band_name, $picture, $members){
         $this->browse_art_id = $browse_art_id;
         $this->art_fname = $art_fname;
         $this->art_lname = $art_lname;
@@ -19,7 +20,8 @@ class Artist {
         $this->description = $description;
         $this->display = $display;
         $this->band_name = $band_name;
-        $this->picture = $picture;   
+        $this->picture = $picture; 
+        $this->members = $members; 
     }
     
     public function getID(){
@@ -60,6 +62,10 @@ class Artist {
     
     public function GetPicture(){
         return $this->picture;
+    }
+    
+    public function GetMembers(){
+        return $this->members;
     }
     
     

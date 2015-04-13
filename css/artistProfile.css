@@ -9,7 +9,9 @@
   float: left;
   margin-top: 40px;
   margin-bottom: 40px;
-  display: block; }
+  display: block;
+  border: 4px solid #9a3cf5;
+  box-shadow: 10px 10px 5px #888888; }
 
 #artistInformtion {
   margin-top: 40px;
@@ -17,3 +19,17 @@
   float: right;
   text-align: left;
   display: block; }
+  #artistInformtion h1 {
+    font-size: 40px; }
+  #artistInformtion h3 {
+    margin-bottom: 0; }
+  #artistInformtion p {
+    line-height: 5px; }
+
+#artistDescription {
+  margin-top: 20px;
+  width: 90%;
+  text-align: left;
+  display: block;
+  margin-bottom: 30px;
+  clear: both; }

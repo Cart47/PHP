@@ -22,10 +22,14 @@ $artist =  ArtistDB::getArtist($artistID);
 
 <section id="artistInformtion">
    <h1><?php echo $artist->GetBandName()  ?></h1>
+   <h2><?php echo $artist->GetGenre()  ?></h2>
+   <h3>Members</h3>   
+   <p><br/><?php echo $artist->GetMembers()  ?></p>
+</section>
+<section id="artistDescription">
     <h2>Band Description</h2>
     <p><?php echo $artist->GetDescription()  ?></p>
 </section>
-
 <!--
 Profile Information
 Description-->
