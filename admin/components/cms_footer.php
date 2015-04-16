@@ -9,7 +9,7 @@
     </div>
     
 </div>
-<script src="../js/parsley.min.js"></script>
+<script src="../../../js/parsley.min.js"></script>
 <script>
     $('#edit_user').parsley();
 </script>

@@ -13,7 +13,13 @@ if(isset($userID['edit'])){
     $prompt = '<script>alert("Successfully Updated");</script>';
 }
 
-$user = Roles::getUserRoles($_POST['individualID']);
+if(isset($_POST['individualID'])){
+    $ind_ID = $_POST['individualID'];
+} else {
+    $ind_ID = $_SESSION['Individual_ID'];   
+}
+
+$user = Roles::getUserRoles($ind_ID);
 $genres = ArtistDB::getGenres();
 
 ?>
@@ -29,6 +35,7 @@ $genres = ArtistDB::getGenres();
        <input type="hidden" value="<?php echo $user->getRoleID(); ?>" name="old_roleID" />
        <input type="hidden" value="<?php echo $user->getLogID(); ?>" name="loginID" />
         <table>
+        <?php if($user->getRoleID() == 2){ ?>
             <tr>
                 <td>
                    <label>Role:</label><br/>
@@ -39,6 +46,7 @@ $genres = ArtistDB::getGenres();
                         <br/><br/>
                 </td>
             </tr>
+        <?php  } ?>
             <tr>   
                 <td <?php if ($user->getRoleID() != 1){ echo 'style="border-right:2px black solid;"';} ?> >
                     <br/>
@@ -120,7 +128,9 @@ $genres = ArtistDB::getGenres();
                 <td>
                     <input type=hidden value="<?php echo $user->getindID(); ?>" name="indID" />
                      <input class="btn xtra-pad" type="submit" name="edit" value="<?php if ($user->getRoleID() == 1){echo "Update User";}else { echo "Edit";}?>" />
-                     <a href="." class="btn xtra-pad">Back</a>
+                     <?php if($user->getRoleID() == 2){
+                   echo  '<a href="." class="btn xtra-pad">Back</a>';
+} ?>
                 </td>
             </tr>
            
