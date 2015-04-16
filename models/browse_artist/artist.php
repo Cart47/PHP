@@ -2,38 +2,41 @@
 
 class Artist {
     private $browse_art_id;
-    private $artist_id;
     private $art_fname;
     private $art_lname;
     private $genre;
     private $description;
     private $display;
+    private $band_name;
+    private $picture;
+    private $members;
     
     
-    public function __construct($browse_art_id, $artist_id, $art_fname, $art_lname, $genre, $description, $display){
+    public function __construct($browse_art_id, $art_fname, $art_lname, $genre, $description, $display, $band_name, $picture, $members){
         $this->browse_art_id = $browse_art_id;
-        $this->artist_id = $artist_id;
         $this->art_fname = $art_fname;
         $this->art_lname = $art_lname;
         $this->genre = $genre;
         $this->description = $description;
         $this->display = $display;
-         
+        $this->band_name = $band_name;
+        $this->picture = $picture; 
+        $this->members = $members; 
     }
     
-    public function getID() {
-        $this->artist_id;
+    public function getID(){
+      return $this->browse_art_id;   
     }
     
     public function setID($value){
-        $this->artist_id = $value;
+        $this->browse_art_id = $value;
     }
     
     public function GetFName(){
         return $this->art_fname;
     }
     
-    public function GetLName () {
+    public function GetLName() {
         return $this->art_lname;
     }
     
@@ -52,6 +55,19 @@ class Artist {
     public function GetDescription(){
         return $this->description;
     }
+    
+    public function GetBandName(){
+        return $this->band_name;
+    }
+    
+    public function GetPicture(){
+        return $this->picture;
+    }
+    
+    public function GetMembers(){
+        return $this->members;
+    }
+    
     
 
 }

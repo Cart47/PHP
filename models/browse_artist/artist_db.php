@@ -2,18 +2,19 @@
 class ArtistDB {
     public static function getArtists() {
         $db = Database::getDB();
-        $query = 'SELECT * FROM browse_artist '
-                . 'ORDER BY browse_art_id';
+        $query = 'SELECT * FROM browse_artist ORDER BY browse_art_id';
         $result = $db->query($query);
         $artists = array();
         foreach ($result as $row) {
             $artist = new Artist($row['browse_art_id'],
-                                 $row['artist_id'],
                                  $row['art_fname'],
                                  $row['art_lname'],
                                  $row['genre'],
                                  $row['description'],
-                                 $row['display']);
+                                 $row['display'],
+                                 $row['art_band_name'],
+                                 $row['browse_art_picture'],
+                                $row['band_members']);
             $artists[] = $artist;
             
         }
@@ -43,12 +44,14 @@ class ArtistDB {
         $statement = $db->query($query);
         $row = $statement->fetch();
         $artist = new Artist($row['browse_art_id'],
-                                 $row['artist_id'],
                                  $row['art_fname'],
                                  $row['art_lname'],
                                  $row['genre'],
                                  $row['description'],
-                                 $row['display']);
+                                 $row['display'],
+                                 $row['art_band_name'],
+                                 $row['browse_art_picture'],
+                                 $row['band_members']);
         return $artist;
     }
 
@@ -62,12 +65,14 @@ class ArtistDB {
              
          
          $artist = new Artist($row['browse_art_id'],
-                                 $row['artist_id'],
                                  $row['art_fname'],
                                  $row['art_lname'],
                                  $row['genre'],
                                  $row['description'],
-                                 $row['display']);
+                                 $row['display'],
+                                 $row['art_band_name'],
+                                 $row['browse_art_picture'],
+                                 $row['band_members']);
             $artists[] = $artist;
         }
         

@@ -7,7 +7,10 @@ include_once('../../models/role_manager/role_manager.php');
 
 if(isset($_POST['delete_user'])){
     $user_id = $_POST['delete_user'];
-    Roles::deleteUser($user_id);
+    $user_roleID = $_POST['user_roleID'];
+    $user_role = $_POST['user_role'];
+    Roles::deleteUser($user_id, $user_roleID, $user_role );
+    unset($_POST);
 }
 
 $users = Roles::getRoles();
@@ -56,7 +59,7 @@ foreach($users as $u){
                     </td>
                     <td>
                         <form action="./edit_user.php" method="post">
-                            <input type="hidden" name="edit_user" value="<?php echo $i->getindID() ?>" />
+                            <input type="hidden" name="individualID" value="<?php echo $i->getindID() ?>" />
                             <input type="hidden" name="action" value="edit" />
                             <button type="submit" class="link-btn"><i class="fa fa-pencil fa-lg"></i></button>
                         </form>
@@ -64,8 +67,9 @@ foreach($users as $u){
                     <td>
                         <form action="." method="post">
                                 <input type="hidden" name="delete_user" value="<?php echo $i->getindID() ?>" />
+                                <input type="hidden" name="user_roleID" value="<?php echo $i->getRoleID() ?>" />
                                 <input type="hidden" name="action" value="delete" />
-                                <button type="submit" class="link-btn" onclick="confirm('Are you sure you would like to delete this member?');"><i class="fa fa-trash-o fa-lg"></i></button>
+                                <button type="submit" class="link-btn"><i class="fa fa-trash-o fa-lg"></i></button>
                         </form>
                     </td>
                     </tr>
@@ -81,7 +85,8 @@ foreach($users as $u){
                 <th>Last Name</th>
                 <th>Username</th>
                 <th>Email</th>
-                <th>Administrative Role</th>
+                <th>Administrative Position</th>
+                <th>Administrative Position Description</th>
                 <th>Edit Admin</th>
                 <th>Delete Admin</th>
             </thead>
@@ -104,8 +109,11 @@ foreach($users as $u){
                         <?php echo $a->getAdminPosition()  ?>    
                     </td>
                     <td>
+                        <?php echo $a->getAdminDescription()  ?>    
+                    </td>
+                    <td>
                         <form action="./edit_user.php" method="post">
-                            <input type="hidden" name="edit_user" value="<?php echo $a->getindID() ?>" />
+                            <input type="hidden" name="individualID" value="<?php echo $a->getindID() ?>" />
                             <input type="hidden" name="action" value="edit" />
                             <button type="submit" class="link-btn"><i class="fa fa-pencil fa-lg"></i></button>
                         </form>
@@ -113,8 +121,10 @@ foreach($users as $u){
                     <td>
                         <form action="." method="post">
                                 <input type="hidden" name="delete_user" value="<?php echo $a->getindID() ?>" />
+                                <input type="hidden" name="user_roleID" value="<?php echo $a->getRoleID() ?>" />
+                                <input type="hidden" name="user_role" value="<?php echo $a->getAdminID() ?>" />
                                 <input type="hidden" name="action" value="delete" />
-                                <button type="submit" class="link-btn" onclick="confirm('Are you sure you would like to delete this member?');"><i class="fa fa-trash-o fa-lg"></i></button>
+                                <button type="submit" class="link-btn"><i class="fa fa-trash-o fa-lg"></i></button>
                         </form>
                     </td>
                 </tr>
@@ -131,7 +141,6 @@ foreach($users as $u){
                 <th>Email</th>
                 <th>Band Name</th>
                 <th>Genre</th>
-                <th>Artist Description</th>
                 <th>Edit Artist</th>
                 <th>Delete Artist</th>
             </thead>
@@ -156,11 +165,8 @@ foreach($users as $u){
                         <?php echo $art->getArtGenre()  ?>    
                     </td>
                     <td>
-                        <?php echo $art->getArtDescription()  ?>    
-                    </td>
-                    <td>
                         <form action="./edit_user.php" method="post">
-                            <input type="hidden" name="edit_user" value="<?php echo $art->getindID() ?>" />
+                            <input type="hidden" name="individualID" value="<?php echo $art->getindID() ?>" />
                             <input type="hidden" name="action" value="edit" />
                             <button type="submit" class="link-btn"><i class="fa fa-pencil fa-lg"></i></button>
                         </form>
@@ -168,8 +174,10 @@ foreach($users as $u){
                     <td>
                         <form action="." method="post">
                                 <input type="hidden" name="delete_user" value="<?php echo $art->getindID() ?>" />
+                                <input type="hidden" name="user_roleID" value="<?php echo $art->getRoleID() ?>" />
+                                <input type="hidden" name="user_role" value="<?php echo $art->getArtistID() ?>" />
                                 <input type="hidden" name="action" value="delete" />
-                                <button type="submit" class="link-btn" onclick="confirm('Are you sure you would like to delete this member?');"><i class="fa fa-trash-o fa-lg"></i></button>
+                                <button type="submit" class="link-btn"><i class="fa fa-trash-o fa-lg"></i></button>
                         </form>
                     </td>
                 </tr>
@@ -178,30 +186,56 @@ foreach($users as $u){
     <?php } if (!empty($volunteers)){ ?>        
     <br/>
     <h2>Volunteers</h2>
-    <form action="." method="post">
         <table>
             <thead>
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Username</th>
                 <th>Email</th>
-                <th>User Role</th>
+                <th>Volunteer Role</th>
+                <th>Volunteer Position Description</th>
+                <th>Edit Volunteer</th>
+                <th>Delete Volunteer</th>
             </thead>
-            <?php 
-                foreach($volunteers as $v){
-                echo '<tr><td>' .
-                            $v->getIndFName() 
-                    . '</td><td>' .
-                             $v->getIndLName()  
-                    . '</td><td>' .
-                             $v->getUsername() 
-                    . '</td><td>' .
-                              $v->getIndEmail()
-                    . '</td><td>Volunteer</td></tr>';
-            }
-            ?>   
+            <?php foreach($volunteers as $v){ ?>
+                 <tr>
+                    <td> 
+                        <?php echo $v->getIndFName() ?>
+                    </td>
+                    <td>
+                        <?php echo $v->getIndLName()  ?>
+                    </td>
+                    <td>
+                        <?php echo $v->getUsername() ?>
+                    </td>
+                    <td>
+                        <?php echo $v->getIndEmail() ?>
+                    </td>
+                    <td>
+                        <?php echo $v->getVolPosition()  ?>    
+                    </td>
+                    <td>
+                        <?php echo $v->getVolDescription()  ?>    
+                    </td>
+                    <td>
+                        <form action="./edit_user.php" method="post">
+                            <input type="hidden" name="individualID" value="<?php echo $v->getindID() ?>" />
+                            <input type="hidden" name="action" value="edit" />
+                            <button type="submit" class="link-btn"><i class="fa fa-pencil fa-lg"></i></button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="." method="post">
+                                <input type="hidden" name="delete_user" value="<?php echo $v->getindID() ?>" />
+                                <input type="hidden" name="user_roleID" value="<?php echo $v->getRoleID() ?>" />
+                                <input type="hidden" name="user_role" value="<?php echo $v->getVolunteerID() ?>" />
+                                <input type="hidden" name="action" value="delete" />
+                                <button type="submit" class="link-btn"><i class="fa fa-trash-o fa-lg"></i></button>
+                        </form>
+                    </td>
+                      <?php } ?>
+                </tr> 
         </table>      
-    </form>
     <?php } ?>
 
 
