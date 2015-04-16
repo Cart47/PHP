@@ -17,11 +17,13 @@
                 
                 else 
                 {
-                     //Still need to build the kill session 
                     echo '<li>Welcome, ' . $_SESSION["UserFullName"] . '</li>';
-                    if($_SESSION['RoleID'] != 1){ 
+                    if($_SESSION['RoleID'] == 2){ 
                         echo '<li><a href="../admin/Home/index.php">Admin</a></li>';
                         }
+                    else {
+                          echo '<li><a href="../admin/role_manager/edit_user.php">Profile</a></li>';  
+                    }
                         
                      echo '<li><a href="../components/logout.php">Logout</a></li>';
                 }
