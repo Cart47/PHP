@@ -103,5 +103,15 @@ class ArtistDB {
             
            return $row[0];  
         }
+    
+        public static function getArtistNames() {
+        
+        $db = Database::getDB();
+        
+        $query = "SELECT browse_art_id, art_band_name FROM browse_artist";
+        $result = $db->query($query);
+
+        return $result;       
+        }
 
     }
