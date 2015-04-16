@@ -48,31 +48,6 @@ if ($action == 'newsList'){ //default view
     
 } elseif ($action == 'internal'){ //insert an internal news article
     
-    //Image upload path and filenames
-    $file_temp = $_FILES['feature_img']['tmp_name'];
-    $file_name = $_FILES['feature_img']['name'];
-    $file_size = $_FILES['feature_img']['size'];
-    $file_type = $_FILES['feature_img']['type'];
-    $file_error = $_FILES['feature_img']['error'];
-    
-    //specifying size requirements
-    //$max_file_size = 20;
-    //if($file_size > $max_file_size){
-        //echo 'Image is too big.';
-    //}
-    
-    $img_root = "PHP/img/news/";
-    $img_path = $img_root . $file_name;
-    
-    $target_path = $_SERVER['DOCUMENT_ROOT'] . "/PHP/img/news/";
-    $target_path = $target_path . $file_name;
-
-    if(move_uploaded_file($file_temp, $target_path)){
-        echo "The file " . $file_name . "has been uploaded";
-    }else{
-        echo 'there was an error uploading';
-    }
-    
     //Posted values
     $news_id = $_POST['news_id'];
     $title = $_POST['title'];

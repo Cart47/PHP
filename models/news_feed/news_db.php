@@ -8,6 +8,21 @@ class NewsDB {
         
         $query = 'SELECT * FROM news
                   WHERE publish = 1
+                  ORDER BY date_published DESC LIMIT 6';
+        
+        $stm = $db->prepare($query);
+        $stm->execute();
+        $result = $stm->fetchAll(PDO::FETCH_ASSOC);
+        
+        return $result;
+    }
+    
+    public static function getAllNews(){
+        
+        $db = Database::getDB();
+        
+        $query = 'SELECT * FROM news
+                  WHERE publish = 1
                   ORDER BY date_published DESC';
         
         $stm = $db->prepare($query);
