@@ -1,6 +1,6 @@
 <?php
 if(!isset($_SESSION)) { session_start();}
-require ('../models/database.php');  
+//require ('../models/database.php');  
 require ('../models/Registration_Login/RegisterNewUser.php');
 require ('../models/Registration_Login/UserLogin.php'); 
 
