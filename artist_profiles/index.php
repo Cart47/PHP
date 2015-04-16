@@ -1,7 +1,7 @@
 <?php 
 
 if(!isset($_SESSION)) { session_start();}
-   
+
 require_once ('../config.php');
 include ("../components/main_header.php"); 
 require_once('../models/browse_artist/artist.php');

@@ -1,6 +1,6 @@
 <?php
 
-Class StageDB {
+class StageDB {
     
     public static function getAllStages(){
         
@@ -29,6 +29,7 @@ Class StageDB {
         
         $query = 'SELECT * FROM stages
                   ORDER BY stage_id';
+        
         $stm = $db->prepare($query);
         $stm->execute();
         $result = $stm->fetchAll(PDO::FETCH_ASSOC);
