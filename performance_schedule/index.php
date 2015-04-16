@@ -1,5 +1,5 @@
 <?php
-
+//include ('../components/main_header.php'); 
 require ('../models/database.php');
 require ('../models/performance_schedule/stage_class.php');
 require ('../models/performance_schedule/stage_db.php');
