@@ -1,8 +1,8 @@
 <?php
 
-include '../../models/customerClass.php';
-include '../../models/customer.php';
-include '../../models/databaseClass.php';
+require '../models/tickets/customerClass.php';
+require '../models/tickets/customer.php';
+require '../models/database.php';
 
 if (isset($_POST['action'])) {
     $action = $_POST['action'];

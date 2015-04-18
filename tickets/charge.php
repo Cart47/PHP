@@ -1,8 +1,8 @@
 <?php
-require_once '../../config.php';
-include '../../models/customerClass.php';
-include '../../models/customer.php';
-include '../../models/databaseClass.php';
+require_once '../config.php';
+require '../models/tickets/customerClass.php';
+require '../models/tickets/customer.php';
+require '../models/tickets/databaseClass.php';
 
 //GET CREDIT CARD DETAILS FROM FORM
   $token  = $_POST['stripeToken'];
@@ -11,7 +11,9 @@ include '../../models/databaseClass.php';
    $cust_fname = $_POST['fname'];
    $cust_lname = $_POST['lname'];
    $cust_phone = $_POST['phone'];
-   $cust_email = $_POST['email'];   
+   $cust_email = $_POST['email'];  
+   
+   echo $cust_fname "HELLLLOOOOOO";
 
   try{
   $customer = \Stripe\Customer::create(array(

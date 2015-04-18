@@ -1,6 +1,7 @@
 <?php
-require '../../models/ticketClass.php';
-require '../../models/ticket.php';
+require '../models/tickets/ticketClass.php';
+require '../models/tickets/ticket.php';
+require '../models/database.php';
 
  $ticket_types = ticketdb::getTickets();
 
@@ -9,7 +10,7 @@ require '../../models/ticket.php';
            
         <?php        
         foreach($ticket_types as $val) {
-            //SHOULD I BE USING SESSION OR IS IT FINE SINCE INFO DOESNT NEED 2 B SECURE
+            
             echo '<a href="../views/ticket_checkout.php?tick_id='. $val->getId() .'&tick_type='. $val->getType() 
                     .'&tick_price='. $val->getPrice() .'">'
                     . '<img src= http://' .$_SERVER['HTTP_HOST'].'/'. $val->getImg() .'></img></a>' ;

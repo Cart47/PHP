@@ -2,7 +2,7 @@
 
 session_start();
 
-require_once '../../config.php';
+require_once '../config.php';
 
 $tick_id = $_GET['tick_id'];
 $tick_type = $_GET['tick_type'];
