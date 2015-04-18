@@ -7,7 +7,10 @@ class ticketdb {
         $db = Database::getDB();
         $query = 'SELECT * FROM tickets';     
         $result = $db->query($query);
+        
+       
         $result->setFetchMode(PDO::FETCH_ASSOC);
+
         $tickets = array();
         
     foreach ($result as $row) {

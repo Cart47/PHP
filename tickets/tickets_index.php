@@ -1,8 +1,8 @@
 <?php
 
-require '../models/tickets/customerClass.php';
-require '../models/tickets/customer.php';
-require '../models/database.php';
+require_once '../models/tickets/customerClass.php';
+require_once '../models/tickets/customer.php';
+require_once '../models/database.php';
 
 if (isset($_POST['action'])) {
     $action = $_POST['action'];

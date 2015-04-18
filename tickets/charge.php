@@ -12,8 +12,6 @@ require '../models/tickets/databaseClass.php';
    $cust_lname = $_POST['lname'];
    $cust_phone = $_POST['phone'];
    $cust_email = $_POST['email'];  
-   
-   echo $cust_fname "HELLLLOOOOOO";
 
   try{
   $customer = \Stripe\Customer::create(array(
