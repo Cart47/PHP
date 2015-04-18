@@ -1,6 +1,5 @@
 <?php
 
-//require '../models/database.php';
 require '../models/image_slider/images.php';
 require '../models/image_slider/sliderClass.php';
 ?>

@@ -1,4 +1,10 @@
 <?php include_once('../components/cms_header.php'); 
+//Forces a redirect through the index
+if($_SESSION['RoleID'] != 2){
+ 
+  echo  '<script type="text/javascript"> window.location.href ="../../Home/Index.php"; </script>';
+}
+
 include_once('../../models/database.php');
 
 //including the Database call files for the Role Manager 
@@ -141,7 +147,6 @@ foreach($users as $u){
                 <th>Email</th>
                 <th>Band Name</th>
                 <th>Genre</th>
-                <th>Artist Description</th>
                 <th>Edit Artist</th>
                 <th>Delete Artist</th>
             </thead>
@@ -164,9 +169,6 @@ foreach($users as $u){
                     </td>
                     <td>
                         <?php echo $art->getArtGenre()  ?>    
-                    </td>
-                    <td>
-                        <?php echo $art->getArtDescription()  ?>    
                     </td>
                     <td>
                         <form action="./edit_user.php" method="post">

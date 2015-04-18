@@ -1,5 +1,4 @@
 <?php
-
 class Registration {
     
     private $newUser, $newEmail, $newPassword, $success;

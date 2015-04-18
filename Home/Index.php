@@ -2,6 +2,7 @@
 
 if(!isset($_SESSION)) { session_start();}
     require_once ('../config.php');
+    include '../models/database.php';
     include ("../components/main_header.php"); 
 
 ?> 

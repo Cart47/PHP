@@ -2,6 +2,7 @@
 include ('../config.php');
 include ('../components/main_header.php');
 
+require ('../models/database.php');
 require_once('../models/browse_artist/artist.php');
 require_once('../models/browse_artist/artist_db.php');
 

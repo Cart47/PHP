@@ -1,0 +1,47 @@
+@import "_variables.scss";
+
+#artistProfile {
+    width: 80%;
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    
+
+}
+
+#artistImage {
+    width: 50%;
+    float: left;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    display: block;
+    border: 4px solid $Purple;
+    box-shadow: 4px 4px 4px #888888;
+
+}
+
+#artistInformtion {
+    margin-top: 40px;
+    width:45%;
+    float:right;
+    text-align: left;
+    display: block;
+    h1 {
+        font-size: 40px;
+    }
+    h3 {
+     margin-bottom: 0;   
+    }
+    p {
+        line-height:5px;
+    }
+}
+
+#artistDescription {
+    margin-top: 20px;
+    width:90%;
+    text-align: left;
+    display: block;
+    margin-bottom: 30px;
+    clear: both;
+}
