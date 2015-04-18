@@ -19,22 +19,3 @@ if($action == 'ticket_type'){
 if($action == 'ticket_checkout'){
     include 'ticket_checkout.php';
 }
-
-if($action == 'insert'){
-    
-    //NEED VALIDATION
-    
-    $cust_fname = $_POST['fname'];
-    $cust_lname = $_POST['lname'];
-    $cust_phone = $_POST['phone'];
-    $cust_email = $_POST['email'];   
-    
-     $cust = new Customer($cust_fname, $cust_lname, $cust_phone, $cust_email);
-     customerDB::insertCustomer($cust);  
-     
-     include 'checkout_form.php';
-}
-
-else if ($action == 'payment'){
- 
-}
