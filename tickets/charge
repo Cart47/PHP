@@ -1,0 +1,22 @@
+<?php
+require_once '../../config.php';
+
+//GET CREDIT CARD DETAILS FROM FORM
+  $token  = $_POST['stripeToken'];
+
+  try{
+  $customer = \Stripe\Customer::create(array(
+      'email' => 'customer@example.com',
+      'card'  => $token
+  ));
+  //Need to fix variable amount using JS API but only if time to do further customization
+  $charge = \Stripe\Charge::create(array(
+      'customer' => $customer->id,
+      'amount'   => 50000,
+      'currency' => 'usd'
+  ));
+    echo "Your CITF tickets have been purchased!";
+  }catch(\Stripe\Error\Card $e) {
+  // The card has been declined
+}
+
