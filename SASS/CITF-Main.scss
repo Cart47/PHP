@@ -331,6 +331,18 @@ input[type=submit] {
     text-align: center;
 }
 
+/* Performance Schedule Tooltip */
+.tooltip {
+    display: none;
+    font-size: 0.9em;
+    position: absolute;
+    padding: 10px;
+    background: #9a3cf5;
+    color: #fff;
+    border-radius: 5px;
+}
+
+
 // ************************************************ //
 // ******************** Footer ******************** //
 // ************************************************ //

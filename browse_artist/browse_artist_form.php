@@ -31,8 +31,8 @@ if(!isset($genres)){
                 </tr>
             
         <?php foreach($artistbygenre as $artist) : ?>
-                <tr class="artist">
-                    <td><?php echo $artist->GetFName(); ?> <?php echo $artist->GetLName();?></td>
+               <tr class="artist">
+                    <td><a href="../artist_profiles/index.php?artistID=<?php echo $artist->getID(); ?>"><?php echo $artist->GetFName(); ?> <?php echo $artist->GetLName();?></a></td>
                     <td><?php echo $artist->GetGenre(); ?></td>
                     <td><?php echo $artist->GetDescription(); ?></td>
                 </tr>

@@ -35,11 +35,11 @@ class Roles {
                              $user['art_fname'],
                              $user['art_lname'],
                              $user['genre'],
-                             $user['description'],             
+                             $user['description'],
+                             $user['band_members'],   
                              $user['role'],
                              $user['vol_position'],
-                             $user['vol_description']
-                              );  
+                             $user['vol_description']);  
             $users[] = $member;
             
         }
@@ -80,11 +80,11 @@ class Roles {
                              $user['art_fname'],
                              $user['art_lname'],
                              $user['genre'],
-                             $user['description'],             
+                             $user['description'],
+                             $user['band_members'],   
                              $user['role'],
                              $user['vol_position'],
-                             $user['vol_description']
-                            );
+                             $user['vol_description']);
         
         return $userInfo;
     }
@@ -195,11 +195,14 @@ class Roles {
                 else {
                     $artGenre = $_POST['ArtGenre'];
                 }
-                $band_description =  $_POST['band_description'];   
+                $band_description =  $_POST['band_description']; 
+                $band_members =  $_POST['band_members']; 
                 
                 
-                $query = "UPDATE browse_artist SET art_band_name='$band_name', art_fname='$art_fname', art_lname='$art_lname', genre='$artGenre', description='$band_description' WHERE browse_art_id='$ArtistID'";
+                $query = "UPDATE browse_artist SET art_band_name='$band_name', art_fname='$art_fname', art_lname='$art_lname', genre='$artGenre', band_members='$band_members' WHERE browse_art_id='$ArtistID'";
             
+                $secondQuery = "UPDATE browse_artist SET description='$band_description' WHERE browse_art_id='$ArtistID'";
+                $change2 = $db->exec($secondQuery);
             }
         
             $change = $db->exec($query);
@@ -235,7 +238,7 @@ class Roles {
             }
             if($roleIDnew == 4){
              
-                $query2 = "INSERT INTO browse_artist VALUES (null, null, null, null, null, ' ', null);";
+                $query2 = "INSERT INTO browse_artist VALUES (null, null, null, null, null,'0', null, null);";
                 $individual = $db->exec($query2);
                 
                 $query3 = "SELECT MAX(browse_art_id) AS artistID FROM browse_artist";
