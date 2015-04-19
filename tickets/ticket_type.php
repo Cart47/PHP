@@ -1,4 +1,7 @@
 <?php
+include ('../components/main_header.php'); 
+
+
 require_once '../models/tickets/ticketClass.php';
 require_once '../models/tickets/ticket.php';
 require_once '../models/database.php';
@@ -19,3 +22,5 @@ require_once '../models/database.php';
         ?>
    
 </div><!--End ticket type-->
+
+<?echo include ('../components/main_footer.php'); ?>
