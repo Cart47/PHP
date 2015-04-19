@@ -8,20 +8,20 @@ require_once '../models/database.php';
  $ticket_types = ticketdb::getTickets();
 
 ?>
-<link rel="stylesheet" href="../css/tickets.css" type="text/css">
+
 <img src="../img/landing/tickets3.png" />
-<div id="ticket_type">
+
            
         <?php             
         foreach($ticket_types as $val) {
             
-            echo '<a href="ticket_checkout.php?tick_id='. $val->getId() .'&tick_type='. $val->getType() 
+            echo '  <div class="tick_img">
+                    <a href="ticket_checkout.php?tick_id='. $val->getId() .'&tick_type='. $val->getType() 
                     .'&tick_price='. $val->getPrice() .'">'
-                    . '<img src= http://' .$_SERVER['HTTP_HOST'].'/'. $val->getImg() .'></img></a>' ;
+                    . '<img src= http://' .$_SERVER['HTTP_HOST'].'/'. $val->getImg() .'></img></a>
+                    </div>' ;
              
         }
         ?>
-   
-</div><!--End ticket type-->
 
-<?echo include ('../components/main_footer.php'); ?>
+<? include ('../components/main_footer.php'); ?>

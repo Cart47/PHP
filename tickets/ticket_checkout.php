@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-
+include ('../components/main_header.php'); 
 require_once '../config.php';
 
 $tick_id = $_GET['tick_id'];
@@ -34,3 +34,4 @@ $_SESSION['tick_price']=$tick_price;
           data-amount="<?php echo $stripe_charge ?>" 
           data-description="CITF Ticket Purchase"></script>
 </form>
+<?php include ('../components/main_footer.php'); ?>
