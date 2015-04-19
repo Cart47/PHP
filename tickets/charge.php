@@ -1,4 +1,6 @@
 <?php
+include ('../components/main_header.php');
+
 require_once '../config.php';
 require '../models/tickets/customerClass.php';
 require '../models/tickets/customer.php';
@@ -31,4 +33,6 @@ require '../models/database.php';
   }catch(\Stripe\Error\Card $e) {
   // The card has been declined
 }
+include ('../components/main_footer.php');
+
 
