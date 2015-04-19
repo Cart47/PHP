@@ -2,7 +2,7 @@
 require_once '../config.php';
 require '../models/tickets/customerClass.php';
 require '../models/tickets/customer.php';
-require '../models/tickets/databaseClass.php';
+require '../models/database.php';
 
 //GET CREDIT CARD DETAILS FROM FORM
   $token  = $_POST['stripeToken'];
