@@ -1,7 +1,6 @@
 <?php
 include ('../components/main_header.php'); 
 
-
 require_once '../models/tickets/ticketClass.php';
 require_once '../models/tickets/ticket.php';
 require_once '../models/database.php';
@@ -9,6 +8,8 @@ require_once '../models/database.php';
  $ticket_types = ticketdb::getTickets();
 
 ?>
+<link rel="stylesheet" href="../css/tickets.css" type="text/css">
+<img src="../img/landing/tickets3.png" />
 <div id="ticket_type">
            
         <?php             
