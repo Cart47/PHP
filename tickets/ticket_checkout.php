@@ -15,25 +15,44 @@ $_SESSION['tick_id']=$tick_id;
 $_SESSION['tick_type']=$tick_type;
 $_SESSION['tick_price']=$tick_price;
 
+$total = 78;
+
 ?>
-<form id="tick_form" action="charge.php" method="post">
-    <p><?php echo $tick_type;?>
-        <a href="ticket_type.php" class='link'> Change</a></p>
-    <input type='hidden' />
-    
-    <select></select>
-    
-    <input class='textbox' type='text' id='cust_fname' name='fname' placeholder="eg. Abraham">
-    
-    <input class='textbox' type='text' id='cust_lname' name='lname' placeholder="eg. Smith">
 
-    <input class='textbox' type='text' id='cust_phone' name='phone' placeholder="eg. 416-562-4687">
-   
-    <input class='textbox' type='text' id='cust_email' name='email' placeholder="eg. abesmith@gmail.com">
+<div id='wrap'>
+    <h1>Ticket Checkout </h1>
+    <table class='table' id='order_details'>
+        <thead>
+            <tr>
+                <th>Ticket Type</th>
+                <th>Cost</th>
+                <th>Quantity</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <td><?php echo $tick_type;?><a href="ticket_type.php" class='link'> (Change)</a></td>
+            <td></td>
+            <td><select></select></td>
+            <td>$<?php echo $total ?></td>
+        </tbody>
+    </table>
 
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<?php echo $stripe['publishable_key']; ?>"
-          data-amount="<?php echo $stripe_charge ?>" 
-          data-description="CITF Ticket Purchase"></script>
-</form>
+    <form id="tick_form" action="charge.php" method="post">
+        <input type='hidden' />
+
+        <input class='textbox' type='text' id='cust_fname' name='fname' placeholder="eg. Abraham">
+
+        <input class='textbox' type='text' id='cust_lname' name='lname' placeholder="eg. Smith">
+
+        <input class='textbox' type='text' id='cust_phone' name='phone' placeholder="eg. 416-562-4687">
+
+        <input class='textbox' type='text' id='cust_email' name='email' placeholder="eg. abesmith@gmail.com">
+
+      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="<?php echo $stripe['publishable_key']; ?>"
+              data-amount="<?php echo $stripe_charge ?>" 
+              data-description="CITF Ticket Purchase"></script>
+    </form> 
+</div>
 <?php include ('../components/main_footer.php'); ?>
