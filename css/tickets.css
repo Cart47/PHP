@@ -1,3 +1,22 @@
+body{background-color:#fff;}
 img{
-dislay:none;
+    max-width: 100%;
+}
+
+.tick_img {
+    background-color: #fff;
+   // border: 5px solid #9a3cf5;
+//    border-radius: 15px;
+    float:left;
+    height:400px;
+    margin: 1%;
+    padding:3px;
+    width: 30%;
+}
+
+
+#tick_form{
+    max-width: 30%;
+    margin: 0 auto;
+    padding: 30px 0;
 }
