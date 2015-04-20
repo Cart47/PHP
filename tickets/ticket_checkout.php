@@ -16,18 +16,20 @@ $_SESSION['tick_type']=$tick_type;
 $_SESSION['tick_price']=$tick_price;
 
 ?>
-<form action="charge.php" method="post">
-    <label>First Name: </label>
-    <input type='text' id='cust_fname' name='fname'>
+<form id="tick_form" action="charge.php" method="post">
+    <p><?php echo $tick_type;?>
+        <a href="ticket_type.php" class='link'> Change</a></p>
+    <input type='hidden' />
     
-    <label>Last Name: </label>
-    <input type='text' id='cust_lname' name='lname'>
+    <select></select>
+    
+    <input class='textbox' type='text' id='cust_fname' name='fname' placeholder="eg. Abraham">
+    
+    <input class='textbox' type='text' id='cust_lname' name='lname' placeholder="eg. Smith">
 
-    <label>Phone: </label>
-    <input type='text' id='cust_phone' name='phone'>
-    
-    <label>Email: </label>
-    <input type='text' id='cust_email' name='email'>
+    <input class='textbox' type='text' id='cust_phone' name='phone' placeholder="eg. 416-562-4687">
+   
+    <input class='textbox' type='text' id='cust_email' name='email' placeholder="eg. abesmith@gmail.com">
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<?php echo $stripe['publishable_key']; ?>"
