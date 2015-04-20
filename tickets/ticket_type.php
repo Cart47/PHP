@@ -19,11 +19,11 @@ require_once '../models/database.php';
                     <a href="ticket_checkout.php?tick_id='. $val->getId() .'&tick_type='. $val->getType() 
                     .'&tick_price='. $val->getPrice() .'">'
                     . '<img src= http://' .$_SERVER['HTTP_HOST'].'/'. $val->getImg() .'></img></a>
-
                     </div>' ;
              
         }
         ?>
+        <div id='tick_info'>Tickets Tickets</div>
     </div><!--End tick_types-->
 
 <? include ('../components/main_footer.php'); ?>
