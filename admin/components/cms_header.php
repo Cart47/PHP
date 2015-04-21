@@ -54,8 +54,17 @@
         <div class="left-menu">
             
             <!-- Users -->
-            <a class="left-mnu-itm" href="../role_manager/index.php"><i class="fa fa-users fa-lg"></i>Users</a>
-            
+            <?php 
+                if($_SESSION['RoleID'] == 2){
+                 echo '<a class="left-mnu-itm" href="../role_manager/index.php"><i class="fa fa-users fa-lg"></i>Users</a>';
+                }
+            ?>
+            <!-- Profile Manager -->
+            <?php 
+                if($_SESSION['RoleID'] != 2 || $_SESSION['RoleID'] == 1){
+                    echo '<a class="left-mnu-itm" href="../role_manager/edit_user.php"><i class="fa fa-users fa-lg"></i>Profile</a>';
+                }
+            ?>
             <!-- Tickets -->
             <a class="left-mnu-itm" href=""><i class="fa fa-ticket fa-lg"></i>Tickets</a>
             

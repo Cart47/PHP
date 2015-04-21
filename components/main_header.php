@@ -52,6 +52,8 @@ if(isset($_POST['subscribe'])){
         <link rel="stylesheet" href="../css/modalStyle.css" type="text/css">
         <link rel="stylesheet" href="../css/validation_errors.css" type="text/css">
         <link rel="stylesheet" href="../css/artistProfile.css" type="text/css">
+        <link rel="stylesheet" href="../css/tickets.css" type="text/css">
+
         
      </head>
      <body>
