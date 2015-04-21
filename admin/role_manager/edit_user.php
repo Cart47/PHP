@@ -35,7 +35,7 @@ $genres = ArtistDB::getGenres();
        <input type="hidden" value="<?php echo $user->getRoleID(); ?>" name="old_roleID" />
        <input type="hidden" value="<?php echo $user->getLogID(); ?>" name="loginID" />
         <table>
-        <?php if($user->getRoleID() == 2){ ?>
+        <?php if($_SESSION['RoleID'] == 2){ ?>
             <tr>
                 <td>
                    <label>Role:</label><br/>
@@ -128,7 +128,7 @@ $genres = ArtistDB::getGenres();
                 <td>
                     <input type=hidden value="<?php echo $user->getindID(); ?>" name="indID" />
                      <input class="btn xtra-pad" type="submit" name="edit" value="<?php if ($user->getRoleID() == 1){echo "Update User";}else { echo "Edit";}?>" />
-                     <?php if($user->getRoleID() == 2){
+                     <?php if($_SESSION['RoleID'] == 2){
                    echo  '<a href="." class="btn xtra-pad">Back</a>';
 } ?>
                 </td>
