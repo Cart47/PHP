@@ -2,18 +2,12 @@
 
 require_once ('../../config.php'); 
 include ('../components/cms_header.php'); 
-
-?>
-
-<!DOCTYPE html>
-
-<?php 
-
 //Forces a redirect through the index
-//if(!isset($pendingNews) && !isset($publishedNews)){
-//    header('Location: ../cms/'); 
-//    
-//}
+if($_SESSION['RoleID'] != 2){
+ 
+  echo  '<script type="text/javascript"> window.location.href ="../../Home/Index.php"; </script>';
+}
+
 
 ?>
 
