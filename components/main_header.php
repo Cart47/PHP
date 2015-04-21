@@ -52,7 +52,13 @@ if(isset($_POST['subscribe'])){
         <link rel="stylesheet" href="../css/modalStyle.css" type="text/css">
         <link rel="stylesheet" href="../css/validation_errors.css" type="text/css">
         <link rel="stylesheet" href="../css/artistProfile.css" type="text/css">
+<<<<<<< HEAD
+        <link rel="stylesheet" href="../css/tickets.css" type="text/css">
+
+        
+=======
         <link rel="stylesheet" href="../css/volunteer.css" type="text/css">
+>>>>>>> NewBranch
      </head>
      <body>
          

@@ -1,16 +1,9 @@
 <?php
+require_once('vendor/autoload.php');
 
-//the path is used for finding models and other files in the project
-//returns /Applications/XAMPP/xamppfiles/htdocs/PHP/
-$path = $_SERVER['DOCUMENT_ROOT'] . '/PHP/';
+$stripe = array(
+  "secret_key"      => "sk_test_zpF9jprElg1qYxa6REqMZRG8",
+  "publishable_key" => "pk_test_dfUZf9734pcqmpwGR7tfLS8t"
+);
 
-
-//the absolute path is used for linking scripts and stylesheets
-// returns http://localhost/PHP/
-$Gen = '/PHP/';
-$Ian = '/PHP/PHP';
-$Matt = '/PHP/';
-
-
-$server = $_SERVER['HTTP_HOST'];
-$absolute = 'http://' . $server . $Ian;
+\Stripe\Stripe::setApiKey($stripe['secret_key']);
