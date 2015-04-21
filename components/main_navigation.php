@@ -43,7 +43,7 @@
     
     <nav id="nav" class="clearfix">
         <ul>
-            <li><a href="#">Tickets</a></li>
+            <li><a href="../tickets/tickets_index.php">Tickets</a></li>
             <li><a href="#">Schedule</a></li>
             <li><a href="../browse_artist/index.php">Lineup</a></li>
             <li><a href="#">Camping</a></li>
