@@ -2,7 +2,13 @@
 
     date_default_timezone_set('UTC'); 
     include ('../../config.php');
-    include ('../components/cms_header.php'); 
+    include ('../components/cms_header.php');
+
+    //Forces a redirect through the index
+    if($_SESSION['RoleID'] != 2){
+
+      echo  '<script type="text/javascript"> window.location.href ="../../Home/Index.php"; </script>';
+    }
 
     //Forces a redirect through the index
     if(!isset($publishSelected['news_id'])){
