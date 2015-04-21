@@ -36,5 +36,10 @@ Profile Information
 Description-->
 
 </div>
+<div id="social">
+    
+    <?php include('../components/social.php'); ?>
+    
+</div>
 
 <?php include("../components/main_footer.php");?>
