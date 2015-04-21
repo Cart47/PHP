@@ -2,6 +2,12 @@
 
     require_once ('../../config.php');
     include ('../components/cms_header.php');
+    
+    //Forces a redirect through the index
+    if($_SESSION['RoleID'] != 2){
+
+      echo  '<script type="text/javascript"> window.location.href ="../../Home/Index.php"; </script>';
+    }
 
     //Forces a redirect through the index
     if(!isset($newsByID)){
