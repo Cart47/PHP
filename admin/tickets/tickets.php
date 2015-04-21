@@ -26,6 +26,7 @@ require_once '../../models/tickets/ticket.php';
     
                 <? foreach($tickets as $ticket)  :?>
                     <tr>
+        
                         <td><?php echo $ticket->getType()?></td>
                         <td><?php echo '$'.$ticket->getPrice()?></td>
                        
