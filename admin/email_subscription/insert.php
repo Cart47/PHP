@@ -7,6 +7,7 @@
 
       echo  '<script type="text/javascript"> window.location.href ="../../Home/Index.php"; </script>';
     }
+
 ?>
 
 <h1>New Subscriber</h1>
@@ -18,21 +19,22 @@
     <!-- Name -->
     <label class="label">Name:</label>
     <div class="clear"></div>
-    <input type="text" class="textbox" name="name" size="40" /><span class="required">*</span>
+    <input type="text" class="textbox" name="name" size="40" value="<?php echo isset($name) ? $name : '' ; ?>"/>
+    <?php echo isset($fields) ? $fields->getField('name')->showErrors() : '' ; ?>
 
     <div class="clear"></div>
 
     <!-- Email -->
     <label class="label">Email:</label>
     <div class="clear"></div>
-    <input type="text" class="textbox" name="email" size="40" /><span class="required">*</span>
+    <input type="text" class="textbox" name="email" size="40" value="<?php echo isset($email) ? $email : '' ; ?>"/>
+    <?php echo isset($fields) ? $fields->getField('email')->showErrors() : '' ; ?>
 
     <div class="clear"></div>
 
     <!-- Approve Email -->
     <input type='radio' class='radio' name='approved' value='1' /> Approved
-    <input type='radio' class='radio' name='approved' value='0' /> Pending
-    <span class="required">*</span>
+    <input type='radio' class='radio' name='approved' value='0' checked /> Pending
 
     <div class="clear"></div>
 
