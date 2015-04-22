@@ -21,7 +21,7 @@ if (!isset($_SESSION)) { session_start();}
   
     $_SESSION['links'] = $links;
     
-  //switch statement to display link url as link name   
+  
 ?>
 <head>
     <title>Slider Image List</title>

@@ -7,8 +7,7 @@ class Ticket {
     private $tick_type;
     private $tick_price;
     
-    public function __construct($tick_img, $tick_type, $tick_price) {
-        $this->tick_img = $tick_img;
+    public function __construct($tick_type, $tick_price) {
         $this->tick_type = $tick_type;
         $this->tick_price = $tick_price;
     }
