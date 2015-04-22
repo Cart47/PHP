@@ -20,8 +20,8 @@ class CamperDB {
 
   public static function getCamperByID($camper_id) {
     $db = Database::getDB();
-    $query = 'SELECT * FROM camper
-              WHERE camper_id ='$camper_id;
+    $query = "SELECT * FROM camper
+              WHERE camper_id ='$camper_id'";
     $statement = $db->query($query);
     $row = $statement->fetch();
       $camper = new Camper($row['camper_id'],
@@ -66,7 +66,7 @@ class CamperDB {
 
       $row_count = $db->exec($query);
 
-      return $row_count
+      return $row_count;
   }
 
   public static function deleteEmail($camper_id){

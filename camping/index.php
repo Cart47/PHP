@@ -1,10 +1,14 @@
 <?php
+    include ('../config.php');
+    include ('../components/main_header.php');
 
-
+    require ('../models/database.php');
+    require('../models/camping/camper.php');
+    require('../models/camping/camper_db.php');
     require ('../models/validation/field_classes.php');
     require ('../models/validation/validation_class.php');
 
-    //Creates an object from Validation class
+  /*  //Creates an object from Validation class
     $validate = new Validation();
 
     //Creates a new fieldsArray
@@ -22,7 +26,7 @@
     $camper_email='';
     $group_size='';
     $camps_num='';
-
+*/
     if (isset($_POST['subscribe'])){ //If subscribe button is clicked
 
         //Post values from the form
@@ -34,29 +38,33 @@
         $camps_num = $_POST['camps_num'];
 
         //Assigns required validation to fields
+        /*
         $validate->required('camper_fname', $camper_fname);
         $validate->required('camper_lname', $camper_lname);
         $validate->required('camper_email', $camper_email);
         $validate->required('group_size', $group_size);
         $validate->required('camps_num', $camps_num);
-
+        */
 
         //If there are errors
-        if(!$fields->hasErrors()){
+        //if(!$fields->hasErrors()){
 
             //Create an object from the Email class
-            $submitCamper = new CamperClass($camper_fname, $camper_lname, $camper_email, $group_size, $camps_num);
+            $submitCamper = new Camping($camper_fname, $camper_lname, $camper_email, $group_size, $camps_num);
 
             //Insert into the database
             CamperDB::insertCamper($submitCamper);
 
         }
-    }
+  //  }
+
+
+?>
 
 <div class="camping">
 
     <!-- if there are input errors OR if the subscribe button has not been clicked, show the form -->
-    <?php if($fields->hasErrors() || !isset($_POST['subscribe']) ){ ?>
+
 
         <form action="index.php" method="post" id="camper-form">
 
@@ -75,11 +83,11 @@
             <?php echo isset($fields) ? $fields->getField('camper_email')->showErrors() : '' ; ?>
             <div class="clear"></div>
 
-            <input type="text" class="camper-field" name="group_size" placeholder="Your Email" value="<?php echo isset($group_size) ? $group_size : '' ; ?>" />
+            <input type="text" class="camper-field" name="group_size" placeholder="Number of people in your group" value="<?php echo isset($group_size) ? $group_size : '' ; ?>" />
             <?php echo isset($fields) ? $fields->getField('group_size')->showErrors() : '' ; ?>
             <div class="clear"></div>
 
-          <input type="text" class="camper-field" name="camps_num" placeholder="Your Email" value="<?php echo isset($camps_num) ? $camps_num : '' ; ?>" />
+          <input type="text" class="camper-field" name="camps_num" placeholder="Camp Site Number" value="<?php echo isset($camps_num) ? $camps_num : '' ; ?>" />
           <?php echo isset($fields) ? $fields->getField('camps_num')->showErrors() : '' ; ?>
           <div class="clear"></div>
 
