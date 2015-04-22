@@ -45,14 +45,14 @@
                 <form action="." method="post" id="edit_email">                            
                     <input type="hidden" name="email_id" value="' . $approve->getEmailID() . '" />
                     <input type="hidden" name="action" value="edit" />
-                    <button type="submit" class="link-btn"><i class="fa fa-pencil fa-lg"></i></button>                      
+                    <button type="submit" class="link-btn"><i class="fa fa-pencil fa-lg"></i></button>
                 </form>
             </td>
             <td>
                 <form action="." method="post" id="delete_email">                            
                     <input type="hidden" name="email_id" value="' . $approve->getEmailID() . '" />
                     <input type="hidden" name="action" value="delete" />   
-                    <button type="submit" class="link-btn"><i class="fa fa-trash-o fa-lg"></i></button>                           
+                    <button type="submit" class="link-btn"><i class="fa fa-trash-o fa-lg"></i></button>      
                 </form>
             </td>
         </tr>';             
@@ -85,14 +85,14 @@
                 <form action="." method="post" id="edit_email">                            
                     <input type="hidden" name="email_id" value="' . $unapprove->getEmailID() . '" />
                     <input type="hidden" name="action" value="edit" />
-                    <button type="submit" class="link-btn"><i class="fa fa-pencil fa-lg"></i></button>                            
+                    <button type="submit" class="link-btn"><i class="fa fa-pencil fa-lg"></i></button>      
                 </form>
             </td>
             <td>
                 <form action="." method="post" id="delete_email">                            
                     <input type="hidden" name="email_id" value="' . $unapprove->getEmailID() . '" />
                     <input type="hidden" name="action" value="delete" />
-                    <button type="submit" class="link-btn"><i class="fa fa-trash-o fa-lg"></i></button>                             
+                    <button type="submit" class="link-btn"><i class="fa fa-trash-o fa-lg"></i></button>      
                 </form>
             </td>
         </tr>';             

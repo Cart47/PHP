@@ -38,16 +38,16 @@
                 <!-- Title -->
                 <td><label>Title:</label></td>
                 <td>
-                    <input type="text" name="title" class="textbox" value="<?php echo isset($title) ? $title : '' ; ?>"/>
-                    <?php echo isset($fields) ? $fields->getField('title')->showErrors() : '' ; ?>
+                    <input type="text" name="int_title" class="textbox" value="<?php echo isset($int_title) ? $int_title : '' ; ?>"/>
+                    <?php echo isset($fields) ? $fields->getField('int_title')->showErrors() : '' ; ?>
                 </td>
             </tr>
             <tr>
                 <!-- Author -->
                 <td><label>Author:</label></td>
                 <td>
-                    <input type="text" name="author" class="textbox" value="<?php echo isset($author) ? $author : '' ; ?>" />
-                    <?php echo isset($fields) ? $fields->getField('author')->showErrors() : '' ; ?>    
+                    <input type="text" name="int_author" class="textbox" value="<?php echo isset($int_author) ? $int_author : '' ; ?>" />
+                    <?php echo isset($fields) ? $fields->getField('int_author')->showErrors() : '' ; ?>    
                 </td>
             </tr>
             <tr>
@@ -59,16 +59,16 @@
                 <!-- Description -->
                 <td><label>Description:</label></td>
                 <td>
-                    <textarea name="description" rows="2" cols="50" class="textarea-sm"><?php echo isset($description) ? $description : '' ; ?></textarea>
-                    <?php echo isset($fields) ? $fields->getField('description')->showErrors() : '' ; ?>
+                    <textarea name="int_description" rows="2" cols="50" class="textarea-sm"><?php echo isset($int_description) ? $int_description : '' ; ?></textarea>
+                    <?php echo isset($fields) ? $fields->getField('int_description')->showErrors() : '' ; ?>
                 </td>
             </tr>
             <tr>
                 <!-- Article -->
                 <td><label>Article:</label></td>
                 <td>
-                    <textarea name="article" rows="5" cols="50" class="textarea-lg"><?php echo isset($article) ? $article : '' ; ?></textarea>
-                    <?php echo isset($fields) ? $fields->getField('article')->showErrors() : '' ; ?>
+                    <textarea name="int_article" rows="5" cols="50" class="textarea-lg"><?php echo isset($int_article) ? $int_article : '' ; ?></textarea>
+                    <?php echo isset($fields) ? $fields->getField('int_article')->showErrors() : '' ; ?>
                 </td>
                 
             </tr>
@@ -79,6 +79,8 @@
         <a href="." class="btn">Cancel</a>
 
     </form>
+
+    <div class="clear"></div>
 
     <!-- External News -->
     <form action="." method="post" id="external" enctype="multipart/form-data">
@@ -94,32 +96,32 @@
                 <!-- Title -->
                 <td><label>Title:</label></td>
                 <td>
-                    <input type="text" name="title" class="textbox" value="<?php echo isset($title) ? $title : '' ; ?>" />
-                <?php echo isset($fields) ? $fields->getField('title')->showErrors() : '' ; ?>
+                    <input type="text" name="ext_title" class="textbox" value="<?php echo isset($ext_title) ? $ext_title : '' ; ?>" />
+                <?php echo isset($fields) ? $fields->getField('ext_title')->showErrors() : '' ; ?>
                 </td>
             </tr>
             <tr>
                 <!-- Author -->
                 <td><label>Author:</label></td>
                 <td>
-                    <input type="text" name="author" class="textbox" value="<?php echo isset($author) ? $author : '' ; ?>" />
-                    <?php echo isset($fields) ? $fields->getField('author')->showErrors() : '' ; ?>
+                    <input type="text" name="ext_author" class="textbox" value="<?php echo isset($ext_author) ? $ext_author : '' ; ?>" />
+                    <?php echo isset($fields) ? $fields->getField('ext_author')->showErrors() : '' ; ?>
                 </td>
             </tr>
             <tr>
                 <!-- Description -->
                 <td><label>Description:</label></td>
                 <td>
-                    <textarea name="description" rows="2" cols="50" class="textarea-sm" value="<?php echo isset($description) ? $description : '' ; ?>" ></textarea>
-                    <?php echo isset($fields) ? $fields->getField('description')->showErrors() : '' ; ?>
+                    <textarea name="ext_description" rows="2" cols="50" class="textarea-sm" value="<?php echo isset($ext_description) ? $ext_description : '' ; ?>" ></textarea>
+                    <?php echo isset($fields) ? $fields->getField('ext_description')->showErrors() : '' ; ?>
                 </td>
             </tr>
             <tr>
                 <!-- Article -->
                 <td><label>Article Link:</label></td>
                 <td>
-                    <input type="text" name="story_url" class="textbox" value="<?php echo isset($story_url) ? $story_url : '' ; ?>" />
-                    <?php echo isset($fields) ? $fields->getField('story_url')->showErrors() : '' ; ?>
+                    <input type="text" name="ext_story_url" class="textbox" value="<?php echo isset($ext_story_url) ? $ext_story_url : '' ; ?>" />
+                    <?php echo isset($fields) ? $fields->getField('ext_story_url')->showErrors() : '' ; ?>
                 </td>
             </tr>
         </table>
