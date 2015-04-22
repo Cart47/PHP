@@ -25,10 +25,10 @@
   color: #121212; }
 
 .btn:hover {
-  background: #F08080; }
+  background: #9a3cf5; }
 
 .btn_red:hover {
-  background: #a54531; }
+  background: #9a3cf5; }
 
 a.btn {
   color: #121212;
@@ -111,7 +111,7 @@ a.btn_red {
   color: #000; }
 
 .social_login .social_box:hover {
-  background: #F08080; }
+  background: #9a3cf5; }
 
 .centeredText {
   text-align: center;

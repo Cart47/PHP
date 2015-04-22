@@ -11,7 +11,7 @@ $tick_type = $_GET['tick_type'];
 $tick_price = $_GET['tick_price'];
 
 //STRIPE WORKS IN CENTS - CONVERT TO DOLLARS
-$stripe_charge = $tick_price * 100;
+$stripe_charge = $tick_price * $i * 100;
 
 $_SESSION['tick_id']=$tick_id;
 $_SESSION['tick_type']=$tick_type;

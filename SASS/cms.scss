@@ -5,7 +5,7 @@
 /* --------------------------------------- */
 
 html { position: relative; min-height: 100%; }
-body { font-family: $font1; -webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px; font-size: 1em; }
+body { font-family: $font1; -webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px; font-size: 0.875em; }
 
 
 a { 
@@ -18,9 +18,12 @@ p { padding: 5px 0px; }
 /* Headings */
 
 h1 {
-    font-size: 1.75em;
-    padding: 10px 0px;
+    font-size: 1.5em;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    margin-bottom: 5px;
     color: $Purple;
+    border-bottom: 1px solid #ddd;
 }
 
 h2 {
@@ -45,12 +48,16 @@ h3 {
     background: #444;
     color: #fff;
     cursor: pointer;
-    margin: 20px 0px;
+    margin: 10px 0px;
     text-decoration: none;
     transition: all 0.3s;
     &:hover {   
         background: #000;
     }
+}
+
+.head-btn { /* This is used for the CMS buttons to appear under h1 and float right */
+    float: right;
 }
 
 /* Only use with href button */
@@ -95,6 +102,10 @@ table {
 	border-collapse: collapse;
 }
 
+table.plain tr {
+    background: none;
+}
+
 th {
     padding: 10px 8px;
 	color: #444;
@@ -108,6 +119,7 @@ tr:nth-child(even){
 td {
     padding: 8px 15px;
 	color: #444;
+    vertical-align: middle;
 }
 
 
@@ -115,19 +127,30 @@ td {
 
 .textbox {
     border: 1px solid #848484; 
-    height: 2.25em;
+    height: 2em;
     padding: 0px 10px;
-    margin-top: 10px;
+    margin-top: 5px;
     font-size: 0.875em;   
     box-shadow: none;
 }
 
-.textarea {
+.textarea-sm {
     border: 1px solid #848484; 
-    height: 10em;
-    width: 40em;
+    height: 4em;
+    width: 100%;
     padding: 0px 10px;
     margin-top: 10px;
+    font-size: 0.875em;   
+    box-shadow: none;
+    resize: none;
+}
+
+.textarea-lg {
+    border: 1px solid #848484; 
+    height: 10em;
+    width: 100%;
+    padding: 0px 10px;
+    margin-top: 8px;
     font-size: 0.875em;   
     box-shadow: none;
     resize: none;
@@ -145,15 +168,17 @@ td {
 
 .radio {
     margin: 10px;
-    padding: 10px;
     font-size: 20px;
     line-height: 20px;
     border: 1px solid #444;
     border-radius: none;
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
 }
 
-label.label {
-
+.label {
+    margin-top: 10px;
 }
 
 .required {
@@ -176,7 +201,7 @@ label.label {
 #citf a {
     color: #fff;
     float: left;
-    padding: 8px 25px;
+    padding: 10px 25px;
     font-family: $font2; 
     font-size: 2em;
     text-decoration: none;
@@ -192,6 +217,7 @@ label.label {
         margin-left: 5px;
         text-decoration: none;
         color: #fff;
+        font-size: 1em;
     } 
     
     a:hover {
@@ -209,11 +235,13 @@ label.label {
 #signout {
 	float: right;
 	background-color: $Purple;
-	padding: 16px 20px;
+	padding: 0px 20px;
+    line-height: 49px;
 	border: 1px solid #000;
     color: #fff;
     text-decoration: none;
     transition: all 0.1s;
+    font-size: 1em;
 }
 
 #signout:hover {
@@ -262,7 +290,6 @@ label.label {
 	display: block;
 	padding: 10px 20px;
 	border-top: 1px solid #ddd;
-	font-size: 0.85em;
 	text-decoration: none;
 }
 
@@ -302,7 +329,7 @@ label.label {
     margin-left: 30px;
     margin-bottom: 100px;
     display: inline-block;
-    width: 73%;
+    width: 68%;
     min-height: 100%;
     float: left;
     
@@ -317,6 +344,12 @@ label.label {
 #external {
     z-index: 2;
     position: absolute;
+}
+
+/* for tables in Email Subscription and News Feed */
+table.tbl-email,
+table.news-tbl {
+    width: 100%;
 }
 
 
@@ -337,4 +370,14 @@ label.label {
 
 #footer-content {
     padding: 20px;
+}
+
+/* ------------------------------------------ */
+/* --------------- Responsive --------------- */
+/* ------------------------------------------ */
+
+@media (max-width: 900px) {
+  #main {
+      width:55%;
+  }
 }

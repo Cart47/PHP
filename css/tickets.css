@@ -9,8 +9,6 @@ img{
 
 .tick_img {
     background-color: #fff;
-   //border: 5px solid #9a3cf5;
-//  border-radius: 15px;
     float:left;
     height:200px;
     margin: 1%;
@@ -41,18 +39,17 @@ img{
     padding: 30px 0;
 }
 
+#order_details, th, td{
+  border: 1px solid #848484;
+  max-width: 500px;
+  padding: 10px;
+}
+
 #order_details{
-    max-width: 500px;
-
-}
-
-#order_details, th, td {
-   border: 1px solid black;
-    max-width: 500px;
-}
-
-th, td{
-    padding: 10px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+/*WHY IS NOT WORK*/
 }
 
 #tick_quant{

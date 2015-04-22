@@ -11,6 +11,8 @@ require_once('../models/browse_artist/artist_db.php');
 if(isset($_GET['artistID'])){
 $artistID = $_GET['artistID'];    
 $artist =  ArtistDB::getArtist($artistID);
+} else {
+    echo  '<script type="text/javascript"> window.location.href ="../browse_artist/index.php"; </script>';
 }
 
 
@@ -35,6 +37,11 @@ $artist =  ArtistDB::getArtist($artistID);
 Profile Information
 Description-->
 
+</div>
+<div id="social">
+    
+    <?php include('../components/social.php'); ?>
+    
 </div>
 
 <?php include("../components/main_footer.php");?>
