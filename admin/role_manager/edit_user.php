@@ -113,7 +113,7 @@ $genres = ArtistDB::getGenres();
                 <?php } ?>
                 
                 <!------------ Volunteer Edit Form    -->  
-                <?php  if($user->getRoleID() == 3){ ?>
+                <?php  if($user->getRoleID() == 3 && $_SESSION['RoleID'] == 2){ ?>
                    <input type="hidden" value="<?php echo $user->getVolunteerID() ?>" name="volunteerID" />
                     <label>Volunteer Position:</label><br/>
                     <input class="textbox"  type="text" name="vol_position" value="<?php echo $user->getVolPosition() ?>" required/><br/><br/>
