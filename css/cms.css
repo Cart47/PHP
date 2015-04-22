@@ -19,8 +19,11 @@ p {
 /* Headings */
 h1 {
   font-size: 1.75em;
-  padding: 10px 0px;
-  color: #9a3cf5; }
+  padding-top: 5px;
+  padding-bottom: 10px;
+  margin-bottom: 5px;
+  color: #9a3cf5;
+  border-bottom: 1px solid #ddd; }
 
 h2 {
   font-size: 1.5em;
@@ -40,11 +43,15 @@ h3 {
   background: #444;
   color: #fff;
   cursor: pointer;
-  margin: 20px 0px;
+  margin: 10px 0px;
   text-decoration: none;
   transition: all 0.3s; }
   .btn:hover {
     background: #000; }
+
+.head-btn {
+  /* This is used for the CMS buttons to appear under h1 and float right */
+  float: right; }
 
 /* Only use with href button */
 .xtra-pad {
@@ -248,7 +255,7 @@ td {
   margin-left: 30px;
   margin-bottom: 100px;
   display: inline-block;
-  width: 73%;
+  width: 68%;
   min-height: 100%;
   float: left; }
 
@@ -260,6 +267,11 @@ td {
 #external {
   z-index: 2;
   position: absolute; }
+
+/* for tables in Email Subscription and News Feed */
+table.tbl-email,
+table.news-tbl {
+  width: 100%; }
 
 /* -------------------------------------- */
 /* --------------- Footer --------------- */
@@ -276,5 +288,12 @@ td {
 
 #footer-content {
   padding: 20px; }
+
+/* ------------------------------------------ */
+/* --------------- Responsive --------------- */
+/* ------------------------------------------ */
+@media (max-width: 900px) {
+  #main {
+    width: 55%; } }
 
 /*# sourceMappingURL=cms.css.map */

@@ -54,15 +54,13 @@ if ($action == 'newsList'){ //default view
     $date_created = $_POST['date_created'];
     $author = $_POST['author'];
     $other_url = $_POST['other_url']; 
-    //$feature_img = $_POST['feature_img'];
-    $banner_img = $_POST['banner_img'];
     $description = $_POST['description'];
     $article = $_POST['article']; 
     $type = $_POST['type'];
     $publish = $_POST['publish'];
     
     //Call to insert
-    $news = new NewsClass($title, $date_created, null, $author, null, $other_url, $img_path, $banner_img, $description, $article, $type, $publish);
+    $news = new NewsClass($title, $date_created, null, $author, null, $other_url, $description, $article, $type, $publish);
     $addNews = NewsDB::insertNews($news);
     
     getNewsList();
@@ -151,14 +149,12 @@ if ($action == 'newsList'){ //default view
     $date_published = $_POST['date_published'];
     $author = $_POST['author'];
     $other_url = $_POST['other_url']; 
-    $feature_img = $_POST['feature_img'];
-    $banner_img = $_POST['banner_img'];
     $description = $_POST['description']; 
     $article = $_POST['article'];
     $type = $_POST['type'];
     $publish = $_POST['publish'];
     
-    NewsDB::updateNews($news_id, $title, $date_created, $date_published, $author, null, $other_url, $feature_img, $banner_img, $description, $article, $type, $publish);
+    NewsDB::updateNews($news_id, $title, $date_created, $date_published, $author, null, $other_url, $description, $article, $type, $publish);
     
     getNewsList();
     
@@ -172,12 +168,11 @@ if ($action == 'newsList'){ //default view
     $date_published = $_POST['date_published'];
     $author = $_POST['author'];
     $story_url = $_POST['story_url']; 
-    $feature_img = $_POST['feature_img'];
     $description = $_POST['description'];  
     $type = $_POST['type'];
     $publish = $_POST['publish'];
     
-    NewsDB::updateNews($news_id, $title, $date_created, $date_published, $author, $story_url, null, $feature_img, null, $description, null, $type, $publish);
+    NewsDB::updateNews($news_id, $title, $date_created, $date_published, $author, $story_url, null, null, $description, null, $type, $publish);
     
     getNewsList();
     
