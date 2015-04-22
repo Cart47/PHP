@@ -11,6 +11,8 @@ require_once('../models/browse_artist/artist_db.php');
 if(isset($_GET['artistID'])){
 $artistID = $_GET['artistID'];    
 $artist =  ArtistDB::getArtist($artistID);
+} else {
+    echo  '<script type="text/javascript"> window.location.href ="../browse_artist/index.php"; </script>';
 }
 
 
