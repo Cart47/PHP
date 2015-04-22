@@ -1,5 +1,5 @@
 <?php
-include ('../components/main_header.php');
+//include ('../components/main_header.php');
 
 require_once '../config.php';
 require '../models/tickets/customerClass.php';
@@ -21,7 +21,7 @@ require '../models/database.php';?>
       'email' => 'customer@example.com',
       'card'  => $token
   ));
-  //Need to fix variable amount using JS API but only if time to do further customization
+
   $charge = \Stripe\Charge::create(array(
       'customer' => $customer->id,
       'amount'   => 50000,
@@ -31,10 +31,11 @@ require '../models/database.php';?>
      customerDB::insertCustomer($cust);
      
     echo "Your CITF tickets have been purchased!";
+      
   }catch(\Stripe\Error\Card $e) {
   // The card has been declined
 }
 
-include ('../components/main_footer.php');
+//include ('../components/main_footer.php');
 
 
