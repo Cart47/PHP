@@ -19,11 +19,29 @@ if($_SESSION['RoleID'] != 2){
     </head>
     <body>
         
-        <h2>Performance Schedule</h2>
+        <h1>Performance Schedule</h1>
+        
+        <div class="head-btn">
+            <div class="inline-btns">
+            <!-- Add Stage Button -->
+                <form action="." method="post">
+                    <input type="hidden" name="action" value="addStage" />
+                    <button type="submit" class="btn" name="add"><i class="fa fa-plus"></i>Add a Stage</button>
+                </form>
+            </div>
+            
+            <div class="inline-btns">
+                <!-- Add Performance Button -->
+                <form action="." method="post">
+                    <input type="hidden" name="action" value="addPerformance" />
+                    <button type="submit" class="btn" name="add"><i class="fa fa-plus"></i>Add a Performance</button>
+                </form>
+            </div>
+        </div>
    
         <?php foreach ($stages as $stage) : ?>
             
-            <table class="stage">
+            <table class="plain stage">
                 <tr>
                     <td colspan="2">
                         <a href="?id=<?php echo $stage->getStageID(); ?>">
@@ -36,14 +54,14 @@ if($_SESSION['RoleID'] != 2){
                         <form action="." method="post" id="editStage">                            
                             <input type="hidden" name="stage_id" value="<?php echo $stage->getStageID(); ?>" />
                             <input type="hidden" name="action" value="editStage" />
-                            <button type="submit" class="link-btn">Edit</button>                      
+                            <button type="submit" class="link-btn"><i class="fa fa-pencil fa-lg"></i></button>
                         </form>
                     </td>
                     <td>
                         <form action="." method="post" id="deleteStage">                            
                             <input type="hidden" name="stage_id" value="<?php echo $stage->getStageID(); ?>" />
                             <input type="hidden" name="action" value="deleteStage" />
-                            <button type="submit" class="link-btn">Delete</button>                      
+                            <button type="submit" class="link-btn"><i class="fa fa-trash-o fa-lg"></i></button> 
                         </form>
                     </td>
                 </tr>
@@ -53,7 +71,9 @@ if($_SESSION['RoleID'] != 2){
         
         <br /><br />
         
-        <p>Performances for the <strong><?php echo $stageName['name']; ?> Stage</strong>:</p>
+        <h3>Performances for the <?php echo $stageName['name']; ?> Stage:</h3>
+        
+        <br />
         
         <!------------------>
         <!-- Friday Table -->
@@ -64,37 +84,46 @@ if($_SESSION['RoleID'] != 2){
         <?php if($friday == null) : ?>
             <p>No scheduled performances</p>
         <?php else : ?>
-            <table>
-            <?php foreach ($friday as $fri) : ?>
+            <table class="sched-day">
                 
-                <tr>
-                    <td>
-                        <?php echo $fri->getArtistName(); ?>
-                    </td>
-                    <td>
-                        <?php $start = $fri->getStartTime(); ?>
-                        <?php $end = $fri->getEndTime(); ?>
-                        <?php echo date('g:i a', strtotime($start)); ?> - <?php echo date('g:i a', strtotime($end)); ?>
-                    </td>
-                    <td>
-                        <form action="." method="post">                            
-                            <input type="hidden" name="performance_id" value="<?php echo $fri->getPerformanceID(); ?>" />
-                            <input type="hidden" name="action" value="editPerformance" />
-                            <button type="submit" class="link-btn">Edit</button>                      
-                        </form>
-                    </td>
-                    <td>
-                        <form action="." method="post">                            
-                            <input type="hidden" name="performance_id" value="<?php echo $fri->getPerformanceID(); ?>" />
-                            <input type="hidden" name="action" value="deletePerformance" />
-                            <button type="submit" class="link-btn">Delete</button>                      
-                        </form>
-                    </td>
-                </tr>
-            <?php endforeach; ?>
+                <th>Performer</th>
+                <th>Timeslot</th>
+                <th>Edit</th>
+                <th>Delete</th>
+                
+                <?php foreach ($friday as $fri) : ?>
+
+                    <tr>
+                        <td>
+                            <?php echo $fri->getArtistName(); ?>
+                        </td>
+                        <td>
+                            <?php $start = $fri->getStartTime(); ?>
+                            <?php $end = $fri->getEndTime(); ?>
+                            <?php echo date('g:i a', strtotime($start)); ?> - <?php echo date('g:i a', strtotime($end)); ?>
+                        </td>
+                        <td>
+                            <form action="." method="post">                            
+                                <input type="hidden" name="performance_id" value="<?php echo $fri->getPerformanceID(); ?>" />
+                                <input type="hidden" name="action" value="editPerformance" />
+                                <button type="submit" class="link-btn">Edit</button>                      
+                            </form>
+                        </td>
+                        <td>
+                            <form action="." method="post">                            
+                                <input type="hidden" name="performance_id" value="<?php echo $fri->getPerformanceID(); ?>" />
+                                <input type="hidden" name="action" value="deletePerformance" />
+                                <button type="submit" class="link-btn">Delete</button>                      
+                            </form>
+                        </td>
+                    </tr>
+                
+                <?php endforeach; ?>
+                
             </table>
         <?php endif; ?>
         
+        <br /><br />
         
         <!-------------------->
         <!-- Saturday Table -->
@@ -104,7 +133,13 @@ if($_SESSION['RoleID'] != 2){
         <?php if($saturday == null) : ?>
             <p>No scheduled performances</p>
         <?php else : ?>
-        <table>
+        <table class="sched-day">
+            
+            <th>Performer</th>
+            <th>Timeslot</th>
+            <th>Edit</th>
+            <th>Delete</th>
+            
             <?php foreach ($saturday as $sat) : ?>
                 <tr>
                     <td>
@@ -134,6 +169,8 @@ if($_SESSION['RoleID'] != 2){
         </table>
         <?php endif; ?>
         
+        <br /><br />
+        
         <!------------------>
         <!-- Sunday Table -->
         <!------------------>
@@ -143,7 +180,13 @@ if($_SESSION['RoleID'] != 2){
         <?php if($sunday == null) : ?>
             <p>No scheduled performances</p>
         <?php else : ?>
-        <table>
+        <table class="sched-day">
+            
+            <th>Performer</th>
+            <th>Timeslot</th>
+            <th>Edit</th>
+            <th>Delete</th>
+            
             <?php foreach ($sunday as $sun) : ?>
                 <tr>
                     <td>
@@ -173,15 +216,6 @@ if($_SESSION['RoleID'] != 2){
         </table>
         <?php endif; ?>
         <br /><br />
-        
-        <form action="." method="post">
-            <input type="hidden" name="action" value="addStage" />
-            <input type="submit" name="add" value="New Stage" /> 
-        </form>
-        <form action="." method="post">
-            <input type="hidden" name="action" value="addPerformance" />
-            <input type="submit" name="add" value="New Performance" /> 
-        </form>
         
     </body>
 </html>

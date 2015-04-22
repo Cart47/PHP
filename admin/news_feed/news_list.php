@@ -1,6 +1,5 @@
 <?php 
 
-    require_once ( '../../config.php'); 
     include ( '../components/cms_header.php'); 
 
     //Forces a redirect through the index
@@ -10,7 +9,7 @@
     }
 ?>
 
-<h1>CITF News</h1>
+<h1>Manage News</h1>
 
 <!-- Add News Article Button -->
 <div class="head-btn">
