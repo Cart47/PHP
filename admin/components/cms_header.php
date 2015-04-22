@@ -83,8 +83,8 @@
             }
             
             //<!-- Voluteer -->
-            if($_SESSION['RoleID'] == 2 || $_SESSION['RoleID'] == 3){
-                echo '<a class="left-mnu-itm" href=""><i class="fa fa-smile-o fa-lg"></i>Volunteer</a>';
+            if($_SESSION['RoleID'] == 2){
+                echo '<a class="left-mnu-itm" href="../volunteer/index.php"><i class="fa fa-smile-o fa-lg"></i>Volunteer</a>';
             }
 
             //<!-- Store -->
