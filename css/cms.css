@@ -8,7 +8,7 @@ html {
 body {
   font-family: roboto, raleway, sans-serif;
   -webkit-text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px;
-  font-size: 1em; }
+  font-size: 0.875em; }
 
 a {
   color: #444; }
@@ -18,7 +18,7 @@ p {
 
 /* Headings */
 h1 {
-  font-size: 1.75em;
+  font-size: 1.5em;
   padding-top: 5px;
   padding-bottom: 10px;
   margin-bottom: 5px;
@@ -87,6 +87,9 @@ table {
   text-align: left;
   border-collapse: collapse; }
 
+table.plain tr {
+  background: none; }
+
 th {
   padding: 10px 8px;
   color: #444;
@@ -97,23 +100,34 @@ tr:nth-child(even) {
 
 td {
   padding: 8px 15px;
-  color: #444; }
+  color: #444;
+  vertical-align: middle; }
 
 /* Form Elements */
 .textbox {
   border: 1px solid #848484;
-  height: 2.25em;
+  height: 2em;
   padding: 0px 10px;
-  margin-top: 10px;
+  margin-top: 5px;
   font-size: 0.875em;
   box-shadow: none; }
 
-.textarea {
+.textarea-sm {
   border: 1px solid #848484;
-  height: 10em;
-  width: 40em;
+  height: 4em;
+  width: 100%;
   padding: 0px 10px;
   margin-top: 10px;
+  font-size: 0.875em;
+  box-shadow: none;
+  resize: none; }
+
+.textarea-lg {
+  border: 1px solid #848484;
+  height: 10em;
+  width: 100%;
+  padding: 0px 10px;
+  margin-top: 8px;
   font-size: 0.875em;
   box-shadow: none;
   resize: none; }
@@ -129,11 +143,16 @@ td {
 
 .radio {
   margin: 10px;
-  padding: 10px;
   font-size: 20px;
   line-height: 20px;
   border: 1px solid #444;
-  border-radius: none; }
+  border-radius: none;
+  width: 15px;
+  height: 15px;
+  margin-right: 5px; }
+
+.label {
+  margin-top: 10px; }
 
 .required {
   margin: 5px;
@@ -152,7 +171,7 @@ td {
 #citf a {
   color: #fff;
   float: left;
-  padding: 8px 25px;
+  padding: 10px 25px;
   font-family: Lobster, serif;
   font-size: 2em;
   text-decoration: none; }
@@ -165,7 +184,8 @@ td {
   padding: 17px 0px 17px 20px;
   margin-left: 5px;
   text-decoration: none;
-  color: #fff; }
+  color: #fff;
+  font-size: 1em; }
 #cms-top-nav a:hover {
   color: #9a3cf5; }
 
@@ -178,11 +198,13 @@ td {
 #signout {
   float: right;
   background-color: #9a3cf5;
-  padding: 16px 20px;
+  padding: 0px 20px;
+  line-height: 49px;
   border: 1px solid #000;
   color: #fff;
   text-decoration: none;
-  transition: all 0.1s; }
+  transition: all 0.1s;
+  font-size: 1em; }
 
 #signout:hover {
   background-color: #fff;
@@ -223,7 +245,6 @@ td {
   display: block;
   padding: 10px 20px;
   border-top: 1px solid #ddd;
-  font-size: 0.85em;
   text-decoration: none; }
 
 .left-mnu-itm:hover {
