@@ -55,3 +55,12 @@ img{
 #tick_quant{
     margin:5px;
 }
+
+/*-----------------SUCCESS----------------*/
+
+#success{
+    height:380px;
+    width:50%;
+    margin:0 auto;
+    
+}

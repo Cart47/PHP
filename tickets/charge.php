@@ -1,5 +1,5 @@
 <?php
-//include ('../components/main_header.php');
+include ('../components/main_header.php');
 
 require_once '../config.php';
 require '../models/tickets/customerClass.php';
@@ -27,15 +27,20 @@ require '../models/database.php';?>
       'amount'   => 50000,
       'currency' => 'usd'
   ));
-     $cust = new Customer($cust_fname, $cust_lname, $cust_phone, $cust_email);
-     customerDB::insertCustomer($cust);
-     
-    echo "Your CITF tickets have been purchased!";
+      $cust = new Customer($cust_fname, $cust_lname, $cust_phone, $cust_email);
+      customerDB::insertCustomer($cust);
+    
+    echo
+    '<div id="success">
+        <h1>SUCCESS!</h1>
+        <h2>Your 2015 CIFT tickets have been purchased.</h2>
+    </div>';
       
   }catch(\Stripe\Error\Card $e) {
   // The card has been declined
+      echo "Your card has been declined.";
 }
 
-//include ('../components/main_footer.php');
+include ('../components/main_footer.php');
 
 
