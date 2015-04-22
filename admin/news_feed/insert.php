@@ -37,12 +37,18 @@
             <tr>
                 <!-- Title -->
                 <td><label>Title:</label></td>
-                <td><input type="text" name="title" class="textbox" /></td>
+                <td>
+                    <input type="text" name="title" class="textbox" value="<?php echo isset($title) ? $title : '' ; ?>"/>
+                    <?php echo isset($fields) ? $fields->getField('title')->showErrors() : '' ; ?>
+                </td>
             </tr>
             <tr>
                 <!-- Author -->
                 <td><label>Author:</label></td>
-                <td><input type="text" name="author" class="textbox" /></td>
+                <td>
+                    <input type="text" name="author" class="textbox" value="<?php echo isset($author) ? $author : '' ; ?>" />
+                    <?php echo isset($fields) ? $fields->getField('author')->showErrors() : '' ; ?>    
+                </td>
             </tr>
             <tr>
                 <!-- Additional URL -->
@@ -52,12 +58,19 @@
             <tr>
                 <!-- Description -->
                 <td><label>Description:</label></td>
-                <td><textarea name="description" rows="2" cols="50" class="textarea-sm"></textarea></td>
+                <td>
+                    <textarea name="description" rows="2" cols="50" class="textarea-sm"><?php echo isset($description) ? $description : '' ; ?></textarea>
+                    <?php echo isset($fields) ? $fields->getField('description')->showErrors() : '' ; ?>
+                </td>
             </tr>
             <tr>
                 <!-- Article -->
                 <td><label>Article:</label></td>
-                <td><textarea name="article" rows="5" cols="50" class="textarea-lg"></textarea></td>
+                <td>
+                    <textarea name="article" rows="5" cols="50" class="textarea-lg"><?php echo isset($article) ? $article : '' ; ?></textarea>
+                    <?php echo isset($fields) ? $fields->getField('article')->showErrors() : '' ; ?>
+                </td>
+                
             </tr>
         </table>
         
