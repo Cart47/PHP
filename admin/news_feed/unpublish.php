@@ -9,12 +9,6 @@
       echo  '<script type="text/javascript"> window.location.href ="../../Home/Index.php"; </script>';
     }
 
-    //Forces a redirect through the index
-    if(!isset($unpublishSelected['news_id'])){
-       header('Location: ../news_feed'); 
-
-    }
-
 ?>
 
 <h2>Unpublish article, <em><?php echo $unpublishSelected['title']; ?></em></h2>

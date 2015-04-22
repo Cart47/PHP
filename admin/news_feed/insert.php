@@ -28,34 +28,27 @@
 
     <!-- Internal News -->
     <form action="." method="post" id="internal" enctype="multipart/form-data">
-
+        
         <input type="hidden" name="news_id" />
         <input type="hidden" name="type" value="0" />
         <input type="hidden" name="publish" value="0" />
         <input type="hidden" name="date_created" value="<?php echo date('Y-m-d'); ?>" />
 
+        <!-- Title -->
         <label>Title:</label>
         <input type="text" name="title" />
 
         <br /><br />
 
+        <!-- Author -->
         <label>Author:</label>
         <input type="text" name="author" />
 
         <br /><br />
 
+        <!-- Additional URL -->
         <label>Additional URL:</label>
         <input type="text" name="other_url" />
-
-        <br /><br />
-
-        <label>Feature Image:</label>
-        <input type="file" name="feature_img" id="feature_img" />
-
-        <br /><br />
-
-        <label>Banner Image:</label>
-        <input type="text" name="banner_img" />
 
         <br /><br />
 
@@ -92,11 +85,6 @@
 
         <label>Author:</label>
         <input type="text" name="author" />
-
-        <br /><br />
-
-        <label>Feature Image:</label>
-        <input type="text" name="feature_img" />
 
         <br /><br />
 
