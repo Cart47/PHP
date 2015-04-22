@@ -47,10 +47,9 @@
             <li><a href="#">Schedule</a></li>
             <li><a href="../browse_artist/index.php">Lineup</a></li>
             <li><a href="#">Camping</a></li>
-            <li><a href="#">Get Involved</a></li>
+            <li><a href="../volunteering/index.php">Get Involved</a></li>
             <li><a href="#">Store</a></li>
             <li><a href="#">Contact</a></li>
-            <li><a href="#">Donate</a></li>
         </ul>
     </nav>
     

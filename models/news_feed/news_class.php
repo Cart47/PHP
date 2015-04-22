@@ -2,17 +2,15 @@
 
 class NewsClass {
     
-    private $news_id, $title, $date_created, $date_published, $author, $story_url, $other_url, $feature_img, $banner_img, $description, $article, $type, $publish;
+    private $news_id, $title, $date_created, $date_published, $author, $story_url, $other_url, $description, $article, $type, $publish;
     
-    public function __construct($title, $date_created, $date_published, $author, $story_url, $other_url, $feature_img, $banner_img, $description, $article, $type, $publish) {
+    public function __construct($title, $date_created, $date_published, $author, $story_url, $other_url, $description, $article, $type, $publish) {
         $this->title = $title;
         $this->date_created = $date_created;
         $this->date_published = $date_published;
         $this->author = $author;
         $this->story_url = $story_url;
         $this->other_url = $other_url;
-        $this->feature_img = $feature_img;
-        $this->banner_img = $banner_img;
         $this->description = $description;
         $this->article = $article;
         $this->type = $type;
@@ -73,22 +71,6 @@ class NewsClass {
 
     public function setOtherURL($value) {
         $this->other_url = $value;
-    }
-    
-    public function getFeatureIMG() {
-        return $this->feature_img;
-    }
-
-    public function setFeatureIMG($value) {
-        $this->feature_img = $value;
-    }
-    
-    public function getBannerIMG() {
-        return $this->banner_img;
-    }
-
-    public function setBannerIMG($value) {
-        $this->banner_img = $value;
     }
     
     public function getDesc() {
