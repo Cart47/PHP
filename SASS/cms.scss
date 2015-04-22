@@ -60,6 +60,15 @@ h3 {
     float: right;
 }
 
+.inline-btns {
+    float: right;
+    display: inline-block;
+}
+
+.inline-btns:last-child {
+    padding-right: 5px;
+}
+
 /* Only use with href button */
 .xtra-pad {
     padding: 10px 20px 7px 20px;
@@ -166,6 +175,15 @@ td {
     box-shadow: none;
 }
 
+.listbox {
+    border: 1px solid #848484; 
+    background: #fff;
+    padding: 0px 10px;
+    margin-top: 10px;
+    font-size: 0.875em;
+    box-shadow: none;
+}
+
 .radio {
     margin: 10px;
     font-size: 20px;
@@ -228,8 +246,9 @@ td {
 #user {
 	float: right;
 	color: #fff;
-	padding: 17px 20px;
+	padding: 0px 20px;
 	font-size: 0.85em;
+    line-height: 50px;
 }
 
 #signout {
@@ -352,6 +371,15 @@ table.news-tbl {
     width: 100%;
 }
 
+/* for tables in the performance schedule */
+table.sched-day {
+    margin: 0px;
+    width: 100%;
+}
+
+table.stage {
+    
+}
 
 /* -------------------------------------- */
 /* --------------- Footer --------------- */

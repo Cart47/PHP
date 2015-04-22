@@ -22,18 +22,26 @@ if($_SESSION['RoleID'] != 2){
         <h1>New Stage</h1>
 
             <form action="." method="post">
-                           
+                   
                 <input type="hidden" name="stage_id" />
                 
-                <label>Title:</label>
-                <input type="text" name="name" />
-                
-                <br /><br />
+                <table class="plain">
+                    <tr>
+                        <td><label>Stage Name:</label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="name" class="textbox" /></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="hidden" name="action" value="insertStage" />
+                            <input type="submit" name="submit" value="Create" class="btn"/>
+                            <a href="." class="btn">Cancel</a>
+                        </td>
+                        <td></td>
+                    </tr>
 
-                <input type="hidden" name="action" value="insertStage" />
-                <input type="submit" name="submit" value="Create" />
-                <a href="." value="">Cancel</a>
-                
+                </table>
             </form>
         
     </body>

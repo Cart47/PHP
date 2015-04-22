@@ -51,12 +51,12 @@ if ($action == 'newsList'){ //default view
     
     //Posted values
     $news_id = $_POST['news_id'];
-    $title = $_POST['title'];
+    $int_title = $_POST['int_title'];
     $date_created = $_POST['date_created'];
-    $author = $_POST['author'];
-    $other_url = $_POST['other_url']; 
-    $description = $_POST['description'];
-    $article = $_POST['article']; 
+    $int_author = $_POST['int_author'];
+    $int_other_url = $_POST['other_url']; 
+    $int_description = $_POST['int_description'];
+    $int_article = $_POST['int_article']; 
     $type = $_POST['type'];
     $publish = $_POST['publish'];
     
@@ -69,22 +69,22 @@ if ($action == 'newsList'){ //default view
     $fields = $validate->getFields();
 
     //Adds the following field objects to the fieldsArray
-    $fields->addField('title');
-    $fields->addField('author');
-    $fields->addField('description');
-    $fields->addField('article');
+    $fields->addField('int_title');
+    $fields->addField('int_author');
+    $fields->addField('int_description');
+    $fields->addField('int_article');
 
     //Assigns required validation to fields
-    $validate->required('title', $title);
-    $validate->required('author', $author);
-    $validate->required('description', $description);
-    $validate->required('article', $article);
+    $validate->required('int_title', $int_title);
+    $validate->required('int_author', $int_author);
+    $validate->required('int_description', $int_description);
+    $validate->required('int_article', $int_article);
     
     //If there are no errors
     if(!$fields->hasErrors()){
 
         //Create new instance of the NewsClass
-        $news = new NewsClass($title, $date_created, null, $author, null, $other_url, $description, $article, $type, $publish);
+        $news = new NewsClass($int_title, $date_created, null, $int_author, null, $int_other_url, $int_description, $int_article, $type, $publish);
         
         //Call to Insert
         $addNews = NewsDB::insertNews($news);
@@ -100,11 +100,11 @@ if ($action == 'newsList'){ //default view
 } elseif ($action == 'external'){ //insert an external news article
     
     $news_id = $_POST['news_id'];
-    $title = $_POST['title'];
+    $ext_title = $_POST['ext_title'];
     $date_created = $_POST['date_created'];
-    $author = $_POST['author'];
-    $story_url = $_POST['story_url']; 
-    $description = $_POST['description']; 
+    $ext_author = $_POST['ext_author'];
+    $ext_story_url = $_POST['ext_story_url']; 
+    $ext_description = $_POST['ext_description']; 
     $type = $_POST['type'];
     $publish = $_POST['publish'];
     
@@ -117,22 +117,22 @@ if ($action == 'newsList'){ //default view
     $fields = $validate->getFields();
 
     //Adds the following field objects to the fieldsArray
-    $fields->addField('title');
-    $fields->addField('author');
-    $fields->addField('story_url');
-    $fields->addField('description');
+    $fields->addField('ext_title');
+    $fields->addField('ext_author');
+    $fields->addField('ext_story_url');
+    $fields->addField('ext_description');
 
     //Assigns required validation to fields
-    $validate->required('title', $title);
-    $validate->required('author', $author);
-    $validate->required('story_url', $story_url);
-    $validate->required('description', $description);
+    $validate->required('ext_title', $ext_title);
+    $validate->required('ext_author', $ext_author);
+    $validate->required('ext_story_url', $ext_story_url);
+    $validate->required('ext_description', $ext_description);
     
     //If there are no errors
     if(!$fields->hasErrors()){
 
         //Create new instance of NewsClass
-        $news = new NewsClass($title, $date_created, null, $author, $story_url, null, null, $description, null, $type, $publish);
+        $news = new NewsClass($ext_title, $date_created, null, $ext_author, $ext_story_url, null, null, $ext_description, null, $type, $publish);
         
         //Call to Insert
         $addNews = NewsDB::insertNews($news);
