@@ -10,12 +10,6 @@
       echo  '<script type="text/javascript"> window.location.href ="../../Home/Index.php"; </script>';
     }
 
-    //Forces a redirect through the index
-    if(!isset($publishSelected['news_id'])){
-       header('Location: ../news_feed'); 
-
-    }
-
 ?>
 
 <h2>Publish article, <em><?php echo $publishSelected['title']; ?></em></h2>

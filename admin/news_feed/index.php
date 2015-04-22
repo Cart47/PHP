@@ -3,6 +3,8 @@
 require ('../../models/database.php');
 require ('../../models/news_feed/news_class.php');
 require ('../../models/news_feed/news_db.php');
+require ('../../models/validation/field_classes.php');
+require ('../../models/validation/validation_class.php');
 
 //function that gets news articles by publish status
 function getNewsList(){
@@ -17,7 +19,6 @@ function getNewsList(){
     $publishedNews = NewsDB::getNewsByStatus($publishArticle);
     
 }
-
 
 // -------------------------------------- //    
 // ---------- Display Articles ---------- //
@@ -54,20 +55,47 @@ if ($action == 'newsList'){ //default view
     $date_created = $_POST['date_created'];
     $author = $_POST['author'];
     $other_url = $_POST['other_url']; 
-    //$feature_img = $_POST['feature_img'];
-    $banner_img = $_POST['banner_img'];
     $description = $_POST['description'];
     $article = $_POST['article']; 
     $type = $_POST['type'];
     $publish = $_POST['publish'];
     
-    //Call to insert
-    $news = new NewsClass($title, $date_created, null, $author, null, $other_url, $img_path, $banner_img, $description, $article, $type, $publish);
-    $addNews = NewsDB::insertNews($news);
+    // ----- Validation ----- //
+
+    //Creates an object from Validation class
+    $validate = new Validation();
+
+    //Creates a new fieldsArray
+    $fields = $validate->getFields();
+
+    //Adds the following field objects to the fieldsArray
+    $fields->addField('title');
+    $fields->addField('author');
+    $fields->addField('description');
+    $fields->addField('article');
+
+    //Assigns required validation to fields
+    $validate->required('title', $title);
+    $validate->required('author', $author);
+    $validate->required('description', $description);
+    $validate->required('article', $article);
     
-    getNewsList();
-    
-    include ('news_list.php');
+    //If there are no errors
+    if(!$fields->hasErrors()){
+
+        //Create new instance of the NewsClass
+        $news = new NewsClass($title, $date_created, null, $author, null, $other_url, $description, $article, $type, $publish);
+        
+        //Call to Insert
+        $addNews = NewsDB::insertNews($news);
+      
+        getEmailList();
+        include ('news_list.php');
+        
+    }else{
+        
+        include ('insert.php');   
+    }
     
 } elseif ($action == 'external'){ //insert an external news article
     
@@ -76,18 +104,46 @@ if ($action == 'newsList'){ //default view
     $date_created = $_POST['date_created'];
     $author = $_POST['author'];
     $story_url = $_POST['story_url']; 
-    $feature_img = $_POST['feature_img'];
     $description = $_POST['description']; 
     $type = $_POST['type'];
     $publish = $_POST['publish'];
     
-    $news = new NewsClass($title, $date_created, null, $author, $story_url, null, $feature_img, null, $description, null, $type, $publish);
-    $addNews = NewsDB::insertNews($news);
+    // ----- Validation ----- //
+
+    //Creates an object from Validation class
+    $validate = new Validation();
+
+    //Creates a new fieldsArray
+    $fields = $validate->getFields();
+
+    //Adds the following field objects to the fieldsArray
+    $fields->addField('title');
+    $fields->addField('author');
+    $fields->addField('story_url');
+    $fields->addField('description');
+
+    //Assigns required validation to fields
+    $validate->required('title', $title);
+    $validate->required('author', $author);
+    $validate->required('story_url', $story_url);
+    $validate->required('description', $description);
     
-    getNewsList();
-    
-    include ('news_list.php');
-    
+    //If there are no errors
+    if(!$fields->hasErrors()){
+
+        //Create new instance of NewsClass
+        $news = new NewsClass($title, $date_created, null, $author, $story_url, null, null, $description, null, $type, $publish);
+        
+        //Call to Insert
+        $addNews = NewsDB::insertNews($news);
+      
+        getNewsList();
+        include ('news_list.php');
+        
+    }else{
+        
+        include ('insert.php');   
+    }
     
 // ------------------------------------------------------ //    
 // ---------- Publishing and Unpublishing News ---------- //
@@ -151,14 +207,12 @@ if ($action == 'newsList'){ //default view
     $date_published = $_POST['date_published'];
     $author = $_POST['author'];
     $other_url = $_POST['other_url']; 
-    $feature_img = $_POST['feature_img'];
-    $banner_img = $_POST['banner_img'];
     $description = $_POST['description']; 
     $article = $_POST['article'];
     $type = $_POST['type'];
     $publish = $_POST['publish'];
     
-    NewsDB::updateNews($news_id, $title, $date_created, $date_published, $author, null, $other_url, $feature_img, $banner_img, $description, $article, $type, $publish);
+    NewsDB::updateNews($news_id, $title, $date_created, $date_published, $author, null, $other_url, $description, $article, $type, $publish);
     
     getNewsList();
     
@@ -172,12 +226,11 @@ if ($action == 'newsList'){ //default view
     $date_published = $_POST['date_published'];
     $author = $_POST['author'];
     $story_url = $_POST['story_url']; 
-    $feature_img = $_POST['feature_img'];
     $description = $_POST['description'];  
     $type = $_POST['type'];
     $publish = $_POST['publish'];
     
-    NewsDB::updateNews($news_id, $title, $date_created, $date_published, $author, $story_url, null, $feature_img, null, $description, null, $type, $publish);
+    NewsDB::updateNews($news_id, $title, $date_created, $date_published, $author, $story_url, null, null, $description, null, $type, $publish);
     
     getNewsList();
     

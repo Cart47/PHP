@@ -34,9 +34,7 @@
 
         <a id="signout" href="../../components/logout.php">Sign Out</a>
 
-        <div id="user">
-            <p>Welcome,
-                <em>
+        <div id="user">Welcome,<em>
                <?php
                 if(isset($_SESSION['UserFullName'])){
                     echo $_SESSION['UserFullName'];
@@ -46,7 +44,7 @@
                 
                 ?>
            </em>
-            </p>
+            
         </div>
 
     </div>

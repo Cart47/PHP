@@ -1,22 +1,29 @@
 <?php 
 
-require_once ( '../../config.php'); 
-include ( '../components/cms_header.php'); 
-//Forces a redirect through the index
-if($_SESSION['RoleID'] != 2){
- 
-  echo  '<script type="text/javascript"> window.location.href ="../../Home/Index.php"; </script>';
-}
+    include ( '../components/cms_header.php'); 
 
-//Forces a redirect through the index 
-if(!isset($pendingNews) && !isset($publishedNews))
-{ header( 'Location: ../news_feed/'); } ?>
+    //Forces a redirect through the index
+    if($_SESSION['RoleID'] != 2){
 
-<h1>CITF News</h1>
+      echo  '<script type="text/javascript"> window.location.href ="../../Home/Index.php"; </script>';
+    }
+?>
+
+<h1>Manage News</h1>
+
+<!-- Add News Article Button -->
+<div class="head-btn">
+    <form action="." method="post" id="insert_news">
+        <input type="hidden" name="action" value="add" />
+        <button type="submit" class="btn" name="submit"><i class="fa fa-plus"></i>New Article</button>
+    </form>
+</div>
+
+<div class="clear"></div>
 
 <h3>Unpublished Articles</h3>
 
-<table id="form_table">
+<table class="news-tbl">
 
     <th>Title</th>
     <th>Author</th>
@@ -59,7 +66,7 @@ if(!isset($pendingNews) && !isset($publishedNews))
 
 <h3>Published Articles</h3>
 
-<table>
+<table class="news-tbl">
 
     <th>Title</th>
     <th>Author</th>
@@ -99,10 +106,5 @@ if(!isset($pendingNews) && !isset($publishedNews))
     </tr>'; } ?>
 
 </table>
-
-<form action="." method="post" id="insert_news">
-    <input type="hidden" name="action" value="add" />
-    <button type="submit" class="btn" name="submit"><i class="fa fa-plus"></i>New Article</button>
-</form>
 
 <?php include ( '../components/cms_footer.php'); ?>

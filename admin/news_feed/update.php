@@ -9,12 +9,6 @@
       echo  '<script type="text/javascript"> window.location.href ="../../Home/Index.php"; </script>';
     }
 
-    //Forces a redirect through the index
-    if(!isset($newsByID)){
-        header('Location: ../news_feed/'); 
-    
-}
-
 ?>
 <h1>Edit Article</h1>
 
@@ -41,16 +35,6 @@
 
         <label>For more information:</label>
         <input type="text" id="other_url" name="other_url" value="<?php echo $newsByID['other_url']; ?>" />
-
-        <div class="clear"></div>
-
-        <label>Feature Image:</label>
-        <input type="text" name="feature_img" value="<?php echo $newsByID['feature_img']; ?>" />
-
-        <div class="clear"></div>
-
-        <label>Banner Image:</label>
-        <input type="text" class="banner_img" name="banner_img" value="<?php echo $newsByID['banner_img']; ?>" />
 
         <div class="clear"></div>
 
@@ -93,11 +77,6 @@
 
         <label>Article Link:</label>
         <input type="text" name="story_url" value="<?php echo $newsByID['story_url']; ?>" />
-
-        <div class="clear"></div>
-
-        <label>Feature Image:</label>
-        <input type="text" name="feature_img" value="<?php echo $newsByID['feature_img']; ?>" />
 
         <div class="clear"></div>
 

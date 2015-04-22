@@ -37,8 +37,6 @@ class NewsDB {
                                      $row['author'],
                                      $row['story_url'],
                                      $row['other_url'],
-                                     $row['feature_img'],
-                                     $row['banner_img'],
                                      $row['description'],
                                      $row['article'],
                                      $row['type'],
@@ -72,8 +70,6 @@ class NewsDB {
                                      $row['author'],
                                      $row['story_url'],
                                      $row['other_url'],
-                                     $row['feature_img'],
-                                     $row['banner_img'],
                                      $row['description'],
                                      $row['article'],
                                      $row['type'],
@@ -129,17 +125,15 @@ class NewsDB {
         $author = $news->getAuthor();
         $story_url = $news->getStoryURL();
         $other_url = $news->getOtherURL();
-        $feature_img = $news->getFeatureIMG();
-        $banner_img = $news->getBannerIMG();
         $description = $news->getDesc();
         $article = $news->getArticle();
         $type = $news->getType();
         $publish = $news->getPublish();
         
         $query = "INSERT INTO news
-                  (news_id, title, date_created, date_published, author, story_url, other_url, feature_img, banner_img, description, article, type, publish)
+                  (news_id, title, date_created, date_published, author, story_url, other_url, description, article, type, publish)
                   VALUES
-                  ('$news_id', '$title', '$date_created', '$date_published', '$author', '$story_url', '$other_url', '$feature_img', '$banner_img', '$description', '$article', '$type', '$publish')";
+                  ('$news_id', '$title', '$date_created', '$date_published', '$author', '$story_url', '$other_url', '$description', '$article', '$type', '$publish')";
         
         $stm = $db->prepare($query);
         $row_count = $stm->execute();
@@ -147,7 +141,7 @@ class NewsDB {
         
     }
     
-    public static function updateNews($news_id, $title, $date_created, $date_published, $author, $story_url, $other_url, $feature_img, $banner_img, $description, $article, $type, $publish){
+    public static function updateNews($news_id, $title, $date_created, $date_published, $author, $story_url, $other_url, $description, $article, $type, $publish){
         
         $db = Database::getDB();
         
@@ -158,8 +152,6 @@ class NewsDB {
                       author ="' . $author . '",
                       story_url ="' . $story_url . '",
                       other_url ="' . $other_url . '",
-                      feature_img ="' . $feature_img . '",
-                      banner_img ="' . $banner_img . '",
                       description ="' . $description . '",
                       article ="' . $article . '",
                       type ="' . $type . '",

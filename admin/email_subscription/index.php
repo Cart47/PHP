@@ -3,6 +3,8 @@
 require ('../../models/database.php');
 require ('../../models/email_subscription/email_class.php');
 require ('../../models/email_subscription/email_db.php');
+require ('../../models/validation/field_classes.php');
+require ('../../models/validation/validation_class.php');
 
 //function that gets emails by approved status
 function getEmailList(){
@@ -17,7 +19,6 @@ function getEmailList(){
     $pendingEmail = EmailDB::getEmailsByStatus($pending);
     
 }
-
 
 // -------------------------------------------- //    
 // ---------- Displaying Subscribers ---------- //
@@ -48,17 +49,47 @@ if ($action == 'email_list'){ //default view
     
 } elseif ($action == 'insert'){ //If insert button is clicked
     
+    $name='';
+    $email='';
+    $approved='';
+    
     $email_id = $_POST['email_id'];
     $name = $_POST['name']; 
     $email = $_POST['email'];
     $approved = $_POST['approved'];
     
-    $newSubscriber = new EmailClass($name, $email, $approved);
-    $addSubscriber = EmailDB::insertEmail($newSubscriber);
-    
-    getEmailList();
-    
-    include ('email_list.php');
+    // ----- Validation ----- //
+
+    //Creates an object from Validation class
+    $validate = new Validation();
+
+    //Creates a new fieldsArray
+    $fields = $validate->getFields();
+
+    //Adds the following field objects to the fieldsArray
+    $fields->addField('name');
+    $fields->addField('email');
+
+    //Assigns required validation to fields
+    $validate->required('name', $name);
+    $validate->required('email', $email);
+
+    //If there are no errors
+    if(!$fields->hasErrors()){
+
+        //Create an object from the Email class
+        $newSubscriber = new EmailClass($name, $email, $approved);
+
+        //Insert into the database
+        $addSubscriber = EmailDB::insertEmail($newSubscriber);
+      
+        getEmailList();
+        include ('email_list.php');
+        
+    }else{
+        
+        include ('insert.php');   
+    }
 
     
 // ------------------------------------------ //    
