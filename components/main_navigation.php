@@ -46,10 +46,8 @@
             <li><a href="../tickets/tickets_index.php">Tickets</a></li>
             <li><a href="../performance_schedule/index.php">Schedule</a></li>
             <li><a href="../browse_artist/index.php">Lineup</a></li>
-            <li><a href="#">Camping</a></li>
+            <li><a href="../camping/index.php">Camping</a></li>
             <li><a href="../volunteering/index.php">Get Involved</a></li>
-            <li><a href="#">Store</a></li>
-            <li><a href="#">Contact</a></li>
         </ul>
     </nav>
     

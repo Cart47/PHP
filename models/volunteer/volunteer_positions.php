@@ -37,5 +37,12 @@ class Volunteer {
         return $requests;
     }
     
+    public static function insertNewPosition($name, $description){
+        $db = Database::getDB();
+        $query = "INSERT INTO volunteer (volunteer_id, vol_position, vol_description) VALUES (NULL , '$name','$description')";
+        $success = $db->exec($query);
+        return $success;
+    }
+    
     
 }

@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../../css/Reset.css">
     <link rel="stylesheet" href="../../css/font-awesome-4.3.0/css/font-awesome.css">
     <link rel="stylesheet" href="../../css/cms.css">
+    <link rel="stylesheet" href="../../css/validation_errors.css" type="text/css">
     
     <!-- Javascript -->
     <script src="../../js/jquery-2.1.3.js"></script>
@@ -99,12 +100,12 @@
                 
             //<!-- News -->
             if($_SESSION['RoleID'] == 2){
-                echo '<a class="left-mnu-itm" href="../news_feed/"><i class="fa fa-newspaper-o fa-lg"></i>News</a>';
+                echo '<a class="left-mnu-itm" href="../news_feed/index.php"><i class="fa fa-newspaper-o fa-lg"></i>News</a>';
             }
 
             //<!-- Email Subscriptions -->
             if($_SESSION['RoleID'] == 2){
-                echo '<a class="left-mnu-itm" href="../email_subscription/"><i class="fa fa fa-envelope-o fa-lg"></i>Email Subscribers</a>';
+                echo '<a class="left-mnu-itm" href="../email_subscription/index.php"><i class="fa fa fa-envelope-o fa-lg"></i>Email Subscribers</a>';
             }
             ?>
         </div>
