@@ -20,5 +20,5 @@ include ( '../components/cms_header.php');
 <br/>
         <input type="hidden" name="action" value="commit_ticket_update">
         <input type="submit" name="commit_ticket_update" value="Save" class="btn">
-        <input type="submit" name="cancel" value="Cancel" formaction="index.php" class="btn">
+        <a href="index.php" class="btn">Cancel</a>
 </form>

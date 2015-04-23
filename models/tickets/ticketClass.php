@@ -16,9 +16,10 @@ class ticketdb {
         
     foreach ($result as $row) {
             
-            $ticket_type = new Ticket($row['tick_img'],
+            $ticket_type = new Ticket(
                                       $row['tick_type'],
-                                      $row['tick_price']);
+                                      $row['tick_price'],
+                                      $row['tick_img']);
             $ticket_type->setId($row['tick_id']);        
             $tickets[] = $ticket_type; 
         }

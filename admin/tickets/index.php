@@ -46,7 +46,7 @@ if ($action =='insert') {
     
     ticketdb::updateTicket($tick_id, $tick_type, $tick_price);
     
-    include 'image_list.php';
+    include 'tickets.php';
     
     }
 

@@ -39,5 +39,5 @@ if(!isset($_SESSION)) { session_start();}
 <br/>
         <input type="hidden" name="action" value="commit_image_update">
         <input type="submit" name="commit_image_update" value="Save" class="btn">
-        <input type="submit" name="cancel" value="Cancel" formaction="index.php" class="btn">
+        <a href="." class="btn">Cancel</a>
 </form>
