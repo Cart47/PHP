@@ -26,11 +26,17 @@
     $camper_email='';
     $group_size='';
     $camps_num='';
+    $vacantsite
 */
-    if (isset($_POST['subscribe'])){ //If subscribe button is clicked
+
+    $vacantsites = CamperDB::getVaccantCampsites();
+
+    if (isset($_POST['submit'])){ //If submit button is clicked
+
+
 
         //Post values from the form
-        $camper_id = $_POST['camper_id'];
+//        $campsite_id = $_POST['campsite_id'];
         $camper_fname = $_POST['camper_fname'];
         $camper_lname = $_POST['camper_lname'];
         $camper_email = $_POST['camper_email'];
@@ -49,11 +55,11 @@
         //If there are errors
         //if(!$fields->hasErrors()){
 
-            //Create an object from the Email class
-            $submitCamper = new Camping($camper_fname, $camper_lname, $camper_email, $group_size, $camps_num);
+            //Create an object from the Camping class
+            //$submitCamper = new Camping($camper_fname, $camper_lname, $camper_email, $group_size, $camps_num);
 
             //Insert into the database
-            CamperDB::insertCamper($submitCamper);
+            CamperDB::updateCamperBySite($camper_fname, $camper_lname, $camper_email, $group_size, $camps_num);
 
         }
   //  }
@@ -63,7 +69,7 @@
 
 <div class="camping">
 
-    <!-- if there are input errors OR if the subscribe button has not been clicked, show the form -->
+    <!-- if there are input errors OR if the submit button has not been clicked, show the form -->
 
 
         <form action="index.php" method="post" id="camper-form">
@@ -83,15 +89,29 @@
             <?php echo isset($fields) ? $fields->getField('camper_email')->showErrors() : '' ; ?>
             <div class="clear"></div>
 
-            <input type="text" class="camper-field" name="group_size" placeholder="Number of people in your group" value="<?php echo isset($group_size) ? $group_size : '' ; ?>" />
-            <?php echo isset($fields) ? $fields->getField('group_size')->showErrors() : '' ; ?>
+
             <div class="clear"></div>
 
-          <input type="text" class="camper-field" name="camps_num" placeholder="Camp Site Number" value="<?php echo isset($camps_num) ? $camps_num : '' ; ?>" />
-          <?php echo isset($fields) ? $fields->getField('camps_num')->showErrors() : '' ; ?>
-          <div class="clear"></div>
+            <select name="group_size">
+
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+            </select>
+            <div class="clear"></div>
+
+          <select name="camps_num">
+              <option value="all">Select a CampSite</option>
+             <?php foreach($vacantsites as $vacantsite) : ?>
+
+              <option value="<?php echo $vacantsite; ?>"> <?php echo $vacantsite; ?></option>
+              <?php endforeach; ?>
+          </select>
 
             <input type="hidden" name="approved" value="0"/>
-            <input type="submit" id="subscribe" name="subscribe" value="Submit" />
+            <input type="submit" id="submit" name="submit" value="Submit" />
 
     </form>
