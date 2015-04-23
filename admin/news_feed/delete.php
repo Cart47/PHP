@@ -17,7 +17,7 @@
     <input type="hidden" name="news_id" value="<?php echo $selected['news_id']; ?>" />
     <input type="hidden" name="action" class="btn" value="yesDelete" />
     <input type="submit" name="yes" class="btn" value="Yes" />
-    <a href="." class="btn xtra-pad">No</a>
+    <a href="." class="btn">No</a>
 
 </form>
 

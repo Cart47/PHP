@@ -47,103 +47,28 @@ if ($action == 'newsList'){ //default view
  
     include ('insert.php'); 
     
-} elseif ($action == 'internal'){ //insert an internal news article
+} elseif ($action == 'insertNews'){ //insert an internal news article
     
     //Posted values
     $news_id = $_POST['news_id'];
-    $int_title = $_POST['int_title'];
+    $title = $_POST['title'];
     $date_created = $_POST['date_created'];
-    $int_author = $_POST['int_author'];
-    $int_other_url = $_POST['other_url']; 
-    $int_description = $_POST['int_description'];
-    $int_article = $_POST['int_article']; 
+    $author = $_POST['author'];
+    $story_url = $_POST['story_url'];
+    $other_url = $_POST['other_url']; 
+    $description = $_POST['description'];
+    $article = $_POST['article']; 
     $type = $_POST['type'];
     $publish = $_POST['publish'];
-    
-    // ----- Validation ----- //
 
-    //Creates an object from Validation class
-    $validate = new Validation();
+    //Create new instance of the NewsClass
+    $news = new NewsClass($title, $date_created, null, $author, $story_url, $other_url, $description, $article, $type, $publish);
 
-    //Creates a new fieldsArray
-    $fields = $validate->getFields();
+    //Call to Insert
+    $addNews = NewsDB::insertNews($news);
 
-    //Adds the following field objects to the fieldsArray
-    $fields->addField('int_title');
-    $fields->addField('int_author');
-    $fields->addField('int_description');
-    $fields->addField('int_article');
-
-    //Assigns required validation to fields
-    $validate->required('int_title', $int_title);
-    $validate->required('int_author', $int_author);
-    $validate->required('int_description', $int_description);
-    $validate->required('int_article', $int_article);
-    
-    //If there are no errors
-    if(!$fields->hasErrors()){
-
-        //Create new instance of the NewsClass
-        $news = new NewsClass($int_title, $date_created, null, $int_author, null, $int_other_url, $int_description, $int_article, $type, $publish);
-        
-        //Call to Insert
-        $addNews = NewsDB::insertNews($news);
-      
-        getEmailList();
-        include ('news_list.php');
-        
-    }else{
-        
-        include ('insert.php');   
-    }
-    
-} elseif ($action == 'external'){ //insert an external news article
-    
-    $news_id = $_POST['news_id'];
-    $ext_title = $_POST['ext_title'];
-    $date_created = $_POST['date_created'];
-    $ext_author = $_POST['ext_author'];
-    $ext_story_url = $_POST['ext_story_url']; 
-    $ext_description = $_POST['ext_description']; 
-    $type = $_POST['type'];
-    $publish = $_POST['publish'];
-    
-    // ----- Validation ----- //
-
-    //Creates an object from Validation class
-    $validate = new Validation();
-
-    //Creates a new fieldsArray
-    $fields = $validate->getFields();
-
-    //Adds the following field objects to the fieldsArray
-    $fields->addField('ext_title');
-    $fields->addField('ext_author');
-    $fields->addField('ext_story_url');
-    $fields->addField('ext_description');
-
-    //Assigns required validation to fields
-    $validate->required('ext_title', $ext_title);
-    $validate->required('ext_author', $ext_author);
-    $validate->required('ext_story_url', $ext_story_url);
-    $validate->required('ext_description', $ext_description);
-    
-    //If there are no errors
-    if(!$fields->hasErrors()){
-
-        //Create new instance of NewsClass
-        $news = new NewsClass($ext_title, $date_created, null, $ext_author, $ext_story_url, null, null, $ext_description, null, $type, $publish);
-        
-        //Call to Insert
-        $addNews = NewsDB::insertNews($news);
-      
-        getNewsList();
-        include ('news_list.php');
-        
-    }else{
-        
-        include ('insert.php');   
-    }
+    getNewsList();
+    include ('news_list.php');
     
 // ------------------------------------------------------ //    
 // ---------- Publishing and Unpublishing News ---------- //
@@ -165,7 +90,6 @@ if ($action == 'newsList'){ //default view
     NewsDB::publishNews($news_id, $pubdate, $published);
     
     getNewsList();
-    
     include ('news_list.php');
     
 } elseif ($action == 'unpublish') { //if UNpublish button is clicked beside article
