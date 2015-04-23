@@ -22,7 +22,7 @@
             <td><label class="label">Name:</label></td>
             <td>
                 <input type="text" class="textbox" name="name" size="40" value="<?php echo isset($name) ? $name : '' ; ?>"/>
-            <?php echo isset($fields) ? $fields->getField('name')->showErrors() : '' ; ?>
+                <?php echo isset($fields) ? $fields->getField('name')->showErrors() : '' ; ?>
             </td>
         </tr>
         <tr>
@@ -30,7 +30,7 @@
             <td><label class="label">Email:</label></td>
             <td>
                 <input type="text" class="textbox" name="email" size="40" value="<?php echo isset($email) ? $email : '' ; ?>"/>
-            <?php echo isset($fields) ? $fields->getField('email')->showErrors() : '' ; ?>
+                <?php echo isset($fields) ? $fields->getField('email')->showErrors() : '' ; ?>
             </td>
         </tr>
         <tr>
