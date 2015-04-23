@@ -297,13 +297,8 @@ td {
   float: left; }
 
 /* Insert News Form */
-#internal {
-  z-index: 1;
-  position: absolute; }
-
 #external {
-  z-index: 2;
-  position: absolute; }
+  display: none; }
 
 /* for tables in Email Subscription and News Feed */
 table.tbl-email,
