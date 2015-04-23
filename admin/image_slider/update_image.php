@@ -1,7 +1,7 @@
 <?php
 include ( '../components/cms_header.php');
 if(!isset($_SESSION)) { session_start();}
-//DON"T HAVE ACCESS TO MY SESSION VARIABLES ANYMORE
+
 
     $links = $_SESSION['links'];
     $img_root = "http://".$_SERVER['HTTP_HOST'] . "/";       

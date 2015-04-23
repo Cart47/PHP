@@ -2,6 +2,8 @@
 include ('../../models/database.php');
 require_once '../../models/image_slider/sliderClass.php';
 require_once '../../models/image_slider/images.php';
+require_once '../../models/tickets/ticketClass.php';
+require_once '../../models/tickets/ticket.php';
 
 if (isset($_POST['action'])) {
     $action = $_POST['action'];
@@ -32,20 +34,28 @@ if ($action =='insert') {
 } else if ($action == 'update'){
 
     $tick_id = $_POST['tick_id'];
-    $current_tick = Slider::getImageById($img_id); 
+    $current_tick = ticketdb::getTicketsById($tick_id); 
     
-    include 'update_image.php';
+        include 'ticket_update.php';
     
- } else if ($action == 'commit_image_update'){
+ } else if ($action == 'commit_ticket_update'){
    
-    //ADD IN VALIDATION HERE
-      
-    $img_id = $_POST['img_id'];
-    $img_title = $_POST['img_title'];
-    $img_link = $_POST['img_links'];
+    $tick_id = $_POST['tick_id'];
+    $tick_type = $_POST['tick_type'];
+    $tick_price = $_POST['tick_price'];
     
-    Slider::updateImage($img_id, $img_title, $img_link);
+    ticketdb::updateTicket($tick_id, $tick_type, $tick_price);
     
     include 'image_list.php';
     
     }
+
+/*-----------DELETE------------------*/
+
+if ($action == 'delete') { 
+    
+    include 'tickets.php';
+    $tick_id = $_POST['tick_id']; 
+    ticketdb::deleteImage($tick_id);
+}
+    
