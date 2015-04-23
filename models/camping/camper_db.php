@@ -3,9 +3,27 @@
 
 
 class CamperDB {
-  public static function getCampers() {
+  public static function getVacantCampsites() {
     $db = Database::getDB();
+<<<<<<< Updated upstream
     $query = 'SELECT * FROM camper ORDER BY campsite_id';
+=======
+    $query = 'SELECT * FROM camper WHERE camper_email IS NULL ORDER BY campsite_id';
+    $result = $db->query($query);
+    $campers = array();
+    $camper = array();
+      
+    foreach ($result as $row) {
+      $camper = ['CampName' => $row['camps_name'], 'CampID' => $row['campsite_id']];
+        $campers[] = $camper;
+    }
+    return $campers;
+  }
+    
+    public static function getVacantCamper() {
+    $db = Database::getDB();
+    $query = 'FROM camper WHERE camper_email IS NULL ORDER BY campsite_id';
+>>>>>>> Stashed changes
     $result = $db->query($query);
     $campers = array();
     foreach ($result as $row) {
@@ -57,17 +75,25 @@ class CamperDB {
 
     $db = Database::getDB();
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     $camper_fname = $insert_camper->getCamperFName();
     $camper_lname = $insert_camper->getCamperLName();
     $camper_email = $insert_camper->getCamperEmail();
     $group_size = $insert_camper->getCamperGroupSize();
-    $camps_num = $insert_camper->getSiteNum();
 
     $query = "INSERT INTO camper
+<<<<<<< Updated upstream
               ( camper_fname, camper_lname, camper_email, group_size, camps_num)
               VALUES
               ('$camper_fname', '$camper_lname', '$camper_email', '$group_size', '$camps_num')";
+=======
+              (camper_fname, camper_lname, camper_email, group_size)
+              VALUES
+              ('$camper_fname', '$camper_lname', '$camper_email', '$group_size')";
+>>>>>>> Stashed changes
 
     $row_count = $db->exec($query);
 
