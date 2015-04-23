@@ -23,10 +23,10 @@ if(!isset($_SESSION)) { session_start();}
     <input type="file" name="up_image" id="image"/> 
     -->
     <label> Title: </label>
-    <input type="text" name="img_title" value="<?php echo $current_img['img_title']; ?>"> </input>
+    <input class="textbox" type="text" name="img_title" value="<?php echo $current_img['img_title']; ?>"> </input>
     
     <label> Link: </label>
-    <select name="img_links">
+    <select name="img_links" class="dropdown">
         <!--NEED SELECTED VALUE TO DISPLAY AS DEFAULT-->
                 <?php
                     foreach ($links as $link_url => $link_name){ 
@@ -35,8 +35,9 @@ if(!isset($_SESSION)) { session_start();}
                             echo '<option value="' . $link_url .'">' . $link_name . '</option>';
                     } 
                 ?>
-    </select>  
+    </select>
+<br/>
         <input type="hidden" name="action" value="commit_image_update">
-        <input type="submit" name="commit_image_update" value="Save">
-        <input type="submit" name="cancel" value="Cancel" formaction="index.php">
+        <input type="submit" name="commit_image_update" value="Save" class="btn">
+        <input type="submit" name="cancel" value="Cancel" formaction="index.php" class="btn">
 </form>

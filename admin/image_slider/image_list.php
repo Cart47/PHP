@@ -47,20 +47,19 @@ if (!isset($_SESSION)) { session_start();}
                         <td><?php echo "<img class='image_list' src='http://".$_SERVER['HTTP_HOST']."/{$image->getUrl()}'/>"?></td>
                         <td><?php echo $image->getTitle()?></td>
                         <td><?php echo $image->getLink()?></td>
-                       
+                        
+                        <td><form id="update_image_button" action="index.php" method="post">                                           
+                                <input type="hidden" name="img_id" value="<?php echo $image->getID()?>">                                
+                                <input type="hidden" name="action" value="update">
+                                <button type="submit" name="update_image" class="link-btn"><i class="fa fa-pencil fa-lg"></i></button>
+                            </form>
+                        </td>
                         <td><form id="delete_image_button" action="index.php" method="post">                                   
                               
                                 <input type="hidden" name="image_id" 
                                        value="<?php echo $image->getID()?>">
                                 <input type="hidden" name="action" value="delete">
-                                <input type="submit" name="delete_image" value="delete">
-                            </form>
-                        </td>
-                        <td><form id="update_image_button" action="index.php" method="post">                                                                
-                                <input type="hidden" name="img_id" 
-                                       value="<?php echo $image->getID()?>">
-                                <input type="hidden" name="action" value="update">
-                                <input type="submit" name="update_image" value="update">
+                                  <button type="submit" class="link-btn" name="delete_img"><i class="fa fa-trash-o fa-lg"></i></button> 
                             </form>
                         </td>
                     </tr>
@@ -77,10 +76,10 @@ if (!isset($_SESSION)) { session_start();}
 
         <input type="file" name="image" id="image"/>
         Title: 
-        <input type="text" name="img_title"/>
+        <input type="text" name="img_title" class="textbox"/>
         Link:
     <!--IF TIME MAKE LINKS DYNAMIC FROM CONTENT TABLE IN DB-->
-        <select name="img_links">
+        <select name="img_links" class="dropdown">
             <?php
                 foreach ($links as $link_url => $link_name){    
                     echo '<option value="' . $link_url .'">' . $link_name . '</option>';
@@ -88,7 +87,7 @@ if (!isset($_SESSION)) { session_start();}
             ?>
         </select>
         <input type="hidden" name="action" value="insert">
-        <input type="submit" name="insert" value="upload" />
+        <button type="submit" class="btn" name="insert"><i class="fa fa-plus"></i>Add Image</button>
 
     </form> 
    

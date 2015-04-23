@@ -26,4 +26,26 @@ if ($action =='insert') {
 
         $ticket = new Ticket($tick_type, $tick_price); 
         ticketdb::insertTicket($ticket);
-        }
+
+  /*-----------UPDATE------------------*/  
+ 
+} else if ($action == 'update'){
+
+    $tick_id = $_POST['tick_id'];
+    $current_tick = Slider::getImageById($img_id); 
+    
+    include 'update_image.php';
+    
+ } else if ($action == 'commit_image_update'){
+   
+    //ADD IN VALIDATION HERE
+      
+    $img_id = $_POST['img_id'];
+    $img_title = $_POST['img_title'];
+    $img_link = $_POST['img_links'];
+    
+    Slider::updateImage($img_id, $img_title, $img_link);
+    
+    include 'image_list.php';
+    
+    }
