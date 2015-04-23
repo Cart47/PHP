@@ -533,10 +533,6 @@ footer {
 
 @media screen and (max-width:1130px) {
     
-#logIn li:first-child {
-    display: none;
-}
-    
 #hamburger{
         display: block;
         float: right;
@@ -561,12 +557,13 @@ footer {
 
     ul{
         width: 100%;
-        
+        text-align: center;
         position: fixed;
         margin-top: 60px;
         background: #333;
         li {
-        text-align: center;
+            font-size: 1.15em;
+            line-height: 30px;
             a {
             line-height: 20px;
                 &:hover {
@@ -579,7 +576,7 @@ footer {
 
     #logIn li a {
         line-height: 60px;
-        padding: 24px;
+        
     }    
 }
 
