@@ -8,9 +8,9 @@ if (!isset($_SESSION)) { session_start();}
 
     
     $page1 = "PHP/tickets/ticket_index.php";
-    $page2 = "PHP/store/shop_index.php";
+    $page2 = "PHP/performance_schedule/index.php";
     $page3 = "PHP/browse_artist/index.php";
-    $page4 = "imageSlider/lineup/views/artists.php";
+    $page4 = "PHP/lineup/views/artists.php";
     
     $name1 = "Tickets";
     $name2 = "Lineup";
