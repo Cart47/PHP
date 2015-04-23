@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../../css/Reset.css">
     <link rel="stylesheet" href="../../css/font-awesome-4.3.0/css/font-awesome.css">
     <link rel="stylesheet" href="../../css/cms.css">
+    <link rel="stylesheet" href="../../css/validation_errors.css" type="text/css">
     
     <!-- Javascript -->
     <script src="../../js/jquery-2.1.3.js"></script>
