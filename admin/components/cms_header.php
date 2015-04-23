@@ -100,12 +100,12 @@
                 
             //<!-- News -->
             if($_SESSION['RoleID'] == 2){
-                echo '<a class="left-mnu-itm" href="../news_feed/"><i class="fa fa-newspaper-o fa-lg"></i>News</a>';
+                echo '<a class="left-mnu-itm" href="../news_feed/index.php"><i class="fa fa-newspaper-o fa-lg"></i>News</a>';
             }
 
             //<!-- Email Subscriptions -->
             if($_SESSION['RoleID'] == 2){
-                echo '<a class="left-mnu-itm" href="../email_subscription/"><i class="fa fa fa-envelope-o fa-lg"></i>Email Subscribers</a>';
+                echo '<a class="left-mnu-itm" href="../email_subscription/index.php"><i class="fa fa fa-envelope-o fa-lg"></i>Email Subscribers</a>';
             }
             ?>
         </div>
