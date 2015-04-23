@@ -7,7 +7,7 @@ if (!isset($_SESSION)) { session_start();}
    
 
     
-    $page1 = "PHP/tickets/ticket_index.php";
+    $page1 = "PHP/tickets/tickets_index.php";
     $page2 = "PHP/performance_schedule/index.php";
     $page3 = "PHP/camping/index.php";
     $page4 = "PHP/lineup/views/artists.php";

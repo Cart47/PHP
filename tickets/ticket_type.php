@@ -9,7 +9,7 @@ require_once '../models/database.php';
 
 ?>
 
-<img src="../img/landing/tickets3.png" />
+<img src="../img/landing/tickets4.png" />
   
 <div id='tick_types'>
         <?php             
