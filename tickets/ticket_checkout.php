@@ -53,14 +53,14 @@ $total = $tick_price * 4;
 
     <form id="tick_form" action="charge.php" method="post">
         <input type='hidden' />
+       
+        <input class='textbox' type='text' id='cust_fname' name='fname' placeholder="First Name">
 
-        <input class='textbox' type='text' id='cust_fname' name='fname' placeholder="eg. Abraham">
+        <input class='textbox' type='text' id='cust_lname' name='lname' placeholder="Last Name">
 
-        <input class='textbox' type='text' id='cust_lname' name='lname' placeholder="eg. Smith">
+        <input class='textbox' type='text' id='cust_phone' name='phone' placeholder="Phone Number">
 
-        <input class='textbox' type='text' id='cust_phone' name='phone' placeholder="eg. 416-562-4687">
-
-        <input class='textbox' type='text' id='cust_email' name='email' placeholder="eg. abesmith@gmail.com">
+        <input class='textbox' type='text' id='cust_email' name='email' placeholder="Email">
 
       <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
               data-key="<?php echo $stripe['publishable_key']; ?>"

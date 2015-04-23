@@ -39,7 +39,7 @@ require_once '../../models/tickets/ticket.php';
                         </td>
                         <td><form id="delete_ticket_button" action="index.php" method="post">                                   
                               
-                                <input type="hidden" name="ticket_id" 
+                                <input type="hidden" name="tick_id" 
                                        value="<?php echo $ticket->getID()?>">
                                 <input type="hidden" name="action" value="delete">
                                 <button type="submit" class="link-btn" onclick="confirm("Are you sure you want to delete")"><i class="fa fa-trash-o fa-lg"></i></button>  
