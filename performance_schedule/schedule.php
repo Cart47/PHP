@@ -36,7 +36,7 @@
                     <!-------------------------------------------->
                     <?php foreach ($day as $performer) : ?>
 
-                        <table>
+                        <table class="sched-details">
                             <tr>
                                 <td><a class="description" href="#" target="_blank" Tooltip="<?php echo $performer->getDescription(); ?>"><?php echo $performer->getArtistName(); ?></a></td>
                                 <td>
