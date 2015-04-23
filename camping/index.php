@@ -63,7 +63,7 @@
 
         }
   //  }
-$campsite = CamperDB::getVacantCampsites();
+
 
 ?>
 
@@ -92,7 +92,6 @@ $campsite = CamperDB::getVacantCampsites();
 
             <div class="clear"></div>
 
-<<<<<<< Updated upstream
             <select name="group_size">
 
                 <option value="1">1</option>
@@ -111,16 +110,6 @@ $campsite = CamperDB::getVacantCampsites();
               <option value="<?php echo $vacantsite; ?>"> <?php echo $vacantsite; ?></option>
               <?php endforeach; ?>
           </select>
-=======
-            <select name="campsite_name">
-                       <?php foreach($campsite as $c) { ?>
-                            <option value="<?php echo $c['CampID']; ?>" >
-                                <?php echo $c['CampName']; ?>
-                            </option>
-                            <br/>
-                       <?php } ?>
-                    </select>
->>>>>>> Stashed changes
 
             <input type="hidden" name="approved" value="0"/>
             <input type="submit" id="submit" name="submit" value="Submit" />
