@@ -13,18 +13,29 @@
 
 <h1>New Article</h1>
 
-    <p>Select the type of article you want to make:</p>
+    <p>Select the type of article you want to write:</p>
 
     <!-- Internal News -->
     <form action="." method="post" id="news" enctype="multipart/form-data">
-        
-        <label>
-            <input type="radio" class="radio" name="type" id="int-radio" value="0" checked />Internal Article
-        </label>
+        <?php 
 
-        <label>
-            <input type="radio" class="radio" name="type" id="ext-radio" value="1"/>External Article    
-        </label>
+                $options = array(0 => 'Internal', 1 => 'External');  
+
+                //Loops through each array item and adds to radio button list
+                foreach($options as $key => $value){
+
+                    //If the approved status in the database matches a status in the array, select that value
+                    if($newsByID['type'] == $key){
+
+                        echo "<input type='radio' class='radio' name='type' value='" . $key . "' checked />" . $value;
+
+                    } else {
+
+                        echo "<input type='radio' class='radio' name='type' value='" . $key . "' />" . $value;
+
+                    }                           
+                }              
+            ?>
         
         <input type="hidden" name="news_id" />
         <input type="hidden" name="publish" value="0" />
@@ -35,39 +46,49 @@
                 <!-- Title -->
                 <td><label>Title:</label></td>
                 <td>
-                    <input type="text" name="title" class="textbox" />
+                    <input type="text" name="title" class="textbox" value="<?php echo isset($title) ? $title : '' ; ?>"/>
+                    <?php echo isset($fields) ? $fields->getField('title')->showErrors() : '' ; ?>
                 </td>
             </tr>
             <tr>
                 <!-- Author -->
                 <td><label>Author:</label></td>
                 <td>
-                    <input type="text" name="author" class="textbox" />   
+                    <input type="text" name="author" class="textbox" value="<?php echo isset($author) ? $author : '' ; ?>"/>
+                    <?php echo isset($fields) ? $fields->getField('author')->showErrors() : '' ; ?>
                 </td>
             </tr>
             <tr>
                 <!-- Description -->
                 <td><label>Description:</label></td>
                 <td>
-                    <textarea name="description" rows="2" cols="50" class="textarea-sm"></textarea>
+                    <textarea name="description" rows="2" cols="50" class="textarea-sm"><?php echo isset($description) ? $description : '' ; ?></textarea>
+                    <?php echo isset($fields) ? $fields->getField('description')->showErrors() : '' ; ?>
                 </td>
             </tr>
             <tr class="internal">
                 <!-- Article -->
                 <td><label>Article:</label></td>
                 <td>
-                    <textarea name="article" rows="5" cols="50" class="textarea-lg"></textarea>
+                    <textarea name="article" rows="5" cols="50" class="textarea-lg"><?php echo isset($article) ? $article : '' ; ?></textarea>
+                    <?php echo isset($fields) ? $fields->getField('article')->showErrors() : '' ; ?>
                 </td>
             </tr>
             <tr class="internal">
                 <!-- Additional URL -->
                 <td><label>Additional URL:</label></td>
-                <td><input type="text" name="other_url" class="textbox" /></td>
+                <td>
+                    <input type="text" name="other_url" class="textbox" value="<?php echo isset($other_url) ? $other_url : '' ; ?>" />
+                    <?php echo isset($fields) ? $fields->getField('other_url')->showErrors() : '' ; ?>
+                </td>
             </tr>
             <tr class="external">
                 <!-- Story URL -->
                 <td><label>Story URL:</label></td>
-                <td><input type="text" name="story_url" class="textbox" /></td>
+                <td>
+                    <input type="text" name="story_url" class="textbox" value="<?php echo isset($story_url) ? $story_url : '' ; ?>" />
+                    <?php echo isset($fields) ? $fields->getField('story_url')->showErrors() : '' ; ?>
+                </td>
             </tr>
         </table>
         

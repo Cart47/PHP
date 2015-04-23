@@ -60,15 +60,48 @@ if ($action == 'newsList'){ //default view
     $article = $_POST['article']; 
     $type = $_POST['type'];
     $publish = $_POST['publish'];
+    
+    $newsByID = NewsDB::getNewsByID($news_id);
+    
+    // ----- Validation ----- //
 
-    //Create new instance of the NewsClass
-    $news = new NewsClass($title, $date_created, null, $author, $story_url, $other_url, $description, $article, $type, $publish);
+    //Creates an object from Validation class
+    $validate = new Validation();
 
-    //Call to Insert
-    $addNews = NewsDB::insertNews($news);
+    //Creates a new fieldsArray
+    $fields = $validate->getFields();
 
-    getNewsList();
-    include ('news_list.php');
+    //Adds the following field objects to the fieldsArray
+    $fields->addField('title');
+    $fields->addField('author');
+    $fields->addField('story_url');
+    $fields->addField('description');
+    $fields->addField('article');
+
+    //Assigns required validation to fields
+    $validate->required('title', $title);
+    $validate->required('author', $author);
+    $validate->required('story_url', $story_url);
+    $validate->required('description', $description);
+    $validate->required('article', $article);
+
+    //If there are no errors
+    if(!$fields->hasErrors()){
+
+        //Create new instance of the NewsClass
+        $news = new NewsClass($title, $date_created, null, $author, $story_url, $other_url, $description, $article, $type, $publish);
+
+        //Call to Insert
+        $addNews = NewsDB::insertNews($news);
+      
+        getNewsList();
+        include ('news_list.php');
+        
+    }else{
+        
+        include ('insert.php');   
+    }
+
     
 // ------------------------------------------------------ //    
 // ---------- Publishing and Unpublishing News ---------- //
@@ -123,7 +156,7 @@ if ($action == 'newsList'){ //default view
  
     include ('update.php');
     
-} elseif ($action == 'updateInternal') { //if the update button is clicked for an internal article
+} elseif ($action == 'updateNews') { //if the update button is clicked for an internal article
     
     $news_id = $_POST['news_id'];
     $title = $_POST['title'];
@@ -141,25 +174,6 @@ if ($action == 'newsList'){ //default view
     getNewsList();
     
     include ('news_list.php');
-    
-} elseif ($action == 'updateExternal') { //if the update button is clicked for an external article
-    
-    $news_id = $_POST['news_id'];
-    $title = $_POST['title'];
-    $date_created = $_POST['date_created'];
-    $date_published = $_POST['date_published'];
-    $author = $_POST['author'];
-    $story_url = $_POST['story_url']; 
-    $description = $_POST['description'];  
-    $type = $_POST['type'];
-    $publish = $_POST['publish'];
-    
-    NewsDB::updateNews($news_id, $title, $date_created, $date_published, $author, $story_url, null, null, $description, null, $type, $publish);
-    
-    getNewsList();
-    
-    include ('news_list.php');
-    
     
 // --------------------------------------- //  
 // ---------- Deleting Articles ---------- //

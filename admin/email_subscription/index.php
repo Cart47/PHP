@@ -110,11 +110,36 @@ if ($action == 'email_list'){ //default view
     $email = $_POST['email']; 
     $approved = $_POST['approved'];
     
-    EmailDB::updateEmail($email_id, $name, $email, $approved);
-    
-    getEmailList();
-    
-    include ('email_list.php');
+    // ----- Validation ----- //
+
+    //Creates an object from Validation class
+    $validate = new Validation();
+
+    //Creates a new fieldsArray
+    $fields = $validate->getFields();
+
+    //Adds the following field objects to the fieldsArray
+    $fields->addField('name');
+    $fields->addField('email');
+
+    //Assigns required validation to fields
+    $validate->required('name', $name);
+    $validate->required('email', $email);
+
+    //If there are no errors
+    if(!$fields->hasErrors()){
+
+        //Update database
+        EmailDB::updateEmail($email_id, $name, $email, $approved);
+      
+        getEmailList();
+        
+        include ('email_list.php');
+        
+    }else{
+        
+        include ('insert.php');   
+    }
 
     
 // ------------------------------------------ //    

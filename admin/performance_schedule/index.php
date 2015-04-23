@@ -38,6 +38,9 @@ function getSchedule(){
     
 }
 
+// ----------------------------------------------------- //    
+// ---------- Getting Stages and Performances ---------- //
+// ----------------------------------------------------- // 
 
 if (isset($_POST['action'])) {
     $action = $_POST['action'];
@@ -222,18 +225,54 @@ if ($action == 'schedule'){ //default view
     
 } elseif ($action == 'updatePerformance'){ 
  
+    $stages = StageDB::getAllStages();
+    $artists = ArtistDB::getArtistNames();
+    
     $performance_id = $_POST['performance_id'];
-    $stage_id = $_POST['stage_id'];
-    $artist_id = $_POST['browse_art_id'];
-    $day = $_POST['day'];
+    $stage_id = (isset($_POST['stage_id']) ? $_POST['stage_id'] : '');
+    $browse_art_id = (isset($_POST['browse_art_id']) ? $_POST['browse_art_id'] : '');
+    $day = (isset($_POST['day']) ? $_POST['day'] : '');
     $start_time = $_POST['start_time'];
     $end_time = $_POST['end_time'];
     $description = $_POST['description'];
-      
-    PerformanceDB::updatePerformance($performance_id, $stage_id, $artist_id, $day, $start_time, $end_time, $description);
     
-    getSchedule();
-    include ('schedule.php');     
+    // ----- Validation ----- //
+
+    //Creates an object from Validation class
+    $validate = new Validation();
+
+    //Creates a new fieldsArray
+    $fields = $validate->getFields();
+
+    //Adds the following field objects to the fieldsArray
+    $fields->addField('stage_id');
+    $fields->addField('browse_art_id');
+    $fields->addField('day');
+    $fields->addField('start_time');
+    $fields->addField('end_time');
+    $fields->addField('description');
+
+    //Assigns required validation to fields
+    $validate->required('stage_id', $stage_id);
+    $validate->required('browse_art_id', $browse_art_id);
+    $validate->required('day', $day);
+    $validate->required('start_time', $start_time);
+    $validate->required('end_time', $end_time);
+    $validate->required('description', $description);
+    
+    //If there are no errors
+    if(!$fields->hasErrors()){
+        
+        //Update the Database
+        PerformanceDB::updatePerformance($performance_id, $stage_id, $artist_id, $day, $start_time, $end_time, $description);
+      
+        getSchedule();
+        include ('schedule.php');
+        
+    }else{
+        
+        include ('insert_performance.php');   
+    }  
     
     
 // ------------------------------------- //    
