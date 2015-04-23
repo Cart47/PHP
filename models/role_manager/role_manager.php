@@ -238,7 +238,7 @@ class Roles {
             }
             if($roleIDnew == 4){
              
-                $query2 = "INSERT INTO browse_artist VALUES (null, null, null, null, null,'0', null, null);";
+                $query2 = "INSERT INTO browse_artist VALUES (null, null, null, null, null,'0', null, null,null);";
                 $individual = $db->exec($query2);
                 
                 $query3 = "SELECT MAX(browse_art_id) AS artistID FROM browse_artist";
