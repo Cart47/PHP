@@ -1,5 +1,8 @@
 $(document).ready(function() {
     
+    //on load hide external form elements
+    $('.external').hide();
+    
     //Toggle change between radio buttons
     $('input[type="radio"]').change(function() {
   
