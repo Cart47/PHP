@@ -30,7 +30,10 @@ if($_SESSION['RoleID'] != 2){
                         <td><label>Stage Name:</label></td>
                     </tr>
                     <tr>
-                        <td><input type="text" name="name" class="textbox" /></td>
+                        <td>
+                            <input type="text" name="name" class="textbox" value="<?php echo isset($name) ? $name : '' ; ?>"/>
+                            <?php echo isset($fields) ? $fields->getField('name')->showErrors() : '' ; ?>
+                        </td>
                     </tr>
                     <tr>
                         <td>

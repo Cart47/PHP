@@ -41,10 +41,10 @@
         <i class="fa fa-bars"></i>
     </div>
     
-    <nav id="nav" class="clearfix">
+    <nav id="nav">
         <ul>
             <li><a href="../tickets/tickets_index.php">Tickets</a></li>
-            <li><a href="#">Schedule</a></li>
+            <li><a href="../performance_schedule">Schedule</a></li>
             <li><a href="../browse_artist/index.php">Lineup</a></li>
             <li><a href="#">Camping</a></li>
             <li><a href="../volunteering/index.php">Get Involved</a></li>
