@@ -56,6 +56,6 @@ if ($action == 'delete') {
     
     include 'tickets.php';
     $tick_id = $_POST['tick_id']; 
-    ticketdb::deleteImage($tick_id);
+    ticketdb::deleteTicket($tick_id);
 }
     

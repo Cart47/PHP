@@ -72,4 +72,10 @@ public static function getTicketsById($tick_id){
     }
     
 /*-------------DELETE-----------------*/ 
+    public static function deleteTicket($tick_id) {
+
+        $db = Database::getDB();
+        $query = "DELETE FROM tickets WHERE tick_id = $tick_id";
+        $result= $db->query($query);
+    }
 }

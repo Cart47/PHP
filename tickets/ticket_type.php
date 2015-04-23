@@ -23,7 +23,15 @@ require_once '../models/database.php';
              
         }
         ?>
-        <div id='tick_info'>Tickets Tickets</div>
+        <div id='tick_info'>
+            
+            <p>All sales are final. There will be no reissues for lost or stolen tickets. </p>
+                <p>The 2015 Chorus In The Forest music festival will take place rain or shine. </p>
+                <br/><br/>
+               <p> All acts advertised have confirmed their appearance at the 2015 CITF, </p>
+                <p>however acts are subject to change without notice.
+            </p>
+        </div>
     </div><!--End tick_types-->
 
 <? include ('../components/main_footer.php'); ?>
