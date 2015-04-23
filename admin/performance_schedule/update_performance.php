@@ -101,11 +101,11 @@ if($_SESSION['RoleID'] != 2){
 
                             <?php if($value == $performByID->getDay()) : ?>
                                 <label for="<?php echo $value; ?>">
-                                    <input type="radio" name="day" value="<?php echo $value; ?>" checked /> <?php echo $value; ?> 
+                                    <input class="radio" type="radio" name="day" value="<?php echo $value; ?>" checked /> <?php echo $value; ?> 
                                 </label>
                             <?php else : ?>
                                 <label for="<?php echo $value; ?>">
-                                    <input type="radio" name="day" value="<?php echo $value; ?>" /> <?php echo $value; ?> 
+                                    <input class="radio" type="radio" name="day" value="<?php echo $value; ?>" /> <?php echo $value; ?> 
                                 </label>
                             <?php endif; ?>
 
@@ -118,14 +118,14 @@ if($_SESSION['RoleID'] != 2){
                     <td><label>Start Time (e.g. 10:00):</label></td>
                     <td>
                         <?php $start = $performByID->getStartTime(); ?>
-                        <input type="text" name="start_time" value="<?php echo date('g:i', strtotime($start)); ?>"/>
+                        <input class="textbox" type="text" name="start_time" value="<?php echo date('g:i', strtotime($start)); ?>"/>
                     </td>
                 </tr>
                 <tr>
                     <td><label>End Time (e.g. 21:00):</label></td>
                     <td>
                         <?php $end = $performByID->getEndTime(); ?>
-                        <input type="text" name="end_time" value="<?php echo date('g:i', strtotime($end)); ?>"/>
+                        <input class="textbox" type="text" name="end_time" value="<?php echo date('g:i', strtotime($end)); ?>"/>
                     </td>
                 </tr>
                 <tr>

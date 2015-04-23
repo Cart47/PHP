@@ -15,38 +15,49 @@
 
     <input type="hidden" name="email_id" value="<?php echo $emailByID['email_id']; ?>" />
 
-    <!-- Name -->
-    <input type="text" name="name" class="textbox" size="40" value="<?php echo $emailByID['name']; ?>"/>    
-    <span class="required">*</span>
+    <table class="plain">
+        <tr>
+            <!-- Name -->
+            <td><label class="label">Name:</label></td>
+            <td>
+                <input type="text" name="name" class="textbox" size="40" value="<?php echo $emailByID['name']; ?>"/> 
+                <?php echo isset($fields) ? $fields->getField('name')->showErrors() : '' ; ?>
+            </td>
+        </tr>
+        <tr>
+            <!-- Email -->
+            <td><label class="label">Email:</label></td>
+            <td>
+                <input type="text" name="email" class="textbox" size="40" value="<?php echo $emailByID['email']; ?>" />
+                <?php echo isset($fields) ? $fields->getField('email')->showErrors() : '' ; ?>
+            </td>
+        </tr>
+        <tr>
+            <!-- Approval Status -->
+            <td>Status:</td>
+            <td>
+                <?php 
 
-    <div class="clear"></div>
+                $options = array(1 => 'Approved', 0 => 'Pending');  
 
-    <!-- Email -->
-    <input type="text" name="email" class="textbox" size="40" value="<?php echo $emailByID['email']; ?>" />
-    <span class="required">*</span>
+                //Loops through each array item and adds to radio button list
+                foreach($options as $key => $value){
 
-    <div class="clear"></div>
+                    //If the approved status in the database matches a status in the array, select that value
+                    if($emailByID['approved'] == $key){
 
-    <?php 
+                        echo "<input type='radio' class='radio' name='approved' value='" . $key . "' checked />" . $value;
 
-        $options = array(1 => 'Approved', 0 => 'Pending');  
+                    } else {
 
-        //Loops through each array item and adds to radio button list
-        foreach($options as $key => $value){
+                        echo "<input type='radio' class='radio' name='approved' value='" . $key . "' />" . $value;
 
-            //If the approved status in the database matches a status in the array, select that value
-            if($emailByID['approved'] == $key){
-
-                echo "<input type='radio' class='radio' name='approved' value='" . $key . "' checked />" . $value;
-
-            } else {
-
-                echo "<input type='radio' class='radio' name='approved' value='" . $key . "' />" . $value;
-
-            }                           
-        }              
-
-    ?>
+                    }                           
+                }              
+            ?>
+            </td>
+        </tr>
+    </table>
 
     <br /><br />
 
@@ -55,7 +66,7 @@
     <input type="submit" name="submit" class="btn" value="Update" />
     
     <!-- Cancel Button -->
-    <a href="." class="btn xtra-pad">Cancel</a>
+    <a href="." class="btn">Cancel</a>
 
 </form>
         
