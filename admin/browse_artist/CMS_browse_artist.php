@@ -10,15 +10,28 @@
 
             <h3>Rock</h3>
             <?php $genre="electro swing" ?>
-            <?php echo ArtistDB::countRock() ?>
-
+            <?php echo ArtistDB::countAltFolk() ?>
         </div>
 
         <div id="electroSwing">
-
+          
             <h3>Electro Swing</h3>
             <?php echo ArtistDB::countES() ?>
+        </div>
 
+        <div id="hardRockAcapella">
+          <h3>Hard Rock Acapella</h3>
+          <?php echo ArtistDB::countHardRockAcapella() ?>
+        </div>
+
+        <div id="countryGrunge">
+          <h3>Country Grunge</h3>
+          <?php echo ArtistDB::countCountryGrunge() ?>
+        </div>
+
+        <div id="democraticFolk">
+          <h3>Democratic Folk</h3>
+          <?php echo ArtistDB::countDemocraticFolk() ?>
         </div>
 
     </form>

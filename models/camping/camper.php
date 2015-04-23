@@ -9,15 +9,13 @@ class Camping {
   private $camps_num;
   private $camps_desc;
 
-
-  public function __construct($camper_id, $camper_fname, $camper_lname, $camper_email, $group_size, $camps_num, $camps_desc){
-    $this->camper_id = $camper_id;
+  public function __construct($camper_fname, $camper_lname, $camper_email, $group_size, $camps_num){
     $this->camper_fname = $camper_fname;
     $this->camper_lname = $camper_lname;
     $this->camper_email = $camper_email;
     $this->group_size = $group_size;
     $this->camps_num = $camps_num;
-    $this->camps_desc = $camps_desc;
+
   }
 
   public function getCamperID(){
