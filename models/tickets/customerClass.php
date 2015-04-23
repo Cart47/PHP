@@ -2,6 +2,30 @@
 
 class customerDB{
     
+/*--------------GET CUSTOMERS---------------*/
+/*
+public function getCustomers(){
+    
+    $db = Database::getDB();
+    $query = "SELECT * FROM customers";
+    $result = $db->query($query);
+    $result->setFetchMode(PDO::FETCH_ASSOC);
+    $customers = array();
+    
+    $customer = new Customer($row['cust_id'],
+                             $row['cust_fname'],
+                             $row['cust_lname'],
+                             $row['cust_phone'],
+                             $row['cust_email']
+                            )
+    
+    return $customers;
+    
+}
+
+*/
+/*--------------INSERT CUSTOMER---------------*/
+    
     public function insertCustomer($customer){
         
         $db = Database::getDB();
