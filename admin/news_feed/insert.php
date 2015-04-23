@@ -16,23 +16,27 @@
     <p>Select the type of article you want to write:</p>
 
     <!-- Internal News -->
-    <form action="." method="post" id="news" enctype="multipart/form-data">
+    <form action="." method="post" id="news">
         
-        <?php $options = array(0 => 'Internal', 1 => 'External'); ?>
+        <?php 
 
-                <?php foreach ($options as $value) : ?>
+                $options = array(0 => 'Internal', 1 => 'External');  
+                
+                //Loops through each array item and adds to radio button list
+                foreach($options as $key => $value){
+                        
+                    if($type == $key){
+                        
+                        //If the approved status in the database matches a status in the array, select that value
+                        echo "<label><input type='radio' class='radio' name='type' value='" . $key . "' checked />" . $value . '</label>';
 
-                    <?php if($value == $_POST['type']) : ?>
-                        <label for="<?php echo $value; ?>">
-                            <input class="radio" type="radio" name="type" value="<?php echo $value; ?>" checked /> <?php echo $value; ?> 
-                        </label>
-                    <?php else : ?>
-                        <label for="<?php echo $value; ?>">
-                            <input class="radio" type="radio" name="type" value="<?php echo $value; ?>" /> <?php echo $value; ?> 
-                        </label>
-                    <?php endif; ?>
+                    } else {
 
-                <?php endforeach; ?>
+                        echo "<label><input type='radio' class='radio' name='type' value='" . $key . "' />" . $value . '</label>';
+
+                    }                           
+                }            
+            ?>
         
         <input type="hidden" name="news_id" />
         <input type="hidden" name="publish" value="0" />
@@ -63,6 +67,8 @@
                     <?php echo isset($fields) ? $fields->getField('description')->showErrors() : '' ; ?>
                 </td>
             </tr>
+            
+            <?php if($type == 0) : ?>
             <tr class="internal">
                 <!-- Article -->
                 <td><label>Article:</label></td>
@@ -75,10 +81,11 @@
                 <!-- Additional URL -->
                 <td><label>Additional URL:</label></td>
                 <td>
-                    <input type="text" name="other_url" class="textbox" value="<?php echo isset($other_url) ? $other_url : '' ; ?>" />
-                    <?php echo isset($fields) ? $fields->getField('other_url')->showErrors() : '' ; ?>
+                    <input type="text" name="other_url" class="textbox" />
                 </td>
             </tr>
+             <?php endif; ?>
+            
             <tr class="external">
                 <!-- Story URL -->
                 <td><label>Story URL:</label></td>
@@ -87,6 +94,7 @@
                     <?php echo isset($fields) ? $fields->getField('story_url')->showErrors() : '' ; ?>
                 </td>
             </tr>
+           
         </table>
         
         <input type="hidden" name="action" value="insertNews" />
