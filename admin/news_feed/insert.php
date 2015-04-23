@@ -17,25 +17,22 @@
 
     <!-- Internal News -->
     <form action="." method="post" id="news" enctype="multipart/form-data">
-        <?php 
+        
+        <?php $options = array(0 => 'Internal', 1 => 'External'); ?>
 
-                $options = array(0 => 'Internal', 1 => 'External');  
+                <?php foreach ($options as $value) : ?>
 
-                //Loops through each array item and adds to radio button list
-                foreach($options as $key => $value){
+                    <?php if($value == $_POST['type']) : ?>
+                        <label for="<?php echo $value; ?>">
+                            <input class="radio" type="radio" name="type" value="<?php echo $value; ?>" checked /> <?php echo $value; ?> 
+                        </label>
+                    <?php else : ?>
+                        <label for="<?php echo $value; ?>">
+                            <input class="radio" type="radio" name="type" value="<?php echo $value; ?>" /> <?php echo $value; ?> 
+                        </label>
+                    <?php endif; ?>
 
-                    //If the approved status in the database matches a status in the array, select that value
-                    if($newsByID['type'] == $key){
-
-                        echo "<input type='radio' class='radio' name='type' value='" . $key . "' checked />" . $value;
-
-                    } else {
-
-                        echo "<input type='radio' class='radio' name='type' value='" . $key . "' />" . $value;
-
-                    }                           
-                }              
-            ?>
+                <?php endforeach; ?>
         
         <input type="hidden" name="news_id" />
         <input type="hidden" name="publish" value="0" />
