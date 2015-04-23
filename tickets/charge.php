@@ -21,18 +21,24 @@ require '../models/database.php';?>
       'email' => 'customer@example.com',
       'card'  => $token
   ));
-  //Need to fix variable amount using JS API but only if time to do further customization
+
   $charge = \Stripe\Charge::create(array(
       'customer' => $customer->id,
       'amount'   => 50000,
       'currency' => 'usd'
   ));
-     $cust = new Customer($cust_fname, $cust_lname, $cust_phone, $cust_email);
-     customerDB::insertCustomer($cust);
-     
-    echo "Your CITF tickets have been purchased!";
+      $cust = new Customer($cust_fname, $cust_lname, $cust_phone, $cust_email);
+      customerDB::insertCustomer($cust);
+    
+    echo
+    '<div id="success">
+        <h1>YAY!</h1>
+        <h2>Your 2015 CIFT tickets have been purchased.</h2>
+    </div>';
+      
   }catch(\Stripe\Error\Card $e) {
   // The card has been declined
+      echo "Your card has been declined.";
 }
 
 include ('../components/main_footer.php');

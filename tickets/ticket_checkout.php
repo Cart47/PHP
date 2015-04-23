@@ -11,7 +11,7 @@ $tick_type = $_GET['tick_type'];
 $tick_price = $_GET['tick_price'];
 
 //STRIPE WORKS IN CENTS - CONVERT TO DOLLARS
-$stripe_charge = $tick_price * $i * 100;
+$stripe_charge = $tick_price * 100;
 
 $_SESSION['tick_id']=$tick_id;
 $_SESSION['tick_type']=$tick_type;
@@ -38,7 +38,7 @@ $total = $tick_price * 4;
             <td><?php echo $tick_type;?><a href="ticket_type.php" class='link'> Change</a></td>
             <td>$<?php echo $tick_price; ?></td>
             <td>
-                <select id='tick_quant'>
+                <select id='tick_quant' onchange='getQuant(this.value)'>
                     <?php 
                         for($i = 0; $i<21; $i++ ){
                            echo '<option value='.$i.'>'.$i.'</option>';
@@ -46,7 +46,7 @@ $total = $tick_price * 4;
                     ?>
                 </select>
             </td>
-            <td>$<?php echo $total ?></td>
+            <td id="total">$<?php //echo $total ?></td>
         </tbody>
     </table>
 
@@ -64,7 +64,18 @@ $total = $tick_price * 4;
       <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
               data-key="<?php echo $stripe['publishable_key']; ?>"
               data-amount="<?php echo $stripe_charge ?>" 
-              data-description="CITF Ticket Purchase"></script>
+              data-description="CITF Ticket Purchase">
+      </script>
+        <script>
+            function getQuant(quantity){
+                var price = <?php echo json_encode($tick_price); ?>;
+                var total = price * quantity;
+                document.getElementById("total").innerHTML = "$" + total;
+            }
+            
+        </script>
+        <script type="text/javascript" src="../js/jquery-2.1.3.js"></script>
+        <script type="text/javascript" src="../js/ticket.js"></script>
     </form> 
 </div>
 <?php include ('../components/main_footer.php'); ?>
