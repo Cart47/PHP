@@ -28,7 +28,7 @@
         <ul id="cms-top-nav">
             <li><a href="."><i class="fa fa-home"></i>CMS</a>
             </li>
-            <li><a href="../../Home/Index.php"><i class="fa fa-external-link"></i>Visit Site</a>
+            <li><a href="../../Home/Index.php" target="_blank"><i class="fa fa-external-link"></i>Visit Site</a>
             </li>
         </ul>
 

@@ -19,7 +19,7 @@
     <input type="hidden" name="date_published" value="<?php echo date('Y-m-d'); ?>" />
     <input type="hidden" name="action" class="btn" value="yesUnpublish" />
     <input type="submit" name="yes" class="btn" value="Yes" />
-    <a href="." class="btn xtra-pad">No</a>
+    <a href="." class="btn">No</a>
 
 </form>
 

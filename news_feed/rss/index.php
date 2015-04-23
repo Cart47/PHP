@@ -30,7 +30,7 @@ foreach ($article as $item) {
         echo '<link type="internal">http://' . $_SERVER['HTTP_HOST'] . '/news_feed/read_article.php?id=' . $item->getNewsID() . '</link>';
     //If Type is 1, it is an external article, get story url
     } elseif ($item->getType() == 1){
-        echo '<link type="external">' . $item->getStoryURL() . '</link>';
+        echo '<link type="external">' . htmlentities($item->getStoryURL()) . '</link>';
     }
     echo '</item>';
 }
