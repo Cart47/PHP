@@ -109,7 +109,7 @@ $genres = ArtistDB::getGenres();
                     <textarea class="textarea"  type="text" name="band_members" required><?php echo $user->getArtMembers() ?></textarea><br/><br/>
                     <br/><br/>
                     <label>Band Description:</label><br/>
-                    <textarea class="textarea"  type="text" name="band_description" data-parsley-trigger="keyup" data-parsley-maxlength="300" data-parsley-validation-threshold="10" required><?php echo $user->getArtDescription() ?></textarea><br/><br/>
+                    <textarea class="textarea" name="band_description" data-parsley-trigger="keyup" data-parsley-maxlength="300" data-parsley-validation-threshold="10" required><?php echo $user->getArtDescription() ?></textarea><br/><br/>
                 <?php } ?>
                 
                 <!------------ Volunteer Edit Form    -->  
