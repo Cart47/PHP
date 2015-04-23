@@ -2,58 +2,58 @@
 
 class Customer {
     
-    private $id;
-    private $f_name;
-    private $l_name;
-    private $phone;
-    private $email;
+    private $cust_id;
+    private $cust_fname;
+    private $cust_lname;
+    private $cust_phone;
+    private $cust_email;
     
-    public function __construct($f_name, $l_name, $phone, $email){
+    public function __construct($cust_name, $cust_name, $cust_phone, $cust_email){
 
-        $this->f_name = $f_name;
-        $this->l_name = $l_name;
-        $this->phone = $phone;
-        $this->email = $email;
+        $this->cust_fname = $cust_fname;
+        $this->cust_lname = $cust_lname;
+        $this->cust_phone = $cust_phone;
+        $this->cust_email = $cust_email;
     }
     
     public function getId(){
-        return $this->id;
+        return $this->cust_id;
     }
     
-    public function setId($id){
-        $this->id = $id;
+    public function setId($cust_id){
+        $this->cust_id = $cust_id;
     }
     
     public function getFname(){
-        return $this->f_name;
+        return $this->cust_fname;
     }
     
-    public function setFname($f_name){
-        $this->f_name = $f_name;
+    public function setFname($cust_fname){
+        $this->cust_fname = $cust_fname;
     }
     
     public function getLname(){
-        return $this->l_name;
+        return $this->cust_lname;
     }
     
-    public function setLname($l_name){
-        $this->l_name = $l_name;
+    public function setLname($cust_lname){
+        $this->cust_lname = $cust_lname;
     }
     
     public function getPhone(){
-        return $this->phone;
+        return $this->cust_phone;
     }
     
-    public function setPhone($phone){
-        $this->phone = $phone;
+    public function setPhone($cust_phone){
+        $this->cust_phone = $cust_phone;
     }
     
     public function getEmail(){
-        return $this->email;
+        return $this->cust_email;
     }
     
-    public function setEmail($email){
-        $this->email = $email;
+    public function setEmail($cust_email){
+        $this->cust_email = $cust_email;
     }
     
 }

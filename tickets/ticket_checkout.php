@@ -25,6 +25,7 @@ $total = $tick_price * 4;
 
 <div id='wrap'>
     <h1>Ticket Checkout </h1>
+    <!--MAKE WIDER SO TABLE DOESNT WIDEN DEPENDING ON PRICE-->
     <table class='table' id='order_details'>
         <thead>
             <tr>
