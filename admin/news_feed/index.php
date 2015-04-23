@@ -167,13 +167,14 @@ if ($action == 'newsList'){ //default view
     $date_created = $_POST['date_created'];
     $date_published = $_POST['date_published'];
     $author = $_POST['author'];
-    $other_url = $_POST['other_url']; 
+    $story_url = (isset($_POST['story_url']) ? $_POST['story_url'] : '');
+    $other_url = (isset($_POST['other_url']) ? $_POST['other_url'] : '');
     $description = $_POST['description']; 
-    $article = $_POST['article'];
+    $article = (isset($_POST['article']) ? $_POST['article'] : '');
     $type = $_POST['type'];
     $publish = $_POST['publish'];
     
-    NewsDB::updateNews($news_id, $title, $date_created, $date_published, $author, null, $other_url, $description, $article, $type, $publish);
+    NewsDB::updateNews($news_id, $title, $date_created, $date_published, $author, $story_url, $other_url, $description, $article, $type, $publish);
     
     getNewsList();
     

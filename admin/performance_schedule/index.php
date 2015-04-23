@@ -264,7 +264,7 @@ if ($action == 'schedule'){ //default view
     if(!$fields->hasErrors()){
         
         //Update the Database
-        PerformanceDB::updatePerformance($performance_id, $stage_id, $artist_id, $day, $start_time, $end_time, $description);
+        PerformanceDB::updatePerformance($performance_id, $stage_id, $browse_art_id, $day, $start_time, $end_time, $description);
       
         getSchedule();
         include ('schedule.php');
